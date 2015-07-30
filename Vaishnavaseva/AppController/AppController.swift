@@ -38,9 +38,9 @@ class AppController: UIResponder, UIApplicationDelegate, UINavigationControllerD
       }
     }
   
-  func pop()
+  func popState()
     {
-    currentState.pop()
+    currentState.popState()
     }
   
   func navigationController(navigationController: UINavigationController, willShowViewController viewController: UIViewController, animated: Bool)

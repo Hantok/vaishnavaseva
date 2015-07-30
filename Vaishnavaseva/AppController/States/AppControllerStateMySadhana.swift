@@ -2,7 +2,6 @@ import UIKit
 
 @objc class AppControllerStateMySadhana: AppControllerState
   {
-
 //  override func isEqualTo(other: EquatableBase) -> Bool
 //    {
 //    let otherDynamic = other as! AppControllerStateSecond

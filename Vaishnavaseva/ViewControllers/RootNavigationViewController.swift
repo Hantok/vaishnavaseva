@@ -21,32 +21,23 @@ class RootNavigationViewController: UINavigationController {
         // Dispose of any resources that can be recreated.
     }
   
+  //Next three methods are added just in case if there is some manual popping of view controller added 
     override func popViewControllerAnimated(animated: Bool) -> UIViewController?
       {
-      AppController.sharedAppController.pop()
+      AppController.sharedAppController.popState()
       return super.popViewControllerAnimated(animated)
       }
   
     override func popToViewController(viewController: UIViewController, animated: Bool) -> [UIViewController]?
       {
-      assert(false, "Never call this method please: pop() works only with one step up unwind segues")
+      assert(false, "Never call this method please: popState() works only with one step up unwind segues")
       return super.popToViewController(viewController, animated: animated)
       }
   
     override func popToRootViewControllerAnimated(animated: Bool) -> [UIViewController]?
       {
-      assert(false, "Never call this method please: pop() works only with one step up unwind segues")
+      assert(false, "Never call this method please: popState() works only with one step up unwind segues")
       return super.popToRootViewControllerAnimated(animated)
       }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

@@ -26,7 +26,7 @@ protocol AppControllerSegueProtocol
 //We don't care of memory footprint size yet: maximum 3 screens in stack for now,
 //So we just save all the previous states as objects in AppController.previousStates
 //As well as use standard navigation controller which keeps all the previous view controllers alive
-//This means we don't need to save/load AppControllerState's state here
+//This means we don't need to save/load AppControllerState's or UIViewController's state here
   func perform()
     {
     let isSegueBack = self.visualSegue.identifier!.hasPrefix("BackFrom")

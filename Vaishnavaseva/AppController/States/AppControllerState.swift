@@ -3,7 +3,7 @@ import UIKit
 
 @objc protocol AppControllerStateProtocol: SceneController
   {
-  // should not be called explicitly (are called by application controller)
+  // should not be called explicitly (are called by AppController only)
   optional func applicationDidReceiveMemoryWarning(application:UIApplication)
   optional func applicationWillResignActive(application: UIApplication)
   optional func applicationDidBecomeActive(application: UIApplication)
@@ -18,7 +18,7 @@ import UIKit
   
   func sceneDidBecomeCurrent()
     {
-    self.viewController.setAction(Selector("pop"), forTarget: self, forStateViewEvent: OnBackStateViewEvent)
+    self.viewController.setAction(Selector("popState"), forTarget: self, forStateViewEvent: OnBackStateViewEvent)
     }
   
   func isEqualTo(other: AppControllerState) -> Bool
@@ -30,7 +30,7 @@ import UIKit
     return  self.viewController == other.viewController
     }
   
-  func pop()
+  func popState()
     {
     let appController = AppController.sharedAppController
     let backState = appController.previousStates.last
@@ -45,7 +45,7 @@ import UIKit
   
   func navigationController(navigationController: UINavigationController, didShowViewController viewController: UIViewController, animated: Bool)
     {
-    assert(viewController == self.viewController)
+    assert(viewController == self.viewController)//If we forgot to set AppControllerState
     (self.viewController as UINavigationControllerDelegate).navigationController?(navigationController, didShowViewController: viewController, animated: animated)
     }
   

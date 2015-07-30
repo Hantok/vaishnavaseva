@@ -20,7 +20,7 @@ class LogInViewController: BaseViewController {
   
   override func didMoveToParentViewController(parent: UIViewController?)
     {
-    //This is a hack: when we remove the LogInViewController from the stack (see viewDidDisappear() above, this method is called which then removes the last element from  AppController.previousStates like if a back button is pressed
+    //This is a hack: when we remove the LogInViewController from the stack (see viewDidDisappear() above, this method is called which then removes the last element from  AppController.previousStates like if a back button is pressed => crash, let's prevent this:
     if !AppController.sharedAppController.isLoggedIn
       {
       super.didMoveToParentViewController(parent)

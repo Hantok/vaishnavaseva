@@ -59,7 +59,7 @@ class BaseViewController: UIViewController, UINavigationControllerDelegate, Stat
   
   override func didMoveToParentViewController(parent: UIViewController?)
     {
-    if parent == nil
+    if parent == nil//We are either going back or removing the view controller from list
       {
       sendActionForStateViewEvent(OnBackStateViewEvent)
       }
