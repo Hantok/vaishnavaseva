@@ -4,6 +4,9 @@ let OnDoneStateViewEvent = "OnDoneStateViewEvent"
 
 class EditSadhanaViewController: BaseViewController {
 
+  var activityIndicatorsContainer: ActivityIndicatorsContainer?
+  @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
@@ -14,6 +17,18 @@ class EditSadhanaViewController: BaseViewController {
     sendActionForStateViewEvent(OnDoneStateViewEvent);
     }
   
+  @IBAction func startIndicatingProgress(sender: AnyObject)
+    {
+    activityIndicatorsContainer = ActivityIndicatorsContainer()
+    activityIndicatorsContainer!.activityIndicator = activityIndicator
+    }
+  
+  @IBAction func stopIndicatingProgress(sender: AnyObject)
+    {
+    activityIndicatorsContainer = nil
+    }
+  
+    
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
