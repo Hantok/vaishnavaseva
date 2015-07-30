@@ -27,12 +27,12 @@ class ActivityIndicatorsContainer
     if ActivityIndicatorsContainer.instanceCount <= 0//there are no other instances created already
       {
       UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-      if let activityIndicator = self.activityIndicator
-        {
-        activityIndicator.stopAnimating()
-        activityIndicator.hidden = true
-        self.activityIndicator = nil
-        }
+      }
+    if let activityIndicator = self.activityIndicator
+      {
+      activityIndicator.stopAnimating()
+      activityIndicator.hidden = true
+      self.activityIndicator = nil
       }
     }
   }
