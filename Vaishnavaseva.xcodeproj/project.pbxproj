@@ -1,0 +1,698 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7521AFA31B57C6E1004B2CFE /* AppControllerStateGeneralSadhana.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7521AFA21B57C6E1004B2CFE /* AppControllerStateGeneralSadhana.swift */; };
+		7521AFA51B57C729004B2CFE /* AppControllerStatePersonalSadhana.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7521AFA41B57C729004B2CFE /* AppControllerStatePersonalSadhana.swift */; };
+		7521AFA71B57C8E6004B2CFE /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7521AFA61B57C8E5004B2CFE /* BaseViewController.swift */; };
+		755BF4E01B68D6BE004B1F61 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755BF4DE1B68D6BE004B1F61 /* LogInViewController.swift */; };
+		755BF4E11B68D6BE004B1F61 /* LogOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755BF4DF1B68D6BE004B1F61 /* LogOutViewController.swift */; };
+		755BF4E41B68D74F004B1F61 /* EditSadhanaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755BF4E21B68D74F004B1F61 /* EditSadhanaViewController.swift */; };
+		755BF4E51B68D74F004B1F61 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755BF4E31B68D74F004B1F61 /* InfoViewController.swift */; };
+		757D124B1B5013300001402B /* GeneralSadhanaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757D124A1B5013300001402B /* GeneralSadhanaViewController.swift */; };
+		757D124E1B5013300001402B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 757D124C1B5013300001402B /* Main.storyboard */; };
+		757D12511B5013300001402B /* Vaishnavaseva.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 757D124F1B5013300001402B /* Vaishnavaseva.xcdatamodeld */; };
+		757D12531B5013300001402B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 757D12521B5013300001402B /* Assets.xcassets */; };
+		757D12561B5013300001402B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 757D12541B5013300001402B /* LaunchScreen.storyboard */; };
+		757D12611B5013300001402B /* VaishnavasevaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757D12601B5013300001402B /* VaishnavasevaTests.swift */; };
+		757D126C1B5013300001402B /* VaishnavasevaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757D126B1B5013300001402B /* VaishnavasevaUITests.swift */; };
+		7595A17E1B626CAF00735A0C /* AppControllerSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7595A17D1B626CAF00735A0C /* AppControllerSegue.swift */; };
+		7595A1811B62847800735A0C /* BackFromAnyToAny.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7595A17F1B62847800735A0C /* BackFromAnyToAny.swift */; };
+		7595A1821B62847800735A0C /* GeneralToPersonal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7595A1801B62847800735A0C /* GeneralToPersonal.swift */; };
+		75BA40361B690C820075CE6B /* AppControllerStateEditSadhana.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BA40351B690C820075CE6B /* AppControllerStateEditSadhana.swift */; };
+		75BA403C1B690F3F0075CE6B /* MyToEdit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BA403B1B690F3F0075CE6B /* MyToEdit.swift */; };
+		75BA40401B69106E0075CE6B /* MyToInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BA403E1B69106E0075CE6B /* MyToInfo.swift */; };
+		75BA40421B6910E60075CE6B /* AppControllerStateInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BA40411B6910E60075CE6B /* AppControllerStateInfo.swift */; };
+		75BA40491B6918A30075CE6B /* GeneralToInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BA40451B6918A30075CE6B /* GeneralToInfo.swift */; };
+		75BA404A1B6918A30075CE6B /* PersonalToInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BA40461B6918A30075CE6B /* PersonalToInfo.swift */; };
+		75BA40501B694D120075CE6B /* RootNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BA404F1B694D120075CE6B /* RootNavigationViewController.swift */; };
+		75BA40521B695DFF0075CE6B /* MyToLogOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BA40511B695DFF0075CE6B /* MyToLogOut.swift */; };
+		75BA40541B695E610075CE6B /* AppControllerStateLogOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BA40531B695E610075CE6B /* AppControllerStateLogOut.swift */; };
+		75BA40561B695E9A0075CE6B /* AppControllerStateLogIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BA40551B695E9A0075CE6B /* AppControllerStateLogIn.swift */; };
+		75C331FC1B695F6C0075F747 /* GeneralToLogIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C331FB1B695F6C0075F747 /* GeneralToLogIn.swift */; };
+		75C331FE1B69623F0075F747 /* LogInToMy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C331FD1B69623F0075F747 /* LogInToMy.swift */; };
+		75C5A5A41B5572AF0069B85D /* EquatableBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C5A5A31B5572AF0069B85D /* EquatableBase.swift */; };
+		75CE83A31B68CFE20033A8AD /* AppControllerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CE83A11B68CFE20033A8AD /* AppControllerState.swift */; };
+		75CE83A41B68CFE20033A8AD /* AppControllerStateMySadhana.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CE83A21B68CFE20033A8AD /* AppControllerStateMySadhana.swift */; };
+		75CE83A81B68D0080033A8AD /* GeneralToMy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CE83A61B68D0080033A8AD /* GeneralToMy.swift */; };
+		75CE83AA1B68D0260033A8AD /* MySadhanaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CE83A91B68D0260033A8AD /* MySadhanaViewController.swift */; };
+		75CFA0E41B5015860071EC79 /* StateSerializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CFA0E31B5015860071EC79 /* StateSerializable.swift */; };
+		75CFA0E81B501A5C0071EC79 /* SceneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CFA0E71B501A5C0071EC79 /* SceneController.swift */; };
+		75CFA0ED1B501FB40071EC79 /* PersonalSadhanaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CFA0EC1B501FB40071EC79 /* PersonalSadhanaViewController.swift */; };
+		75CFA0EF1B50214F0071EC79 /* AppController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75CFA0EE1B50214F0071EC79 /* AppController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		757D125D1B5013300001402B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 757D123D1B5013300001402B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 757D12441B5013300001402B;
+			remoteInfo = Vaishnavaseva;
+		};
+		757D12681B5013300001402B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 757D123D1B5013300001402B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 757D12441B5013300001402B;
+			remoteInfo = Vaishnavaseva;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		751716681B68E69E00ED79BE /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
+		751716691B68E69E00ED79BE /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		7521AFA21B57C6E1004B2CFE /* AppControllerStateGeneralSadhana.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppControllerStateGeneralSadhana.swift; path = AppController/States/AppControllerStateGeneralSadhana.swift; sourceTree = "<group>"; };
+		7521AFA41B57C729004B2CFE /* AppControllerStatePersonalSadhana.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppControllerStatePersonalSadhana.swift; path = AppController/States/AppControllerStatePersonalSadhana.swift; sourceTree = "<group>"; };
+		7521AFA61B57C8E5004B2CFE /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseViewController.swift; path = ViewControllers/BaseViewController.swift; sourceTree = "<group>"; };
+		755BF4DE1B68D6BE004B1F61 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LogInViewController.swift; path = ViewControllers/LogInViewController.swift; sourceTree = "<group>"; };
+		755BF4DF1B68D6BE004B1F61 /* LogOutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LogOutViewController.swift; path = ViewControllers/LogOutViewController.swift; sourceTree = "<group>"; };
+		755BF4E21B68D74F004B1F61 /* EditSadhanaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditSadhanaViewController.swift; path = ViewControllers/EditSadhanaViewController.swift; sourceTree = "<group>"; };
+		755BF4E31B68D74F004B1F61 /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InfoViewController.swift; path = ViewControllers/InfoViewController.swift; sourceTree = "<group>"; };
+		757D12451B5013300001402B /* Vaishnavaseva.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vaishnavaseva.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		757D124A1B5013300001402B /* GeneralSadhanaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GeneralSadhanaViewController.swift; path = ViewControllers/GeneralSadhanaViewController.swift; sourceTree = "<group>"; };
+		757D124D1B5013300001402B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		757D12501B5013300001402B /* Vaishnavaseva.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Vaishnavaseva.xcdatamodel; sourceTree = "<group>"; };
+		757D12521B5013300001402B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		757D12551B5013300001402B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		757D12571B5013300001402B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		757D125C1B5013300001402B /* VaishnavasevaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VaishnavasevaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		757D12601B5013300001402B /* VaishnavasevaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaishnavasevaTests.swift; sourceTree = "<group>"; };
+		757D12621B5013300001402B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		757D12671B5013300001402B /* VaishnavasevaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VaishnavasevaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		757D126B1B5013300001402B /* VaishnavasevaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VaishnavasevaUITests.swift; sourceTree = "<group>"; };
+		757D126D1B5013300001402B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7595A17D1B626CAF00735A0C /* AppControllerSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppControllerSegue.swift; path = AppController/Segues/AppControllerSegue.swift; sourceTree = "<group>"; };
+		7595A17F1B62847800735A0C /* BackFromAnyToAny.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BackFromAnyToAny.swift; path = AppController/Segues/BackFromAnyToAny.swift; sourceTree = "<group>"; };
+		7595A1801B62847800735A0C /* GeneralToPersonal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GeneralToPersonal.swift; path = AppController/Segues/GeneralToPersonal.swift; sourceTree = "<group>"; };
+		75BA40351B690C820075CE6B /* AppControllerStateEditSadhana.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppControllerStateEditSadhana.swift; path = AppController/States/AppControllerStateEditSadhana.swift; sourceTree = "<group>"; };
+		75BA403B1B690F3F0075CE6B /* MyToEdit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyToEdit.swift; path = AppController/Segues/MyToEdit.swift; sourceTree = "<group>"; };
+		75BA403E1B69106E0075CE6B /* MyToInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyToInfo.swift; path = AppController/Segues/MyToInfo.swift; sourceTree = "<group>"; };
+		75BA40411B6910E60075CE6B /* AppControllerStateInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppControllerStateInfo.swift; path = AppController/States/AppControllerStateInfo.swift; sourceTree = "<group>"; };
+		75BA40451B6918A30075CE6B /* GeneralToInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GeneralToInfo.swift; path = AppController/Segues/GeneralToInfo.swift; sourceTree = "<group>"; };
+		75BA40461B6918A30075CE6B /* PersonalToInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersonalToInfo.swift; path = AppController/Segues/PersonalToInfo.swift; sourceTree = "<group>"; };
+		75BA404F1B694D120075CE6B /* RootNavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RootNavigationViewController.swift; path = ViewControllers/RootNavigationViewController.swift; sourceTree = "<group>"; };
+		75BA40511B695DFF0075CE6B /* MyToLogOut.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyToLogOut.swift; path = AppController/Segues/MyToLogOut.swift; sourceTree = "<group>"; };
+		75BA40531B695E610075CE6B /* AppControllerStateLogOut.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppControllerStateLogOut.swift; path = AppController/States/AppControllerStateLogOut.swift; sourceTree = "<group>"; };
+		75BA40551B695E9A0075CE6B /* AppControllerStateLogIn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppControllerStateLogIn.swift; path = AppController/States/AppControllerStateLogIn.swift; sourceTree = "<group>"; };
+		75C331FB1B695F6C0075F747 /* GeneralToLogIn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GeneralToLogIn.swift; path = AppController/Segues/GeneralToLogIn.swift; sourceTree = "<group>"; };
+		75C331FD1B69623F0075F747 /* LogInToMy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LogInToMy.swift; path = AppController/Segues/LogInToMy.swift; sourceTree = "<group>"; };
+		75C5A5A31B5572AF0069B85D /* EquatableBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EquatableBase.swift; path = Equatable/EquatableBase.swift; sourceTree = "<group>"; };
+		75CE83A11B68CFE20033A8AD /* AppControllerState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppControllerState.swift; path = AppController/States/AppControllerState.swift; sourceTree = "<group>"; };
+		75CE83A21B68CFE20033A8AD /* AppControllerStateMySadhana.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppControllerStateMySadhana.swift; path = AppController/States/AppControllerStateMySadhana.swift; sourceTree = "<group>"; };
+		75CE83A61B68D0080033A8AD /* GeneralToMy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GeneralToMy.swift; path = AppController/Segues/GeneralToMy.swift; sourceTree = "<group>"; };
+		75CE83A91B68D0260033A8AD /* MySadhanaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MySadhanaViewController.swift; path = ViewControllers/MySadhanaViewController.swift; sourceTree = "<group>"; };
+		75CFA0E31B5015860071EC79 /* StateSerializable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StateSerializable.swift; path = SceneManager/StateSerializable.swift; sourceTree = "<group>"; };
+		75CFA0E71B501A5C0071EC79 /* SceneController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SceneController.swift; path = SceneManager/SceneController.swift; sourceTree = "<group>"; };
+		75CFA0EC1B501FB40071EC79 /* PersonalSadhanaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersonalSadhanaViewController.swift; path = ViewControllers/PersonalSadhanaViewController.swift; sourceTree = "<group>"; };
+		75CFA0EE1B50214F0071EC79 /* AppController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppController.swift; path = AppController/AppController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		757D12421B5013300001402B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		757D12591B5013300001402B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		757D12641B5013300001402B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7521AFA11B57C6B1004B2CFE /* States */ = {
+			isa = PBXGroup;
+			children = (
+				75CE83A11B68CFE20033A8AD /* AppControllerState.swift */,
+				7521AFA21B57C6E1004B2CFE /* AppControllerStateGeneralSadhana.swift */,
+				75CE83A21B68CFE20033A8AD /* AppControllerStateMySadhana.swift */,
+				75BA40551B695E9A0075CE6B /* AppControllerStateLogIn.swift */,
+				75BA40531B695E610075CE6B /* AppControllerStateLogOut.swift */,
+				75BA40351B690C820075CE6B /* AppControllerStateEditSadhana.swift */,
+				7521AFA41B57C729004B2CFE /* AppControllerStatePersonalSadhana.swift */,
+				75BA40411B6910E60075CE6B /* AppControllerStateInfo.swift */,
+			);
+			name = States;
+			sourceTree = "<group>";
+		};
+		757D123C1B5013300001402B = {
+			isa = PBXGroup;
+			children = (
+				757D12471B5013300001402B /* Vaishnavaseva */,
+				757D125F1B5013300001402B /* VaishnavasevaTests */,
+				757D126A1B5013300001402B /* VaishnavasevaUITests */,
+				757D12461B5013300001402B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		757D12461B5013300001402B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				757D12451B5013300001402B /* Vaishnavaseva.app */,
+				757D125C1B5013300001402B /* VaishnavasevaTests.xctest */,
+				757D12671B5013300001402B /* VaishnavasevaUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		757D12471B5013300001402B /* Vaishnavaseva */ = {
+			isa = PBXGroup;
+			children = (
+				75CFA0EB1B501F710071EC79 /* AppController */,
+				75CFA0E01B50145D0071EC79 /* SceneManager */,
+				75CFA0EA1B501F560071EC79 /* ViewControllers */,
+				75C5A5A01B5531F60069B85D /* Equatable */,
+				757D124C1B5013300001402B /* Main.storyboard */,
+				757D12521B5013300001402B /* Assets.xcassets */,
+				757D12541B5013300001402B /* LaunchScreen.storyboard */,
+				757D12571B5013300001402B /* Info.plist */,
+				757D124F1B5013300001402B /* Vaishnavaseva.xcdatamodeld */,
+			);
+			path = Vaishnavaseva;
+			sourceTree = "<group>";
+		};
+		757D125F1B5013300001402B /* VaishnavasevaTests */ = {
+			isa = PBXGroup;
+			children = (
+				757D12601B5013300001402B /* VaishnavasevaTests.swift */,
+				757D12621B5013300001402B /* Info.plist */,
+			);
+			path = VaishnavasevaTests;
+			sourceTree = "<group>";
+		};
+		757D126A1B5013300001402B /* VaishnavasevaUITests */ = {
+			isa = PBXGroup;
+			children = (
+				757D126B1B5013300001402B /* VaishnavasevaUITests.swift */,
+				757D126D1B5013300001402B /* Info.plist */,
+			);
+			path = VaishnavasevaUITests;
+			sourceTree = "<group>";
+		};
+		7595A17C1B626C8D00735A0C /* Segues */ = {
+			isa = PBXGroup;
+			children = (
+				7595A17D1B626CAF00735A0C /* AppControllerSegue.swift */,
+				75CE83A61B68D0080033A8AD /* GeneralToMy.swift */,
+				75C331FB1B695F6C0075F747 /* GeneralToLogIn.swift */,
+				75C331FD1B69623F0075F747 /* LogInToMy.swift */,
+				75BA403B1B690F3F0075CE6B /* MyToEdit.swift */,
+				75BA40511B695DFF0075CE6B /* MyToLogOut.swift */,
+				7595A1801B62847800735A0C /* GeneralToPersonal.swift */,
+				75BA40451B6918A30075CE6B /* GeneralToInfo.swift */,
+				75BA403E1B69106E0075CE6B /* MyToInfo.swift */,
+				75BA40461B6918A30075CE6B /* PersonalToInfo.swift */,
+				7595A17F1B62847800735A0C /* BackFromAnyToAny.swift */,
+			);
+			name = Segues;
+			sourceTree = "<group>";
+		};
+		75C5A5A01B5531F60069B85D /* Equatable */ = {
+			isa = PBXGroup;
+			children = (
+				75C5A5A31B5572AF0069B85D /* EquatableBase.swift */,
+			);
+			name = Equatable;
+			sourceTree = "<group>";
+		};
+		75CFA0E01B50145D0071EC79 /* SceneManager */ = {
+			isa = PBXGroup;
+			children = (
+				75CFA0E71B501A5C0071EC79 /* SceneController.swift */,
+				75CFA0E31B5015860071EC79 /* StateSerializable.swift */,
+			);
+			name = SceneManager;
+			sourceTree = "<group>";
+		};
+		75CFA0EA1B501F560071EC79 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				7521AFA61B57C8E5004B2CFE /* BaseViewController.swift */,
+				757D124A1B5013300001402B /* GeneralSadhanaViewController.swift */,
+				75CE83A91B68D0260033A8AD /* MySadhanaViewController.swift */,
+				755BF4E21B68D74F004B1F61 /* EditSadhanaViewController.swift */,
+				75CFA0EC1B501FB40071EC79 /* PersonalSadhanaViewController.swift */,
+				755BF4E31B68D74F004B1F61 /* InfoViewController.swift */,
+				755BF4DE1B68D6BE004B1F61 /* LogInViewController.swift */,
+				755BF4DF1B68D6BE004B1F61 /* LogOutViewController.swift */,
+				75BA404F1B694D120075CE6B /* RootNavigationViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		75CFA0EB1B501F710071EC79 /* AppController */ = {
+			isa = PBXGroup;
+			children = (
+				75CFA0EE1B50214F0071EC79 /* AppController.swift */,
+				7521AFA11B57C6B1004B2CFE /* States */,
+				7595A17C1B626C8D00735A0C /* Segues */,
+			);
+			name = AppController;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		757D12441B5013300001402B /* Vaishnavaseva */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 757D12701B5013300001402B /* Build configuration list for PBXNativeTarget "Vaishnavaseva" */;
+			buildPhases = (
+				757D12411B5013300001402B /* Sources */,
+				757D12421B5013300001402B /* Frameworks */,
+				757D12431B5013300001402B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Vaishnavaseva;
+			productName = Vaishnavaseva;
+			productReference = 757D12451B5013300001402B /* Vaishnavaseva.app */;
+			productType = "com.apple.product-type.application";
+		};
+		757D125B1B5013300001402B /* VaishnavasevaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 757D12731B5013300001402B /* Build configuration list for PBXNativeTarget "VaishnavasevaTests" */;
+			buildPhases = (
+				757D12581B5013300001402B /* Sources */,
+				757D12591B5013300001402B /* Frameworks */,
+				757D125A1B5013300001402B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				757D125E1B5013300001402B /* PBXTargetDependency */,
+			);
+			name = VaishnavasevaTests;
+			productName = VaishnavasevaTests;
+			productReference = 757D125C1B5013300001402B /* VaishnavasevaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		757D12661B5013300001402B /* VaishnavasevaUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 757D12761B5013300001402B /* Build configuration list for PBXNativeTarget "VaishnavasevaUITests" */;
+			buildPhases = (
+				757D12631B5013300001402B /* Sources */,
+				757D12641B5013300001402B /* Frameworks */,
+				757D12651B5013300001402B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				757D12691B5013300001402B /* PBXTargetDependency */,
+			);
+			name = VaishnavasevaUITests;
+			productName = VaishnavasevaUITests;
+			productReference = 757D12671B5013300001402B /* VaishnavasevaUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		757D123D1B5013300001402B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = 007;
+				TargetAttributes = {
+					757D12441B5013300001402B = {
+						CreatedOnToolsVersion = 7.0;
+					};
+					757D125B1B5013300001402B = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = 757D12441B5013300001402B;
+					};
+					757D12661B5013300001402B = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = 757D12441B5013300001402B;
+					};
+				};
+			};
+			buildConfigurationList = 757D12401B5013300001402B /* Build configuration list for PBXProject "Vaishnavaseva" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 757D123C1B5013300001402B;
+			productRefGroup = 757D12461B5013300001402B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				757D12441B5013300001402B /* Vaishnavaseva */,
+				757D125B1B5013300001402B /* VaishnavasevaTests */,
+				757D12661B5013300001402B /* VaishnavasevaUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		757D12431B5013300001402B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				757D12561B5013300001402B /* LaunchScreen.storyboard in Resources */,
+				757D12531B5013300001402B /* Assets.xcassets in Resources */,
+				757D124E1B5013300001402B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		757D125A1B5013300001402B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		757D12651B5013300001402B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		757D12411B5013300001402B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				75BA404A1B6918A30075CE6B /* PersonalToInfo.swift in Sources */,
+				7595A17E1B626CAF00735A0C /* AppControllerSegue.swift in Sources */,
+				7521AFA31B57C6E1004B2CFE /* AppControllerStateGeneralSadhana.swift in Sources */,
+				7521AFA71B57C8E6004B2CFE /* BaseViewController.swift in Sources */,
+				75CFA0ED1B501FB40071EC79 /* PersonalSadhanaViewController.swift in Sources */,
+				7595A1821B62847800735A0C /* GeneralToPersonal.swift in Sources */,
+				75BA40561B695E9A0075CE6B /* AppControllerStateLogIn.swift in Sources */,
+				75BA40361B690C820075CE6B /* AppControllerStateEditSadhana.swift in Sources */,
+				7521AFA51B57C729004B2CFE /* AppControllerStatePersonalSadhana.swift in Sources */,
+				75C331FC1B695F6C0075F747 /* GeneralToLogIn.swift in Sources */,
+				75BA40501B694D120075CE6B /* RootNavigationViewController.swift in Sources */,
+				75CFA0E81B501A5C0071EC79 /* SceneController.swift in Sources */,
+				75CE83A31B68CFE20033A8AD /* AppControllerState.swift in Sources */,
+				757D12511B5013300001402B /* Vaishnavaseva.xcdatamodeld in Sources */,
+				757D124B1B5013300001402B /* GeneralSadhanaViewController.swift in Sources */,
+				75CE83AA1B68D0260033A8AD /* MySadhanaViewController.swift in Sources */,
+				755BF4E51B68D74F004B1F61 /* InfoViewController.swift in Sources */,
+				7595A1811B62847800735A0C /* BackFromAnyToAny.swift in Sources */,
+				75BA40521B695DFF0075CE6B /* MyToLogOut.swift in Sources */,
+				75CFA0E41B5015860071EC79 /* StateSerializable.swift in Sources */,
+				75BA40421B6910E60075CE6B /* AppControllerStateInfo.swift in Sources */,
+				75BA40541B695E610075CE6B /* AppControllerStateLogOut.swift in Sources */,
+				75C5A5A41B5572AF0069B85D /* EquatableBase.swift in Sources */,
+				75CE83A81B68D0080033A8AD /* GeneralToMy.swift in Sources */,
+				75CFA0EF1B50214F0071EC79 /* AppController.swift in Sources */,
+				75C331FE1B69623F0075F747 /* LogInToMy.swift in Sources */,
+				755BF4E01B68D6BE004B1F61 /* LogInViewController.swift in Sources */,
+				755BF4E11B68D6BE004B1F61 /* LogOutViewController.swift in Sources */,
+				755BF4E41B68D74F004B1F61 /* EditSadhanaViewController.swift in Sources */,
+				75BA40491B6918A30075CE6B /* GeneralToInfo.swift in Sources */,
+				75CE83A41B68CFE20033A8AD /* AppControllerStateMySadhana.swift in Sources */,
+				75BA403C1B690F3F0075CE6B /* MyToEdit.swift in Sources */,
+				75BA40401B69106E0075CE6B /* MyToInfo.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		757D12581B5013300001402B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				757D12611B5013300001402B /* VaishnavasevaTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		757D12631B5013300001402B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				757D126C1B5013300001402B /* VaishnavasevaUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		757D125E1B5013300001402B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 757D12441B5013300001402B /* Vaishnavaseva */;
+			targetProxy = 757D125D1B5013300001402B /* PBXContainerItemProxy */;
+		};
+		757D12691B5013300001402B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 757D12441B5013300001402B /* Vaishnavaseva */;
+			targetProxy = 757D12681B5013300001402B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		757D124C1B5013300001402B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				757D124D1B5013300001402B /* Base */,
+				751716681B68E69E00ED79BE /* ru */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		757D12541B5013300001402B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				757D12551B5013300001402B /* Base */,
+				751716691B68E69E00ED79BE /* ru */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		757D126E1B5013300001402B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		757D126F1B5013300001402B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		757D12711B5013300001402B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Vaishnavaseva/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Openminded.Vaishnavaseva;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		757D12721B5013300001402B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Vaishnavaseva/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Openminded.Vaishnavaseva;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		757D12741B5013300001402B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = VaishnavasevaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Openminded.VaishnavasevaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Vaishnavaseva.app/Vaishnavaseva";
+			};
+			name = Debug;
+		};
+		757D12751B5013300001402B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = VaishnavasevaTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Openminded.VaishnavasevaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Vaishnavaseva.app/Vaishnavaseva";
+			};
+			name = Release;
+		};
+		757D12771B5013300001402B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = VaishnavasevaUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Openminded.VaishnavasevaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Vaishnavaseva;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		757D12781B5013300001402B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = VaishnavasevaUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Openminded.VaishnavasevaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Vaishnavaseva;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		757D12401B5013300001402B /* Build configuration list for PBXProject "Vaishnavaseva" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				757D126E1B5013300001402B /* Debug */,
+				757D126F1B5013300001402B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		757D12701B5013300001402B /* Build configuration list for PBXNativeTarget "Vaishnavaseva" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				757D12711B5013300001402B /* Debug */,
+				757D12721B5013300001402B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		757D12731B5013300001402B /* Build configuration list for PBXNativeTarget "VaishnavasevaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				757D12741B5013300001402B /* Debug */,
+				757D12751B5013300001402B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		757D12761B5013300001402B /* Build configuration list for PBXNativeTarget "VaishnavasevaUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				757D12771B5013300001402B /* Debug */,
+				757D12781B5013300001402B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		757D124F1B5013300001402B /* Vaishnavaseva.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				757D12501B5013300001402B /* Vaishnavaseva.xcdatamodel */,
+			);
+			currentVersion = 757D12501B5013300001402B /* Vaishnavaseva.xcdatamodel */;
+			path = Vaishnavaseva.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 757D123D1B5013300001402B /* Project object */;
+}
