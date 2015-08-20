@@ -20,12 +20,14 @@ class EditSadhanaViewController: BaseViewController {
   @IBAction func startIndicatingProgress(sender: AnyObject)
     {
     activityIndicatorsContainer = ActivityIndicatorsContainer()
-    activityIndicatorsContainer!.activityIndicator = activityIndicator
+    activityIndicatorsContainer?.activityIndicator = activityIndicator
+    activityIndicatorsContainer?.start()
     }
   
   @IBAction func stopIndicatingProgress(sender: AnyObject)
     {
-    activityIndicatorsContainer = nil
+    activityIndicatorsContainer?.stop()
+    //activityIndicatorsContainer = nil//this code stops the indicators too even if you don't call stop()
     }
   
     

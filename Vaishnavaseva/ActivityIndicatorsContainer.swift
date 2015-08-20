@@ -2,32 +2,31 @@ import UIKit
 
 class ActivityIndicatorsContainer
   {
-  static var instanceCount = 0
   var activityIndicator: UIActivityIndicatorView?
+  
+  func start()
     {
-    didSet
+    UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+    if let activityIndicator = self.activityIndicator
       {
-      if let activityIndicator = self.activityIndicator
-        {
-        activityIndicator.startAnimating()
-        activityIndicator.hidden = false
-        }
+      activityIndicator.startAnimating()
+      activityIndicator.hidden = false
       }
     }
   
-  init()
+  func stop()
     {
-    ++ActivityIndicatorsContainer.instanceCount
-    UIApplication.sharedApplication().networkActivityIndicatorVisible = true
+    UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+    if let activityIndicator = self.activityIndicator
+      {
+      activityIndicator.stopAnimating()
+      activityIndicator.hidden = true
+      }
     }
   
   deinit
     {
-    --ActivityIndicatorsContainer.instanceCount
-    if ActivityIndicatorsContainer.instanceCount <= 0//there are no other instances created already
-      {
-      UIApplication.sharedApplication().networkActivityIndicatorVisible = false
-      }
+    UIApplication.sharedApplication().networkActivityIndicatorVisible = false
     if let activityIndicator = self.activityIndicator
       {
       activityIndicator.stopAnimating()
