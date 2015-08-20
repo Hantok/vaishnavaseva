@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		750907E51B6A29C1008E25E8 /* ActivityIndicatorsContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750907E41B6A29C1008E25E8 /* ActivityIndicatorsContainer.swift */; };
+		750907EA1B6A91ED008E25E8 /* JapaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750907E91B6A91ED008E25E8 /* JapaView.swift */; };
+		750907ED1B6A9244008E25E8 /* JapaView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 750907EC1B6A9244008E25E8 /* JapaView.xib */; };
 		7521AFA31B57C6E1004B2CFE /* AppControllerStateGeneralSadhana.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7521AFA21B57C6E1004B2CFE /* AppControllerStateGeneralSadhana.swift */; };
 		7521AFA51B57C729004B2CFE /* AppControllerStatePersonalSadhana.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7521AFA41B57C729004B2CFE /* AppControllerStatePersonalSadhana.swift */; };
 		7521AFA71B57C8E6004B2CFE /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7521AFA61B57C8E5004B2CFE /* BaseViewController.swift */; };
@@ -67,6 +69,8 @@
 
 /* Begin PBXFileReference section */
 		750907E41B6A29C1008E25E8 /* ActivityIndicatorsContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorsContainer.swift; sourceTree = "<group>"; };
+		750907E91B6A91ED008E25E8 /* JapaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JapaView.swift; path = Views/JapaView.swift; sourceTree = "<group>"; };
+		750907EC1B6A9244008E25E8 /* JapaView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = JapaView.xib; path = Views/xib/JapaView.xib; sourceTree = "<group>"; };
 		751716681B68E69E00ED79BE /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
 		751716691B68E69E00ED79BE /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		7521AFA21B57C6E1004B2CFE /* AppControllerStateGeneralSadhana.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppControllerStateGeneralSadhana.swift; path = AppController/States/AppControllerStateGeneralSadhana.swift; sourceTree = "<group>"; };
@@ -140,6 +144,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		750907E61B6A8E1C008E25E8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				750907E91B6A91ED008E25E8 /* JapaView.swift */,
+				750907EB1B6A9211008E25E8 /* xib */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		750907EB1B6A9211008E25E8 /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				750907EC1B6A9244008E25E8 /* JapaView.xib */,
+			);
+			name = xib;
+			sourceTree = "<group>";
+		};
 		7521AFA11B57C6B1004B2CFE /* States */ = {
 			isa = PBXGroup;
 			children = (
@@ -181,6 +202,7 @@
 				75CFA0EB1B501F710071EC79 /* AppController */,
 				75CFA0E01B50145D0071EC79 /* SceneManager */,
 				75CFA0EA1B501F560071EC79 /* ViewControllers */,
+				750907E61B6A8E1C008E25E8 /* Views */,
 				75C5A5A01B5531F60069B85D /* Equatable */,
 				757D124C1B5013300001402B /* Main.storyboard */,
 				757D12521B5013300001402B /* Assets.xcassets */,
@@ -374,6 +396,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				750907ED1B6A9244008E25E8 /* JapaView.xib in Resources */,
 				757D12561B5013300001402B /* LaunchScreen.storyboard in Resources */,
 				757D12531B5013300001402B /* Assets.xcassets in Resources */,
 				757D124E1B5013300001402B /* Main.storyboard in Resources */,
@@ -432,6 +455,7 @@
 				755BF4E11B68D6BE004B1F61 /* LogOutViewController.swift in Sources */,
 				755BF4E41B68D74F004B1F61 /* EditSadhanaViewController.swift in Sources */,
 				75BA40491B6918A30075CE6B /* GeneralToInfo.swift in Sources */,
+				750907EA1B6A91ED008E25E8 /* JapaView.swift in Sources */,
 				75CE83A41B68CFE20033A8AD /* AppControllerStateMySadhana.swift in Sources */,
 				75BA403C1B690F3F0075CE6B /* MyToEdit.swift in Sources */,
 				75BA40401B69106E0075CE6B /* MyToInfo.swift in Sources */,

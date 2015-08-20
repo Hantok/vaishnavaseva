@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8164.2" systemVersion="14F6a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BU8-X4-nNb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8164.2" systemVersion="14F25a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BU8-X4-nNb">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8135.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
@@ -9,42 +10,11 @@
         <scene sceneID="AvT-tN-Kgu">
             <objects>
                 <viewController id="Pfd-d1-ZYF" customClass="GeneralSadhanaViewController" customModule="Vaishnavaseva" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="wV1-SR-Ybu"/>
-                        <viewControllerLayoutGuide type="bottom" id="tja-FQ-Xmt"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="hwJ-kP-hVQ">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Sbh-qe-xYe">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="91h-4r-qmr">
-                                <rect key="frame" x="20" y="72" width="272" height="81"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sadhana of everyone (no filters yet)" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xxb-b0-xJp">
-                                        <rect key="frame" x="0.0" y="0.0" width="272" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sf6-vC-kzm">
-                                        <rect key="frame" x="0.0" y="21" width="120" height="30"/>
-                                        <state key="normal" title="Select any record"/>
-                                        <connections>
-                                            <action selector="onAnyRecordSelected:" destination="Pfd-d1-ZYF" eventType="touchUpInside" id="Rky-tT-obm"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iVW-ai-leW">
-                                        <rect key="frame" x="0.0" y="51" width="196" height="30"/>
-                                        <state key="normal" title="Select MY record (logged in)"/>
-                                        <connections>
-                                            <action selector="onMySadhana:" destination="Pfd-d1-ZYF" eventType="touchUpInside" id="qY2-8Y-CB5"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
-                        </subviews>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
+                    </tableView>
                     <navigationItem key="navigationItem" title="Sadhana" id="bIg-DW-MlW">
                         <rightBarButtonItems>
                             <barButtonItem title="Info" id="dMc-w4-mhg">
@@ -334,18 +304,60 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iNj-FR-kcF">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iNj-FR-kcF">
                                 <rect key="frame" x="20" y="72" width="42" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="ElK-F8-itx"/>
+                                    <constraint firstAttribute="width" constant="42" id="rOg-vB-0C6"/>
+                                </constraints>
                                 <state key="normal" title="Log In"/>
                                 <connections>
                                     <action selector="onLogIn:" destination="6Hf-a8-qBb" eventType="touchUpInside" id="68h-lS-Rwb"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TV8-Yq-Exp" customClass="JapaView" customModule="Vaishnavaseva" customModuleProvider="target">
+                                <rect key="frame" x="20" y="110" width="501" height="16"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="16" id="Re7-9g-r1b"/>
+                                    <constraint firstAttribute="width" constant="501" id="YBB-dK-PNL"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="YBB-dK-PNL"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TNQ-qY-6eJ">
+                                <rect key="frame" x="70" y="72" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="onButtonPressed:" destination="6Hf-a8-qBb" eventType="touchUpInside" id="7yX-Jz-Stw"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="iNj-FR-kcF" firstAttribute="top" secondItem="IhL-0d-bqS" secondAttribute="bottom" constant="8" id="5aP-V1-GEU"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="TNQ-qY-6eJ" secondAttribute="trailing" constant="464" id="7Lj-wR-xX3"/>
+                            <constraint firstItem="iNj-FR-kcF" firstAttribute="leading" secondItem="KlS-cs-6qL" secondAttribute="leadingMargin" id="8A8-Ce-qb3"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="TV8-Yq-Exp" secondAttribute="trailing" id="9Ec-OY-JSs"/>
+                            <constraint firstItem="TNQ-qY-6eJ" firstAttribute="leading" secondItem="KlS-cs-6qL" secondAttribute="leadingMargin" constant="50" id="Hbh-Pe-0bt"/>
+                            <constraint firstItem="TV8-Yq-Exp" firstAttribute="top" secondItem="iNj-FR-kcF" secondAttribute="bottom" constant="8" id="bDq-yq-x59"/>
+                            <constraint firstItem="TV8-Yq-Exp" firstAttribute="leading" secondItem="KlS-cs-6qL" secondAttribute="leadingMargin" id="hYP-Lv-b6X"/>
+                            <constraint firstItem="TV8-Yq-Exp" firstAttribute="top" secondItem="iNj-FR-kcF" secondAttribute="bottom" constant="8" id="qNi-F1-7CR"/>
+                            <constraint firstItem="TNQ-qY-6eJ" firstAttribute="top" secondItem="IhL-0d-bqS" secondAttribute="bottom" constant="8" id="ynl-qI-SYx"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="7Lj-wR-xX3"/>
+                                <exclude reference="qNi-F1-7CR"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Log In" id="amd-3N-3fr"/>
                     <connections>
+                        <outlet property="japaView" destination="TV8-Yq-Exp" id="zWF-gW-K8v"/>
                         <segue destination="n9d-oo-zJV" kind="show" identifier="LogInToMy" id="IIT-AO-hU6"/>
                     </connections>
                 </viewController>

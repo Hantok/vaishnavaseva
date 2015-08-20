@@ -2,6 +2,18 @@ import UIKit
 
 class LogInViewController: BaseViewController {
 
+  @IBOutlet weak var japaView: JapaView!
+  
+
+  @IBAction func onButtonPressed(sender: AnyObject)
+    {
+    japaView.rounds0 = 16
+    japaView.rounds1 = 16
+    japaView.rounds2 = 16
+    japaView.rounds3 = 16
+    japaView.recalculateLayout()
+    }
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
