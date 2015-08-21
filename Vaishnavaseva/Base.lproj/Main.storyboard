@@ -168,7 +168,7 @@
             </objects>
             <point key="canvasLocation" x="876" y="-298"/>
         </scene>
-        <!--Edit-->
+        <!--Today-->
         <scene sceneID="NrD-wn-fti">
             <objects>
                 <viewController id="eG7-5b-7LX" customClass="EditSadhanaViewController" customModule="Vaishnavaseva" customModuleProvider="target" sceneMemberID="viewController">
@@ -180,42 +180,146 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="dHn-Dt-jT0">
-                                <rect key="frame" x="20" y="72" width="232" height="81"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" alwaysBounceHorizontal="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gkV-hr-4Ic">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Edit a single day sadhana data" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v3U-uT-jWY">
-                                        <rect key="frame" x="0.0" y="0.0" width="232" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8RR-Xj-h0e">
-                                        <rect key="frame" x="0.0" y="21" width="169" height="30"/>
-                                        <state key="normal" title="Start indicating progress"/>
-                                        <connections>
-                                            <action selector="startIndicatingProgress:" destination="eG7-5b-7LX" eventType="touchUpInside" id="2RC-ly-ze9"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N7z-5l-hFV">
-                                        <rect key="frame" x="0.0" y="51" width="168" height="30"/>
-                                        <state key="normal" title="Stop indicating progress"/>
-                                        <connections>
-                                            <action selector="stopIndicatingProgress:" destination="eG7-5b-7LX" eventType="touchUpInside" id="VbP-e7-fBl"/>
-                                        </connections>
-                                    </button>
+                                    <stackView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ZbJ-wG-A7k">
+                                        <rect key="frame" x="20" y="20" width="640" height="505"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Ufd-js-ROe">
+                                                <rect key="frame" x="0.0" y="0.0" width="640" height="21"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="7:30 AM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="21v-vy-KaL">
+                                                        <rect key="frame" x="0.0" y="0.0" width="65" height="21"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="10:00 AM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ak2-XV-4aG">
+                                                        <rect key="frame" x="182" y="0.0" width="74" height="21"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="6:00 PM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fzh-Tn-xyg">
+                                                        <rect key="frame" x="373" y="0.0" width="66" height="21"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Books, min" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q8E-q3-O41">
+                                                        <rect key="frame" x="556" y="0.0" width="84" height="21"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0EG-wv-tFe">
+                                                <rect key="frame" x="0.0" y="21" width="640" height="216"/>
+                                            </pickerView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="FYM-nY-YeP">
+                                                <rect key="frame" x="0.0" y="237" width="640" height="31"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N02-pf-WSh">
+                                                        <rect key="frame" x="0.0" y="0.0" width="106" height="31"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Service" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lU8-do-Pan">
+                                                                <rect key="frame" x="0.0" y="0.0" width="57" height="31"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="gRg-Hy-7Wj">
+                                                                <rect key="frame" x="57" y="0.0" width="51" height="31"/>
+                                                            </switch>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4cT-6Y-LgB">
+                                                        <rect key="frame" x="268" y="0.0" width="95" height="31"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Kirtan" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gcX-cN-zi5">
+                                                                <rect key="frame" x="0.0" y="0.0" width="46" height="31"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="z2H-mb-twJ">
+                                                                <rect key="frame" x="46" y="0.0" width="51" height="31"/>
+                                                            </switch>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CRy-CV-l8V">
+                                                        <rect key="frame" x="524" y="0.0" width="116" height="31"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Lectures" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YNw-X3-2Ba">
+                                                                <rect key="frame" x="0.0" y="0.0" width="67" height="31"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="an2-z8-d7u">
+                                                                <rect key="frame" x="67" y="0.0" width="51" height="31"/>
+                                                            </switch>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" distribution="equalSpacing" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="qrP-jD-vig">
+                                                <rect key="frame" x="0.0" y="268" width="640" height="21"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Wake-up time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TGl-CB-Ph4">
+                                                        <rect key="frame" x="0.0" y="0.0" width="107" height="21"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bedtime" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hSs-FH-abS">
+                                                        <rect key="frame" x="576" y="0.0" width="64" height="21"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AUc-o1-HM2">
+                                                <rect key="frame" x="0.0" y="289" width="640" height="216"/>
+                                                <subviews>
+                                                    <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="15" translatesAutoresizingMaskIntoConstraints="NO" id="h3Z-A2-TAB">
+                                                        <rect key="frame" x="0.0" y="0.0" width="320" height="216"/>
+                                                        <date key="date" timeIntervalSinceReferenceDate="461834330.632231">
+                                                            <!--2015-08-21 07:18:50 +0000-->
+                                                        </date>
+                                                    </datePicker>
+                                                    <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="15" translatesAutoresizingMaskIntoConstraints="NO" id="19i-wW-R5N">
+                                                        <rect key="frame" x="320" y="0.0" width="320" height="216"/>
+                                                        <date key="date" timeIntervalSinceReferenceDate="461834330.632231">
+                                                            <!--2015-08-21 07:18:50 +0000-->
+                                                        </date>
+                                                    </datePicker>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.98039215690000003" green="0.76862745099999996" blue="0.1764705882" alpha="1" colorSpace="calibratedRGB"/>
+                                    </stackView>
                                 </subviews>
-                            </stackView>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="XE1-I5-lgL">
-                                <rect key="frame" x="282" y="281" width="37" height="37"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            </scrollView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="XE1-I5-lgL">
+                                <rect key="frame" x="291" y="290" width="20" height="20"/>
                             </activityIndicatorView>
                         </subviews>
-                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="gkV-hr-4Ic" firstAttribute="leading" secondItem="Ken-ns-peE" secondAttribute="leadingMargin" id="7Du-ge-eDP"/>
+                            <constraint firstItem="gkV-hr-4Ic" firstAttribute="top" secondItem="Ken-ns-peE" secondAttribute="topMargin" id="Ee4-ap-POT"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="gkV-hr-4Ic" secondAttribute="trailing" id="Rt4-q3-vkg"/>
                             <constraint firstItem="XE1-I5-lgL" firstAttribute="centerX" secondItem="Ken-ns-peE" secondAttribute="centerX" id="cG6-1u-OeV"/>
                             <constraint firstItem="XE1-I5-lgL" firstAttribute="centerY" secondItem="Ken-ns-peE" secondAttribute="centerY" id="iiY-44-beN"/>
+                            <constraint firstItem="FC7-zD-96L" firstAttribute="top" secondItem="gkV-hr-4Ic" secondAttribute="bottom" id="muc-ub-O1n"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Edit" id="nCg-mi-b0I">
+                    <navigationItem key="navigationItem" title="Today" id="nCg-mi-b0I">
                         <barButtonItem key="backBarButtonItem" title="Cancel" id="RNj-hX-603"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="qNy-vY-jkq">
                             <connections>
@@ -225,6 +329,12 @@
                     </navigationItem>
                     <connections>
                         <outlet property="activityIndicator" destination="XE1-I5-lgL" id="InW-m1-j7c"/>
+                        <outlet property="bedtimePicker" destination="19i-wW-R5N" id="Li8-i1-tQg"/>
+                        <outlet property="japaBooksPicker" destination="0EG-wv-tFe" id="QTc-xh-JXk"/>
+                        <outlet property="kirtanSwitch" destination="z2H-mb-twJ" id="SF8-w6-utv"/>
+                        <outlet property="lecturesSwitch" destination="an2-z8-d7u" id="wsG-DX-2NL"/>
+                        <outlet property="serviceSwitch" destination="gRg-Hy-7Wj" id="aa2-um-jvC"/>
+                        <outlet property="wakeupTimePicker" destination="h3Z-A2-TAB" id="QsA-f1-fMe"/>
                         <segue destination="0Uj-ub-dMn" kind="unwind" identifier="BackFromAnyToAny" unwindAction="backToMySadhana:" id="b5B-1d-OSO"/>
                     </connections>
                 </viewController>
