@@ -10,10 +10,99 @@
         <scene sceneID="AvT-tN-Kgu">
             <objects>
                 <viewController id="Pfd-d1-ZYF" customClass="GeneralSadhanaViewController" customModule="Vaishnavaseva" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Sbh-qe-xYe">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="120" sectionHeaderHeight="22" sectionFooterHeight="22" id="Sbh-qe-xYe">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PersonalCell" id="U5n-xn-sgd">
+                                <rect key="frame" x="0.0" y="86" width="600" height="120"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="U5n-xn-sgd" id="iIP-ux-tNd">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="119"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Ms8-XR-KPz">
+                                            <rect key="frame" x="8" y="0.0" width="584" height="103"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Someones Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gqe-80-aGb">
+                                                    <rect key="frame" x="0.0" y="0.0" width="131" height="11"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="mBU-s9-63w">
+                                                    <rect key="frame" x="0.0" y="11" width="390" height="92"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ifz-h9-2ND">
+                                                            <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
+                                                        </imageView>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" distribution="equalSpacing" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="UPJ-KD-mf5">
+                                                            <rect key="frame" x="90" y="0.0" width="300" height="92"/>
+                                                            <subviews>
+                                                                <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="kHD-by-eYA">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="124" height="42"/>
+                                                                    <subviews>
+                                                                        <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Cbc-Li-IDe">
+                                                                            <rect key="frame" x="0.0" y="0.0" width="51" height="42"/>
+                                                                            <subviews>
+                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Kirtan:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jFy-nN-f2G">
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="51" height="21"/>
+                                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                                    <nil key="highlightedColor"/>
+                                                                                </label>
+                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="No" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KS2-zI-4wE">
+                                                                                    <rect key="frame" x="0.0" y="21" width="22" height="21"/>
+                                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                                    <nil key="highlightedColor"/>
+                                                                                </label>
+                                                                            </subviews>
+                                                                        </stackView>
+                                                                        <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="xc8-vn-Xgo">
+                                                                            <rect key="frame" x="71" y="0.0" width="53" height="42"/>
+                                                                            <subviews>
+                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Books:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KeY-9T-Z3V">
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="53" height="21"/>
+                                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                                    <nil key="highlightedColor"/>
+                                                                                </label>
+                                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="30 min" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ePP-mq-Ql6">
+                                                                                    <rect key="frame" x="0.0" y="21" width="53" height="21"/>
+                                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                                    <nil key="highlightedColor"/>
+                                                                                </label>
+                                                                            </subviews>
+                                                                        </stackView>
+                                                                    </subviews>
+                                                                </stackView>
+                                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ebU-1e-rF2" customClass="JapaView" customModule="Vaishnavaseva" customModuleProvider="target">
+                                                                    <rect key="frame" x="0.0" y="42" width="300" height="50"/>
+                                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </view>
+                                                            </subviews>
+                                                        </stackView>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="Ms8-XR-KPz" secondAttribute="bottom" id="2Pz-Rd-dMP"/>
+                                        <constraint firstItem="Ms8-XR-KPz" firstAttribute="leading" secondItem="iIP-ux-tNd" secondAttribute="leadingMargin" id="M6e-Zr-lCS"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Ms8-XR-KPz" secondAttribute="trailing" id="PEa-UC-ehL"/>
+                                        <constraint firstItem="Ms8-XR-KPz" firstAttribute="top" secondItem="iIP-ux-tNd" secondAttribute="topMargin" id="cKf-fa-ygG"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Pfd-d1-ZYF" id="e5G-RC-cZ5"/>
+                            <outlet property="delegate" destination="Pfd-d1-ZYF" id="Fpx-if-MiH"/>
+                        </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Sadhana" id="bIg-DW-MlW">
                         <rightBarButtonItems>
@@ -30,6 +119,7 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
+                        <outlet property="tableView" destination="Sbh-qe-xYe" id="dW3-Ei-Vep"/>
                         <segue destination="n9d-oo-zJV" kind="show" identifier="GeneralToMy" id="jLf-bz-HMW"/>
                         <segue destination="6Hf-a8-qBb" kind="show" identifier="GeneralToLogIn" id="unt-3V-rk8"/>
                         <segue destination="Egm-P0-sbH" kind="show" identifier="GeneralToPersonal" id="1r8-VS-5Uk"/>
@@ -477,7 +567,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="IwF-dC-oae"/>
         <segue reference="jLf-bz-HMW"/>
+        <segue reference="IwF-dC-oae"/>
     </inferredMetricsTieBreakers>
 </document>
