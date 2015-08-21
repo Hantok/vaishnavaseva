@@ -16,11 +16,13 @@ class AppController: UIResponder, UIApplicationDelegate, UINavigationControllerD
         {
         if !oldState.isEqualTo(newValue)
           {
-          let oldStateProto: AppControllerStateProtocol = oldState;
-          let newStateProto: AppControllerStateProtocol = newValue;
-          oldStateProto.sceneWillResignCurrent?()
-          newStateProto.sceneWillBecomeCurrent?()
+          (oldState as AppControllerStateProtocol).sceneWillResignCurrent?()
+          (newValue as AppControllerStateProtocol).sceneWillBecomeCurrent?()
           }
+        }
+      else
+        {
+        (newValue as AppControllerStateProtocol).sceneWillBecomeCurrent?()
         }
       }
     didSet
@@ -29,11 +31,13 @@ class AppController: UIResponder, UIApplicationDelegate, UINavigationControllerD
         {
         if !oldState.isEqualTo(self.currentState)
           {
-          let oldStateProto: AppControllerStateProtocol = oldState;
-          let newStateProto: AppControllerStateProtocol = self.currentState;
-          oldStateProto.sceneDidResignCurrent?()
-          newStateProto.sceneDidBecomeCurrent?()
+          (oldState as AppControllerStateProtocol).sceneDidResignCurrent?()
+          (self.currentState as AppControllerStateProtocol).sceneDidBecomeCurrent?()
           }
+        }
+      else
+        {
+        (self.currentState as AppControllerStateProtocol).sceneDidBecomeCurrent?()
         }
       }
     }
