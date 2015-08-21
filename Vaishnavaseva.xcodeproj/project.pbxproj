@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4EE82CC01B87539300D7E658 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE82CBE1B87539300D7E658 /* SwiftyJSON.swift */; };
+		4EE82CC11B87539300D7E658 /* SwiftyJSONTests.json in Resources */ = {isa = PBXBuildFile; fileRef = 4EE82CBF1B87539300D7E658 /* SwiftyJSONTests.json */; };
+		4EE82CC81B87619300D7E658 /* GeneralSadhanaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE82CC71B87619300D7E658 /* GeneralSadhanaTableViewCell.swift */; };
 		750907E51B6A29C1008E25E8 /* ActivityIndicatorsContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750907E41B6A29C1008E25E8 /* ActivityIndicatorsContainer.swift */; };
 		750907EA1B6A91ED008E25E8 /* JapaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750907E91B6A91ED008E25E8 /* JapaView.swift */; };
 		750907ED1B6A9244008E25E8 /* JapaView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 750907EC1B6A9244008E25E8 /* JapaView.xib */; };
@@ -68,6 +71,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4EE82CBE1B87539300D7E658 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		4EE82CBF1B87539300D7E658 /* SwiftyJSONTests.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = SwiftyJSONTests.json; sourceTree = "<group>"; };
+		4EE82CC71B87619300D7E658 /* GeneralSadhanaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralSadhanaTableViewCell.swift; sourceTree = "<group>"; };
 		750907E41B6A29C1008E25E8 /* ActivityIndicatorsContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorsContainer.swift; sourceTree = "<group>"; };
 		750907E91B6A91ED008E25E8 /* JapaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JapaView.swift; path = Views/JapaView.swift; sourceTree = "<group>"; };
 		750907EC1B6A9244008E25E8 /* JapaView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = JapaView.xib; path = Views/xib/JapaView.xib; sourceTree = "<group>"; };
@@ -144,6 +150,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4EE82CBD1B87536600D7E658 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				4EE82CBE1B87539300D7E658 /* SwiftyJSON.swift */,
+				4EE82CBF1B87539300D7E658 /* SwiftyJSONTests.json */,
+			);
+			name = JSON;
+			sourceTree = "<group>";
+		};
+		4EE82CC41B8760F900D7E658 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				4EE82CC71B87619300D7E658 /* GeneralSadhanaTableViewCell.swift */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
 		750907E61B6A8E1C008E25E8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -199,6 +222,8 @@
 		757D12471B5013300001402B /* Vaishnavaseva */ = {
 			isa = PBXGroup;
 			children = (
+				4EE82CC41B8760F900D7E658 /* Cells */,
+				4EE82CBD1B87536600D7E658 /* JSON */,
 				75CFA0EB1B501F710071EC79 /* AppController */,
 				75CFA0E01B50145D0071EC79 /* SceneManager */,
 				75CFA0EA1B501F560071EC79 /* ViewControllers */,
@@ -398,6 +423,7 @@
 			files = (
 				750907ED1B6A9244008E25E8 /* JapaView.xib in Resources */,
 				757D12561B5013300001402B /* LaunchScreen.storyboard in Resources */,
+				4EE82CC11B87539300D7E658 /* SwiftyJSONTests.json in Resources */,
 				757D12531B5013300001402B /* Assets.xcassets in Resources */,
 				757D124E1B5013300001402B /* Main.storyboard in Resources */,
 			);
@@ -427,6 +453,7 @@
 				75BA404A1B6918A30075CE6B /* PersonalToInfo.swift in Sources */,
 				7595A17E1B626CAF00735A0C /* AppControllerSegue.swift in Sources */,
 				7521AFA31B57C6E1004B2CFE /* AppControllerStateGeneralSadhana.swift in Sources */,
+				4EE82CC81B87619300D7E658 /* GeneralSadhanaTableViewCell.swift in Sources */,
 				7521AFA71B57C8E6004B2CFE /* BaseViewController.swift in Sources */,
 				75CFA0ED1B501FB40071EC79 /* PersonalSadhanaViewController.swift in Sources */,
 				7595A1821B62847800735A0C /* GeneralToPersonal.swift in Sources */,
@@ -439,6 +466,7 @@
 				75CE83A31B68CFE20033A8AD /* AppControllerState.swift in Sources */,
 				757D12511B5013300001402B /* Vaishnavaseva.xcdatamodeld in Sources */,
 				757D124B1B5013300001402B /* GeneralSadhanaViewController.swift in Sources */,
+				4EE82CC01B87539300D7E658 /* SwiftyJSON.swift in Sources */,
 				75CE83AA1B68D0260033A8AD /* MySadhanaViewController.swift in Sources */,
 				755BF4E51B68D74F004B1F61 /* InfoViewController.swift in Sources */,
 				7595A1811B62847800735A0C /* BackFromAnyToAny.swift in Sources */,

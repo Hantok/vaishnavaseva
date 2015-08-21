@@ -10,35 +10,35 @@
         <scene sceneID="AvT-tN-Kgu">
             <objects>
                 <viewController id="Pfd-d1-ZYF" customClass="GeneralSadhanaViewController" customModule="Vaishnavaseva" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="120" sectionHeaderHeight="22" sectionFooterHeight="22" id="Sbh-qe-xYe">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="105" sectionHeaderHeight="22" sectionFooterHeight="22" id="Sbh-qe-xYe">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PersonalCell" id="U5n-xn-sgd">
-                                <rect key="frame" x="0.0" y="86" width="600" height="120"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PersonalCell" rowHeight="105" id="U5n-xn-sgd" customClass="GeneralSadhanaTableViewCell" customModule="Vaishnavaseva" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="86" width="600" height="105"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="U5n-xn-sgd" id="iIP-ux-tNd">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="119"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="104"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Ms8-XR-KPz">
-                                            <rect key="frame" x="8" y="0.0" width="584" height="103"/>
+                                            <rect key="frame" x="8" y="0.0" width="584" height="88"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Someones Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gqe-80-aGb">
-                                                    <rect key="frame" x="0.0" y="0.0" width="131" height="11"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="131" height="16"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" alignment="top" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="mBU-s9-63w">
-                                                    <rect key="frame" x="0.0" y="11" width="390" height="92"/>
+                                                    <rect key="frame" x="0.0" y="16" width="390" height="72"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ifz-h9-2ND">
                                                             <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
                                                         </imageView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" distribution="equalSpacing" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="UPJ-KD-mf5">
-                                                            <rect key="frame" x="90" y="0.0" width="300" height="92"/>
+                                                            <rect key="frame" x="90" y="0.0" width="300" height="72"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="kHD-by-eYA">
                                                                     <rect key="frame" x="0.0" y="0.0" width="124" height="42"/>
@@ -79,9 +79,14 @@
                                                                         </stackView>
                                                                     </subviews>
                                                                 </stackView>
-                                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ebU-1e-rF2" customClass="JapaView" customModule="Vaishnavaseva" customModuleProvider="target">
-                                                                    <rect key="frame" x="0.0" y="42" width="300" height="50"/>
+                                                                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ebU-1e-rF2" customClass="JapaView" customModule="Vaishnavaseva" customModuleProvider="target">
+                                                                    <rect key="frame" x="0.0" y="42" width="300" height="30"/>
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="30" id="466-OK-wWe"/>
+                                                                        <constraint firstAttribute="width" constant="300" id="OYq-se-uK4"/>
+                                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="25" id="bxF-Lc-kGx"/>
+                                                                    </constraints>
                                                                 </view>
                                                             </subviews>
                                                         </stackView>
@@ -97,6 +102,13 @@
                                         <constraint firstItem="Ms8-XR-KPz" firstAttribute="top" secondItem="iIP-ux-tNd" secondAttribute="topMargin" id="cKf-fa-ygG"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="books" destination="ePP-mq-Ql6" id="MRO-N4-z17"/>
+                                    <outlet property="javaView" destination="ebU-1e-rF2" id="OTC-5M-3sq"/>
+                                    <outlet property="kirtan" destination="KS2-zI-4wE" id="Vh1-Y0-RCR"/>
+                                    <outlet property="name" destination="gqe-80-aGb" id="3ep-DC-AAr"/>
+                                    <outlet property="photo" destination="ifz-h9-2ND" id="cFc-HD-DJc"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
