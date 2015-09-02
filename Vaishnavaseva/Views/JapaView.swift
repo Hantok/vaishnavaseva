@@ -90,8 +90,28 @@ import UIKit
   //Constraints
   @IBOutlet weak var progressView1LeadingConstraint: NSLayoutConstraint!
   @IBOutlet weak var progressView1TrailingConstraint: NSLayoutConstraint!
+    {
+    didSet
+      {
+      if progressView1TrailingConstraintOriginal == nil
+        {
+        progressView1TrailingConstraintOriginal = NSLayoutConstraint(item: progressView1TrailingConstraint.firstItem, attribute: progressView1TrailingConstraint.firstAttribute, relatedBy: progressView1TrailingConstraint.relation, toItem: progressView1TrailingConstraint.secondItem, attribute: progressView1TrailingConstraint.secondAttribute, multiplier: progressView1TrailingConstraint.multiplier, constant: progressView1TrailingConstraint.constant)
+        }
+      }
+    }
+  var progressView1TrailingConstraintOriginal: NSLayoutConstraint!//we are going to change the progressView1TrailingConstraint structure in some cases, which can cause problems when using the control in a table view cell
   @IBOutlet weak var progressView2LeadingConstraint: NSLayoutConstraint!
   @IBOutlet weak var progressView2TrailingConstraint: NSLayoutConstraint!
+    {
+    didSet
+      {
+      if progressView2TrailingConstraintOriginal == nil
+        {
+        progressView2TrailingConstraintOriginal = NSLayoutConstraint(item: progressView2TrailingConstraint.firstItem, attribute: progressView2TrailingConstraint.firstAttribute, relatedBy: progressView2TrailingConstraint.relation, toItem: progressView2TrailingConstraint.secondItem, attribute: progressView2TrailingConstraint.secondAttribute, multiplier: progressView2TrailingConstraint.multiplier, constant: progressView2TrailingConstraint.constant)
+        }
+      }
+    }
+  var progressView2TrailingConstraintOriginal: NSLayoutConstraint!//we are going to change the progressView2TrailingConstraint structure in some cases, which can cause problems when using the control in a table view cell
   @IBOutlet weak var delimiterViewLeadingCostraint: NSLayoutConstraint!
   
   func recalculateLayout()
@@ -137,11 +157,11 @@ import UIKit
     
     
     let newConsraint1 = progressView1TrailingConstraintMultiplier > 0 ?
-      NSLayoutConstraint(item: progressView1TrailingConstraint.firstItem, attribute: progressView1TrailingConstraint.firstAttribute, relatedBy: progressView1TrailingConstraint.relation, toItem: progressView1TrailingConstraint.secondItem, attribute: progressView1TrailingConstraint.secondAttribute, multiplier: CGFloat(progressView1TrailingConstraintMultiplier), constant: progressView1TrailingConstraint.constant) :
+      NSLayoutConstraint(item: progressView1TrailingConstraintOriginal.firstItem, attribute: progressView1TrailingConstraintOriginal.firstAttribute, relatedBy: progressView1TrailingConstraintOriginal.relation, toItem: progressView1TrailingConstraintOriginal.secondItem, attribute: progressView1TrailingConstraintOriginal.secondAttribute, multiplier: CGFloat(progressView1TrailingConstraintMultiplier), constant: progressView1TrailingConstraintOriginal.constant) :
       NSLayoutConstraint(item: progressView1TrailingConstraint.firstItem, attribute: progressView1TrailingConstraint.firstAttribute, relatedBy: progressView1LeadingConstraint.relation, toItem: progressView1LeadingConstraint.secondItem, attribute: progressView1LeadingConstraint.secondAttribute, multiplier: progressView1LeadingConstraint.multiplier, constant: progressView1LeadingConstraint.constant)
     
     let newConsraint2 = progressView2TrailingConstraintMultiplier > 0 ?
-      NSLayoutConstraint(item: progressView2TrailingConstraint.firstItem, attribute: progressView2TrailingConstraint.firstAttribute, relatedBy: progressView2TrailingConstraint.relation, toItem: progressView2TrailingConstraint.secondItem, attribute: progressView2TrailingConstraint.secondAttribute, multiplier: CGFloat(progressView2TrailingConstraintMultiplier), constant: progressView2TrailingConstraint.constant) :
+      NSLayoutConstraint(item: progressView2TrailingConstraintOriginal.firstItem, attribute: progressView2TrailingConstraintOriginal.firstAttribute, relatedBy: progressView2TrailingConstraintOriginal.relation, toItem: progressView2TrailingConstraintOriginal.secondItem, attribute: progressView2TrailingConstraintOriginal.secondAttribute, multiplier: CGFloat(progressView2TrailingConstraintMultiplier), constant: progressView2TrailingConstraintOriginal.constant) :
       NSLayoutConstraint(item: progressView2TrailingConstraint.firstItem, attribute: progressView2TrailingConstraint.firstAttribute, relatedBy: progressView2LeadingConstraint.relation, toItem: progressView2LeadingConstraint.secondItem, attribute: progressView2LeadingConstraint.secondAttribute, multiplier: progressView2LeadingConstraint.multiplier, constant: progressView2LeadingConstraint.constant)
       
     mainView.removeConstraint(progressView1TrailingConstraint);
