@@ -530,6 +530,23 @@
                                     <action selector="onLogIn:" destination="6Hf-a8-qBb" eventType="touchUpInside" id="68h-lS-Rwb"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TNQ-qY-6eJ">
+                                <rect key="frame" x="70" y="72" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="onButtonPressed:" destination="6Hf-a8-qBb" eventType="touchUpInside" id="7yX-Jz-Stw"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Login" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cW5-cc-Bq4">
+                                <rect key="frame" x="20" y="162" width="170" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="S25-fb-2r8">
+                                <rect key="frame" x="20" y="225" width="170" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
+                            </textField>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TV8-Yq-Exp" customClass="JapaView" customModule="Vaishnavaseva" customModuleProvider="target">
                                 <rect key="frame" x="20" y="110" width="501" height="16"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -543,13 +560,6 @@
                                     </mask>
                                 </variation>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TNQ-qY-6eJ">
-                                <rect key="frame" x="70" y="72" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="onButtonPressed:" destination="6Hf-a8-qBb" eventType="touchUpInside" id="7yX-Jz-Stw"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -573,6 +583,8 @@
                     <navigationItem key="navigationItem" title="Log In" id="amd-3N-3fr"/>
                     <connections>
                         <outlet property="japaView" destination="TV8-Yq-Exp" id="zWF-gW-K8v"/>
+                        <outlet property="loginTextField" destination="cW5-cc-Bq4" id="aoi-l7-fjB"/>
+                        <outlet property="passwordTextField" destination="S25-fb-2r8" id="eqG-3K-Swd"/>
                         <segue destination="n9d-oo-zJV" kind="show" identifier="LogInToMy" id="IIT-AO-hU6"/>
                     </connections>
                 </viewController>
@@ -585,7 +597,7 @@
         <image name="default_avatar.gif" width="100" height="100"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="jLf-bz-HMW"/>
         <segue reference="IwF-dC-oae"/>
+        <segue reference="IIT-AO-hU6"/>
     </inferredMetricsTieBreakers>
 </document>
