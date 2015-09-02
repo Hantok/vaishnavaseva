@@ -80,7 +80,7 @@ class GeneralSadhanaViewController: BaseViewController, UITableViewDelegate, UIT
     
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
-        let greenColor = UIColor(colorLiteralRed: 0, green: 125/256, blue: 0, alpha: 1)
+        let greenColor = UIColor(red: 0, green: 125/256, blue: 0, alpha: 1)
         let cell = tableView.dequeueReusableCellWithIdentifier("PersonalCell", forIndexPath: indexPath) as! GeneralSadhanaTableViewCell
         let row = sections[indexPath.section].firstIndex + indexPath.row
         if ((self.json[0])["user"])["user_name"] != nil
