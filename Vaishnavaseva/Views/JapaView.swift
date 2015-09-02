@@ -117,8 +117,8 @@ import UIKit
         }
       else
         {
-        var addCount  = sumRounds / roundsTarget
-        let remainder = sumRounds % roundsTarget
+        var addCount  = (sumRounds - roundsTarget) / roundsTarget
+        let remainder = (sumRounds - roundsTarget) % roundsTarget
         if remainder == 0
           {
           --addCount
@@ -126,7 +126,7 @@ import UIKit
         percentageTakenByRoundsProgressive[index] =
           delimiterPosition +
           (Float(1) - delimiterPosition) * sumOfHalfAdded(addCount) +
-          (Float(1) - delimiterPosition) * sumOfHalfAdded(addCount + 1) * Float(remainder)
+          (Float(1) - delimiterPosition) * sumOfHalfAdded(addCount + 1) * Float(remainder)/Float(roundsTarget)
         }
       }
     
