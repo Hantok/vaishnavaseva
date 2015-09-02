@@ -72,7 +72,6 @@ class GeneralSadhanaViewController: BaseViewController, UITableViewDelegate, UIT
         {
             cell.name?.text = "\(row)"
         }
-        cell.detailTextLabel?.text = self.json.arrayValue.description
         cell.javaView.rounds0 = Int((self.json[row])["jcount_730"].description)!
         cell.javaView.rounds1 = Int((self.json[row])["jcount_1000"].description)!
         cell.javaView.rounds2 = Int((self.json[row])["jcount_1800"].description)!
