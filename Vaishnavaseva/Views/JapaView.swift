@@ -43,6 +43,22 @@ import UIKit
       }
     }
   
+  @IBInspectable var borderColor: UIColor = UIColor.lightGrayColor()
+    {
+    willSet
+      {
+      view.layer.borderColor = newValue.CGColor
+      }
+    }
+  
+  @IBInspectable var borderWidth: CGFloat = 1
+    {
+      willSet
+      {
+      view.layer.borderWidth = newValue
+      }
+    }
+  
   @IBInspectable var roundsTarget: Int = 16
     {
     didSet
@@ -247,6 +263,10 @@ import UIKit
 
     // Assumes UIView is top level and only object in JapaView.xib file
     let view = nib.instantiateWithOwner(self, options: nil)[0] as! UIView
+      
+    view.layer.borderColor = borderColor.CGColor
+    view.layer.borderWidth = borderWidth
+  
     return view
     }
 
