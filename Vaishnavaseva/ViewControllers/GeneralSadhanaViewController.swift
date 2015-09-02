@@ -53,7 +53,7 @@ class GeneralSadhanaViewController: BaseViewController, UITableViewDelegate, UIT
         }
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
+  func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
         let greenColor = UIColor(colorLiteralRed: 0, green: 125/256, blue: 0, alpha: 1)
         let cell = tableView.dequeueReusableCellWithIdentifier("PersonalCell", forIndexPath: indexPath) as! GeneralSadhanaTableViewCell
@@ -82,6 +82,17 @@ class GeneralSadhanaViewController: BaseViewController, UITableViewDelegate, UIT
         cell.javaView.rounds3 = Int((self.json[row])["jcount_after"].description)!
         
         return cell
+    }
+  
+  func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?
+    {
+    let cell = tableView.dequeueReusableCellWithIdentifier("Header") as! GeneralSadhanaTableViewHeader
+    return cell
+    }
+  
+  func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat
+    {
+    return 30
     }
 }
 
