@@ -23,7 +23,8 @@ import UIKit
         var running = false
         let request = NSMutableURLRequest(URL: SADHANA_URL!)
         request.HTTPMethod = "POST"
-        let postString = "data"
+        //TODO: this is a hack, we need to ask for smaller portions several times instead!!!
+        let postString = "items_per_page=999999999"
         request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
         let task = session.dataTaskWithRequest(request) {
             (let data, let response, let error) in

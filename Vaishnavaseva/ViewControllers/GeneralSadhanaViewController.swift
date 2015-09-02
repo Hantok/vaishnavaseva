@@ -1,10 +1,40 @@
 import UIKit
 
+struct Section
+  {
+  var date: String
+  var firstIndex: Int
+  var count: Int
+  }
+
 class GeneralSadhanaViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
 
   @IBOutlet var tableView: UITableView!
-    
-    var json: JSON = JSON.null
+  
+  var sections: [Section] = []
+  var json: JSON = JSON.null
+    {
+    didSet
+      {
+      switch self.json.type
+        {
+        case Type.Array:
+          var lastDate = ""
+          for var i = 0; i < json.count; ++i
+            {
+            let currentDate = json[i]["date"].description
+            if lastDate != currentDate
+              {
+              lastDate = currentDate
+              sections.append(Section(date: lastDate, firstIndex: i, count: 0))
+              }
+            ++sections[sections.count - 1].count
+            }
+        default:
+          break
+        }
+      }
+    }
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -40,24 +70,19 @@ class GeneralSadhanaViewController: BaseViewController, UITableViewDelegate, UIT
   
   func numberOfSectionsInTableView(tableView: UITableView) -> Int
     {
-        return 1
+        return sections.count
     }
   
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        switch self.json.type {
-        case Type.Array, Type.Dictionary:
-            return self.json.count
-        default:
-            return 1
-        }
+        return sections[section].count
     }
     
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
         let greenColor = UIColor(colorLiteralRed: 0, green: 125/256, blue: 0, alpha: 1)
         let cell = tableView.dequeueReusableCellWithIdentifier("PersonalCell", forIndexPath: indexPath) as! GeneralSadhanaTableViewCell
-        let row = indexPath.row
+        let row = sections[indexPath.section].firstIndex + indexPath.row
         if ((self.json[0])["user"])["user_name"] != nil
         {
             cell.name?.text = ((self.json[row])["user"])["user_name"].description
@@ -87,6 +112,7 @@ class GeneralSadhanaViewController: BaseViewController, UITableViewDelegate, UIT
   func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?
     {
     let cell = tableView.dequeueReusableCellWithIdentifier("Header") as! GeneralSadhanaTableViewHeader
+    cell.date.text = sections[section].date
     return cell
     }
   
