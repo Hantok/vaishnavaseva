@@ -10,6 +10,7 @@
 		4EE82CC01B87539300D7E658 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE82CBE1B87539300D7E658 /* SwiftyJSON.swift */; };
 		4EE82CC11B87539300D7E658 /* SwiftyJSONTests.json in Resources */ = {isa = PBXBuildFile; fileRef = 4EE82CBF1B87539300D7E658 /* SwiftyJSONTests.json */; };
 		4EE82CC81B87619300D7E658 /* GeneralSadhanaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE82CC71B87619300D7E658 /* GeneralSadhanaTableViewCell.swift */; };
+		750810C91B971FFA00E97FF5 /* default_avatar.gif in Resources */ = {isa = PBXBuildFile; fileRef = 750810C81B971FFA00E97FF5 /* default_avatar.gif */; };
 		750907E51B6A29C1008E25E8 /* ActivityIndicatorsContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750907E41B6A29C1008E25E8 /* ActivityIndicatorsContainer.swift */; };
 		750907EA1B6A91ED008E25E8 /* JapaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750907E91B6A91ED008E25E8 /* JapaView.swift */; };
 		750907ED1B6A9244008E25E8 /* JapaView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 750907EC1B6A9244008E25E8 /* JapaView.xib */; };
@@ -74,6 +75,7 @@
 		4EE82CBE1B87539300D7E658 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		4EE82CBF1B87539300D7E658 /* SwiftyJSONTests.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = SwiftyJSONTests.json; sourceTree = "<group>"; };
 		4EE82CC71B87619300D7E658 /* GeneralSadhanaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralSadhanaTableViewCell.swift; sourceTree = "<group>"; };
+		750810C81B971FFA00E97FF5 /* default_avatar.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = default_avatar.gif; path = Images/default_avatar.gif; sourceTree = "<group>"; };
 		750907E41B6A29C1008E25E8 /* ActivityIndicatorsContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorsContainer.swift; sourceTree = "<group>"; };
 		750907E91B6A91ED008E25E8 /* JapaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JapaView.swift; path = Views/JapaView.swift; sourceTree = "<group>"; };
 		750907EC1B6A9244008E25E8 /* JapaView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = JapaView.xib; path = Views/xib/JapaView.xib; sourceTree = "<group>"; };
@@ -167,6 +169,14 @@
 			name = Cells;
 			sourceTree = "<group>";
 		};
+		750810C71B971FE700E97FF5 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				750810C81B971FFA00E97FF5 /* default_avatar.gif */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
 		750907E61B6A8E1C008E25E8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -229,6 +239,7 @@
 				75CFA0EA1B501F560071EC79 /* ViewControllers */,
 				750907E61B6A8E1C008E25E8 /* Views */,
 				75C5A5A01B5531F60069B85D /* Equatable */,
+				750810C71B971FE700E97FF5 /* Images */,
 				757D124C1B5013300001402B /* Main.storyboard */,
 				757D12521B5013300001402B /* Assets.xcassets */,
 				757D12541B5013300001402B /* LaunchScreen.storyboard */,
@@ -424,6 +435,7 @@
 				750907ED1B6A9244008E25E8 /* JapaView.xib in Resources */,
 				757D12561B5013300001402B /* LaunchScreen.storyboard in Resources */,
 				4EE82CC11B87539300D7E658 /* SwiftyJSONTests.json in Resources */,
+				750810C91B971FFA00E97FF5 /* default_avatar.gif in Resources */,
 				757D12531B5013300001402B /* Assets.xcassets in Resources */,
 				757D124E1B5013300001402B /* Main.storyboard in Resources */,
 			);
