@@ -55,6 +55,7 @@ class GeneralSadhanaViewController: BaseViewController, UITableViewDelegate, UIT
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
+        let greenColor = UIColor(colorLiteralRed: 0, green: 125/256, blue: 0, alpha: 1)
         let cell = tableView.dequeueReusableCellWithIdentifier("PersonalCell", forIndexPath: indexPath) as! GeneralSadhanaTableViewCell
         let row = indexPath.row
         if ((self.json[0])["user"])["user_name"] != nil
@@ -63,11 +64,14 @@ class GeneralSadhanaViewController: BaseViewController, UITableViewDelegate, UIT
             if (self.json[row])["kirtan"].description == "1"
             {
                 cell.kirtan?.text = "Yes"
+                cell.kirtan?.textColor = greenColor
             } else
             {
                 cell.kirtan?.text = "No"
+                cell.kirtan?.textColor = UIColor.redColor()
             }
             cell.books?.text = (self.json[row])["reading"].description
+          cell.books?.textColor = (self.json[row])["reading"].intValue > 0 ? greenColor : UIColor.redColor()
         } else
         {
             cell.name?.text = "\(row)"
