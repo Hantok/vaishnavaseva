@@ -2,19 +2,8 @@ import UIKit
 
 class LogInViewController: BaseViewController {
 
-  @IBOutlet weak var japaView: JapaView!
   @IBOutlet weak var loginTextField: UITextField!
   @IBOutlet weak var passwordTextField: UITextField!
-  
-
-  @IBAction func onButtonPressed(sender: AnyObject)
-    {
-    japaView.rounds0 = 16
-    japaView.rounds1 = 16
-    japaView.rounds2 = 16
-    japaView.rounds3 = 16
-    japaView.recalculateLayout()
-    }
   
   override func viewDidLoad() {
     super.viewDidLoad()
