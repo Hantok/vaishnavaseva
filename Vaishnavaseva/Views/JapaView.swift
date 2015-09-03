@@ -153,12 +153,9 @@ import UIKit
         }
       else
         {
-        var addCount  = (sumRounds - roundsTarget) / roundsTarget
+        let addCount  = (sumRounds - roundsTarget) / roundsTarget
         let remainder = (sumRounds - roundsTarget) % roundsTarget
-        if remainder == 0
-          {
-          --addCount
-          }
+
         percentageTakenByRoundsProgressive[index] =
           delimiterPosition +
           (Float(1) - delimiterPosition) * sumOfHalfAdded(addCount) +
@@ -171,14 +168,13 @@ import UIKit
     let progressView2TrailingConstraintMultiplier: Float = percentageTakenByRoundsProgressive[3] * 2
     let delimiterViewLeadingCostraintMultiplier: Float   = delimiterPosition * 2
     
-    
     let newConsraint1 = progressView1TrailingConstraintMultiplier > 0 ?
       NSLayoutConstraint(item: progressView1TrailingConstraintOriginal.firstItem, attribute: progressView1TrailingConstraintOriginal.firstAttribute, relatedBy: progressView1TrailingConstraintOriginal.relation, toItem: progressView1TrailingConstraintOriginal.secondItem, attribute: progressView1TrailingConstraintOriginal.secondAttribute, multiplier: CGFloat(progressView1TrailingConstraintMultiplier), constant: progressView1TrailingConstraintOriginal.constant) :
-      NSLayoutConstraint(item: progressView1TrailingConstraint.firstItem, attribute: progressView1TrailingConstraint.firstAttribute, relatedBy: progressView1LeadingConstraint.relation, toItem: progressView1LeadingConstraint.secondItem, attribute: progressView1LeadingConstraint.secondAttribute, multiplier: progressView1LeadingConstraint.multiplier, constant: progressView1LeadingConstraint.constant)
+      NSLayoutConstraint(item: progressView1TrailingConstraintOriginal.firstItem, attribute: progressView1TrailingConstraintOriginal.firstAttribute, relatedBy: progressView1LeadingConstraint.relation, toItem: progressView1LeadingConstraint.secondItem, attribute: progressView1LeadingConstraint.secondAttribute, multiplier: progressView1LeadingConstraint.multiplier, constant: progressView1LeadingConstraint.constant)
     
     let newConsraint2 = progressView2TrailingConstraintMultiplier > 0 ?
       NSLayoutConstraint(item: progressView2TrailingConstraintOriginal.firstItem, attribute: progressView2TrailingConstraintOriginal.firstAttribute, relatedBy: progressView2TrailingConstraintOriginal.relation, toItem: progressView2TrailingConstraintOriginal.secondItem, attribute: progressView2TrailingConstraintOriginal.secondAttribute, multiplier: CGFloat(progressView2TrailingConstraintMultiplier), constant: progressView2TrailingConstraintOriginal.constant) :
-      NSLayoutConstraint(item: progressView2TrailingConstraint.firstItem, attribute: progressView2TrailingConstraint.firstAttribute, relatedBy: progressView2LeadingConstraint.relation, toItem: progressView2LeadingConstraint.secondItem, attribute: progressView2LeadingConstraint.secondAttribute, multiplier: progressView2LeadingConstraint.multiplier, constant: progressView2LeadingConstraint.constant)
+      NSLayoutConstraint(item: progressView2TrailingConstraintOriginal.firstItem, attribute: progressView2TrailingConstraintOriginal.firstAttribute, relatedBy: progressView2LeadingConstraint.relation, toItem: progressView2LeadingConstraint.secondItem, attribute: progressView2LeadingConstraint.secondAttribute, multiplier: progressView2LeadingConstraint.multiplier, constant: progressView2LeadingConstraint.constant)
       
     mainView.removeConstraint(progressView1TrailingConstraint);
     mainView.removeConstraint(progressView2TrailingConstraint);
