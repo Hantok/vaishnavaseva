@@ -55,6 +55,7 @@ class LogInViewController: BaseViewController {
     
     func login(login: String, password: String) -> Bool
     {
+        //need to refactor
         var loginSuccess = false
         let config = NSURLSessionConfiguration.defaultSessionConfiguration()
         let userPasswordString = login + ":" + password
