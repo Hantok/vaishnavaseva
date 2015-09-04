@@ -7,6 +7,8 @@ struct Section
   var count: Int
   }
 
+let allSadhanaEntriesStateViewEvent = "allSadhanaEntriesStateViewEvent"
+
 class GeneralSadhanaViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
 
   @IBOutlet var tableView: UITableView!
@@ -38,19 +40,7 @@ class GeneralSadhanaViewController: BaseViewController, UITableViewDelegate, UIT
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
-    "allSadhanaEntries".post(["items_per_page":"999999999"]) { response in
-        print(response.responseJSON)
-        var json = JSON(response.responseJSON!)
-        let keys = (json.object as! NSDictionary).allKeys
-        for key in keys {
-            if key as! String == "entries" {
-                self.json = json[key as! String]
-                break
-            }
-        }
-        self.tableView.reloadData()
-    }
+    sendActionForStateViewEvent(allSadhanaEntriesStateViewEvent)
   }
 
   override func didReceiveMemoryWarning() {
