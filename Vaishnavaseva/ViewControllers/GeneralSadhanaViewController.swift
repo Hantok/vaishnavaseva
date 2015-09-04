@@ -42,9 +42,13 @@ class GeneralSadhanaViewController: BaseViewController, UITableViewDelegate, UIT
     "allSadhanaEntries".post(["items_per_page":"999999999"]) { response in
         print(response.responseJSON)
         var json = JSON(response.responseJSON!)
-        let entry: AnyObject = (json.object as! NSDictionary).allKeys[0]
-        json = json[entry as! String]
-        self.json = json
+        let keys = (json.object as! NSDictionary).allKeys
+        for key in keys {
+            if key as! String == "entries" {
+                self.json = json[key as! String]
+                break
+            }
+        }
         self.tableView.reloadData()
     }
   }
