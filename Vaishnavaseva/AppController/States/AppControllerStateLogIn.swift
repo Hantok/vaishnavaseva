@@ -25,7 +25,7 @@ import UIKit
             print(response.responseJSON)
             print(JSON(response.responseJSON!))
             // (self.viewController as! LogInViewController).spiningActivity.hide(true)
-            MBProgressHUD.hideAllHUDsForView((self.viewController as! LogInViewController).view, animated: true)
+            MBProgressHUD.hideAllHUDsForView((self.viewController as! LogInViewController).navigationController?.view, animated: true)
             if response.HTTPResponse.statusCode != 200
             {
                 let alert = UIAlertController(title: "Authorization error!", message: "", preferredStyle: UIAlertControllerStyle.Alert)

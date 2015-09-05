@@ -36,9 +36,8 @@ class LogInViewController: BaseViewController {
 
   @IBAction func onLogIn(sender: AnyObject)
     {
-        let spiningActivity = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+        let spiningActivity = MBProgressHUD.showHUDAddedTo(navigationController?.view, animated: true)
         spiningActivity.labelText = "Loading"
-        spiningActivity.userInteractionEnabled = false
         
         sendActionForStateViewEvent(LogInStateViewEvent)
     }
