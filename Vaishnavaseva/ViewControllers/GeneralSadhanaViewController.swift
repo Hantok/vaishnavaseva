@@ -41,6 +41,9 @@ class GeneralSadhanaViewController: BaseViewController, UITableViewDelegate, UIT
   override func viewDidLoad() {
     super.viewDidLoad()
     sendActionForStateViewEvent(allSadhanaEntriesStateViewEvent)
+    let spiningActivity = MBProgressHUD.showHUDAddedTo(navigationController?.view, animated: true)
+    spiningActivity.labelText = "Loading"
+    spiningActivity.detailsLabelText = "Please wait"
   }
 
   override func didReceiveMemoryWarning() {
