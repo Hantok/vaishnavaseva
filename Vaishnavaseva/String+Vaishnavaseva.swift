@@ -14,23 +14,24 @@ extension String {
     /// It's an exercise to the reader to extend these to allow custom headers if you require.
     /// Also, if you think this string extension technique is a tad twee (i'll concede that's possible) you can of course
     /// make these as static functions of a class of your choosing.
-    func get(parameters: [String: String]? = nil, completion: NetworkingCompletion) {
-        requestWithMethod("GET", queryParameters: parameters, completion: completion)
+    func get(parameters: [String: String]? = nil, headers: [String: String]? = nil, completion: NetworkingCompletion) {
+        requestWithMethod("GET", queryParameters: parameters, headers: headers, completion: completion)
     }
-    func post(parameters: NSDictionary? = nil, completion: NetworkingCompletion) {
-        requestWithMethod("POST", bodyParameters: parameters, completion: completion)
+    func post(parameters: NSDictionary? = nil, headers: [String: String]? = nil, completion: NetworkingCompletion) {
+        requestWithMethod("POST", bodyParameters: parameters, headers: headers, completion: completion)
     }
-    func put(parameters: NSDictionary? = nil, completion: NetworkingCompletion) {
-        requestWithMethod("PUT", bodyParameters: parameters, completion: completion)
+    func put(parameters: NSDictionary? = nil, headers: [String: String]? = nil, completion: NetworkingCompletion) {
+        requestWithMethod("PUT", bodyParameters: parameters, headers: headers, completion: completion)
     }
-    func delete(parameters: NSDictionary? = nil, completion: NetworkingCompletion) {
-        requestWithMethod("DELETE", bodyParameters: parameters, completion: completion)
+    func delete(parameters: NSDictionary? = nil, headers: [String: String]? = nil, completion: NetworkingCompletion) {
+        requestWithMethod("DELETE", bodyParameters: parameters, headers: headers, completion: completion)
     }
 
     /// Used to contain the common code for GET and POST and DELETE and PUT.
     private func requestWithMethod(method: String,
         queryParameters: [String: String]? = nil,
         bodyParameters: NSDictionary? = nil,
+        headers: [String: String]? = nil,
         completion: NetworkingCompletion) {
         /// Tack on the endpoint to the base URL.
         let URL = NSURL(string: self, relativeToURL: Constants.baseURL)!
@@ -39,7 +40,7 @@ extension String {
             method: method,
             queryParameters: queryParameters,
             bodyParameters: bodyParameters,
-            headers: nil)
+            headers: headers)
         let task = NSURLSession.sharedVaishnavasevaSession.dataTaskWithRequest(request) {
             data, response, sessionError in
             
