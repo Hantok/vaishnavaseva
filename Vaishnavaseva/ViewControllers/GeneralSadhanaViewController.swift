@@ -1,4 +1,4 @@
-import UIKit
+  import UIKit
 
 struct Section
   {
@@ -10,6 +10,7 @@ struct Section
 let allSadhanaEntriesStateViewEvent = "allSadhanaEntriesStateViewEvent"
 
 class GeneralSadhanaViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
+  let refreshControl = UIRefreshControl()
 
   @IBOutlet var tableView: UITableView!
   
@@ -22,28 +23,40 @@ class GeneralSadhanaViewController: BaseViewController, UITableViewDelegate, UIT
         {
         case Type.Array:
           var lastDate = ""
+          if sections.count != 0
+          {
+            sections = []
+          }
           for var i = 0; i < json.count; ++i
             {
-            let currentDate = json[i]["date"].description
-            if lastDate != currentDate
+              let currentDate = json[i]["date"].description
+              if lastDate != currentDate
               {
-              lastDate = currentDate
-              sections.append(Section(date: lastDate, firstIndex: i, count: 0))
+                lastDate = currentDate
+                sections.append(Section(date: lastDate, firstIndex: i, count: 0))
               }
-            ++sections[sections.count - 1].count
+              ++sections[sections.count - 1].count
             }
         default:
           break
         }
       }
     }
+  var pageNum = 0
+  var itemsPerPage = 20
+  var totalFound = 120
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    sendActionForStateViewEvent(allSadhanaEntriesStateViewEvent)
-    let spiningActivity = MBProgressHUD.showHUDAddedTo(navigationController?.view, animated: true)
-    spiningActivity.labelText = "Loading"
-    spiningActivity.detailsLabelText = "Please wait"
+    refresh(self)
+    
+    self.refreshControl.attributedTitle = NSAttributedString(string: "Refrishing...")
+    self.refreshControl.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
+    self.tableView.addSubview(self.refreshControl)
+
+    self.tableView.addInfiniteScrollingWithActionHandler(){
+      self.insertRowAtBottom()
+    }
   }
 
   override func didReceiveMemoryWarning() {
@@ -125,5 +138,35 @@ class GeneralSadhanaViewController: BaseViewController, UITableViewDelegate, UIT
     {
     return 30
     }
+    
+  func refresh(sender:AnyObject)
+  {
+    self.refreshControl.endRefreshing()
+    self.pageNum = 0
+    sendActionForStateViewEvent(allSadhanaEntriesStateViewEvent)
+    let spiningActivity = MBProgressHUD.showHUDAddedTo(navigationController?.view, animated: true)
+    spiningActivity.labelText = "Please wait"
+//    spiningActivity.detailsLabelText = ""
+  }
+  
+  func insertRowAtBottom() {
+    let delayInSeconds = 2.0
+    let popTime = dispatch_time(DISPATCH_TIME_NOW, Int64(delayInSeconds * Double(NSEC_PER_SEC)))
+    
+    dispatch_after(popTime, dispatch_get_main_queue()) {
+      if (self.pageNum * self.itemsPerPage < self.totalFound)
+      {
+        ++self.pageNum
+      }
+      self.sendActionForStateViewEvent(allSadhanaEntriesStateViewEvent)
+      self.tableView.infiniteScrollingView.stopAnimating()
+    }
+  }
+  
+  func showErrorAlert() {
+    let alert = UIAlertController(title: "Server error", message: "", preferredStyle: UIAlertControllerStyle.Alert)
+    alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+    self.presentViewController(alert, animated: true, completion: nil)
+  }
 }
 

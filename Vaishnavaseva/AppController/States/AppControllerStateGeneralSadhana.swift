@@ -14,7 +14,9 @@ import UIKit
     }
     
     func allSadhanaEntries() {
-        "allSadhanaEntries".post(["items_per_page":"999999999"]) { response in
+      let pageNum = (self.viewController as! GeneralSadhanaViewController).pageNum
+      let itemPerPage = (self.viewController as! GeneralSadhanaViewController).itemsPerPage
+      "allSadhanaEntries".post(["page_num": "\(pageNum)", "items_per_page":"\(itemPerPage)"]) { response in
             print(response.responseJSON)
             MBProgressHUD.hideAllHUDsForView((self.viewController as! GeneralSadhanaViewController).navigationController?.view, animated: true)
             var json = JSON(response.responseJSON!)
@@ -23,25 +25,31 @@ import UIKit
                 let keys = (json.object as! NSDictionary).allKeys
                 var success = false
                 for key in keys {
-                    if key as! String == "entries" {
+                    if key as! String == "entries"
+                    {
+                      if ((self.viewController as! GeneralSadhanaViewController).json != JSON.null && pageNum != 0)
+                      {
+                        (self.viewController as! GeneralSadhanaViewController).json.arrayObject?.appendContentsOf((json[key as! String].arrayObject!))
+                      }
+                      else
+                      {
+                        (self.viewController as! GeneralSadhanaViewController).sections = []
                         (self.viewController as! GeneralSadhanaViewController).json = json[key as! String]
-                        success = true
-                        break
+                      }
+                      success = true
+                    }
+                    else if key as! String == "total_found"
+                    {
+                      (self.viewController as! GeneralSadhanaViewController).totalFound = Int(json[key as! String].string!)!
                     }
                 }
                 if !success {
-                    self.showAlert()
+                    (self.viewController as! GeneralSadhanaViewController).showErrorAlert()
                 }
             default:
-                self.showAlert()
+                (self.viewController as! GeneralSadhanaViewController).showErrorAlert()
             }
             (self.viewController as! GeneralSadhanaViewController).tableView.reloadData()
         }
-    }
-    
-    private func showAlert() {
-        let alert = UIAlertController(title: "Server error", message: "", preferredStyle: UIAlertControllerStyle.Alert)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
-        (self.viewController as! GeneralSadhanaViewController).presentViewController(alert, animated: true, completion: nil)
     }
   }

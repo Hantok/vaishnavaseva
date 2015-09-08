@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4E3ADAD11B9B0CDA00783267 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E3ADAD01B9B0CDA00783267 /* MBProgressHUD.m */; settings = {ASSET_TAGS = (); }; };
+		4E42AEBA1B9DFFB800599C15 /* UIScrollView+SVInfiniteScrolling.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E42AEB91B9DFFB800599C15 /* UIScrollView+SVInfiniteScrolling.m */; settings = {ASSET_TAGS = (); }; };
 		4EE82CC01B87539300D7E658 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE82CBE1B87539300D7E658 /* SwiftyJSON.swift */; };
 		4EE82CC11B87539300D7E658 /* SwiftyJSONTests.json in Resources */ = {isa = PBXBuildFile; fileRef = 4EE82CBF1B87539300D7E658 /* SwiftyJSONTests.json */; };
 		4EFB425F1B9865B700111304 /* Locksmith.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFB425D1B9865B700111304 /* Locksmith.swift */; settings = {ASSET_TAGS = (); }; };
@@ -85,6 +86,8 @@
 		4E3ADACE1B9B0CD800783267 /* Vaishnavaseva-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Vaishnavaseva-Bridging-Header.h"; sourceTree = "<group>"; };
 		4E3ADACF1B9B0CDA00783267 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		4E3ADAD01B9B0CDA00783267 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		4E42AEB81B9DFFB800599C15 /* UIScrollView+SVInfiniteScrolling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+SVInfiniteScrolling.h"; sourceTree = "<group>"; };
+		4E42AEB91B9DFFB800599C15 /* UIScrollView+SVInfiniteScrolling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SVInfiniteScrolling.m"; sourceTree = "<group>"; };
 		4EE82CBE1B87539300D7E658 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		4EE82CBF1B87539300D7E658 /* SwiftyJSONTests.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = SwiftyJSONTests.json; sourceTree = "<group>"; };
 		4EFB425D1B9865B700111304 /* Locksmith.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Locksmith.swift; sourceTree = "<group>"; };
@@ -180,6 +183,8 @@
 				4E3ADACE1B9B0CD800783267 /* Vaishnavaseva-Bridging-Header.h */,
 				4E3ADACF1B9B0CDA00783267 /* MBProgressHUD.h */,
 				4E3ADAD01B9B0CDA00783267 /* MBProgressHUD.m */,
+				4E42AEB81B9DFFB800599C15 /* UIScrollView+SVInfiniteScrolling.h */,
+				4E42AEB91B9DFFB800599C15 /* UIScrollView+SVInfiniteScrolling.m */,
 			);
 			name = ObjC;
 			sourceTree = "<group>";
@@ -557,6 +562,7 @@
 				75BA40491B6918A30075CE6B /* GeneralToInfo.swift in Sources */,
 				750907EA1B6A91ED008E25E8 /* JapaView.swift in Sources */,
 				75CE83A41B68CFE20033A8AD /* AppControllerStateMySadhana.swift in Sources */,
+				4E42AEBA1B9DFFB800599C15 /* UIScrollView+SVInfiniteScrolling.m in Sources */,
 				75BA403C1B690F3F0075CE6B /* MyToEdit.swift in Sources */,
 				7507E19D1B975762000AFEA3 /* GeneralSadhanaTableHeader.swift in Sources */,
 				75BA40401B69106E0075CE6B /* MyToInfo.swift in Sources */,
