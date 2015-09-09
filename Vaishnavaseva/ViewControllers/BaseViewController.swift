@@ -17,8 +17,7 @@ typealias StateViewEvent = String;
 let OnBackStateViewEvent = "OnBackStateViewEvent"
 
 class BaseViewController: UIViewController, UINavigationControllerDelegate, StateSerializable
-
-  {
+{
   private var stateViewActions: Dictionary<StateViewEvent, StateActionRecord> = [:]
   
   func setAction(action: Selector, forTarget target: AnyObject, forStateViewEvent stateEvent:StateViewEvent)
@@ -65,4 +64,38 @@ class BaseViewController: UIViewController, UINavigationControllerDelegate, Stat
       }
     }
   
+  var sections: [Section] = []
+  var json: JSON = JSON.null
+    {
+    didSet
+    {
+      switch self.json.type
+      {
+      case Type.Array:
+        var lastDate = ""
+        if sections.count != 0
+        {
+          sections = []
+        }
+        for var i = 0; i < json.count; ++i
+        {
+          let currentDate = json[i]["date"].description
+          if lastDate != currentDate
+          {
+            lastDate = currentDate
+            sections.append(Section(date: lastDate, firstIndex: i, count: 0))
+          }
+          ++sections[sections.count - 1].count
+        }
+      default:
+        break
+      }
+    }
   }
+  
+  func showErrorAlert() {
+    let alert = UIAlertController(title: "Server error", message: "", preferredStyle: UIAlertControllerStyle.Alert)
+    alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+    self.presentViewController(alert, animated: true, completion: nil)
+  }
+}

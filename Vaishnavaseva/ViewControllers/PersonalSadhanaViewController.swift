@@ -1,9 +1,17 @@
 import UIKit
 
-class PersonalSadhanaViewController: BaseViewController {
+let userSadhanaEntriesStateViewEvent = "userSadhanaEntriesStateViewEvent"
+
+class PersonalSadhanaViewController: BaseViewController/*, UITableViewDelegate, UITableViewDataSource*/ {
+  
+  var person : JSON = JSON.null
 
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    sendActionForStateViewEvent(userSadhanaEntriesStateViewEvent)
+    let spiningActivity = MBProgressHUD.showHUDAddedTo(navigationController?.view, animated: true)
+    spiningActivity.labelText = "Please wait"
     // Do any additional setup after loading the view, typically from a nib.
   }
 

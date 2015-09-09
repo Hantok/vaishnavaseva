@@ -14,34 +14,6 @@ class GeneralSadhanaViewController: BaseViewController, UITableViewDelegate, UIT
 
   @IBOutlet var tableView: UITableView!
   
-  var sections: [Section] = []
-  var json: JSON = JSON.null
-    {
-    didSet
-      {
-      switch self.json.type
-        {
-        case Type.Array:
-          var lastDate = ""
-          if sections.count != 0
-          {
-            sections = []
-          }
-          for var i = 0; i < json.count; ++i
-            {
-              let currentDate = json[i]["date"].description
-              if lastDate != currentDate
-              {
-                lastDate = currentDate
-                sections.append(Section(date: lastDate, firstIndex: i, count: 0))
-              }
-              ++sections[sections.count - 1].count
-            }
-        default:
-          break
-        }
-      }
-    }
   var pageNum = 0
   var itemsPerPage = 20
   var totalFound = 120
@@ -138,7 +110,24 @@ class GeneralSadhanaViewController: BaseViewController, UITableViewDelegate, UIT
     {
     return 30
     }
-    
+  
+  func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
+  {
+    performSegueWithIdentifier("GeneralToPersonal", sender: nil)
+    tableView.deselectRowAtIndexPath(indexPath, animated: true)
+  }
+  
+  override func prepareForSegue(storyboardSegue: UIStoryboardSegue, sender: AnyObject?)
+  {
+    super.prepareForSegue(storyboardSegue, sender: sender)
+    if (storyboardSegue.identifier == "GeneralToPersonal")
+    {
+      let indexPath = self.tableView.indexPathForSelectedRow!
+      let row = sections[indexPath.section].firstIndex + indexPath.row
+      (storyboardSegue.destinationViewController as! PersonalSadhanaViewController).person = self.json[row]
+    }
+  }
+  
   func refresh(sender:AnyObject)
   {
     self.refreshControl.endRefreshing()
@@ -161,12 +150,6 @@ class GeneralSadhanaViewController: BaseViewController, UITableViewDelegate, UIT
       self.sendActionForStateViewEvent(allSadhanaEntriesStateViewEvent)
       self.tableView.infiniteScrollingView.stopAnimating()
     }
-  }
-  
-  func showErrorAlert() {
-    let alert = UIAlertController(title: "Server error", message: "", preferredStyle: UIAlertControllerStyle.Alert)
-    alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
-    self.presentViewController(alert, animated: true, completion: nil)
   }
 }
 
