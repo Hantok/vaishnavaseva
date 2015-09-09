@@ -41,25 +41,26 @@ import UIKit
         for key in keys {
           if key as! String == "entries"
           {
-            if ((self.viewController as! PersonalSadhanaViewController).json != JSON.null /*&& pageNum != 0*/)
+            if (self.viewController.json != JSON.null /*&& pageNum != 0*/)
             {
-              (self.viewController as! PersonalSadhanaViewController).json.arrayObject?.appendContentsOf((json[key as! String].arrayObject!))
+              self.viewController.json.arrayObject?.appendContentsOf((json[key as! String].arrayObject!))
             }
             else
             {
-              (self.viewController as! PersonalSadhanaViewController).sections = []
-              (self.viewController as! PersonalSadhanaViewController).json = json[key as! String]
+              self.viewController.sections = []
+              self.viewController.json = json[key as! String]
             }
             success = true
           }
         }
         if !success {
-          (self.viewController as! PersonalSadhanaViewController).showErrorAlert()
+          self.viewController.showErrorAlert()
         }
       default:
-        (self.viewController as! PersonalSadhanaViewController).showErrorAlert()
+        self.viewController.showErrorAlert()
       }
-      //(self.viewController as! PersonalSadhanaViewController).tableView.reloadData()
+      self.viewController.sections = self.viewController.sections.reverse()
+      (self.viewController as! PersonalSadhanaViewController).tableView.reloadData()
     }
   }
 }
