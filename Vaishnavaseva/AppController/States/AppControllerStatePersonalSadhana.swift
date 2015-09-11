@@ -32,7 +32,7 @@ import UIKit
 //    }
     
     "userSadhanaEntries/\(userId)".post(["year": "\(year)", "month": "\(month)"]) { response in
-      print(response.responseJSON)
+      //print(response.responseJSON)
       MBProgressHUD.hideAllHUDsForView(self.viewController.navigationController?.view, animated: true)
       let jsonTableViewController = self.viewControllerProtocol as! JSONTableViewController
       var json = JSON(response.responseJSON!)

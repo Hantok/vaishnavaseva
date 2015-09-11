@@ -23,8 +23,8 @@ import UIKit
         let authString = "Basic \(base64EncodedCredential)"
         
         "me".get(headers: ["Authorization" : authString]) { response in
-            print(response.responseJSON)
-            print(JSON(response.responseJSON!))
+            //print(response.responseJSON)
+            //print(JSON(response.responseJSON!))
             // logInViewController.spiningActivity.hide(true)
             MBProgressHUD.hideAllHUDsForView(self.viewController.navigationController?.view, animated: true)
             if response.HTTPResponse.statusCode != 200

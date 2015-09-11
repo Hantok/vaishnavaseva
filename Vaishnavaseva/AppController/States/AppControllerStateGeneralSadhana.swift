@@ -18,7 +18,7 @@ import UIKit
       let pageNum = generalSadhanaViewController.pageNum
       let itemPerPage = generalSadhanaViewController.itemsPerPage
       "allSadhanaEntries".post(["page_num": "\(pageNum)", "items_per_page":"\(itemPerPage)"]) { response in
-            print(response.responseJSON)
+            //print(response.responseJSON)
             MBProgressHUD.hideAllHUDsForView(self.viewController.navigationController?.view, animated: true)
             var json = JSON(response.responseJSON!)
             switch json.object {
