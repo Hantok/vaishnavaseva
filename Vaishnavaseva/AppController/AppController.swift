@@ -65,7 +65,7 @@ class AppController: UIResponder, UIApplicationDelegate, UINavigationControllerD
     navigationController.delegate = self
     
     let initialState = AppControllerStateGeneralSadhana()
-    initialState.viewController = navigationController.topViewController as! BaseViewController
+    initialState.viewController = navigationController.topViewController
     self.currentState = initialState
     return true
     }

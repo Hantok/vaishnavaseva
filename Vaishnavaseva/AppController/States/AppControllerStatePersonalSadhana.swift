@@ -11,11 +11,12 @@ import UIKit
   
   override func sceneDidBecomeCurrent() {
     super.sceneDidBecomeCurrent()
-    self.viewController.setAction(Selector("userSadhanaEntries"), forTarget: self, forStateViewEvent: userSadhanaEntriesStateViewEvent)
+    self.viewControllerProtocol.setAction(Selector("userSadhanaEntries"), forTarget: self, forStateViewEvent: userSadhanaEntriesStateViewEvent)
   }
 
   func userSadhanaEntries() {
-    let userId = ((self.viewController as! PersonalSadhanaViewController).person["user"])["userid"]
+    let personalSadhanaViewController = self.viewController as! PersonalSadhanaViewController
+    let userId = (personalSadhanaViewController.person["user"])["userid"]
     
     let date = NSDate()
     let calendar = NSCalendar.currentCalendar()
@@ -32,35 +33,39 @@ import UIKit
     
     "userSadhanaEntries/\(userId)".post(["year": "\(year)", "month": "\(month)"]) { response in
       print(response.responseJSON)
-      MBProgressHUD.hideAllHUDsForView((self.viewController as! PersonalSadhanaViewController).navigationController?.view, animated: true)
+      MBProgressHUD.hideAllHUDsForView(self.viewController.navigationController?.view, animated: true)
+      let jsonTableViewController = self.viewControllerProtocol as! JSONTableViewController
       var json = JSON(response.responseJSON!)
-      switch json.object {
-      case _ as NSDictionary:
-        let keys = (json.object as! NSDictionary).allKeys
-        var success = false
-        for key in keys {
-          if key as! String == "entries"
-          {
-            if (self.viewController.json != JSON.null /*&& pageNum != 0*/)
+      switch json.object
+        {
+        case _ as NSDictionary:
+          let keys = (json.object as! NSDictionary).allKeys
+          var success = false
+          for key in keys
             {
-              self.viewController.json.arrayObject?.appendContentsOf((json[key as! String].arrayObject!))
+            if key as! String == "entries"
+              {
+              if (jsonTableViewController.json != JSON.null /*&& pageNum != 0*/)
+                {
+                jsonTableViewController.json.arrayObject?.appendContentsOf((json[key as! String].arrayObject!))
+                }
+              else
+                {
+                jsonTableViewController.sections = []
+                jsonTableViewController.json = json[key as! String]
+                }
+              success = true
+              }
             }
-            else
+          if !success
             {
-              self.viewController.sections = []
-              self.viewController.json = json[key as! String]
+            self.viewController.showErrorAlert()
             }
-            success = true
-          }
-        }
-        if !success {
+        default:
           self.viewController.showErrorAlert()
         }
-      default:
-        self.viewController.showErrorAlert()
-      }
-      self.viewController.sections = self.viewController.sections.reverse()
-      (self.viewController as! PersonalSadhanaViewController).tableView.reloadData()
+      jsonTableViewController.sections = jsonTableViewController.sections.reverse()
+      personalSadhanaViewController.tableView.reloadData()
     }
   }
 }

@@ -16,8 +16,16 @@ typealias StateViewEvent = String;
 
 let OnBackStateViewEvent = "OnBackStateViewEvent"
 
-class BaseViewController: UIViewController, UINavigationControllerDelegate, StateSerializable
-{
+protocol BaseViewControllerProtocol
+  {
+  func setAction(action: Selector, forTarget target: AnyObject, forStateViewEvent stateEvent:StateViewEvent)
+  func removeActionForStateViewEvent(stateEvent: StateViewEvent)
+  func hasActionForStateViewEvent(stateEvent: StateViewEvent) ->Bool
+  func sendActionForStateViewEvent(stateEvent: StateViewEvent) -> Bool
+  }
+
+class BaseViewControllerDelegate: BaseViewControllerProtocol
+  {
   private var stateViewActions: Dictionary<StateViewEvent, StateActionRecord> = [:]
   
   func setAction(action: Selector, forTarget target: AnyObject, forStateViewEvent stateEvent:StateViewEvent)
@@ -44,9 +52,9 @@ class BaseViewController: UIViewController, UINavigationControllerDelegate, Stat
     return false;
     }
   
-  override func prepareForSegue(storyboardSegue: UIStoryboardSegue, sender: AnyObject?)
+  func prepareForSegue(storyboardSegue: UIStoryboardSegue, sender: AnyObject?)
     {
-    assert(storyboardSegue.destinationViewController is BaseViewController, "BaseViewController subclass expected");
+    assert(storyboardSegue.destinationViewController is BaseViewControllerProtocol, "BaseViewControllerProtocol expected");
     let segueClass = NSClassFromString(storyboardSegue.identifier!) as! NSObject.Type
     let segue = segueClass.init() as! AppControllerSegue
     
@@ -56,46 +64,81 @@ class BaseViewController: UIViewController, UINavigationControllerDelegate, Stat
     segue.perform()
     }
   
-  override func didMoveToParentViewController(parent: UIViewController?)
+  func didMoveToParentViewController(parent: UIViewController?)
     {
     if parent == nil//We are either going back or removing the view controller from list
       {
       sendActionForStateViewEvent(OnBackStateViewEvent)
       }
     }
+  }
+
+class BaseViewController: UIViewController, BaseViewControllerProtocol, UINavigationControllerDelegate, StateSerializable
+  {
+  private let baseViewControllerDelegate = BaseViewControllerDelegate()
   
-  var sections: [Section] = []
-  var json: JSON = JSON.null
+  func setAction(action: Selector, forTarget target: AnyObject, forStateViewEvent stateEvent:StateViewEvent)
     {
-    didSet
+    baseViewControllerDelegate.setAction(action, forTarget: target, forStateViewEvent: stateEvent)
+    }
+  
+  func removeActionForStateViewEvent(stateEvent: StateViewEvent)
     {
-      switch self.json.type
-      {
-      case Type.Array:
-        var lastDate = ""
-        if sections.count != 0
-        {
-          sections = []
-        }
-        for var i = 0; i < json.count; ++i
-        {
-          let currentDate = json[i]["date"].description
-          if lastDate != currentDate
-          {
-            lastDate = currentDate
-            sections.append(Section(date: lastDate, firstIndex: i, count: 0))
-          }
-          ++sections[sections.count - 1].count
-        }
-      default:
-        break
-      }
+    baseViewControllerDelegate.removeActionForStateViewEvent(stateEvent)
+    }
+  
+  func hasActionForStateViewEvent(stateEvent: StateViewEvent) ->Bool
+    {
+    return baseViewControllerDelegate.hasActionForStateViewEvent(stateEvent)
+    }
+  
+  func sendActionForStateViewEvent(stateEvent: StateViewEvent) -> Bool
+    {
+    return baseViewControllerDelegate.sendActionForStateViewEvent(stateEvent)
+    }
+  
+  override func prepareForSegue(storyboardSegue: UIStoryboardSegue, sender: AnyObject?)
+    {
+    self.baseViewControllerDelegate.prepareForSegue(storyboardSegue, sender: sender)
+    }
+  
+  override func didMoveToParentViewController(parent: UIViewController?)
+    {
+    self.baseViewControllerDelegate.didMoveToParentViewController(parent)
     }
   }
+
+class BaseTableViewController: UITableViewController, BaseViewControllerProtocol, UINavigationControllerDelegate, StateSerializable
+  {
+  private let baseViewControllerDelegate = BaseViewControllerDelegate()
   
-  func showErrorAlert() {
-    let alert = UIAlertController(title: "Server error", message: "", preferredStyle: UIAlertControllerStyle.Alert)
-    alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
-    self.presentViewController(alert, animated: true, completion: nil)
+  func setAction(action: Selector, forTarget target: AnyObject, forStateViewEvent stateEvent:StateViewEvent)
+    {
+    baseViewControllerDelegate.setAction(action, forTarget: target, forStateViewEvent: stateEvent)
+    }
+  
+  func removeActionForStateViewEvent(stateEvent: StateViewEvent)
+    {
+    baseViewControllerDelegate.removeActionForStateViewEvent(stateEvent)
+    }
+  
+  func hasActionForStateViewEvent(stateEvent: StateViewEvent) ->Bool
+    {
+    return baseViewControllerDelegate.hasActionForStateViewEvent(stateEvent)
+    }
+  
+  func sendActionForStateViewEvent(stateEvent: StateViewEvent) -> Bool
+    {
+    return baseViewControllerDelegate.sendActionForStateViewEvent(stateEvent)
+    }
+  
+  override func prepareForSegue(storyboardSegue: UIStoryboardSegue, sender: AnyObject?)
+    {
+    self.baseViewControllerDelegate.prepareForSegue(storyboardSegue, sender: sender)
+    }
+  
+  override func didMoveToParentViewController(parent: UIViewController?)
+    {
+    self.baseViewControllerDelegate.didMoveToParentViewController(parent)
+    }
   }
-}

@@ -6,7 +6,7 @@ import Foundation
   override func perform()
     {
     super.perform()//sets the destinationSceneController
-    self.destinationSceneController.viewController = self.visualSegue.destinationViewController as! BaseViewController
+    self.destinationSceneController.viewController = self.visualSegue.destinationViewController
     
     //Transfer any data between AppControllerStates and ViewControllers here
     }

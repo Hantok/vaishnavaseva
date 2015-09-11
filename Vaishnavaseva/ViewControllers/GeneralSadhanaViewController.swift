@@ -9,22 +9,20 @@ struct Section
 
 let allSadhanaEntriesStateViewEvent = "allSadhanaEntriesStateViewEvent"
 
-class GeneralSadhanaViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
-  let refreshControl = UIRefreshControl()
-
-  @IBOutlet var tableView: UITableView!
-  
+class GeneralSadhanaViewController: JSONTableViewController {
   var pageNum = 0
   var itemsPerPage = 20
   var totalFound = 120
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    self.refreshControl = UIRefreshControl()
+    
     refresh(self)
     
-    self.refreshControl.attributedTitle = NSAttributedString(string: "Refrishing...")
-    self.refreshControl.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
-    self.tableView.addSubview(self.refreshControl)
+    self.refreshControl?.attributedTitle = NSAttributedString(string: "Refreshing...")
+    self.refreshControl?.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
+    //self.tableView.addSubview(self.refreshControl)
 
     self.tableView.addInfiniteScrollingWithActionHandler(){
       self.insertRowAtBottom()
@@ -58,17 +56,17 @@ class GeneralSadhanaViewController: BaseViewController, UITableViewDelegate, UIT
     {
     }
   
-  func numberOfSectionsInTableView(tableView: UITableView) -> Int
+  override func numberOfSectionsInTableView(tableView: UITableView) -> Int
     {
         return sections.count
     }
   
-  func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+  override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
         return sections[section].count
     }
     
-  func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
+  override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
         let greenColor = UIColor(red: 0, green: 125/256, blue: 0, alpha: 1)
         let cell = tableView.dequeueReusableCellWithIdentifier("PersonalCell", forIndexPath: indexPath) as! GeneralSadhanaTableViewCell
@@ -99,19 +97,19 @@ class GeneralSadhanaViewController: BaseViewController, UITableViewDelegate, UIT
         return cell
     }
   
-  func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?
+  override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?
     {
     let cell = tableView.dequeueReusableCellWithIdentifier("Header") as! GeneralSadhanaTableViewHeader
     cell.date.text = sections[section].date
     return cell
     }
   
-  func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat
+  override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat
     {
     return 30
     }
   
-  func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
+  override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
   {
     performSegueWithIdentifier("GeneralToPersonal", sender: nil)
     tableView.deselectRowAtIndexPath(indexPath, animated: true)
@@ -130,7 +128,7 @@ class GeneralSadhanaViewController: BaseViewController, UITableViewDelegate, UIT
   
   func refresh(sender:AnyObject)
   {
-    self.refreshControl.endRefreshing()
+    self.refreshControl?.endRefreshing()
     self.pageNum = 0
     sendActionForStateViewEvent(allSadhanaEntriesStateViewEvent)
     let spiningActivity = MBProgressHUD.showHUDAddedTo(navigationController?.view, animated: true)

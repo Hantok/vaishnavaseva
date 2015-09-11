@@ -6,7 +6,7 @@ import Foundation
   override func perform()
     {
     let destinationState = AppControllerStateEditSadhana()
-    destinationState.viewController = self.visualSegue.destinationViewController as! BaseViewController
+    destinationState.viewController = self.visualSegue.destinationViewController
     self.destinationSceneController = destinationState
     
     super.perform()

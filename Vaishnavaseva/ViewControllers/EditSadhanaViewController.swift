@@ -2,7 +2,7 @@ import UIKit
 
 let OnDoneStateViewEvent = "OnDoneStateViewEvent"
 
-class EditSadhanaViewController: BaseViewController, UIPickerViewDataSource, UIPickerViewDelegate
+class EditSadhanaViewController: BaseTableViewController, UIPickerViewDataSource, UIPickerViewDelegate
   {
 
   @IBOutlet weak var japaBooksPicker: UIPickerView!

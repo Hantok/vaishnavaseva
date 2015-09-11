@@ -2,11 +2,9 @@ import UIKit
 
 let userSadhanaEntriesStateViewEvent = "userSadhanaEntriesStateViewEvent"
 
-class PersonalSadhanaViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
+class PersonalSadhanaViewController: JSONTableViewController {
   
   var person : JSON = JSON.null
-
-  @IBOutlet var tableView: UITableView!
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -27,17 +25,17 @@ class PersonalSadhanaViewController: BaseViewController, UITableViewDelegate, UI
   {
   }
   
-  func numberOfSectionsInTableView(tableView: UITableView) -> Int
+  override func numberOfSectionsInTableView(tableView: UITableView) -> Int
   {
     return sections.count
   }
   
-  func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
+  override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
   {
     return sections[section].count
   }
   
-  func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
+  override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
   {
     let greenColor = UIColor(red: 0, green: 125/256, blue: 0, alpha: 1)
     let cell = tableView.dequeueReusableCellWithIdentifier("UserCell", forIndexPath: indexPath) as! PersonalSadhanaTableViewCell
@@ -63,14 +61,14 @@ class PersonalSadhanaViewController: BaseViewController, UITableViewDelegate, UI
     return cell
   }
   
-  func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?
+  override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?
   {
     let cell = tableView.dequeueReusableCellWithIdentifier("Header") as! GeneralSadhanaTableViewHeader
     cell.date.text = sections[section].date
     return cell
   }
   
-  func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat
+  override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat
   {
     return 30
   }

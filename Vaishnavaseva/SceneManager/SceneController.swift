@@ -3,7 +3,7 @@ import UIKit
 
 @objc protocol SceneController: StateSerializable
   {
-  var viewController: BaseViewController! {get set}
+  var viewController: UIViewController! {get set}
   
   optional func sceneWillResignCurrent()
   optional func sceneDidResignCurrent()

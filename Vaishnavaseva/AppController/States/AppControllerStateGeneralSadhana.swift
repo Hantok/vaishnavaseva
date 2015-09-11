@@ -10,15 +10,16 @@ import UIKit
 //    }
     override func sceneDidBecomeCurrent() {
         super.sceneDidBecomeCurrent()
-        self.viewController.setAction(Selector("allSadhanaEntries"), forTarget: self, forStateViewEvent: allSadhanaEntriesStateViewEvent)
+        self.viewControllerProtocol.setAction(Selector("allSadhanaEntries"), forTarget: self, forStateViewEvent: allSadhanaEntriesStateViewEvent)
     }
     
     func allSadhanaEntries() {
-      let pageNum = (self.viewController as! GeneralSadhanaViewController).pageNum
-      let itemPerPage = (self.viewController as! GeneralSadhanaViewController).itemsPerPage
+      let generalSadhanaViewController = self.viewController as! GeneralSadhanaViewController
+      let pageNum = generalSadhanaViewController.pageNum
+      let itemPerPage = generalSadhanaViewController.itemsPerPage
       "allSadhanaEntries".post(["page_num": "\(pageNum)", "items_per_page":"\(itemPerPage)"]) { response in
             print(response.responseJSON)
-            MBProgressHUD.hideAllHUDsForView((self.viewController as! GeneralSadhanaViewController).navigationController?.view, animated: true)
+            MBProgressHUD.hideAllHUDsForView(self.viewController.navigationController?.view, animated: true)
             var json = JSON(response.responseJSON!)
             switch json.object {
             case _ as NSDictionary:
@@ -27,29 +28,29 @@ import UIKit
                 for key in keys {
                     if key as! String == "entries"
                     {
-                      if ((self.viewController as! GeneralSadhanaViewController).json != JSON.null && pageNum != 0)
+                      if (generalSadhanaViewController.json != JSON.null && pageNum != 0)
                       {
-                        (self.viewController as! GeneralSadhanaViewController).json.arrayObject?.appendContentsOf((json[key as! String].arrayObject!))
+                        generalSadhanaViewController.json.arrayObject?.appendContentsOf((json[key as! String].arrayObject!))
                       }
                       else
                       {
-                        (self.viewController as! GeneralSadhanaViewController).sections = []
-                        (self.viewController as! GeneralSadhanaViewController).json = json[key as! String]
+                        generalSadhanaViewController.sections = []
+                        generalSadhanaViewController.json = json[key as! String]
                       }
                       success = true
                     }
                     else if key as! String == "total_found"
                     {
-                      (self.viewController as! GeneralSadhanaViewController).totalFound = Int(json[key as! String].string!)!
+                      generalSadhanaViewController.totalFound = Int(json[key as! String].string!)!
                     }
                 }
                 if !success {
-                    (self.viewController as! GeneralSadhanaViewController).showErrorAlert()
+                    generalSadhanaViewController.showErrorAlert()
                 }
             default:
-                (self.viewController as! GeneralSadhanaViewController).showErrorAlert()
+                generalSadhanaViewController.showErrorAlert()
             }
-            (self.viewController as! GeneralSadhanaViewController).tableView.reloadData()
+            generalSadhanaViewController.tableView.reloadData()
         }
     }
   }

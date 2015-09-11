@@ -14,11 +14,19 @@ import UIKit
 
 @objc class AppControllerState: NSObject, EquatablePolymorphic, AppControllerStateProtocol, UINavigationControllerDelegate
   {
-  var viewController: BaseViewController!
+  var viewController: UIViewController!
+  
+  var viewControllerProtocol: BaseViewControllerProtocol
+    {
+    get
+      {
+      return self.viewController as! BaseViewControllerProtocol
+      }
+    }
   
   func sceneDidBecomeCurrent()
     {
-    self.viewController.setAction(Selector("popState"), forTarget: self, forStateViewEvent: OnBackStateViewEvent)
+    self.viewControllerProtocol.setAction(Selector("popState"), forTarget: self, forStateViewEvent: OnBackStateViewEvent)
     }
   
   func isEqualTo(other: AppControllerState) -> Bool
@@ -40,13 +48,13 @@ import UIKit
   
   func navigationController(navigationController: UINavigationController, willShowViewController viewController: UIViewController, animated: Bool)
     {
-    (self.viewController as UINavigationControllerDelegate).navigationController?(navigationController, willShowViewController: viewController, animated: animated)
+    (self.viewController as! UINavigationControllerDelegate).navigationController?(navigationController, willShowViewController: viewController, animated: animated)
     }
   
   func navigationController(navigationController: UINavigationController, didShowViewController viewController: UIViewController, animated: Bool)
     {
     assert(viewController == self.viewController)//If we forgot to set AppControllerState
-    (self.viewController as UINavigationControllerDelegate).navigationController?(navigationController, didShowViewController: viewController, animated: animated)
+    (self.viewController as! UINavigationControllerDelegate).navigationController?(navigationController, didShowViewController: viewController, animated: animated)
     }
   
   }

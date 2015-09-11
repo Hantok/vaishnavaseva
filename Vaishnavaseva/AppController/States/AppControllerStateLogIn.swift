@@ -10,12 +10,13 @@ import UIKit
 //    }
     override func sceneDidBecomeCurrent() {
         super.sceneDidBecomeCurrent()
-        self.viewController.setAction(Selector("onLogIn"), forTarget: self, forStateViewEvent: LogInStateViewEvent)
+        self.viewControllerProtocol.setAction(Selector("onLogIn"), forTarget: self, forStateViewEvent: LogInStateViewEvent)
     }
     
     func onLogIn() {
-        let login = (self.viewController as! LogInViewController).loginTextField.text!
-        let password = (self.viewController as! LogInViewController).passwordTextField.text!
+        let logInViewController = self.viewController as! LogInViewController
+        let login = logInViewController.loginTextField.text!
+        let password = logInViewController.passwordTextField.text!
         let userPasswordString = login + ":" + password
         let userPasswordData = userPasswordString.dataUsingEncoding(NSUTF8StringEncoding)
         let base64EncodedCredential = userPasswordData!.base64EncodedStringWithOptions(NSDataBase64EncodingOptions.Encoding64CharacterLineLength)
@@ -24,15 +25,15 @@ import UIKit
         "me".get(headers: ["Authorization" : authString]) { response in
             print(response.responseJSON)
             print(JSON(response.responseJSON!))
-            // (self.viewController as! LogInViewController).spiningActivity.hide(true)
-            MBProgressHUD.hideAllHUDsForView((self.viewController as! LogInViewController).navigationController?.view, animated: true)
+            // logInViewController.spiningActivity.hide(true)
+            MBProgressHUD.hideAllHUDsForView(self.viewController.navigationController?.view, animated: true)
             if response.HTTPResponse.statusCode != 200
             {
                 let alert = UIAlertController(title: "Authorization error!", message: "", preferredStyle: UIAlertControllerStyle.Alert)
                 alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
-                (self.viewController as! LogInViewController).presentViewController(alert, animated: true, completion: nil)
-                (self.viewController as! LogInViewController).passwordTextField.text = ""
-                (self.viewController as! LogInViewController).passwordTextField.becomeFirstResponder()
+                logInViewController.presentViewController(alert, animated: true, completion: nil)
+                logInViewController.passwordTextField.text = ""
+                logInViewController.passwordTextField.becomeFirstResponder()
             }
             else
             {
@@ -43,7 +44,7 @@ import UIKit
                     print(error)
                 }
                 AppController.sharedAppController.isLoggedIn = true
-                (self.viewController as! LogInViewController).performSegueWithIdentifier("LogInToMy", sender: nil)
+                self.viewController.performSegueWithIdentifier("LogInToMy", sender: nil)
             }
         }
     }
