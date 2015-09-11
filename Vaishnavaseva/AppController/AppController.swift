@@ -100,7 +100,7 @@ class AppController: UIResponder, UIApplicationDelegate, UINavigationControllerD
     (currentState as AppControllerStateProtocol).applicationWillTerminate?(application)
     // Saves changes in the application's managed object context before the application terminates.
     self.saveContext()
-    AppController.sharedAppController = nil;
+    AppController.sharedAppController = nil
     }
   
   func applicationDidReceiveMemoryWarning(application: UIApplication)

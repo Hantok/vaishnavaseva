@@ -22,7 +22,7 @@ class EditSadhanaViewController: BaseTableViewController, UIPickerViewDataSource
 
   @IBAction func onDone(sender: AnyObject)
     {
-    sendActionForStateViewEvent(OnDoneStateViewEvent);
+    sendActionForStateViewEvent(OnDoneStateViewEvent)
     }
   
   func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int

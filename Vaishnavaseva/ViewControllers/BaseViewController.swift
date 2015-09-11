@@ -12,7 +12,7 @@ class StateActionRecord
     }
   }
 
-typealias StateViewEvent = String;
+typealias StateViewEvent = String
 
 let OnBackStateViewEvent = "OnBackStateViewEvent"
 
@@ -40,7 +40,7 @@ class BaseViewControllerDelegate: BaseViewControllerProtocol
   
   func hasActionForStateViewEvent(stateEvent: StateViewEvent) ->Bool
     {
-    return nil != stateViewActions[stateEvent];
+    return nil != stateViewActions[stateEvent]
     }
   
   func sendActionForStateViewEvent(stateEvent: StateViewEvent) -> Bool
@@ -49,17 +49,17 @@ class BaseViewControllerDelegate: BaseViewControllerProtocol
       {
       return UIApplication.sharedApplication().sendAction(actionRecord.action, to: actionRecord.target, from: self, forEvent: nil)
       }
-    return false;
+    return false
     }
   
   func prepareForSegue(storyboardSegue: UIStoryboardSegue, sender: AnyObject?)
     {
-    assert(storyboardSegue.destinationViewController is BaseViewControllerProtocol, "BaseViewControllerProtocol expected");
+    assert(storyboardSegue.destinationViewController is BaseViewControllerProtocol, "BaseViewControllerProtocol expected")
     let segueClass = NSClassFromString(storyboardSegue.identifier!) as! NSObject.Type
     let segue = segueClass.init() as! AppControllerSegue
     
-    segue.sourceSceneController = AppController.sharedAppController.currentState;
-    segue.visualSegue = storyboardSegue;
+    segue.sourceSceneController = AppController.sharedAppController.currentState
+    segue.visualSegue = storyboardSegue
     
     segue.perform()
     }

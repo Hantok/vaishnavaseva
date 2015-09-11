@@ -176,21 +176,21 @@ import UIKit
       NSLayoutConstraint(item: progressView2TrailingConstraintOriginal.firstItem, attribute: progressView2TrailingConstraintOriginal.firstAttribute, relatedBy: progressView2TrailingConstraintOriginal.relation, toItem: progressView2TrailingConstraintOriginal.secondItem, attribute: progressView2TrailingConstraintOriginal.secondAttribute, multiplier: CGFloat(progressView2TrailingConstraintMultiplier), constant: progressView2TrailingConstraintOriginal.constant) :
       NSLayoutConstraint(item: progressView2TrailingConstraintOriginal.firstItem, attribute: progressView2TrailingConstraintOriginal.firstAttribute, relatedBy: progressView2LeadingConstraint.relation, toItem: progressView2LeadingConstraint.secondItem, attribute: progressView2LeadingConstraint.secondAttribute, multiplier: progressView2LeadingConstraint.multiplier, constant: progressView2LeadingConstraint.constant)
       
-    mainView.removeConstraint(progressView1TrailingConstraint);
-    mainView.removeConstraint(progressView2TrailingConstraint);
+    mainView.removeConstraint(progressView1TrailingConstraint)
+    mainView.removeConstraint(progressView2TrailingConstraint)
     
     progressView1TrailingConstraint = newConsraint1
-    mainView.addConstraint(progressView1TrailingConstraint);
+    mainView.addConstraint(progressView1TrailingConstraint)
     
     progressView2TrailingConstraint = newConsraint2
-    mainView.addConstraint(progressView2TrailingConstraint);
+    mainView.addConstraint(progressView2TrailingConstraint)
     
     if CGFloat(delimiterViewLeadingCostraintMultiplier) != delimiterViewLeadingCostraint.multiplier
       {
       let newConsraint = NSLayoutConstraint(item: delimiterViewLeadingCostraint.firstItem, attribute: delimiterViewLeadingCostraint.firstAttribute, relatedBy: delimiterViewLeadingCostraint.relation, toItem: delimiterViewLeadingCostraint.secondItem, attribute: delimiterViewLeadingCostraint.secondAttribute, multiplier: CGFloat(delimiterViewLeadingCostraintMultiplier), constant: delimiterViewLeadingCostraint.constant)
-      mainView.removeConstraint(delimiterViewLeadingCostraint);
+      mainView.removeConstraint(delimiterViewLeadingCostraint)
       delimiterViewLeadingCostraint = newConsraint
-      mainView.addConstraint(delimiterViewLeadingCostraint);
+      mainView.addConstraint(delimiterViewLeadingCostraint)
       }
     
     //Set the percentage of the progress views

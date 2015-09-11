@@ -15,8 +15,8 @@ class EquatableBase: EquatablePolymorphic
     {
     if self.dynamicType != other.dynamicType
       {
-      return false;
+      return false
       }
-    return true;//in subclasses: {return super.isEqualTo(other) && self.state==other.state}
+    return true//in subclasses: {return super.isEqualTo(other) && self.state==other.state}
     }
   }
