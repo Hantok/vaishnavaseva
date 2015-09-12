@@ -133,6 +133,10 @@ class GeneralSadhanaViewController: JSONTableViewController {
     sendActionForStateViewEvent(allSadhanaEntriesStateViewEvent)
     let spiningActivity = MBProgressHUD.showHUDAddedTo(navigationController?.view, animated: true)
     spiningActivity.labelText = "Please wait"
+    if self.tableView.infiniteScrollingView != nil
+    {
+      self.tableView.infiniteScrollingView.enabled = true
+    }
 //    spiningActivity.detailsLabelText = ""
   }
   
@@ -141,12 +145,15 @@ class GeneralSadhanaViewController: JSONTableViewController {
     let popTime = dispatch_time(DISPATCH_TIME_NOW, Int64(delayInSeconds * Double(NSEC_PER_SEC)))
     
     dispatch_after(popTime, dispatch_get_main_queue()) {
-      if (self.pageNum * self.itemsPerPage < self.totalFound)
+      if (self.pageNum * self.itemsPerPage < self.totalFound - self.itemsPerPage)
       {
         ++self.pageNum
       }
+      else
+      {
+        self.tableView.infiniteScrollingView.enabled = false
+      }
       self.sendActionForStateViewEvent(allSadhanaEntriesStateViewEvent)
-      self.tableView.infiniteScrollingView.stopAnimating()
     }
   }
 }

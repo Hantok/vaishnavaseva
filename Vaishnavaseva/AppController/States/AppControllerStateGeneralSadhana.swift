@@ -50,6 +50,7 @@ import UIKit
             default:
                 generalSadhanaViewController.showErrorAlert()
             }
+            generalSadhanaViewController.tableView.infiniteScrollingView.stopAnimating()
             generalSadhanaViewController.tableView.reloadData()
         }
     }
