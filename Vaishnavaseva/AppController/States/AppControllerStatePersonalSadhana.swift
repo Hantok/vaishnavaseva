@@ -59,10 +59,10 @@ import UIKit
             }
           if !success
             {
-            self.viewController.showErrorAlert()
+            self.viewController.showErrorAlert("Server error")
             }
         default:
-          self.viewController.showErrorAlert()
+          self.viewController.showErrorAlert("Server error")
         }
       jsonTableViewController.sections = jsonTableViewController.sections.reverse()
       personalSadhanaViewController.tableView.reloadData()

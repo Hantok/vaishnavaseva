@@ -18,7 +18,7 @@ class GeneralSadhanaViewController: JSONTableViewController {
     super.viewDidLoad()
     self.refreshControl = UIRefreshControl()
     
-    refresh(self)
+    firstTimeDownload()
     
     self.refreshControl?.attributedTitle = NSAttributedString(string: "Refreshing...")
     self.refreshControl?.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
@@ -126,18 +126,20 @@ class GeneralSadhanaViewController: JSONTableViewController {
     }
   }
   
-  func refresh(sender:AnyObject)
-  {
-    self.refreshControl?.endRefreshing()
-    self.pageNum = 0
-    sendActionForStateViewEvent(allSadhanaEntriesStateViewEvent)
+  func firstTimeDownload() {
     let spiningActivity = MBProgressHUD.showHUDAddedTo(navigationController?.view, animated: true)
     spiningActivity.labelText = "Please wait"
+    refresh(self)
+  }
+  
+  func refresh(sender:AnyObject)
+  {
+    self.pageNum = 0
+    sendActionForStateViewEvent(allSadhanaEntriesStateViewEvent)
     if self.tableView.infiniteScrollingView != nil
     {
       self.tableView.infiniteScrollingView.enabled = true
     }
-//    spiningActivity.detailsLabelText = ""
   }
   
   func insertRowAtBottom() {

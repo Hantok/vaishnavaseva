@@ -20,6 +20,11 @@ import UIKit
       "allSadhanaEntries".post(["page_num": "\(pageNum)", "items_per_page":"\(itemPerPage)"]) { response in
             //print(response.responseJSON)
             MBProgressHUD.hideAllHUDsForView(self.viewController.navigationController?.view, animated: true)
+            if response.error?.code != nil {
+              generalSadhanaViewController.showErrorAlert("No internet connection")
+              self.stopAnimations()
+              return
+            }
             var json = JSON(response.responseJSON!)
             switch json.object {
             case _ as NSDictionary:
@@ -45,13 +50,18 @@ import UIKit
                     }
                 }
                 if !success {
-                    generalSadhanaViewController.showErrorAlert()
+                    generalSadhanaViewController.showErrorAlert("Server error")
                 }
             default:
-                generalSadhanaViewController.showErrorAlert()
+                generalSadhanaViewController.showErrorAlert("Server error")
             }
-            generalSadhanaViewController.tableView.infiniteScrollingView.stopAnimating()
+            self.stopAnimations()
             generalSadhanaViewController.tableView.reloadData()
         }
+    }
+  
+    private func stopAnimations() {
+      (self.viewController as! GeneralSadhanaViewController).refreshControl?.endRefreshing()
+      (self.viewController as! GeneralSadhanaViewController).tableView.infiniteScrollingView.stopAnimating()
     }
   }

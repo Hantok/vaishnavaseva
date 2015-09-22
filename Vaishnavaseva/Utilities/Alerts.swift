@@ -2,9 +2,9 @@ import UIKit
 
 extension UIViewController
   {
-  func showErrorAlert()
+  func showErrorAlert(errorString: String)
     {
-    let alert = UIAlertController(title: "Server error", message: "", preferredStyle: UIAlertControllerStyle.Alert)
+    let alert = UIAlertController(title: errorString, message: "", preferredStyle: UIAlertControllerStyle.Alert)
     alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
     self.presentViewController(alert, animated: true, completion: nil)
     }
