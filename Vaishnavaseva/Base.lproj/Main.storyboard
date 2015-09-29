@@ -234,25 +234,25 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Header" rowHeight="80" id="Grp-Fu-ryi" customClass="PersonalSadhanaTableHeader" customModule="Vaishnavaseva" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="92" width="600" height="80"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Header" rowHeight="87" id="Grp-Fu-ryi" customClass="PersonalSadhanaTableHeader" customModule="Vaishnavaseva" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="87"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Grp-Fu-ryi" id="SUV-Lx-swL">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="79"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="86"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Qh2-Dl-HLl">
-                                            <rect key="frame" x="18" y="13" width="564" height="70"/>
+                                            <rect key="frame" x="18" y="8" width="564" height="70"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default_avatar.gif" highlightedImage="default_avatar.gif" translatesAutoresizingMaskIntoConstraints="NO" id="1uf-u5-f2T">
                                                     <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="70" id="iXK-WC-I3y"/>
-                                                        <constraint firstAttribute="height" constant="70" id="tyc-Ra-bIA"/>
+                                                        <constraint firstAttribute="height" constant="70" id="tJi-yS-7eX"/>
                                                     </constraints>
                                                 </imageView>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="v9S-A3-Ewz">
-                                                    <rect key="frame" x="90" y="14" width="474" height="42"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="v9S-A3-Ewz">
+                                                    <rect key="frame" x="90" y="7" width="474" height="57"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zh8-WM-97I">
                                                             <rect key="frame" x="0.0" y="0.0" width="474" height="21"/>
@@ -261,7 +261,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="HRM-3x-vpu">
-                                                            <rect key="frame" x="0.0" y="21" width="474" height="21"/>
+                                                            <rect key="frame" x="0.0" y="36" width="474" height="21"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kirtan:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9QQ-en-2va">
                                                                     <rect key="frame" x="0.0" y="0.0" width="237" height="21"/>
@@ -285,8 +285,8 @@
                                     <color key="backgroundColor" red="0.91368842080000001" green="0.91368842080000001" blue="0.91368842080000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="trailingMargin" secondItem="Qh2-Dl-HLl" secondAttribute="trailing" constant="10" id="D4F-us-tdu"/>
-                                        <constraint firstItem="Qh2-Dl-HLl" firstAttribute="top" secondItem="SUV-Lx-swL" secondAttribute="topMargin" constant="5" id="HOX-6F-E0C"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="Qh2-Dl-HLl" secondAttribute="bottom" priority="250" id="OPw-NC-JqP"/>
+                                        <constraint firstItem="Qh2-Dl-HLl" firstAttribute="top" secondItem="SUV-Lx-swL" secondAttribute="topMargin" id="HOX-6F-E0C"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="Qh2-Dl-HLl" secondAttribute="bottom" id="OPw-NC-JqP"/>
                                         <constraint firstItem="Qh2-Dl-HLl" firstAttribute="leading" secondItem="SUV-Lx-swL" secondAttribute="leadingMargin" constant="10" id="Wrf-us-sW4"/>
                                     </constraints>
                                 </tableViewCellContentView>
@@ -296,7 +296,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserCell" rowHeight="80" id="AKx-Xg-GFN" customClass="PersonalSadhanaTableViewCell" customModule="Vaishnavaseva" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="172" width="600" height="80"/>
+                                <rect key="frame" x="0.0" y="179" width="600" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AKx-Xg-GFN" id="KWz-xE-pXd">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="79"/>
@@ -948,7 +948,7 @@
         <image name="default_avatar.gif" width="100" height="100"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="jLf-bz-HMW"/>
         <segue reference="IwF-dC-oae"/>
+        <segue reference="jLf-bz-HMW"/>
     </inferredMetricsTieBreakers>
 </document>

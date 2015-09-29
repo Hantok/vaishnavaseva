@@ -71,7 +71,7 @@ class PersonalSadhanaViewController: JSONTableViewController {
   
   override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat
   {
-    return 80
+    return 87
   }
 
 }
