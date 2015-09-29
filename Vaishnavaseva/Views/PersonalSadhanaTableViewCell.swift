@@ -10,7 +10,7 @@ import UIKit
 
 class PersonalSadhanaTableViewCell: UITableViewCell {
   
-  @IBOutlet weak var photo: UIImageView!
+  @IBOutlet weak var date: UILabel!
   @IBOutlet weak var kirtan: UILabel!
   @IBOutlet weak var books: UILabel!
   @IBOutlet weak var javaView: JapaView!

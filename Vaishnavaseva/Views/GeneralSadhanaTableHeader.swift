@@ -11,8 +11,6 @@ import UIKit
 class GeneralSadhanaTableViewHeader: UITableViewCell {
 
     @IBOutlet weak var date: UILabel!
-    @IBOutlet weak var kirtan: UILabel!
-    @IBOutlet weak var books: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

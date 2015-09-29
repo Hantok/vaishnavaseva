@@ -8,7 +8,7 @@ class PersonalSadhanaViewController: JSONTableViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    self.navigationItem.title = ((person)["user"])["user_name"].stringValue
+    self.navigationItem.title = "Sadhana"
     sendActionForStateViewEvent(userSadhanaEntriesStateViewEvent)
     let spiningActivity = MBProgressHUD.showHUDAddedTo(navigationController?.view, animated: true)
     spiningActivity.labelText = "Please wait"
@@ -27,19 +27,19 @@ class PersonalSadhanaViewController: JSONTableViewController {
   
   override func numberOfSectionsInTableView(tableView: UITableView) -> Int
   {
-    return sections.count
+    return 1
   }
   
   override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int
   {
-    return sections[section].count
+    return self.json.count
   }
   
   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
   {
     let greenColor = UIColor(red: 0, green: 125/256, blue: 0, alpha: 1)
     let cell = tableView.dequeueReusableCellWithIdentifier("UserCell", forIndexPath: indexPath) as! PersonalSadhanaTableViewCell
-    let row = sections[indexPath.section].firstIndex + indexPath.row
+    let row = indexPath.row
 //      cell.name?.text = ((self.json[row])["user"])["user_name"].description
     if (self.json[row])["kirtan"].description == "1"
     {
@@ -50,6 +50,7 @@ class PersonalSadhanaViewController: JSONTableViewController {
       cell.kirtan?.text = "No"
       cell.kirtan?.textColor = UIColor.redColor()
     }
+    cell.date.text = (self.json[row])["date"].description
     cell.books?.text = (self.json[row])["reading"].description
     cell.books?.textColor = (self.json[row])["reading"].intValue > 0 ? greenColor : UIColor.redColor()
     
@@ -63,14 +64,14 @@ class PersonalSadhanaViewController: JSONTableViewController {
   
   override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?
   {
-    let cell = tableView.dequeueReusableCellWithIdentifier("Header") as! GeneralSadhanaTableViewHeader
-    cell.date.text = sections[section].date
+    let cell = tableView.dequeueReusableCellWithIdentifier("Header") as! PersonalSadhanaTableHeader
+    cell.name.text = ((person)["user"])["user_name"].stringValue
     return cell
   }
   
   override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat
   {
-    return 30
+    return 80
   }
 
 }
