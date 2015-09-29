@@ -47,12 +47,12 @@ import UIKit
               {
               if (jsonTableViewController.json != JSON.null /*&& pageNum != 0*/)
                 {
-                jsonTableViewController.json.arrayObject?.appendContentsOf((json[key as! String].arrayObject!))
+                  jsonTableViewController.json.arrayObject?.appendContentsOf((json[key as! String].arrayObject!.reverse()))
                 }
               else
                 {
-                jsonTableViewController.sections = []
-                jsonTableViewController.json = json[key as! String]
+                  jsonTableViewController.sections = []
+                  jsonTableViewController.json = JSON.init(json[key as! String].arrayObject!.reverse())
                 }
               success = true
               }
@@ -64,7 +64,6 @@ import UIKit
         default:
           self.viewController.showErrorAlert("Server error")
         }
-      jsonTableViewController.sections = jsonTableViewController.sections.reverse()
       personalSadhanaViewController.tableView.reloadData()
     }
   }
