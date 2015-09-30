@@ -5,6 +5,8 @@ let userSadhanaEntriesStateViewEvent = "userSadhanaEntriesStateViewEvent"
 class PersonalSadhanaViewController: JSONTableViewController {
   
   var person : JSON = JSON.null
+  var month = 0
+  var totalFound = 1
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -12,7 +14,11 @@ class PersonalSadhanaViewController: JSONTableViewController {
     sendActionForStateViewEvent(userSadhanaEntriesStateViewEvent)
     let spiningActivity = MBProgressHUD.showHUDAddedTo(navigationController?.view, animated: true)
     spiningActivity.labelText = "Please wait"
-    // Do any additional setup after loading the view, typically from a nib.
+
+    self.tableView.addInfiniteScrollingWithActionHandler()
+    {
+      self.insertRowAtBottom()
+    }
   }
 
   override func didReceiveMemoryWarning() {
@@ -40,7 +46,6 @@ class PersonalSadhanaViewController: JSONTableViewController {
     let greenColor = UIColor(red: 0, green: 125/256, blue: 0, alpha: 1)
     let cell = tableView.dequeueReusableCellWithIdentifier("UserCell", forIndexPath: indexPath) as! PersonalSadhanaTableViewCell
     let row = indexPath.row
-//      cell.name?.text = ((self.json[row])["user"])["user_name"].description
     if (self.json[row])["kirtan"].description == "1"
     {
       cell.kirtan?.text = "Yes"
@@ -73,6 +78,25 @@ class PersonalSadhanaViewController: JSONTableViewController {
   {
     return 87
   }
-
+  
+  func insertRowAtBottom()
+  {
+    if totalFound != 0
+    {
+      let delayInSeconds = 2.0
+      let popTime = dispatch_time(DISPATCH_TIME_NOW, Int64(delayInSeconds * Double(NSEC_PER_SEC)))
+      
+      dispatch_after(popTime, dispatch_get_main_queue())
+        {
+          --self.month
+          self.sendActionForStateViewEvent(userSadhanaEntriesStateViewEvent)
+      }
+    }
+    else
+    {
+      self.tableView.infiniteScrollingView.stopAnimating()
+      self.tableView.infiniteScrollingView.enabled = false
+    }
+  }
 }
 
