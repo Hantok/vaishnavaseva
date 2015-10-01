@@ -24,11 +24,20 @@ import UIKit
     var year = components.year
     var month = components.month + personalSadhanaViewController.month //personalSadhanaViewController.month <= 0
     
-    //need to be finishing when tableView will be done
-    if month == 0
+    //year check change
+    while month < 0
     {
-      month = 12
-      --year
+      month = 12 + month
+      if month == 0
+      {
+        month = 12
+        --year
+        break
+      }
+      else if month < 0
+      {
+        --year
+      }
     }
     
     "userSadhanaEntries/\(userId)".post(["year": "\(year)", "month": "\(month)"]) { response in
