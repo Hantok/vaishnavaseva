@@ -43,6 +43,12 @@ import UIKit
     "userSadhanaEntries/\(userId)".post(["year": "\(year)", "month": "\(month)"]) { response in
       //print(response.responseJSON)
       MBProgressHUD.hideAllHUDsForView(self.viewController.navigationController?.view, animated: true)
+      if (response.data == nil){
+        self.viewController.showErrorAlert("Server error")
+        personalSadhanaViewController.tableView.infiniteScrollingView.stopAnimating()
+        personalSadhanaViewController.isBeforeResponseSucsess = false
+        return
+      }
       var json = JSON(response.responseJSON!)
       
       switch json.object
@@ -81,14 +87,17 @@ import UIKit
                 personalSadhanaViewController.tableView.reloadData()
               }
               success = true
+              personalSadhanaViewController.isBeforeResponseSucsess = true
             }
           }
           if !success
           {
             self.viewController.showErrorAlert("Server error")
+            personalSadhanaViewController.isBeforeResponseSucsess = false
           }
         default:
           self.viewController.showErrorAlert("Server error")
+          personalSadhanaViewController.isBeforeResponseSucsess = false
         }
       personalSadhanaViewController.tableView.infiniteScrollingView.stopAnimating()
     }

@@ -7,6 +7,8 @@ class LogInViewController: BaseViewController {
   @IBOutlet weak var loginTextField: UITextField!
   @IBOutlet weak var passwordTextField: UITextField!
   
+  var me: JSON = JSON.null
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     loginTextField.text = "roman"
@@ -33,6 +35,16 @@ class LogInViewController: BaseViewController {
       super.didMoveToParentViewController(parent)
       }
     }
+  
+  override func prepareForSegue(storyboardSegue: UIStoryboardSegue, sender: AnyObject?)
+  {
+    super.prepareForSegue(storyboardSegue, sender: sender)
+    if (storyboardSegue.identifier == "LogInToMy")
+    {
+      (storyboardSegue.destinationViewController as! MySadhanaViewController).me = self.me
+    }
+
+  }
 
   @IBAction func onLogIn(sender: AnyObject)
     {

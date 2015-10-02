@@ -88,7 +88,11 @@ class PersonalSadhanaViewController: JSONTableViewController {
       
       dispatch_after(popTime, dispatch_get_main_queue())
         {
-          --self.month
+          // decrease date if previous request was success
+          if self.isBeforeResponseSucsess
+          {
+            --self.month 
+          }
           self.sendActionForStateViewEvent(userSadhanaEntriesStateViewEvent)
       }
     }

@@ -36,7 +36,7 @@ class GeneralSadhanaViewController: JSONTableViewController {
 
   @IBAction func onMySadhana(sender: AnyObject)
     {
-    if AppController.sharedAppController.isLoggedIn
+    if AppController.sharedAppController.isLoggedIn || NSUserDefaults.standardUserDefaults().objectForKey("me") != nil
       {
         performSegueWithIdentifier("GeneralToMy", sender: nil)
       }
@@ -149,7 +149,10 @@ class GeneralSadhanaViewController: JSONTableViewController {
     dispatch_after(popTime, dispatch_get_main_queue()) {
       if (self.pageNum * self.itemsPerPage < self.totalFound - self.itemsPerPage)
       {
-        ++self.pageNum
+        if self.isBeforeResponseSucsess
+        {
+          ++self.pageNum
+        }
       }
       else
       {
