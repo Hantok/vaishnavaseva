@@ -19,9 +19,10 @@ import UIKit
     
     let date = NSDate()
     let calendar = NSCalendar.currentCalendar()
-    let components = calendar.components([.Year, .Month], fromDate: date)
+    let components = calendar.components([.Year, .Month, .Day], fromDate: date)
     var year = components.year
     var month = components.month + mySadhanaViewController.month //mySadhanaViewController <= 0
+    let today = components.day
     
     //year check change
     while month < 0
@@ -61,8 +62,10 @@ import UIKit
           {
             if json[key as! String].arrayObject!.count == 0
             {
+              mySadhanaViewController.json = JSON.init(self.addEmptyValues(JSON.init([]), today: today).arrayObject!.reverse())
               mySadhanaViewController.totalFound = 0
               mySadhanaViewController.tableView.infiniteScrollingView.enabled = false
+              mySadhanaViewController.tableView.reloadData()
               success = true
               break
             }
@@ -82,7 +85,7 @@ import UIKit
             }
             else
             {
-              mySadhanaViewController.json = JSON.init(json[key as! String].arrayObject!.reverse())
+              mySadhanaViewController.json = JSON.init(self.addEmptyValues(json[key as! String], today: today).arrayObject!.reverse())
               mySadhanaViewController.tableView.reloadData()
             }
             success = true
@@ -100,5 +103,69 @@ import UIKit
       }
       mySadhanaViewController.tableView.infiniteScrollingView.stopAnimating()
     }
+  }
+  
+  /* 
+    addEmptyValues method adds new elements to the array dataSource if needed
+  */
+  private func addEmptyValues(json: JSON, today: Int) -> JSON
+  {
+    let dateFormat: NSDateFormatter = NSDateFormatter()
+    dateFormat.dateFormat = "yyyy-MM-dd"
+    var startDate = NSDate().dateByAddingTimeInterval(NSTimeInterval.init(NSTimeZone.systemTimeZone().secondsFromGMT))
+    var addNewCellToTableView = false
+    if json.count == 0
+    {
+      let calendar = NSCalendar.currentCalendar()
+      let components = calendar.components([.Year, .Month, .Day], fromDate: NSDate())
+      
+      components.day = 1
+      startDate = calendar.dateFromComponents(components)!
+      addNewCellToTableView = true
+    }
+    else
+    {
+      let lastObject = json.count - 1
+      let tempDate = json.arrayObject?[lastObject]["date"] as! String
+      
+      //if today data already in DB, do change json
+      addNewCellToTableView = startDate != dateFormat.dateFromString(tempDate)! ? false : true
+    }
+    
+    let calendar = NSCalendar.currentCalendar()
+    let components = calendar.components([.Year, .Month, .Day], fromDate: startDate)
+    let startDay = components.day
+    
+    var jsonTemp = json
+    for var day = (startDay <= today && addNewCellToTableView) ? startDay : startDay + 1; day <= today; day++
+    {
+      var value = JSON.init(Dictionary<String, String>())
+      if (jsonTemp.count != 0)
+      {
+        startDate = startDate.dateByAddingTimeInterval(24*60*60)
+        value.dictionaryObject?.updateValue(dateFormat.stringFromDate(startDate), forKey: "date")
+      }
+      else
+      {
+        value.dictionaryObject?.updateValue(dateFormat.stringFromDate(startDate), forKey: "date")
+      }
+      value.dictionaryObject?.updateValue("\(day)", forKey: "day")
+      value.dictionaryObject?.updateValue("-1", forKey: "id")
+      value.dictionaryObject?.updateValue("0", forKey: "jcount_1000")
+      value.dictionaryObject?.updateValue("0", forKey: "jcount_1800")
+      value.dictionaryObject?.updateValue("0", forKey: "jcount_730")
+      value.dictionaryObject?.updateValue("0", forKey: "jcount_after")
+      value.dictionaryObject?.updateValue("0", forKey: "kirtan")
+      value.dictionaryObject?.updateValue("0", forKey: "opt_exercise")
+      value.dictionaryObject?.updateValue("0", forKey: "opt_lections")
+      value.dictionaryObject?.updateValue("0", forKey: "opt_service")
+      value.dictionaryObject?.updateValue("00:00", forKey: "opt_sleep")
+      value.dictionaryObject?.updateValue("00:00", forKey: "opt_wake_up")
+      value.dictionaryObject?.updateValue("0", forKey: "reading")
+      value.dictionaryObject?.updateValue((NSUserDefaults.standardUserDefaults().valueForKey("me")?["userid"])!, forKey: "user_id")
+      jsonTemp.arrayObject?.append(value.dictionaryObject!)
+    }
+    
+    return jsonTemp
   }
 }
