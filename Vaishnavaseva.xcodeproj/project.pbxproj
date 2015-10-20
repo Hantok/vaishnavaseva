@@ -19,6 +19,10 @@
 		4E3DD6781BB19F300057A087 /* icon-29x29.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E3DD6771BB19F300057A087 /* icon-29x29.png */; settings = {ASSET_TAGS = (); }; };
 		4E3DD67C1BB19FAB0057A087 /* icon-76x76.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E3DD67B1BB19FAB0057A087 /* icon-76x76.png */; settings = {ASSET_TAGS = (); }; };
 		4E42AEBA1B9DFFB800599C15 /* UIScrollView+SVInfiniteScrolling.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E42AEB91B9DFFB800599C15 /* UIScrollView+SVInfiniteScrolling.m */; settings = {ASSET_TAGS = (); }; };
+		4E9977AE1BD623DE0002D7A0 /* Diskcached.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9977AB1BD623DE0002D7A0 /* Diskcached.swift */; settings = {ASSET_TAGS = (); }; };
+		4E9977AF1BD623DE0002D7A0 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9977AC1BD623DE0002D7A0 /* ImageLoader.swift */; settings = {ASSET_TAGS = (); }; };
+		4E9977B01BD623DE0002D7A0 /* UIImageView+ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9977AD1BD623DE0002D7A0 /* UIImageView+ImageLoader.swift */; settings = {ASSET_TAGS = (); }; };
+		4E9977B31BD628790002D7A0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9977B21BD628790002D7A0 /* Constants.swift */; settings = {ASSET_TAGS = (); }; };
 		4ED8890B1BBAFBDA000BC5A4 /* PersonalSadhanaTableHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED8890A1BBAFBDA000BC5A4 /* PersonalSadhanaTableHeader.swift */; settings = {ASSET_TAGS = (); }; };
 		4EE82CC01B87539300D7E658 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE82CBE1B87539300D7E658 /* SwiftyJSON.swift */; };
 		4EE82CC11B87539300D7E658 /* SwiftyJSONTests.json in Resources */ = {isa = PBXBuildFile; fileRef = 4EE82CBF1B87539300D7E658 /* SwiftyJSONTests.json */; };
@@ -111,6 +115,10 @@
 		4E3DD67B1BB19FAB0057A087 /* icon-76x76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon-76x76.png"; sourceTree = "<group>"; };
 		4E42AEB81B9DFFB800599C15 /* UIScrollView+SVInfiniteScrolling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+SVInfiniteScrolling.h"; sourceTree = "<group>"; };
 		4E42AEB91B9DFFB800599C15 /* UIScrollView+SVInfiniteScrolling.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+SVInfiniteScrolling.m"; sourceTree = "<group>"; };
+		4E9977AB1BD623DE0002D7A0 /* Diskcached.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Diskcached.swift; path = ImageLoader/Diskcached.swift; sourceTree = "<group>"; };
+		4E9977AC1BD623DE0002D7A0 /* ImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageLoader.swift; path = ImageLoader/ImageLoader.swift; sourceTree = "<group>"; };
+		4E9977AD1BD623DE0002D7A0 /* UIImageView+ImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImageView+ImageLoader.swift"; path = "ImageLoader/UIImageView+ImageLoader.swift"; sourceTree = "<group>"; };
+		4E9977B21BD628790002D7A0 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Constants.swift; path = Utilities/Constants.swift; sourceTree = "<group>"; };
 		4ED8890A1BBAFBDA000BC5A4 /* PersonalSadhanaTableHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersonalSadhanaTableHeader.swift; path = Views/PersonalSadhanaTableHeader.swift; sourceTree = "<group>"; };
 		4EE82CBE1B87539300D7E658 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		4EE82CBF1B87539300D7E658 /* SwiftyJSONTests.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = SwiftyJSONTests.json; sourceTree = "<group>"; };
@@ -215,6 +223,16 @@
 			name = ObjC;
 			sourceTree = "<group>";
 		};
+		4E9977B11BD623EC0002D7A0 /* ImageLoader */ = {
+			isa = PBXGroup;
+			children = (
+				4E9977AB1BD623DE0002D7A0 /* Diskcached.swift */,
+				4E9977AC1BD623DE0002D7A0 /* ImageLoader.swift */,
+				4E9977AD1BD623DE0002D7A0 /* UIImageView+ImageLoader.swift */,
+			);
+			name = ImageLoader;
+			sourceTree = "<group>";
+		};
 		4EE82CBD1B87536600D7E658 /* JSON */ = {
 			isa = PBXGroup;
 			children = (
@@ -303,6 +321,7 @@
 			isa = PBXGroup;
 			children = (
 				755B5DE31BA2D81500ADE410 /* Alerts.swift */,
+				4E9977B21BD628790002D7A0 /* Constants.swift */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -341,6 +360,7 @@
 				755B5DE21BA2D7FD00ADE410 /* Utilities */,
 				75C5A5A01B5531F60069B85D /* Equatable */,
 				750810C71B971FE700E97FF5 /* Images */,
+				4E9977B11BD623EC0002D7A0 /* ImageLoader */,
 				757D124C1B5013300001402B /* Main.storyboard */,
 				757D12521B5013300001402B /* Assets.xcassets */,
 				757D12541B5013300001402B /* LaunchScreen.storyboard */,
@@ -582,6 +602,7 @@
 				75CFA0ED1B501FB40071EC79 /* PersonalSadhanaViewController.swift in Sources */,
 				7595A1821B62847800735A0C /* GeneralToPersonal.swift in Sources */,
 				75BA40561B695E9A0075CE6B /* AppControllerStateLogIn.swift in Sources */,
+				4E9977AE1BD623DE0002D7A0 /* Diskcached.swift in Sources */,
 				4E3ADAD11B9B0CDA00783267 /* MBProgressHUD.m in Sources */,
 				4EFB42711B987AD200111304 /* String+Vaishnavaseva.swift in Sources */,
 				75BA40361B690C820075CE6B /* AppControllerStateEditSadhana.swift in Sources */,
@@ -606,12 +627,14 @@
 				7595A1811B62847800735A0C /* BackFromAnyToAny.swift in Sources */,
 				4EFB426E1B987AD200111304 /* NSURLSession+Vaishnavaseva.swift in Sources */,
 				75BA40521B695DFF0075CE6B /* MyToLogOut.swift in Sources */,
+				4E9977AF1BD623DE0002D7A0 /* ImageLoader.swift in Sources */,
 				4E3C3C631BA078DD00C61320 /* PersonalSadhanaTableViewCell.swift in Sources */,
 				75CFA0E41B5015860071EC79 /* StateSerializable.swift in Sources */,
 				75BA40421B6910E60075CE6B /* AppControllerStateInfo.swift in Sources */,
 				75BA40541B695E610075CE6B /* AppControllerStateLogOut.swift in Sources */,
 				75C5A5A41B5572AF0069B85D /* EquatableBase.swift in Sources */,
 				75CE83A81B68D0080033A8AD /* GeneralToMy.swift in Sources */,
+				4E9977B31BD628790002D7A0 /* Constants.swift in Sources */,
 				75CFA0EF1B50214F0071EC79 /* AppController.swift in Sources */,
 				75C331FE1B69623F0075F747 /* LogInToMy.swift in Sources */,
 				750907E51B6A29C1008E25E8 /* ActivityIndicatorsContainer.swift in Sources */,
@@ -627,6 +650,7 @@
 				75BA403C1B690F3F0075CE6B /* MyToEdit.swift in Sources */,
 				7507E19D1B975762000AFEA3 /* GeneralSadhanaTableHeader.swift in Sources */,
 				75BA40401B69106E0075CE6B /* MyToInfo.swift in Sources */,
+				4E9977B01BD623DE0002D7A0 /* UIImageView+ImageLoader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

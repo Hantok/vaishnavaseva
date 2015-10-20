@@ -73,6 +73,22 @@ class MySadhanaViewController: JSONTableViewController {
   {
     let cell = tableView.dequeueReusableCellWithIdentifier("Header") as! PersonalSadhanaTableHeader
     cell.name.text = me["user_name"].stringValue
+    
+    let avatar_url = me["avatar_url"].description
+    if avatar_url != Constants.default_avatar_url
+    {
+      if (Manager.sharedInstance.cache[NSURL(string: avatar_url)!] != nil) {
+        cell.photo.image = Manager.sharedInstance.cache[NSURL(string: avatar_url)!]
+      }
+      else {
+        cell.photo.load(me["avatar_url"].description, placeholder: UIImage(named: "default_avatar.gif"), completionHandler: nil)
+      }
+    }
+    else
+    {
+      cell.photo.image = UIImage(named: "default_avatar.gif")
+    }
+
     return cell
   }
   
