@@ -1,5 +1,9 @@
 import UIKit
 
+enum sadhanaType: Int {
+  case Books, Kirtan, Japa, Wake, Sleep, Service, Joga, Lectures, Count
+}
+
 let OnDoneStateViewEvent = "OnDoneStateViewEvent"
 
 class EditSadhanaViewController: BaseTableViewController, UIPickerViewDataSource, UIPickerViewDelegate {
@@ -12,11 +16,25 @@ class EditSadhanaViewController: BaseTableViewController, UIPickerViewDataSource
   //  @IBOutlet weak var bedtimePicker: UIDatePicker!
   
   var booksReadInMinutes = 0
-  var kirtanMade = false
+  var kirtanDone = false
+  var serviceDone = false
+  var jogaDone = false
+  var lecturesDone = false
+  
+  var sadhanaTypesActive: [Bool] = Array(count: sadhanaType.Count.rawValue, repeatedValue: true)
+  var activeRows: [Int]!
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
+    //Apply active sadhana types from user settings here:
+    //sadhanaTypesActive[sadhanaTypesOrder.indexOf("sleep")!] = false
+    
+    activeRows = []
+    for (row, active) in sadhanaTypesActive.enumerate() {
+      if active {
+        activeRows.append(row)
+      }
+    }
   }
   
   @IBAction func onDone(sender: AnyObject) {
@@ -29,7 +47,7 @@ class EditSadhanaViewController: BaseTableViewController, UIPickerViewDataSource
   }
   
   override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return 2
+    return activeRows.count
   }
   
   //override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -37,18 +55,48 @@ class EditSadhanaViewController: BaseTableViewController, UIPickerViewDataSource
   //}
   
   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let row = indexPath.row
+    let row = activeRows[indexPath.row]
     switch row {
-    case 0:
+    case sadhanaType.Books.rawValue:
       let cell = tableView.dequeueReusableCellWithIdentifier("EditCountSadhanaTableViewCell") as! EditCountSadhanaTableViewCell
       cell.label.text = NSLocalizedString("Books, min", comment: "Books label in edit sadhana")
       cell.countTextField.text = booksReadInMinutes > 0 ? String("\(booksReadInMinutes)") : ""
       cell.stepperControl.value = Double(booksReadInMinutes)
       return cell
-    default:
+    case sadhanaType.Kirtan.rawValue:
       let cell = tableView.dequeueReusableCellWithIdentifier("EditBoolSadhanaTableViewCell") as! EditBoolSadhanaTableViewCell
       cell.label.text = NSLocalizedString("Kirtan", comment: "Kirtan label in edit sadhana")
-      cell.switchControl.setOn(kirtanMade, animated: false)
+      cell.switchControl.setOn(kirtanDone, animated: false)
+      return cell
+    case sadhanaType.Japa.rawValue:
+      let cell = tableView.dequeueReusableCellWithIdentifier("EditBoolSadhanaTableViewCell") as! EditBoolSadhanaTableViewCell
+      cell.label.text = NSLocalizedString("Kirtan", comment: "Kirtan label in edit sadhana")
+      cell.switchControl.setOn(kirtanDone, animated: false)
+      return cell
+    case sadhanaType.Wake.rawValue:
+      let cell = tableView.dequeueReusableCellWithIdentifier("EditBoolSadhanaTableViewCell") as! EditBoolSadhanaTableViewCell
+      cell.label.text = NSLocalizedString("Kirtan", comment: "Kirtan label in edit sadhana")
+      cell.switchControl.setOn(kirtanDone, animated: false)
+      return cell
+    case sadhanaType.Sleep.rawValue:
+      let cell = tableView.dequeueReusableCellWithIdentifier("EditBoolSadhanaTableViewCell") as! EditBoolSadhanaTableViewCell
+      cell.label.text = NSLocalizedString("Kirtan", comment: "Kirtan label in edit sadhana")
+      cell.switchControl.setOn(kirtanDone, animated: false)
+      return cell
+    case sadhanaType.Service.rawValue:
+      let cell = tableView.dequeueReusableCellWithIdentifier("EditBoolSadhanaTableViewCell") as! EditBoolSadhanaTableViewCell
+      cell.label.text = NSLocalizedString("Service", comment: "Service label in edit sadhana")
+      cell.switchControl.setOn(kirtanDone, animated: false)
+      return cell
+    case sadhanaType.Joga.rawValue:
+      let cell = tableView.dequeueReusableCellWithIdentifier("EditBoolSadhanaTableViewCell") as! EditBoolSadhanaTableViewCell
+      cell.label.text = NSLocalizedString("Joga", comment: "Joga label in edit sadhana")
+      cell.switchControl.setOn(kirtanDone, animated: false)
+      return cell
+    default://lectures
+      let cell = tableView.dequeueReusableCellWithIdentifier("EditBoolSadhanaTableViewCell") as! EditBoolSadhanaTableViewCell
+      cell.label.text = NSLocalizedString("Lectures", comment: "Lectures label in edit sadhana")
+      cell.switchControl.setOn(kirtanDone, animated: false)
       return cell
     }
   }
