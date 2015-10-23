@@ -13,8 +13,7 @@ class VSURLSessionDelegate: NSObject, NSURLSessionDelegate {
         completionHandler: (NSURLSessionAuthChallengeDisposition, NSURLCredential?) -> Void) {
      
         // For example, you may want to override this to accept some self-signed certs here.
-        if challenge.protectionSpace.authenticationMethod == NSURLAuthenticationMethodServerTrust &&
-                Constants.selfSignedHosts.contains(challenge.protectionSpace.host) {
+        if challenge.protectionSpace.authenticationMethod == NSURLAuthenticationMethodServerTrust {
             // Allow the self-signed cert.
             let credential = NSURLCredential(forTrust: challenge.protectionSpace.serverTrust!)
             completionHandler(.UseCredential, credential)
@@ -23,14 +22,4 @@ class VSURLSessionDelegate: NSObject, NSURLSessionDelegate {
             completionHandler(.PerformDefaultHandling, nil)
         }
     }
-    
-    // MARK: - Constants
-    
-    struct Constants {
-        // A list of hosts you allow self-signed certificates on.
-        // You'd likely have your dev/test servers here.
-        // Please don't put your production server here!
-        static let selfSignedHosts: Set<String> = ["dev.example.com", "test.example.com"]
-    }
-    
 }
