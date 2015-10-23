@@ -40,6 +40,10 @@
 		750907E51B6A29C1008E25E8 /* ActivityIndicatorsContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750907E41B6A29C1008E25E8 /* ActivityIndicatorsContainer.swift */; };
 		750907EA1B6A91ED008E25E8 /* JapaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750907E91B6A91ED008E25E8 /* JapaView.swift */; };
 		750907ED1B6A9244008E25E8 /* JapaView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 750907EC1B6A9244008E25E8 /* JapaView.xib */; };
+		751E1F011BDA672100A474B7 /* EditBoolSadhanaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751E1EFD1BDA672100A474B7 /* EditBoolSadhanaTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
+		751E1F021BDA672100A474B7 /* EditCountSadhanaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751E1EFE1BDA672100A474B7 /* EditCountSadhanaTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
+		751E1F031BDA672100A474B7 /* EditRoundsSadhanaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751E1EFF1BDA672100A474B7 /* EditRoundsSadhanaTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
+		751E1F041BDA672100A474B7 /* EditTimeSadhanaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751E1F001BDA672100A474B7 /* EditTimeSadhanaTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		7521AFA31B57C6E1004B2CFE /* AppControllerStateGeneralSadhana.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7521AFA21B57C6E1004B2CFE /* AppControllerStateGeneralSadhana.swift */; };
 		7521AFA51B57C729004B2CFE /* AppControllerStatePersonalSadhana.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7521AFA41B57C729004B2CFE /* AppControllerStatePersonalSadhana.swift */; };
 		7521AFA71B57C8E6004B2CFE /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7521AFA61B57C8E5004B2CFE /* BaseViewController.swift */; };
@@ -138,6 +142,10 @@
 		750907EC1B6A9244008E25E8 /* JapaView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = JapaView.xib; path = Views/xib/JapaView.xib; sourceTree = "<group>"; };
 		751716681B68E69E00ED79BE /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
 		751716691B68E69E00ED79BE /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		751E1EFD1BDA672100A474B7 /* EditBoolSadhanaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditBoolSadhanaTableViewCell.swift; path = Views/EditBoolSadhanaTableViewCell.swift; sourceTree = "<group>"; };
+		751E1EFE1BDA672100A474B7 /* EditCountSadhanaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditCountSadhanaTableViewCell.swift; path = Views/EditCountSadhanaTableViewCell.swift; sourceTree = "<group>"; };
+		751E1EFF1BDA672100A474B7 /* EditRoundsSadhanaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditRoundsSadhanaTableViewCell.swift; path = Views/EditRoundsSadhanaTableViewCell.swift; sourceTree = "<group>"; };
+		751E1F001BDA672100A474B7 /* EditTimeSadhanaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditTimeSadhanaTableViewCell.swift; path = Views/EditTimeSadhanaTableViewCell.swift; sourceTree = "<group>"; };
 		7521AFA21B57C6E1004B2CFE /* AppControllerStateGeneralSadhana.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppControllerStateGeneralSadhana.swift; path = AppController/States/AppControllerStateGeneralSadhana.swift; sourceTree = "<group>"; };
 		7521AFA41B57C729004B2CFE /* AppControllerStatePersonalSadhana.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppControllerStatePersonalSadhana.swift; path = AppController/States/AppControllerStatePersonalSadhana.swift; sourceTree = "<group>"; };
 		7521AFA61B57C8E5004B2CFE /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseViewController.swift; path = ViewControllers/BaseViewController.swift; sourceTree = "<group>"; };
@@ -289,6 +297,10 @@
 				4ED8890A1BBAFBDA000BC5A4 /* PersonalSadhanaTableHeader.swift */,
 				7507E19C1B975762000AFEA3 /* GeneralSadhanaTableViewCell.swift */,
 				4E3C3C621BA078DD00C61320 /* PersonalSadhanaTableViewCell.swift */,
+				751E1EFD1BDA672100A474B7 /* EditBoolSadhanaTableViewCell.swift */,
+				751E1EFE1BDA672100A474B7 /* EditCountSadhanaTableViewCell.swift */,
+				751E1EFF1BDA672100A474B7 /* EditRoundsSadhanaTableViewCell.swift */,
+				751E1F001BDA672100A474B7 /* EditTimeSadhanaTableViewCell.swift */,
 				750907EB1B6A9211008E25E8 /* xib */,
 			);
 			name = Views;
@@ -612,6 +624,7 @@
 				75C331FC1B695F6C0075F747 /* GeneralToLogIn.swift in Sources */,
 				75BA40501B694D120075CE6B /* RootNavigationViewController.swift in Sources */,
 				75CFA0E81B501A5C0071EC79 /* SceneController.swift in Sources */,
+				751E1F041BDA672100A474B7 /* EditTimeSadhanaTableViewCell.swift in Sources */,
 				75CE83A31B68CFE20033A8AD /* AppControllerState.swift in Sources */,
 				4EFB42701B987AD200111304 /* VSResponse.swift in Sources */,
 				4EFB426F1B987AD200111304 /* NSURLRequest+Vaishnavaseva.swift in Sources */,
@@ -628,8 +641,10 @@
 				4EFB426E1B987AD200111304 /* NSURLSession+Vaishnavaseva.swift in Sources */,
 				75BA40521B695DFF0075CE6B /* MyToLogOut.swift in Sources */,
 				4E9977AF1BD623DE0002D7A0 /* ImageLoader.swift in Sources */,
+				751E1F011BDA672100A474B7 /* EditBoolSadhanaTableViewCell.swift in Sources */,
 				4E3C3C631BA078DD00C61320 /* PersonalSadhanaTableViewCell.swift in Sources */,
 				75CFA0E41B5015860071EC79 /* StateSerializable.swift in Sources */,
+				751E1F021BDA672100A474B7 /* EditCountSadhanaTableViewCell.swift in Sources */,
 				75BA40421B6910E60075CE6B /* AppControllerStateInfo.swift in Sources */,
 				75BA40541B695E610075CE6B /* AppControllerStateLogOut.swift in Sources */,
 				75C5A5A41B5572AF0069B85D /* EquatableBase.swift in Sources */,
@@ -651,6 +666,7 @@
 				7507E19D1B975762000AFEA3 /* GeneralSadhanaTableHeader.swift in Sources */,
 				75BA40401B69106E0075CE6B /* MyToInfo.swift in Sources */,
 				4E9977B01BD623DE0002D7A0 /* UIImageView+ImageLoader.swift in Sources */,
+				751E1F031BDA672100A474B7 /* EditRoundsSadhanaTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
