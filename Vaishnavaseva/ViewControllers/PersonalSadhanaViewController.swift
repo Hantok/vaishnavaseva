@@ -71,6 +71,22 @@ class PersonalSadhanaViewController: JSONTableViewController {
   {
     let cell = tableView.dequeueReusableCellWithIdentifier("Header") as! PersonalSadhanaTableHeader
     cell.name.text = ((person)["user"])["user_name"].stringValue
+    
+    let avatar_url = ((person)["user"])["avatar_url"].description
+    if avatar_url != Constants.default_avatar_url
+    {
+      if (Manager.sharedInstance.cache[NSURL(string: avatar_url)!] != nil) {
+        cell.photo.image = Manager.sharedInstance.cache[NSURL(string: avatar_url)!]
+      }
+      else {
+        cell.photo.load(((person)["user"])["avatar_url"].description, placeholder: UIImage(named: "default_avatar.gif"), completionHandler: nil)
+      }
+    }
+    else
+    {
+      cell.photo.image = UIImage(named: "default_avatar.gif")
+    }
+    
     return cell
   }
   
@@ -78,6 +94,7 @@ class PersonalSadhanaViewController: JSONTableViewController {
   {
     return 87
   }
+  
   
   func insertRowAtBottom()
   {
@@ -88,7 +105,11 @@ class PersonalSadhanaViewController: JSONTableViewController {
       
       dispatch_after(popTime, dispatch_get_main_queue())
         {
-          --self.month
+          // decrease date if previous request was success
+          if self.isBeforeResponseSucsess
+          {
+            --self.month 
+          }
           self.sendActionForStateViewEvent(userSadhanaEntriesStateViewEvent)
       }
     }

@@ -9,8 +9,9 @@ class LogOutViewController: BaseViewController {
 
   @IBAction func onLogOut(sender: AnyObject)
     {
-    AppController.sharedAppController.isLoggedIn = false
-    performSegueWithIdentifier("BackFromAnyToAny", sender: nil)
+      AppController.sharedAppController.isLoggedIn = false
+      NSUserDefaults.standardUserDefaults().removeObjectForKey("me")
+      performSegueWithIdentifier("BackFromAnyToAny", sender: nil)
     }
   
   override func didReceiveMemoryWarning() {

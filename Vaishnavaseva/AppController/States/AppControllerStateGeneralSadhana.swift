@@ -20,6 +20,12 @@ import UIKit
       "allSadhanaEntries".post(["page_num": "\(pageNum)", "items_per_page":"\(itemPerPage)"]) { response in
             //print(response.responseJSON)
             MBProgressHUD.hideAllHUDsForView(self.viewController.navigationController?.view, animated: true)
+            if (response.data == nil){
+              self.viewController.showErrorAlert("Server error")
+              self.stopAnimations()
+              generalSadhanaViewController.isBeforeResponseSucsess = false
+              return
+            }
             if response.error?.code != nil {
               generalSadhanaViewController.showErrorAlert("No internet connection")
               self.stopAnimations()
@@ -43,6 +49,7 @@ import UIKit
                         generalSadhanaViewController.json = json[key as! String]
                       }
                       success = true
+                      generalSadhanaViewController.isBeforeResponseSucsess = true
                     }
                     else if key as! String == "total_found"
                     {
@@ -51,9 +58,11 @@ import UIKit
                 }
                 if !success {
                     generalSadhanaViewController.showErrorAlert("Server error")
+                    generalSadhanaViewController.isBeforeResponseSucsess = false
                 }
             default:
                 generalSadhanaViewController.showErrorAlert("Server error")
+                generalSadhanaViewController.isBeforeResponseSucsess = false
             }
             self.stopAnimations()
             generalSadhanaViewController.tableView.reloadData()

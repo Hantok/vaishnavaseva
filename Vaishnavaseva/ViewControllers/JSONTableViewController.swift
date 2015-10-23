@@ -2,6 +2,7 @@ import UIKit
 
 class JSONTableViewController: BaseTableViewController
   {
+  var isBeforeResponseSucsess = false
   var sections: [Section] = []
   var json: JSON = JSON.null
     {

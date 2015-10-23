@@ -24,16 +24,31 @@ import UIKit
     var year = components.year
     var month = components.month + personalSadhanaViewController.month //personalSadhanaViewController.month <= 0
     
-    //need to be finishing when tableView will be done
-    if month == 0
+    //year check change
+    while month < 0
     {
-      month = 12
-      --year
+      month = 12 + month
+      if month == 0
+      {
+        month = 12
+        --year
+        break
+      }
+      else if month < 0
+      {
+        --year
+      }
     }
     
     "userSadhanaEntries/\(userId)".post(["year": "\(year)", "month": "\(month)"]) { response in
       //print(response.responseJSON)
       MBProgressHUD.hideAllHUDsForView(self.viewController.navigationController?.view, animated: true)
+      if (response.data == nil){
+        self.viewController.showErrorAlert("Server error")
+        personalSadhanaViewController.tableView.infiniteScrollingView.stopAnimating()
+        personalSadhanaViewController.isBeforeResponseSucsess = false
+        return
+      }
       var json = JSON(response.responseJSON!)
       
       switch json.object
@@ -72,14 +87,17 @@ import UIKit
                 personalSadhanaViewController.tableView.reloadData()
               }
               success = true
+              personalSadhanaViewController.isBeforeResponseSucsess = true
             }
           }
           if !success
           {
             self.viewController.showErrorAlert("Server error")
+            personalSadhanaViewController.isBeforeResponseSucsess = false
           }
         default:
           self.viewController.showErrorAlert("Server error")
+          personalSadhanaViewController.isBeforeResponseSucsess = false
         }
       personalSadhanaViewController.tableView.infiniteScrollingView.stopAnimating()
     }

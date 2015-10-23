@@ -27,6 +27,10 @@ import UIKit
             //print(JSON(response.responseJSON!))
             // logInViewController.spiningActivity.hide(true)
             MBProgressHUD.hideAllHUDsForView(self.viewController.navigationController?.view, animated: true)
+            if (response.data == nil){
+              self.viewController.showErrorAlert("Server error")
+              return
+            }
             if response.HTTPResponse.statusCode != 200
             {
                 let alert = UIAlertController(title: "Authorization error!", message: "", preferredStyle: UIAlertControllerStyle.Alert)
@@ -38,8 +42,11 @@ import UIKit
             else
             {
                 do {
-                    // update user credentials in keychain
-                    try Locksmith.updateData([login: password], forUserAccount: "myUserAccount")
+                  // update user credentials in keychain
+                  try Locksmith.updateData([login: password], forUserAccount: "myUserAccount")
+                  logInViewController.me = JSON(response.responseJSON!)
+                  //save me
+                  NSUserDefaults.standardUserDefaults().setValue(logInViewController.me.dictionaryObject, forKey: "me")
                 } catch {
                     print(error)
                 }

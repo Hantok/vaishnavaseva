@@ -36,7 +36,7 @@ class GeneralSadhanaViewController: JSONTableViewController {
 
   @IBAction func onMySadhana(sender: AnyObject)
     {
-    if AppController.sharedAppController.isLoggedIn
+    if AppController.sharedAppController.isLoggedIn || NSUserDefaults.standardUserDefaults().objectForKey("me") != nil
       {
         performSegueWithIdentifier("GeneralToMy", sender: nil)
       }
@@ -93,6 +93,16 @@ class GeneralSadhanaViewController: JSONTableViewController {
         cell.javaView.rounds1 = Int((self.json[row])["jcount_1000"].description)!
         cell.javaView.rounds2 = Int((self.json[row])["jcount_1800"].description)!
         cell.javaView.rounds3 = Int((self.json[row])["jcount_after"].description)!
+
+        let avatar_url = ((self.json[row])["user"])["avatar_url"].description
+        if avatar_url != Constants.default_avatar_url
+        {
+          cell.photo.load(((self.json[row])["user"])["avatar_url"].description, placeholder: UIImage(named: "default_avatar.gif"), completionHandler: nil)
+        }
+        else
+        {
+          cell.photo.image = UIImage(named: "default_avatar.gif")
+        }
         
         return cell
     }
@@ -149,7 +159,10 @@ class GeneralSadhanaViewController: JSONTableViewController {
     dispatch_after(popTime, dispatch_get_main_queue()) {
       if (self.pageNum * self.itemsPerPage < self.totalFound - self.itemsPerPage)
       {
-        ++self.pageNum
+        if self.isBeforeResponseSucsess
+        {
+          ++self.pageNum
+        }
       }
       else
       {
