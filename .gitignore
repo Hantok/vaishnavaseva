@@ -33,3 +33,5 @@ DerivedData
 Carthage/Build
 
 .DS_Store
+*.playground
+*.xcodeproj/project.xcworkspace/
