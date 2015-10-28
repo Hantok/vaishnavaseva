@@ -16,7 +16,7 @@ import UIKit
 
   func userSadhanaEntries() {
     let personalSadhanaViewController = self.viewController as! PersonalSadhanaViewController
-    let userId = (personalSadhanaViewController.person["user"])["userid"]
+    let userId = personalSadhanaViewController.sadhanaUser.userId!
     
     let date = NSDate()
     let calendar = NSCalendar.currentCalendar()
@@ -43,62 +43,48 @@ import UIKit
     "userSadhanaEntries/\(userId)".post(["year": "\(year)", "month": "\(month)"]) { response in
       //print(response.responseJSON)
       MBProgressHUD.hideAllHUDsForView(self.viewController.navigationController?.view, animated: true)
-      if (response.data == nil){
+      if (response.data == nil) {
         self.viewController.showErrorAlert("Server error")
         personalSadhanaViewController.tableView.infiniteScrollingView.stopAnimating()
         personalSadhanaViewController.isBeforeResponseSucsess = false
         return
       }
-      var json = JSON(response.responseJSON!)
+      if response.error?.code != nil {
+        personalSadhanaViewController.showErrorAlert("No internet connection")
+        personalSadhanaViewController.tableView.infiniteScrollingView.stopAnimating()
+        personalSadhanaViewController.isBeforeResponseSucsess = false
+        return
+      }
       
-      switch json.object
+      let dict = response.responseJSON as! NSDictionary
+      let entriesDict = dict.objectForKey("entries") as! NSArray
+      if entriesDict.count == 0 {
+        personalSadhanaViewController.totalFound = 0
+        personalSadhanaViewController.isBeforeResponseSucsess = true
+        personalSadhanaViewController.tableView.infiniteScrollingView.stopAnimating()
+        personalSadhanaViewController.tableView.infiniteScrollingView.enabled = false
+        return
+      }
+      let entries = Deserialiser().getArrayOfSadhanaEntry(entriesDict)
+      
+      //init or append array
+      if (personalSadhanaViewController.entries.count != 0) {
+        var paths: Array<NSIndexPath> = []
+        let countOfNewItems = entries.count
+        let countOfCurrentItems = personalSadhanaViewController.entries.count
+        personalSadhanaViewController.tableView.beginUpdates()
+        personalSadhanaViewController.entries.appendContentsOf(entries.reverse())
+        for var i = 0; i < countOfNewItems; i++
         {
-        case _ as NSDictionary:
-          let keys = (json.object as! NSDictionary).allKeys
-          var success = false
-          for key in keys
-          {
-            if key as! String == "entries"
-            {
-              if json[key as! String].arrayObject!.count == 0
-              {
-                personalSadhanaViewController.totalFound = 0
-                personalSadhanaViewController.tableView.infiniteScrollingView.enabled = false
-                success = true
-                break
-              }
-              if (personalSadhanaViewController.json != JSON.null)
-              {
-                var paths: Array<NSIndexPath> = []
-                let countOfNewItems = json[key as! String].arrayObject!.count
-                let countOfCurrentItems = personalSadhanaViewController.json.count
-                personalSadhanaViewController.tableView.beginUpdates()
-                personalSadhanaViewController.json.arrayObject?.appendContentsOf(json[key as! String].arrayObject!.reverse())
-                for var i = 0; i < countOfNewItems; i++
-                {
-                  paths.append(NSIndexPath.init(forRow: countOfCurrentItems+i, inSection: 0))
-                }
-                personalSadhanaViewController.tableView.insertRowsAtIndexPaths(paths, withRowAnimation: UITableViewRowAnimation.Fade)
-                personalSadhanaViewController.tableView.endUpdates()
-              }
-              else 
-              {
-                personalSadhanaViewController.json = JSON.init(json[key as! String].arrayObject!.reverse())
-                personalSadhanaViewController.tableView.reloadData()
-              }
-              success = true
-              personalSadhanaViewController.isBeforeResponseSucsess = true
-            }
-          }
-          if !success
-          {
-            self.viewController.showErrorAlert("Server error")
-            personalSadhanaViewController.isBeforeResponseSucsess = false
-          }
-        default:
-          self.viewController.showErrorAlert("Server error")
-          personalSadhanaViewController.isBeforeResponseSucsess = false
+          paths.append(NSIndexPath.init(forRow: countOfCurrentItems+i, inSection: 0))
         }
+        personalSadhanaViewController.tableView.insertRowsAtIndexPaths(paths, withRowAnimation: UITableViewRowAnimation.Fade)
+        personalSadhanaViewController.tableView.endUpdates()
+      } else {
+        personalSadhanaViewController.entries = entries.reverse()
+        personalSadhanaViewController.tableView.reloadData()
+      }
+      personalSadhanaViewController.isBeforeResponseSucsess = true
       personalSadhanaViewController.tableView.infiniteScrollingView.stopAnimating()
     }
   }

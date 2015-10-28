@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E24D05D1BDFBCE000E4C17F /* SadhanaUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E24D05C1BDFBCE000E4C17F /* SadhanaUser.swift */; settings = {ASSET_TAGS = (); }; };
+		4E24D0601BDFBEAE00E4C17F /* SadhanaEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E24D05F1BDFBEAE00E4C17F /* SadhanaEntry.swift */; settings = {ASSET_TAGS = (); }; };
+		4E24D0621BDFC00A00E4C17F /* Deserializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E24D0611BDFC00A00E4C17F /* Deserializer.swift */; settings = {ASSET_TAGS = (); }; };
 		4E3ADAD11B9B0CDA00783267 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E3ADAD01B9B0CDA00783267 /* MBProgressHUD.m */; settings = {ASSET_TAGS = (); }; };
 		4E3C3C631BA078DD00C61320 /* PersonalSadhanaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3C3C621BA078DD00C61320 /* PersonalSadhanaTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
 		4E3DD6701BB19EF40057A087 /* icon-40x40.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E3DD6691BB19EF40057A087 /* icon-40x40.png */; settings = {ASSET_TAGS = (); }; };
@@ -100,6 +103,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4E24D05C1BDFBCE000E4C17F /* SadhanaUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SadhanaUser.swift; path = Model/SadhanaUser.swift; sourceTree = "<group>"; };
+		4E24D05F1BDFBEAE00E4C17F /* SadhanaEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SadhanaEntry.swift; path = Model/SadhanaEntry.swift; sourceTree = "<group>"; };
+		4E24D0611BDFC00A00E4C17F /* Deserializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Deserializer.swift; path = Model/Deserializer.swift; sourceTree = "<group>"; };
 		4E3ADACE1B9B0CD800783267 /* Vaishnavaseva-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Vaishnavaseva-Bridging-Header.h"; sourceTree = "<group>"; };
 		4E3ADACF1B9B0CDA00783267 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		4E3ADAD01B9B0CDA00783267 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
@@ -211,6 +217,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4E24D05E1BDFBD2300E4C17F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4E24D05C1BDFBCE000E4C17F /* SadhanaUser.swift */,
+				4E24D05F1BDFBEAE00E4C17F /* SadhanaEntry.swift */,
+				4E24D0611BDFC00A00E4C17F /* Deserializer.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		4E3ADAD21B9B0D2600783267 /* ObjC */ = {
 			isa = PBXGroup;
 			children = (
@@ -349,6 +365,7 @@
 		757D12471B5013300001402B /* Vaishnavaseva */ = {
 			isa = PBXGroup;
 			children = (
+				4E24D05E1BDFBD2300E4C17F /* Model */,
 				4E3ADAD21B9B0D2600783267 /* ObjC */,
 				4EFB42611B9865BD00111304 /* Keychain */,
 				4EFB425C1B984A9A00111304 /* Networking */,
@@ -605,6 +622,7 @@
 				4E9977AE1BD623DE0002D7A0 /* Diskcached.swift in Sources */,
 				4E3ADAD11B9B0CDA00783267 /* MBProgressHUD.m in Sources */,
 				4EFB42711B987AD200111304 /* String+Vaishnavaseva.swift in Sources */,
+				4E24D05D1BDFBCE000E4C17F /* SadhanaUser.swift in Sources */,
 				75BA40361B690C820075CE6B /* AppControllerStateEditSadhana.swift in Sources */,
 				755B5DE41BA2D81500ADE410 /* Alerts.swift in Sources */,
 				4EFB426C1B987AD200111304 /* NSURLSessionConfiguration+Vaishnavaseva.swift in Sources */,
@@ -613,6 +631,7 @@
 				75BA40501B694D120075CE6B /* RootNavigationViewController.swift in Sources */,
 				75CFA0E81B501A5C0071EC79 /* SceneController.swift in Sources */,
 				75CE83A31B68CFE20033A8AD /* AppControllerState.swift in Sources */,
+				4E24D0621BDFC00A00E4C17F /* Deserializer.swift in Sources */,
 				4EFB42701B987AD200111304 /* VSResponse.swift in Sources */,
 				4EFB426F1B987AD200111304 /* NSURLRequest+Vaishnavaseva.swift in Sources */,
 				4EFB426D1B987AD200111304 /* VSURLSessionDelegate.swift in Sources */,
@@ -621,6 +640,7 @@
 				757D12511B5013300001402B /* Vaishnavaseva.xcdatamodeld in Sources */,
 				4EFB425F1B9865B700111304 /* Locksmith.swift in Sources */,
 				757D124B1B5013300001402B /* GeneralSadhanaViewController.swift in Sources */,
+				4E24D0601BDFBEAE00E4C17F /* SadhanaEntry.swift in Sources */,
 				4EE82CC01B87539300D7E658 /* SwiftyJSON.swift in Sources */,
 				75CE83AA1B68D0260033A8AD /* MySadhanaViewController.swift in Sources */,
 				755BF4E51B68D74F004B1F61 /* InfoViewController.swift in Sources */,
