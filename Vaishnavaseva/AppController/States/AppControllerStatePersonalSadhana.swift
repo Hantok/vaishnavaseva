@@ -65,10 +65,11 @@ import UIKit
         personalSadhanaViewController.tableView.infiniteScrollingView.enabled = false
         return
       }
+      
       let entries = Deserialiser().getArrayOfSadhanaEntry(entriesDict)
       
       //init or append array
-      if (personalSadhanaViewController.entries.count != 0) {
+      if personalSadhanaViewController.entries.count != 0 {
         var paths: Array<NSIndexPath> = []
         let countOfNewItems = entries.count
         let countOfCurrentItems = personalSadhanaViewController.entries.count

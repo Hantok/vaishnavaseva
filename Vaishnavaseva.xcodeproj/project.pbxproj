@@ -31,8 +31,6 @@
 		4E436D751BE110540046C145 /* String+Vaishnavaseva.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E436D6F1BE110540046C145 /* String+Vaishnavaseva.swift */; settings = {ASSET_TAGS = (); }; };
 		4E436D761BE110540046C145 /* VSResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E436D701BE110540046C145 /* VSResponse.swift */; settings = {ASSET_TAGS = (); }; };
 		4E436D771BE110540046C145 /* VSURLSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E436D711BE110540046C145 /* VSURLSessionDelegate.swift */; settings = {ASSET_TAGS = (); }; };
-		4E436D7A1BE110770046C145 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E436D781BE110770046C145 /* SwiftyJSON.swift */; settings = {ASSET_TAGS = (); }; };
-		4E436D7B1BE110770046C145 /* SwiftyJSONTests.json in Resources */ = {isa = PBXBuildFile; fileRef = 4E436D791BE110770046C145 /* SwiftyJSONTests.json */; settings = {ASSET_TAGS = (); }; };
 		4E9977AE1BD623DE0002D7A0 /* Diskcached.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9977AB1BD623DE0002D7A0 /* Diskcached.swift */; settings = {ASSET_TAGS = (); }; };
 		4E9977AF1BD623DE0002D7A0 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9977AC1BD623DE0002D7A0 /* ImageLoader.swift */; settings = {ASSET_TAGS = (); }; };
 		4E9977B01BD623DE0002D7A0 /* UIImageView+ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9977AD1BD623DE0002D7A0 /* UIImageView+ImageLoader.swift */; settings = {ASSET_TAGS = (); }; };
@@ -134,8 +132,6 @@
 		4E436D6F1BE110540046C145 /* String+Vaishnavaseva.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+Vaishnavaseva.swift"; path = "Networking/String+Vaishnavaseva.swift"; sourceTree = "<group>"; };
 		4E436D701BE110540046C145 /* VSResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VSResponse.swift; path = Networking/VSResponse.swift; sourceTree = "<group>"; };
 		4E436D711BE110540046C145 /* VSURLSessionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VSURLSessionDelegate.swift; path = Networking/VSURLSessionDelegate.swift; sourceTree = "<group>"; };
-		4E436D781BE110770046C145 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = JSON/SwiftyJSON.swift; sourceTree = "<group>"; };
-		4E436D791BE110770046C145 /* SwiftyJSONTests.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = SwiftyJSONTests.json; path = JSON/SwiftyJSONTests.json; sourceTree = "<group>"; };
 		4E9977AB1BD623DE0002D7A0 /* Diskcached.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Diskcached.swift; path = ImageLoader/Diskcached.swift; sourceTree = "<group>"; };
 		4E9977AC1BD623DE0002D7A0 /* ImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageLoader.swift; path = ImageLoader/ImageLoader.swift; sourceTree = "<group>"; };
 		4E9977AD1BD623DE0002D7A0 /* UIImageView+ImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImageView+ImageLoader.swift"; path = "ImageLoader/UIImageView+ImageLoader.swift"; sourceTree = "<group>"; };
@@ -257,15 +253,6 @@
 			name = ImageLoader;
 			sourceTree = "<group>";
 		};
-		4EE82CBD1B87536600D7E658 /* JSON */ = {
-			isa = PBXGroup;
-			children = (
-				4E436D781BE110770046C145 /* SwiftyJSON.swift */,
-				4E436D791BE110770046C145 /* SwiftyJSONTests.json */,
-			);
-			name = JSON;
-			sourceTree = "<group>";
-		};
 		4EFB425C1B984A9A00111304 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
@@ -382,7 +369,6 @@
 				4E3ADAD21B9B0D2600783267 /* ObjC */,
 				4EFB42611B9865BD00111304 /* Keychain */,
 				4EFB425C1B984A9A00111304 /* Networking */,
-				4EE82CBD1B87536600D7E658 /* JSON */,
 				75CFA0EB1B501F710071EC79 /* AppController */,
 				75CFA0E01B50145D0071EC79 /* SceneManager */,
 				75CFA0EA1B501F560071EC79 /* ViewControllers */,
@@ -587,7 +573,6 @@
 			files = (
 				750907ED1B6A9244008E25E8 /* JapaView.xib in Resources */,
 				4E436D5A1BE10FA00046C145 /* icon-58x58.png in Resources */,
-				4E436D7B1BE110770046C145 /* SwiftyJSONTests.json in Resources */,
 				757D12561B5013300001402B /* LaunchScreen.storyboard in Resources */,
 				4E436D581BE10FA00046C145 /* icon-29x29.png in Resources */,
 				4E436D5C1BE10FA00046C145 /* icon-80x80.png in Resources */,
@@ -652,7 +637,6 @@
 				7507E19E1B975762000AFEA3 /* GeneralSadhanaTableViewCell.swift in Sources */,
 				757D12511B5013300001402B /* Vaishnavaseva.xcdatamodeld in Sources */,
 				757D124B1B5013300001402B /* GeneralSadhanaViewController.swift in Sources */,
-				4E436D7A1BE110770046C145 /* SwiftyJSON.swift in Sources */,
 				4E24D0601BDFBEAE00E4C17F /* SadhanaEntry.swift in Sources */,
 				75CE83AA1B68D0260033A8AD /* MySadhanaViewController.swift in Sources */,
 				4E436D761BE110540046C145 /* VSResponse.swift in Sources */,

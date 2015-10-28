@@ -7,12 +7,10 @@ class LogInViewController: BaseViewController {
   @IBOutlet weak var loginTextField: UITextField!
   @IBOutlet weak var passwordTextField: UITextField!
   
-  var me: JSON = JSON.null
+  var me = SadhanaUser()
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    loginTextField.text = "roman"
-    passwordTextField.text = "Ubuntu108"
     // Do any additional setup after loading the view, typically from a nib.
   }
   

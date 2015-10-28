@@ -23,9 +23,6 @@ import UIKit
         let authString = "Basic \(base64EncodedCredential)"
         
         "me".get(headers: ["Authorization" : authString]) { response in
-            //print(response.responseJSON)
-            //print(JSON(response.responseJSON!))
-            // logInViewController.spiningActivity.hide(true)
             MBProgressHUD.hideAllHUDsForView(self.viewController.navigationController?.view, animated: true)
             if (response.data == nil){
               self.viewController.showErrorAlert("Server error")
@@ -44,9 +41,11 @@ import UIKit
                 do {
                   // update user credentials in keychain
                   try Locksmith.updateData([login: password], forUserAccount: "myUserAccount")
-                  logInViewController.me = JSON(response.responseJSON!)
+                  let dict = response.responseJSON as! NSDictionary
+                  let sadhanaUser = Deserialiser().getSadhanaUser(dict)
+                  logInViewController.me = sadhanaUser
                   //save me
-                  NSUserDefaults.standardUserDefaults().setValue(logInViewController.me.dictionaryObject, forKey: "me")
+                  NSUserDefaults.standardUserDefaults().setValue(dict, forKey: "me")
                 } catch {
                     print(error)
                 }

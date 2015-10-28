@@ -15,7 +15,7 @@ import UIKit
   
   func userSadhanaEntries() {
     let mySadhanaViewController = self.viewController as! MySadhanaViewController
-    let userId = mySadhanaViewController.me["userid"].stringValue
+    let userId = mySadhanaViewController.me.userId!
     
     let date = NSDate()
     let calendar = NSCalendar.currentCalendar()
@@ -41,7 +41,7 @@ import UIKit
     }
     
     "userSadhanaEntries/\(userId)".post(["year": "\(year)", "month": "\(month)"]) { response in
-      //print(response.responseJSON)
+
       MBProgressHUD.hideAllHUDsForView(self.viewController.navigationController?.view, animated: true)
       if (response.data == nil){
         self.viewController.showErrorAlert("Server error")
@@ -49,72 +49,58 @@ import UIKit
         mySadhanaViewController.isBeforeResponseSucsess = false
         return
       }
-      var json = JSON(response.responseJSON!)
-      
-      switch json.object
-      {
-      case _ as NSDictionary:
-        let keys = (json.object as! NSDictionary).allKeys
-        var success = false
-        for key in keys
-        {
-          if key as! String == "entries"
-          {
-            if json[key as! String].arrayObject!.count == 0
-            {
-              mySadhanaViewController.json = JSON.init(self.addEmptyValues(JSON.init([]), today: today).arrayObject!.reverse())
-              mySadhanaViewController.totalFound = 0
-              mySadhanaViewController.tableView.infiniteScrollingView.enabled = false
-              mySadhanaViewController.tableView.reloadData()
-              success = true
-              break
-            }
-            if (mySadhanaViewController.json != JSON.null)
-            {
-              var paths: Array<NSIndexPath> = []
-              let countOfNewItems = json[key as! String].arrayObject!.count
-              let countOfCurrentItems = mySadhanaViewController.json.count
-              mySadhanaViewController.tableView.beginUpdates()
-              mySadhanaViewController.json.arrayObject?.appendContentsOf(json[key as! String].arrayObject!.reverse())
-              for var i = 0; i < countOfNewItems; i++
-              {
-                paths.append(NSIndexPath.init(forRow: countOfCurrentItems+i, inSection: 0))
-              }
-              mySadhanaViewController.tableView.insertRowsAtIndexPaths(paths, withRowAnimation: UITableViewRowAnimation.Fade)
-              mySadhanaViewController.tableView.endUpdates()
-            }
-            else
-            {
-              mySadhanaViewController.json = JSON.init(self.addEmptyValues(json[key as! String], today: today).arrayObject!.reverse())
-              mySadhanaViewController.tableView.reloadData()
-            }
-            success = true
-            mySadhanaViewController.isBeforeResponseSucsess = true
-          }
-        }
-        if !success
-        {
-          mySadhanaViewController.isBeforeResponseSucsess = false
-          self.viewController.showErrorAlert("Server error")
-        }
-      default:
-        self.viewController.showErrorAlert("Server error")
+      if response.error?.code != nil {
+        mySadhanaViewController.showErrorAlert("No internet connection")
+        mySadhanaViewController.tableView.infiniteScrollingView.stopAnimating()
         mySadhanaViewController.isBeforeResponseSucsess = false
+        return
       }
+      let dict = response.responseJSON as! NSDictionary
+      let entriesDict = dict.objectForKey("entries") as! NSArray
+      if entriesDict.count == 0 {
+        if mySadhanaViewController.entries.count == 0 {
+          mySadhanaViewController.entries = self.createEmptySadhanaEntries(today, entries: [])
+        }
+        mySadhanaViewController.isBeforeResponseSucsess = true
+        mySadhanaViewController.tableView.infiniteScrollingView.stopAnimating()
+        mySadhanaViewController.tableView.infiniteScrollingView.enabled = false
+        return
+      }
+      
+      let entries = Deserialiser().getArrayOfSadhanaEntry(entriesDict)
+      
+      //init or append array
+      if mySadhanaViewController.entries.count != 0 {
+        var paths: Array<NSIndexPath> = []
+        let countOfNewItems = entries.count
+        let countOfCurrentItems = mySadhanaViewController.entries.count
+        mySadhanaViewController.tableView.beginUpdates()
+        mySadhanaViewController.entries.appendContentsOf(entries.reverse())
+        for var i = 0; i < countOfNewItems; i++
+        {
+          paths.append(NSIndexPath.init(forRow: countOfCurrentItems+i, inSection: 0))
+        }
+        mySadhanaViewController.tableView.insertRowsAtIndexPaths(paths, withRowAnimation: UITableViewRowAnimation.Fade)
+        mySadhanaViewController.tableView.endUpdates()
+      } else {
+        mySadhanaViewController.entries = self.createEmptySadhanaEntries(today, entries: entries).reverse()
+        mySadhanaViewController.tableView.reloadData()
+      }
+      mySadhanaViewController.isBeforeResponseSucsess = true
       mySadhanaViewController.tableView.infiniteScrollingView.stopAnimating()
     }
   }
   
   /* 
-    addEmptyValues method adds new elements to the array dataSource if needed
+    method adds new elements to the array dataSource if needed
   */
-  private func addEmptyValues(json: JSON, today: Int) -> JSON
-  {
+  private func createEmptySadhanaEntries(today: Int, entries: Array<SadhanaEntry>) -> Array<SadhanaEntry> {
+    
     let dateFormat: NSDateFormatter = NSDateFormatter()
     dateFormat.dateFormat = "yyyy-MM-dd"
     var startDate = NSDate().dateByAddingTimeInterval(NSTimeInterval.init(NSTimeZone.systemTimeZone().secondsFromGMT))
     var addNewCellToTableView = false
-    if json.count == 0
+    if entries.count == 0
     {
       let calendar = NSCalendar.currentCalendar()
       let components = calendar.components([.Year, .Month, .Day], fromDate: NSDate())
@@ -125,47 +111,42 @@ import UIKit
     }
     else
     {
-      let lastObject = json.count - 1
-      let tempDate = json.arrayObject?[lastObject]["date"] as! String
-      
       //if today data already in DB, do change json
-      addNewCellToTableView = startDate != dateFormat.dateFromString(tempDate)! ? false : true
+      addNewCellToTableView = startDate != dateFormat.dateFromString((entries.last?.date)!)! ? false : true
     }
     
     let calendar = NSCalendar.currentCalendar()
     let components = calendar.components([.Year, .Month, .Day], fromDate: startDate)
     let startDay = components.day
     
-    var jsonTemp = json
+    var result = entries
     for var day = (startDay <= today && addNewCellToTableView) ? startDay : startDay + 1; day <= today; day++
     {
-      var value = JSON.init(Dictionary<String, String>())
-      if (jsonTemp.count != 0)
-      {
+      var sadhanaEntry = SadhanaEntry()
+      if result.count != 0 {
         startDate = startDate.dateByAddingTimeInterval(24*60*60)
-        value.dictionaryObject?.updateValue(dateFormat.stringFromDate(startDate), forKey: "date")
+        sadhanaEntry.date = dateFormat.stringFromDate(startDate) as String
+      } else {
+        sadhanaEntry.date = dateFormat.stringFromDate(startDate) as String
       }
-      else
-      {
-        value.dictionaryObject?.updateValue(dateFormat.stringFromDate(startDate), forKey: "date")
-      }
-      value.dictionaryObject?.updateValue("\(day)", forKey: "day")
-      value.dictionaryObject?.updateValue("-1", forKey: "id")
-      value.dictionaryObject?.updateValue("0", forKey: "jcount_1000")
-      value.dictionaryObject?.updateValue("0", forKey: "jcount_1800")
-      value.dictionaryObject?.updateValue("0", forKey: "jcount_730")
-      value.dictionaryObject?.updateValue("0", forKey: "jcount_after")
-      value.dictionaryObject?.updateValue("0", forKey: "kirtan")
-      value.dictionaryObject?.updateValue("0", forKey: "opt_exercise")
-      value.dictionaryObject?.updateValue("0", forKey: "opt_lections")
-      value.dictionaryObject?.updateValue("0", forKey: "opt_service")
-      value.dictionaryObject?.updateValue("00:00", forKey: "opt_sleep")
-      value.dictionaryObject?.updateValue("00:00", forKey: "opt_wake_up")
-      value.dictionaryObject?.updateValue("0", forKey: "reading")
-      value.dictionaryObject?.updateValue((NSUserDefaults.standardUserDefaults().valueForKey("me")?["userid"])!, forKey: "user_id")
-      jsonTemp.arrayObject?.append(value.dictionaryObject!)
+      sadhanaEntry.day = day
+      sadhanaEntry.id = -1
+      sadhanaEntry.userId = Int((NSUserDefaults.standardUserDefaults().valueForKey("me")?["userid"]) as! String)
+      sadhanaEntry.jCount730 = 0
+      sadhanaEntry.jCount1000 = 0
+      sadhanaEntry.jCount1800 = 0
+      sadhanaEntry.jCountAfter = 0
+      sadhanaEntry.kirtan = false
+      sadhanaEntry.reading = 0
+      sadhanaEntry.exerciseEnable = false
+      sadhanaEntry.lectionsEnable = false
+      sadhanaEntry.serviceEnable = false
+      sadhanaEntry.sleepTime = "00:00"
+      sadhanaEntry.wakeUpTime = "00:00"
+      
+      result.append(sadhanaEntry)
     }
-    
-    return jsonTemp
+
+    return result
   }
 }
