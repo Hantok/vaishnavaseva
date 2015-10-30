@@ -329,7 +329,7 @@
             </objects>
             <point key="canvasLocation" x="3350" y="-298"/>
         </scene>
-        <!--Edit Sadhana View Controller-->
+        <!--Date-->
         <scene sceneID="oHu-ae-IuT">
             <objects>
                 <viewController id="AV6-D2-REd" customClass="EditSadhanaViewController" customModule="Vaishnavaseva" customModuleProvider="target" sceneMemberID="viewController">
@@ -344,13 +344,13 @@
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="yNA-76-yiA">
                                 <rect key="frame" x="20" y="80" width="560" height="31"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Books, min" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lB3-4Q-5RE">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Books, min" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lB3-4Q-5RE">
                                         <rect key="frame" x="0.0" y="0.0" width="84" height="31"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="dRg-t9-sYz">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="dRg-t9-sYz">
                                         <rect key="frame" x="94" y="0.0" width="362" height="31"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
@@ -561,6 +561,13 @@
                             <constraint firstAttribute="trailingMargin" secondItem="rRd-Ha-hSf" secondAttribute="trailing" id="xUo-ld-gGy"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Date" id="8OC-V4-eN1">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="Gx7-SC-KDl">
+                            <connections>
+                                <action selector="onDone:" destination="AV6-D2-REd" id="1SL-p6-m6y"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="booksMinutesStepperControl" destination="k6R-IH-ec3" id="eyK-C9-bXN"/>
                         <outlet property="booksMinutesTextField" destination="dRg-t9-sYz" id="POi-wR-QGz"/>
