@@ -7,49 +7,51 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4E24D05D1BDFBCE000E4C17F /* SadhanaUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E24D05C1BDFBCE000E4C17F /* SadhanaUser.swift */; settings = {ASSET_TAGS = (); }; };
-		4E24D0601BDFBEAE00E4C17F /* SadhanaEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E24D05F1BDFBEAE00E4C17F /* SadhanaEntry.swift */; settings = {ASSET_TAGS = (); }; };
-		4E24D0621BDFC00A00E4C17F /* Deserializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E24D0611BDFC00A00E4C17F /* Deserializer.swift */; settings = {ASSET_TAGS = (); }; };
-		4E3C3C631BA078DD00C61320 /* PersonalSadhanaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3C3C621BA078DD00C61320 /* PersonalSadhanaTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
-		4E436D4E1BE10F6D0046C145 /* ActivityIndicatorsContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E436D4D1BE10F6D0046C145 /* ActivityIndicatorsContainer.swift */; settings = {ASSET_TAGS = (); }; };
-		4E436D581BE10FA00046C145 /* icon-29x29.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E436D4F1BE10FA00046C145 /* icon-29x29.png */; settings = {ASSET_TAGS = (); }; };
-		4E436D591BE10FA00046C145 /* icon-40x40.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E436D501BE10FA00046C145 /* icon-40x40.png */; settings = {ASSET_TAGS = (); }; };
-		4E436D5A1BE10FA00046C145 /* icon-58x58.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E436D511BE10FA00046C145 /* icon-58x58.png */; settings = {ASSET_TAGS = (); }; };
-		4E436D5B1BE10FA00046C145 /* icon-76x76.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E436D521BE10FA00046C145 /* icon-76x76.png */; settings = {ASSET_TAGS = (); }; };
-		4E436D5C1BE10FA00046C145 /* icon-80x80.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E436D531BE10FA00046C145 /* icon-80x80.png */; settings = {ASSET_TAGS = (); }; };
-		4E436D5D1BE10FA00046C145 /* icon-87x87.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E436D541BE10FA00046C145 /* icon-87x87.png */; settings = {ASSET_TAGS = (); }; };
-		4E436D5E1BE10FA00046C145 /* icon-120x120.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E436D551BE10FA00046C145 /* icon-120x120.png */; settings = {ASSET_TAGS = (); }; };
-		4E436D5F1BE10FA00046C145 /* icon-152x152.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E436D561BE10FA00046C145 /* icon-152x152.png */; settings = {ASSET_TAGS = (); }; };
-		4E436D601BE10FA00046C145 /* icon-180x180.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E436D571BE10FA00046C145 /* icon-180x180.png */; settings = {ASSET_TAGS = (); }; };
-		4E436D631BE10FC40046C145 /* Locksmith.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E436D611BE10FC40046C145 /* Locksmith.swift */; settings = {ASSET_TAGS = (); }; };
-		4E436D641BE10FC40046C145 /* LocksmithRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E436D621BE10FC40046C145 /* LocksmithRequest.swift */; settings = {ASSET_TAGS = (); }; };
-		4E436D6A1BE1100B0046C145 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E436D661BE1100B0046C145 /* MBProgressHUD.m */; settings = {ASSET_TAGS = (); }; };
-		4E436D6B1BE1100B0046C145 /* UIScrollView+SVInfiniteScrolling.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E436D681BE1100B0046C145 /* UIScrollView+SVInfiniteScrolling.m */; settings = {ASSET_TAGS = (); }; };
-		4E436D721BE110540046C145 /* NSURLRequest+Vaishnavaseva.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E436D6C1BE110540046C145 /* NSURLRequest+Vaishnavaseva.swift */; settings = {ASSET_TAGS = (); }; };
-		4E436D731BE110540046C145 /* NSURLSession+Vaishnavaseva.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E436D6D1BE110540046C145 /* NSURLSession+Vaishnavaseva.swift */; settings = {ASSET_TAGS = (); }; };
-		4E436D741BE110540046C145 /* NSURLSessionConfiguration+Vaishnavaseva.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E436D6E1BE110540046C145 /* NSURLSessionConfiguration+Vaishnavaseva.swift */; settings = {ASSET_TAGS = (); }; };
-		4E436D751BE110540046C145 /* String+Vaishnavaseva.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E436D6F1BE110540046C145 /* String+Vaishnavaseva.swift */; settings = {ASSET_TAGS = (); }; };
-		4E436D761BE110540046C145 /* VSResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E436D701BE110540046C145 /* VSResponse.swift */; settings = {ASSET_TAGS = (); }; };
-		4E436D771BE110540046C145 /* VSURLSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E436D711BE110540046C145 /* VSURLSessionDelegate.swift */; settings = {ASSET_TAGS = (); }; };
-		4E9977AE1BD623DE0002D7A0 /* Diskcached.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9977AB1BD623DE0002D7A0 /* Diskcached.swift */; settings = {ASSET_TAGS = (); }; };
-		4E9977AF1BD623DE0002D7A0 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9977AC1BD623DE0002D7A0 /* ImageLoader.swift */; settings = {ASSET_TAGS = (); }; };
-		4E9977B01BD623DE0002D7A0 /* UIImageView+ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9977AD1BD623DE0002D7A0 /* UIImageView+ImageLoader.swift */; settings = {ASSET_TAGS = (); }; };
-		4E9977B31BD628790002D7A0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9977B21BD628790002D7A0 /* Constants.swift */; settings = {ASSET_TAGS = (); }; };
-		4ED8890B1BBAFBDA000BC5A4 /* PersonalSadhanaTableHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED8890A1BBAFBDA000BC5A4 /* PersonalSadhanaTableHeader.swift */; settings = {ASSET_TAGS = (); }; };
+		4E24D05D1BDFBCE000E4C17F /* SadhanaUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E24D05C1BDFBCE000E4C17F /* SadhanaUser.swift */; };
+		4E24D0601BDFBEAE00E4C17F /* SadhanaEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E24D05F1BDFBEAE00E4C17F /* SadhanaEntry.swift */; };
+		4E24D0621BDFC00A00E4C17F /* Deserializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E24D0611BDFC00A00E4C17F /* Deserializer.swift */; };
+		4E3C3C631BA078DD00C61320 /* PersonalSadhanaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3C3C621BA078DD00C61320 /* PersonalSadhanaTableViewCell.swift */; };
+		4E436D4E1BE10F6D0046C145 /* ActivityIndicatorsContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E436D4D1BE10F6D0046C145 /* ActivityIndicatorsContainer.swift */; };
+		4E436D581BE10FA00046C145 /* icon-29x29.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E436D4F1BE10FA00046C145 /* icon-29x29.png */; };
+		4E436D591BE10FA00046C145 /* icon-40x40.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E436D501BE10FA00046C145 /* icon-40x40.png */; };
+		4E436D5A1BE10FA00046C145 /* icon-58x58.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E436D511BE10FA00046C145 /* icon-58x58.png */; };
+		4E436D5B1BE10FA00046C145 /* icon-76x76.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E436D521BE10FA00046C145 /* icon-76x76.png */; };
+		4E436D5C1BE10FA00046C145 /* icon-80x80.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E436D531BE10FA00046C145 /* icon-80x80.png */; };
+		4E436D5D1BE10FA00046C145 /* icon-87x87.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E436D541BE10FA00046C145 /* icon-87x87.png */; };
+		4E436D5E1BE10FA00046C145 /* icon-120x120.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E436D551BE10FA00046C145 /* icon-120x120.png */; };
+		4E436D5F1BE10FA00046C145 /* icon-152x152.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E436D561BE10FA00046C145 /* icon-152x152.png */; };
+		4E436D601BE10FA00046C145 /* icon-180x180.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E436D571BE10FA00046C145 /* icon-180x180.png */; };
+		4E436D631BE10FC40046C145 /* Locksmith.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E436D611BE10FC40046C145 /* Locksmith.swift */; };
+		4E436D641BE10FC40046C145 /* LocksmithRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E436D621BE10FC40046C145 /* LocksmithRequest.swift */; };
+		4E436D6A1BE1100B0046C145 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E436D661BE1100B0046C145 /* MBProgressHUD.m */; };
+		4E436D6B1BE1100B0046C145 /* UIScrollView+SVInfiniteScrolling.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E436D681BE1100B0046C145 /* UIScrollView+SVInfiniteScrolling.m */; };
+		4E436D721BE110540046C145 /* NSURLRequest+Vaishnavaseva.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E436D6C1BE110540046C145 /* NSURLRequest+Vaishnavaseva.swift */; };
+		4E436D731BE110540046C145 /* NSURLSession+Vaishnavaseva.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E436D6D1BE110540046C145 /* NSURLSession+Vaishnavaseva.swift */; };
+		4E436D741BE110540046C145 /* NSURLSessionConfiguration+Vaishnavaseva.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E436D6E1BE110540046C145 /* NSURLSessionConfiguration+Vaishnavaseva.swift */; };
+		4E436D751BE110540046C145 /* String+Vaishnavaseva.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E436D6F1BE110540046C145 /* String+Vaishnavaseva.swift */; };
+		4E436D761BE110540046C145 /* VSResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E436D701BE110540046C145 /* VSResponse.swift */; };
+		4E436D771BE110540046C145 /* VSURLSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E436D711BE110540046C145 /* VSURLSessionDelegate.swift */; };
+		4E9977AE1BD623DE0002D7A0 /* Diskcached.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9977AB1BD623DE0002D7A0 /* Diskcached.swift */; };
+		4E9977AF1BD623DE0002D7A0 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9977AC1BD623DE0002D7A0 /* ImageLoader.swift */; };
+		4E9977B01BD623DE0002D7A0 /* UIImageView+ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9977AD1BD623DE0002D7A0 /* UIImageView+ImageLoader.swift */; };
+		4E9977B31BD628790002D7A0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9977B21BD628790002D7A0 /* Constants.swift */; };
+		4ED8890B1BBAFBDA000BC5A4 /* PersonalSadhanaTableHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED8890A1BBAFBDA000BC5A4 /* PersonalSadhanaTableHeader.swift */; };
 		7507E19D1B975762000AFEA3 /* GeneralSadhanaTableHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7507E19B1B975762000AFEA3 /* GeneralSadhanaTableHeader.swift */; };
 		7507E19E1B975762000AFEA3 /* GeneralSadhanaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7507E19C1B975762000AFEA3 /* GeneralSadhanaTableViewCell.swift */; };
 		750810C91B971FFA00E97FF5 /* default_avatar.gif in Resources */ = {isa = PBXBuildFile; fileRef = 750810C81B971FFA00E97FF5 /* default_avatar.gif */; };
 		750907EA1B6A91ED008E25E8 /* JapaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 750907E91B6A91ED008E25E8 /* JapaView.swift */; };
 		750907ED1B6A9244008E25E8 /* JapaView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 750907EC1B6A9244008E25E8 /* JapaView.xib */; };
-		751E1F011BDA672100A474B7 /* EditBoolSadhanaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751E1EFD1BDA672100A474B7 /* EditBoolSadhanaTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
-		751E1F021BDA672100A474B7 /* EditCountSadhanaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751E1EFE1BDA672100A474B7 /* EditCountSadhanaTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
-		751E1F031BDA672100A474B7 /* EditRoundsSadhanaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751E1EFF1BDA672100A474B7 /* EditRoundsSadhanaTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
-		751E1F041BDA672100A474B7 /* EditTimeSadhanaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751E1F001BDA672100A474B7 /* EditTimeSadhanaTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
+		751E1F011BDA672100A474B7 /* EditBoolSadhanaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751E1EFD1BDA672100A474B7 /* EditBoolSadhanaTableViewCell.swift */; };
+		751E1F021BDA672100A474B7 /* EditCountSadhanaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751E1EFE1BDA672100A474B7 /* EditCountSadhanaTableViewCell.swift */; };
+		751E1F031BDA672100A474B7 /* EditRoundsSadhanaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751E1EFF1BDA672100A474B7 /* EditRoundsSadhanaTableViewCell.swift */; };
+		751E1F041BDA672100A474B7 /* EditTimeSadhanaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751E1F001BDA672100A474B7 /* EditTimeSadhanaTableViewCell.swift */; };
 		7521AFA31B57C6E1004B2CFE /* AppControllerStateGeneralSadhana.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7521AFA21B57C6E1004B2CFE /* AppControllerStateGeneralSadhana.swift */; };
 		7521AFA51B57C729004B2CFE /* AppControllerStatePersonalSadhana.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7521AFA41B57C729004B2CFE /* AppControllerStatePersonalSadhana.swift */; };
 		7521AFA71B57C8E6004B2CFE /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7521AFA61B57C8E5004B2CFE /* BaseViewController.swift */; };
-		755B5DE11BA2D72900ADE410 /* JSONTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755B5DE01BA2D72900ADE410 /* JSONTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		755B5DE41BA2D81500ADE410 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755B5DE31BA2D81500ADE410 /* Alerts.swift */; settings = {ASSET_TAGS = (); }; };
+		7553A0F01BE35BEB005F54B0 /* HitTestPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7553A0EF1BE35BEB005F54B0 /* HitTestPicker.swift */; };
+		7553A0F21BE3ACF1005F54B0 /* HitTestDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7553A0F11BE3ACF1005F54B0 /* HitTestDatePicker.swift */; };
+		755B5DE11BA2D72900ADE410 /* JSONTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755B5DE01BA2D72900ADE410 /* JSONTableViewController.swift */; };
+		755B5DE41BA2D81500ADE410 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755B5DE31BA2D81500ADE410 /* Alerts.swift */; };
 		755BF4E01B68D6BE004B1F61 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755BF4DE1B68D6BE004B1F61 /* LogInViewController.swift */; };
 		755BF4E11B68D6BE004B1F61 /* LogOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755BF4DF1B68D6BE004B1F61 /* LogOutViewController.swift */; };
 		755BF4E41B68D74F004B1F61 /* EditSadhanaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755BF4E21B68D74F004B1F61 /* EditSadhanaViewController.swift */; };
@@ -151,6 +153,8 @@
 		7521AFA21B57C6E1004B2CFE /* AppControllerStateGeneralSadhana.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppControllerStateGeneralSadhana.swift; path = AppController/States/AppControllerStateGeneralSadhana.swift; sourceTree = "<group>"; };
 		7521AFA41B57C729004B2CFE /* AppControllerStatePersonalSadhana.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppControllerStatePersonalSadhana.swift; path = AppController/States/AppControllerStatePersonalSadhana.swift; sourceTree = "<group>"; };
 		7521AFA61B57C8E5004B2CFE /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseViewController.swift; path = ViewControllers/BaseViewController.swift; sourceTree = "<group>"; };
+		7553A0EF1BE35BEB005F54B0 /* HitTestPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HitTestPicker.swift; path = Views/HitTestPicker.swift; sourceTree = "<group>"; };
+		7553A0F11BE3ACF1005F54B0 /* HitTestDatePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HitTestDatePicker.swift; path = Views/HitTestDatePicker.swift; sourceTree = "<group>"; };
 		755B5DE01BA2D72900ADE410 /* JSONTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSONTableViewController.swift; path = ViewControllers/JSONTableViewController.swift; sourceTree = "<group>"; };
 		755B5DE31BA2D81500ADE410 /* Alerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Alerts.swift; path = Utilities/Alerts.swift; sourceTree = "<group>"; };
 		755BF4DE1B68D6BE004B1F61 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LogInViewController.swift; path = ViewControllers/LogInViewController.swift; sourceTree = "<group>"; };
@@ -304,6 +308,8 @@
 				751E1EFE1BDA672100A474B7 /* EditCountSadhanaTableViewCell.swift */,
 				751E1EFF1BDA672100A474B7 /* EditRoundsSadhanaTableViewCell.swift */,
 				751E1F001BDA672100A474B7 /* EditTimeSadhanaTableViewCell.swift */,
+				7553A0EF1BE35BEB005F54B0 /* HitTestPicker.swift */,
+				7553A0F11BE3ACF1005F54B0 /* HitTestDatePicker.swift */,
 				750907EB1B6A9211008E25E8 /* xib */,
 			);
 			name = Views;
@@ -628,6 +634,7 @@
 				7521AFA51B57C729004B2CFE /* AppControllerStatePersonalSadhana.swift in Sources */,
 				75C331FC1B695F6C0075F747 /* GeneralToLogIn.swift in Sources */,
 				75BA40501B694D120075CE6B /* RootNavigationViewController.swift in Sources */,
+				7553A0F21BE3ACF1005F54B0 /* HitTestDatePicker.swift in Sources */,
 				75CFA0E81B501A5C0071EC79 /* SceneController.swift in Sources */,
 				4E436D741BE110540046C145 /* NSURLSessionConfiguration+Vaishnavaseva.swift in Sources */,
 				751E1F041BDA672100A474B7 /* EditTimeSadhanaTableViewCell.swift in Sources */,
@@ -653,6 +660,7 @@
 				75BA40541B695E610075CE6B /* AppControllerStateLogOut.swift in Sources */,
 				75C5A5A41B5572AF0069B85D /* EquatableBase.swift in Sources */,
 				75CE83A81B68D0080033A8AD /* GeneralToMy.swift in Sources */,
+				7553A0F01BE35BEB005F54B0 /* HitTestPicker.swift in Sources */,
 				4E9977B31BD628790002D7A0 /* Constants.swift in Sources */,
 				4E436D771BE110540046C145 /* VSURLSessionDelegate.swift in Sources */,
 				75CFA0EF1B50214F0071EC79 /* AppController.swift in Sources */,
