@@ -66,8 +66,8 @@ class EditSadhanaViewController: BaseViewController, UIPickerViewDataSource, UIP
       sleepTimePickerSuperviewTopConstraint]
     
     //Apply active sadhana types from user settings here like next:
-    sadhanaTypesEnableState.Sleep = false
-    sadhanaTypesEnableState.Joga = false
+//    sadhanaTypesEnableState.Sleep = false
+//    sadhanaTypesEnableState.Joga = false
     
     wakeTimePickerView.userInteractionEnabled = sadhanaTypesEnableState.Wake
     sleepTimePickerView.userInteractionEnabled = sadhanaTypesEnableState.Sleep
