@@ -46,11 +46,30 @@ class LogInViewController: BaseViewController {
 
   @IBAction func onLogIn(sender: AnyObject)
     {
-        let spiningActivity = MBProgressHUD.showHUDAddedTo(navigationController?.view, animated: true)
-        spiningActivity.labelText = "Loading"
+      if self.loginTextField.text == "" {
+        self.loginTextField.becomeFirstResponder()
+        self.showErrorAlert("Enter login please")
+        return
+      } else if self.passwordTextField.text == "" {
+        self.passwordTextField.becomeFirstResponder()
+        self.showErrorAlert("Enter password please")
+        return
+      }
+      
+      let spiningActivity = MBProgressHUD.showHUDAddedTo(navigationController?.view, animated: true)
+      spiningActivity.labelText = "Loading"
         
-        sendActionForStateViewEvent(LogInStateViewEvent)
+      sendActionForStateViewEvent(LogInStateViewEvent)
     }
+  
+  @IBAction func onSignUp(sender: AnyObject) {
+    let registerURL = NSURL(string: "\(Constants.siteURL)/registration")
+    UIApplication.sharedApplication().openURL(registerURL!)
+  }
+  
+  @IBAction func hideKeyboard(sender: AnyObject) {
+    self.view.endEditing(true)
+  }
   
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()

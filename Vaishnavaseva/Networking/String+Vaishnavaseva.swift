@@ -58,11 +58,4 @@ extension String {
         }
         task.resume()
     }
-
-    // MARK: - Constants
-    
-    struct Constants {
-        /// This is the base URL for your requests.
-        static let baseURL = NSURL(string: "http://vaishnavaseva.net/vs-api/v1/sadhana/")!
-    }
 }

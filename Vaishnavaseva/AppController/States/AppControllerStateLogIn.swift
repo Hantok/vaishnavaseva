@@ -30,27 +30,25 @@ import UIKit
             }
             if response.HTTPResponse.statusCode != 200
             {
-                let alert = UIAlertController(title: "Authorization error!", message: "", preferredStyle: UIAlertControllerStyle.Alert)
-                alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
-                logInViewController.presentViewController(alert, animated: true, completion: nil)
-                logInViewController.passwordTextField.text = ""
-                logInViewController.passwordTextField.becomeFirstResponder()
+              logInViewController.passwordTextField.text = ""
+              logInViewController.passwordTextField.becomeFirstResponder()
+              logInViewController.showErrorAlert("Authorization error!")
             }
             else
             {
-                do {
-                  // update user credentials in keychain
-                  try Locksmith.updateData([login: password], forUserAccount: "myUserAccount")
-                  let dict = response.responseJSON as! NSDictionary
-                  let sadhanaUser = Deserialiser().getSadhanaUser(dict)
-                  logInViewController.me = sadhanaUser
-                  //save me
-                  NSUserDefaults.standardUserDefaults().setValue(dict, forKey: "me")
-                } catch {
-                    print(error)
-                }
-                AppController.sharedAppController.isLoggedIn = true
-                self.viewController.performSegueWithIdentifier("LogInToMy", sender: nil)
+              do {
+                // update user credentials in keychain
+                try Locksmith.updateData([login: password], forUserAccount: "myUserAccount")
+                let dict = response.responseJSON as! NSDictionary
+                let sadhanaUser = Deserialiser().getSadhanaUser(dict)
+                logInViewController.me = sadhanaUser
+                //save me
+                NSUserDefaults.standardUserDefaults().setValue(dict, forKey: "me")
+              } catch {
+                  print(error)
+              }
+              AppController.sharedAppController.isLoggedIn = true
+              self.viewController.performSegueWithIdentifier("LogInToMy", sender: nil)
             }
         }
     }

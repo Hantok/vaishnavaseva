@@ -827,8 +827,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Qgj-g9-zOa">
-                                <rect key="frame" x="20" y="104" width="560" height="190"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="equalSpacing" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Qgj-g9-zOa">
+                                <rect key="frame" x="20" y="104" width="560" height="150"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Login" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cW5-cc-Bq4">
                                         <rect key="frame" x="180" y="0.0" width="200" height="30"/>
@@ -857,23 +857,26 @@
                                             <action selector="onLogIn:" destination="6Hf-a8-qBb" eventType="touchUpInside" id="68h-lS-Rwb"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mrq-SL-qHo">
-                                        <rect key="frame" x="223" y="120" width="115" height="30"/>
-                                        <state key="normal" title="Forgot Password"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xjL-1b-cwp">
-                                        <rect key="frame" x="253" y="160" width="55" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xjL-1b-cwp">
+                                        <rect key="frame" x="253" y="120" width="55" height="30"/>
                                         <state key="normal" title="Sign Up"/>
+                                        <connections>
+                                            <action selector="onSignUp:" destination="6Hf-a8-qBb" eventType="touchUpInside" id="96k-Ad-hPT"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="Qgj-g9-zOa" firstAttribute="leading" secondItem="KlS-cs-6qL" secondAttribute="leadingMargin" id="VfJ-Hc-ZCY"/>
                             <constraint firstItem="Qgj-g9-zOa" firstAttribute="top" secondItem="IhL-0d-bqS" secondAttribute="bottom" constant="40" id="yZJ-9e-ORn"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Qgj-g9-zOa" secondAttribute="trailing" id="zMz-Yz-RJ1"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Gdc-Wn-hAS" appends="YES" id="7xu-D3-SCI"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Log In" id="amd-3N-3fr"/>
                     <connections>
@@ -883,6 +886,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pzU-jo-SC9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer cancelsTouchesInView="NO" id="Gdc-Wn-hAS">
+                    <connections>
+                        <action selector="hideKeyboard:" destination="6Hf-a8-qBb" id="UQd-tQ-Bay"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2522" y="-660"/>
         </scene>
