@@ -795,18 +795,48 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kos-PD-6PK">
-                                <rect key="frame" x="20" y="72" width="55" height="30"/>
-                                <state key="normal" title="Log Out"/>
-                                <connections>
-                                    <action selector="onLogOut:" destination="MwM-Sy-swG" eventType="touchUpInside" id="AdD-Al-ETo"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Hun-m5-vm8">
+                                <rect key="frame" x="20" y="104" width="560" height="150"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1iI-vP-xVf">
+                                        <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="150" id="Jx4-VV-g22"/>
+                                            <constraint firstAttribute="width" constant="150" id="zE1-rs-rbs"/>
+                                        </constraints>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="fillProportionally" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="2VW-CH-SIb">
+                                        <rect key="frame" x="150" y="42" width="410" height="66"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ruh-bu-HsW">
+                                                <rect key="frame" x="183" y="0.0" width="45" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kos-PD-6PK">
+                                                <rect key="frame" x="178" y="36" width="55" height="30"/>
+                                                <state key="normal" title="Log Out"/>
+                                                <connections>
+                                                    <action selector="onLogOut:" destination="MwM-Sy-swG" eventType="touchUpInside" id="AdD-Al-ETo"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="leadingMargin" secondItem="Hun-m5-vm8" secondAttribute="leading" id="DTG-Ej-DjE"/>
+                            <constraint firstItem="Hun-m5-vm8" firstAttribute="top" secondItem="brm-YA-1Hq" secondAttribute="bottom" constant="40" id="GiB-lF-oW1"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Hun-m5-vm8" secondAttribute="trailing" id="qtv-zc-Mf6"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Log Out" id="IxR-1M-pMS"/>
                     <connections>
+                        <outlet property="nameLabel" destination="ruh-bu-HsW" id="7Dk-5A-Ejm"/>
+                        <outlet property="photo" destination="1iI-vP-xVf" id="D1h-f4-Ptf"/>
                         <segue destination="Rl6-dw-pqv" kind="unwind" identifier="BackFromAnyToAny" unwindAction="backToGeneralSadhana:" id="Lic-36-DHn"/>
                     </connections>
                 </viewController>
