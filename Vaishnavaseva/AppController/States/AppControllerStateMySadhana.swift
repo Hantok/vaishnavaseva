@@ -64,6 +64,7 @@ import UIKit
         mySadhanaViewController.isBeforeResponseSucsess = true
         mySadhanaViewController.tableView.infiniteScrollingView.stopAnimating()
         mySadhanaViewController.tableView.infiniteScrollingView.enabled = false
+        mySadhanaViewController.tableView.reloadData()
         return
       }
       
@@ -100,13 +101,14 @@ import UIKit
     dateFormat.dateFormat = "yyyy-MM-dd"
     var startDate = NSDate().dateByAddingTimeInterval(NSTimeInterval.init(NSTimeZone.systemTimeZone().secondsFromGMT))
     var addNewCellToTableView = false
-    if entries.count == 0
+    if entries.count == 0 //new month started
     {
       let calendar = NSCalendar.currentCalendar()
-      let components = calendar.components([.Year, .Month, .Day], fromDate: NSDate())
+      let components = calendar.components([.Year, .Month, .Day], fromDate: startDate)
       
       components.day = 1
       startDate = calendar.dateFromComponents(components)!
+      startDate = startDate.dateByAddingTimeInterval(NSTimeInterval.init(NSTimeZone.systemTimeZone().secondsFromGMT))
       addNewCellToTableView = true
     }
     else
