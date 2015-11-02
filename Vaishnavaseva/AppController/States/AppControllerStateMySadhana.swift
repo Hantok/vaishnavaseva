@@ -99,7 +99,7 @@ import UIKit
     
     let dateFormat: NSDateFormatter = NSDateFormatter()
     dateFormat.dateFormat = "yyyy-MM-dd"
-    var startDate = NSDate().dateByAddingTimeInterval(NSTimeInterval.init(NSTimeZone.systemTimeZone().secondsFromGMT))
+    var startDate = NSDate()
     var addNewCellToTableView = false
     if entries.count == 0 //new month started
     {
@@ -114,7 +114,7 @@ import UIKit
     else
     {
       //if today data already in DB, do change json
-      addNewCellToTableView = startDate != dateFormat.dateFromString((entries.last?.date)!)! ? false : true
+      addNewCellToTableView = dateFormat.stringFromDate(startDate) == (entries.last?.date)! ? false : true
     }
     
     let calendar = NSCalendar.currentCalendar()
@@ -125,12 +125,7 @@ import UIKit
     for var day = (startDay <= today && addNewCellToTableView) ? startDay : startDay + 1; day <= today; day++
     {
       var sadhanaEntry = SadhanaEntry()
-      if result.count != 0 {
-        startDate = startDate.dateByAddingTimeInterval(24*60*60)
-        sadhanaEntry.date = dateFormat.stringFromDate(startDate) as String
-      } else {
-        sadhanaEntry.date = dateFormat.stringFromDate(startDate) as String
-      }
+      sadhanaEntry.date = dateFormat.stringFromDate(startDate) as String
       sadhanaEntry.day = day
       sadhanaEntry.id = -1
       sadhanaEntry.userId = Int((NSUserDefaults.standardUserDefaults().valueForKey("me")?["userid"]) as! String)

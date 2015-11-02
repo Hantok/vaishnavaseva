@@ -17,7 +17,7 @@ extension String {
     func get(parameters: [String: String]? = nil, headers: [String: String]? = nil, completion: NetworkingCompletion) {
         requestWithMethod("GET", queryParameters: parameters, headers: headers, completion: completion)
     }
-    func post(parameters: NSDictionary? = nil, headers: [String: String]? = nil, completion: NetworkingCompletion) {
+    func post(parameters: [String : String]? = nil, headers: [String: String]? = nil, completion: NetworkingCompletion) {
         requestWithMethod("POST", bodyParameters: parameters, headers: headers, completion: completion)
     }
     func put(parameters: NSDictionary? = nil, headers: [String: String]? = nil, completion: NetworkingCompletion) {

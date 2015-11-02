@@ -21,8 +21,6 @@
 		4E436D5E1BE10FA00046C145 /* icon-120x120.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E436D551BE10FA00046C145 /* icon-120x120.png */; };
 		4E436D5F1BE10FA00046C145 /* icon-152x152.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E436D561BE10FA00046C145 /* icon-152x152.png */; };
 		4E436D601BE10FA00046C145 /* icon-180x180.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E436D571BE10FA00046C145 /* icon-180x180.png */; };
-		4E436D631BE10FC40046C145 /* Locksmith.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E436D611BE10FC40046C145 /* Locksmith.swift */; };
-		4E436D641BE10FC40046C145 /* LocksmithRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E436D621BE10FC40046C145 /* LocksmithRequest.swift */; };
 		4E436D6A1BE1100B0046C145 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E436D661BE1100B0046C145 /* MBProgressHUD.m */; };
 		4E436D6B1BE1100B0046C145 /* UIScrollView+SVInfiniteScrolling.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E436D681BE1100B0046C145 /* UIScrollView+SVInfiniteScrolling.m */; };
 		4E436D721BE110540046C145 /* NSURLRequest+Vaishnavaseva.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E436D6C1BE110540046C145 /* NSURLRequest+Vaishnavaseva.swift */; };
@@ -31,6 +29,15 @@
 		4E436D751BE110540046C145 /* String+Vaishnavaseva.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E436D6F1BE110540046C145 /* String+Vaishnavaseva.swift */; };
 		4E436D761BE110540046C145 /* VSResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E436D701BE110540046C145 /* VSResponse.swift */; };
 		4E436D771BE110540046C145 /* VSURLSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E436D711BE110540046C145 /* VSURLSessionDelegate.swift */; };
+		4E43E3271BE7C51400D18973 /* VaishnavasevaAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E43E3261BE7C51400D18973 /* VaishnavasevaAccount.swift */; };
+		4E43E3451BE7FD4500D18973 /* BackFromEditToMy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E43E3441BE7FD4500D18973 /* BackFromEditToMy.swift */; };
+		4E43E3491BE8087200D18973 /* Locksmith.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E43E3481BE8087200D18973 /* Locksmith.swift */; };
+		4E43E34B1BE8089F00D18973 /* LocksmithAccessibleOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E43E34A1BE8089F00D18973 /* LocksmithAccessibleOption.swift */; };
+		4E43E3501BE808D000D18973 /* LocksmithError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E43E34C1BE808D000D18973 /* LocksmithError.swift */; };
+		4E43E3511BE808D000D18973 /* LocksmithInternetAuthenticationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E43E34D1BE808D000D18973 /* LocksmithInternetAuthenticationType.swift */; };
+		4E43E3521BE808D000D18973 /* LocksmithInternetProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E43E34E1BE808D000D18973 /* LocksmithInternetProtocol.swift */; };
+		4E43E3531BE808D000D18973 /* LocksmithSecurityClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E43E34F1BE808D000D18973 /* LocksmithSecurityClass.swift */; };
+		4E43E3551BE808F000D18973 /* Dictionary_Initializers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E43E3541BE808F000D18973 /* Dictionary_Initializers.swift */; };
 		4E9977AE1BD623DE0002D7A0 /* Diskcached.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9977AB1BD623DE0002D7A0 /* Diskcached.swift */; };
 		4E9977AF1BD623DE0002D7A0 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9977AC1BD623DE0002D7A0 /* ImageLoader.swift */; };
 		4E9977B01BD623DE0002D7A0 /* UIImageView+ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9977AD1BD623DE0002D7A0 /* UIImageView+ImageLoader.swift */; };
@@ -120,8 +127,6 @@
 		4E436D551BE10FA00046C145 /* icon-120x120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-120x120.png"; path = "Images/icon-120x120.png"; sourceTree = "<group>"; };
 		4E436D561BE10FA00046C145 /* icon-152x152.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-152x152.png"; path = "Images/icon-152x152.png"; sourceTree = "<group>"; };
 		4E436D571BE10FA00046C145 /* icon-180x180.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-180x180.png"; path = "Images/icon-180x180.png"; sourceTree = "<group>"; };
-		4E436D611BE10FC40046C145 /* Locksmith.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Locksmith.swift; path = Keychain/Locksmith.swift; sourceTree = "<group>"; };
-		4E436D621BE10FC40046C145 /* LocksmithRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocksmithRequest.swift; path = Keychain/LocksmithRequest.swift; sourceTree = "<group>"; };
 		4E436D651BE1100B0046C145 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBProgressHUD.h; path = ObjC/MBProgressHUD.h; sourceTree = "<group>"; };
 		4E436D661BE1100B0046C145 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBProgressHUD.m; path = ObjC/MBProgressHUD.m; sourceTree = "<group>"; };
 		4E436D671BE1100B0046C145 /* UIScrollView+SVInfiniteScrolling.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIScrollView+SVInfiniteScrolling.h"; path = "ObjC/UIScrollView+SVInfiniteScrolling.h"; sourceTree = "<group>"; };
@@ -133,6 +138,15 @@
 		4E436D6F1BE110540046C145 /* String+Vaishnavaseva.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+Vaishnavaseva.swift"; path = "Networking/String+Vaishnavaseva.swift"; sourceTree = "<group>"; };
 		4E436D701BE110540046C145 /* VSResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VSResponse.swift; path = Networking/VSResponse.swift; sourceTree = "<group>"; };
 		4E436D711BE110540046C145 /* VSURLSessionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VSURLSessionDelegate.swift; path = Networking/VSURLSessionDelegate.swift; sourceTree = "<group>"; };
+		4E43E3261BE7C51400D18973 /* VaishnavasevaAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VaishnavasevaAccount.swift; path = Utilities/VaishnavasevaAccount.swift; sourceTree = "<group>"; };
+		4E43E3441BE7FD4500D18973 /* BackFromEditToMy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BackFromEditToMy.swift; path = AppController/Segues/BackFromEditToMy.swift; sourceTree = "<group>"; };
+		4E43E3481BE8087200D18973 /* Locksmith.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Locksmith.swift; path = Keychain/Locksmith.swift; sourceTree = "<group>"; };
+		4E43E34A1BE8089F00D18973 /* LocksmithAccessibleOption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocksmithAccessibleOption.swift; path = Keychain/LocksmithAccessibleOption.swift; sourceTree = "<group>"; };
+		4E43E34C1BE808D000D18973 /* LocksmithError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocksmithError.swift; path = Keychain/LocksmithError.swift; sourceTree = "<group>"; };
+		4E43E34D1BE808D000D18973 /* LocksmithInternetAuthenticationType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocksmithInternetAuthenticationType.swift; path = Keychain/LocksmithInternetAuthenticationType.swift; sourceTree = "<group>"; };
+		4E43E34E1BE808D000D18973 /* LocksmithInternetProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocksmithInternetProtocol.swift; path = Keychain/LocksmithInternetProtocol.swift; sourceTree = "<group>"; };
+		4E43E34F1BE808D000D18973 /* LocksmithSecurityClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocksmithSecurityClass.swift; path = Keychain/LocksmithSecurityClass.swift; sourceTree = "<group>"; };
+		4E43E3541BE808F000D18973 /* Dictionary_Initializers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Dictionary_Initializers.swift; path = Keychain/Dictionary_Initializers.swift; sourceTree = "<group>"; };
 		4E9977AB1BD623DE0002D7A0 /* Diskcached.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Diskcached.swift; path = ImageLoader/Diskcached.swift; sourceTree = "<group>"; };
 		4E9977AC1BD623DE0002D7A0 /* ImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageLoader.swift; path = ImageLoader/ImageLoader.swift; sourceTree = "<group>"; };
 		4E9977AD1BD623DE0002D7A0 /* UIImageView+ImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImageView+ImageLoader.swift"; path = "ImageLoader/UIImageView+ImageLoader.swift"; sourceTree = "<group>"; };
@@ -271,8 +285,13 @@
 		4EFB42611B9865BD00111304 /* Keychain */ = {
 			isa = PBXGroup;
 			children = (
-				4E436D611BE10FC40046C145 /* Locksmith.swift */,
-				4E436D621BE10FC40046C145 /* LocksmithRequest.swift */,
+				4E43E3481BE8087200D18973 /* Locksmith.swift */,
+				4E43E34A1BE8089F00D18973 /* LocksmithAccessibleOption.swift */,
+				4E43E34C1BE808D000D18973 /* LocksmithError.swift */,
+				4E43E34D1BE808D000D18973 /* LocksmithInternetAuthenticationType.swift */,
+				4E43E34E1BE808D000D18973 /* LocksmithInternetProtocol.swift */,
+				4E43E34F1BE808D000D18973 /* LocksmithSecurityClass.swift */,
+				4E43E3541BE808F000D18973 /* Dictionary_Initializers.swift */,
 			);
 			name = Keychain;
 			sourceTree = "<group>";
@@ -339,6 +358,7 @@
 				4E436D4D1BE10F6D0046C145 /* ActivityIndicatorsContainer.swift */,
 				755B5DE31BA2D81500ADE410 /* Alerts.swift */,
 				4E9977B21BD628790002D7A0 /* Constants.swift */,
+				4E43E3261BE7C51400D18973 /* VaishnavasevaAccount.swift */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -420,6 +440,7 @@
 				7553A0F51BE76217005F54B0 /* MyToSettings.swift */,
 				75BA40461B6918A30075CE6B /* PersonalToInfo.swift */,
 				7595A17F1B62847800735A0C /* BackFromAnyToAny.swift */,
+				4E43E3441BE7FD4500D18973 /* BackFromEditToMy.swift */,
 			);
 			name = Segues;
 			sourceTree = "<group>";
@@ -612,10 +633,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4E436D631BE10FC40046C145 /* Locksmith.swift in Sources */,
 				75BA404A1B6918A30075CE6B /* PersonalToInfo.swift in Sources */,
 				7553A0F41BE761ED005F54B0 /* PersonalSettingsViewController.swift in Sources */,
 				7595A17E1B626CAF00735A0C /* AppControllerSegue.swift in Sources */,
+				4E43E3531BE808D000D18973 /* LocksmithSecurityClass.swift in Sources */,
 				7521AFA31B57C6E1004B2CFE /* AppControllerStateGeneralSadhana.swift in Sources */,
 				7521AFA71B57C8E6004B2CFE /* BaseViewController.swift in Sources */,
 				75CFA0ED1B501FB40071EC79 /* PersonalSadhanaViewController.swift in Sources */,
@@ -630,11 +651,15 @@
 				755B5DE41BA2D81500ADE410 /* Alerts.swift in Sources */,
 				4E436D4E1BE10F6D0046C145 /* ActivityIndicatorsContainer.swift in Sources */,
 				7521AFA51B57C729004B2CFE /* AppControllerStatePersonalSadhana.swift in Sources */,
+				4E43E3271BE7C51400D18973 /* VaishnavasevaAccount.swift in Sources */,
 				75C331FC1B695F6C0075F747 /* GeneralToLogIn.swift in Sources */,
 				7553A0F81BE7624D005F54B0 /* AppControllerStatePersonalSettings.swift in Sources */,
+				4E43E3451BE7FD4500D18973 /* BackFromEditToMy.swift in Sources */,
 				75BA40501B694D120075CE6B /* RootNavigationViewController.swift in Sources */,
 				7553A0F21BE3ACF1005F54B0 /* HitTestDatePicker.swift in Sources */,
 				75CFA0E81B501A5C0071EC79 /* SceneController.swift in Sources */,
+				4E43E3491BE8087200D18973 /* Locksmith.swift in Sources */,
+				4E43E3511BE808D000D18973 /* LocksmithInternetAuthenticationType.swift in Sources */,
 				4E436D741BE110540046C145 /* NSURLSessionConfiguration+Vaishnavaseva.swift in Sources */,
 				75CE83A31B68CFE20033A8AD /* AppControllerState.swift in Sources */,
 				4E24D0621BDFC00A00E4C17F /* Deserializer.swift in Sources */,
@@ -642,15 +667,18 @@
 				7507E19E1B975762000AFEA3 /* GeneralSadhanaTableViewCell.swift in Sources */,
 				757D12511B5013300001402B /* Vaishnavaseva.xcdatamodeld in Sources */,
 				757D124B1B5013300001402B /* GeneralSadhanaViewController.swift in Sources */,
+				4E43E3551BE808F000D18973 /* Dictionary_Initializers.swift in Sources */,
 				4E24D0601BDFBEAE00E4C17F /* SadhanaEntry.swift in Sources */,
 				75CE83AA1B68D0260033A8AD /* MySadhanaViewController.swift in Sources */,
 				4E436D761BE110540046C145 /* VSResponse.swift in Sources */,
+				4E43E3501BE808D000D18973 /* LocksmithError.swift in Sources */,
 				755BF4E51B68D74F004B1F61 /* InfoViewController.swift in Sources */,
 				4E436D721BE110540046C145 /* NSURLRequest+Vaishnavaseva.swift in Sources */,
 				7595A1811B62847800735A0C /* BackFromAnyToAny.swift in Sources */,
 				75BA40521B695DFF0075CE6B /* MyToLogOut.swift in Sources */,
 				4E9977AF1BD623DE0002D7A0 /* ImageLoader.swift in Sources */,
 				4E3C3C631BA078DD00C61320 /* PersonalSadhanaTableViewCell.swift in Sources */,
+				4E43E34B1BE8089F00D18973 /* LocksmithAccessibleOption.swift in Sources */,
 				75CFA0E41B5015860071EC79 /* StateSerializable.swift in Sources */,
 				75BA40421B6910E60075CE6B /* AppControllerStateInfo.swift in Sources */,
 				75BA40541B695E610075CE6B /* AppControllerStateLogOut.swift in Sources */,
@@ -661,7 +689,6 @@
 				4E436D771BE110540046C145 /* VSURLSessionDelegate.swift in Sources */,
 				75CFA0EF1B50214F0071EC79 /* AppController.swift in Sources */,
 				75C331FE1B69623F0075F747 /* LogInToMy.swift in Sources */,
-				4E436D641BE10FC40046C145 /* LocksmithRequest.swift in Sources */,
 				755BF4E01B68D6BE004B1F61 /* LogInViewController.swift in Sources */,
 				755BF4E11B68D6BE004B1F61 /* LogOutViewController.swift in Sources */,
 				755BF4E41B68D74F004B1F61 /* EditSadhanaViewController.swift in Sources */,
@@ -675,6 +702,7 @@
 				75BA40401B69106E0075CE6B /* MyToInfo.swift in Sources */,
 				4E436D731BE110540046C145 /* NSURLSession+Vaishnavaseva.swift in Sources */,
 				4E9977B01BD623DE0002D7A0 /* UIImageView+ImageLoader.swift in Sources */,
+				4E43E3521BE808D000D18973 /* LocksmithInternetProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

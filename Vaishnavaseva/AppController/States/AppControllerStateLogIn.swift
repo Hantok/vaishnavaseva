@@ -17,7 +17,7 @@ import UIKit
         let logInViewController = self.viewController as! LogInViewController
         let login = logInViewController.loginTextField.text!
         let password = logInViewController.passwordTextField.text!
-        let userPasswordString = login + ":" + password
+        let userPasswordString = "\(login):\(password)"
         let userPasswordData = userPasswordString.dataUsingEncoding(NSUTF8StringEncoding)
         let base64EncodedCredential = userPasswordData!.base64EncodedStringWithOptions(NSDataBase64EncodingOptions.Encoding64CharacterLineLength)
         let authString = "Basic \(base64EncodedCredential)"

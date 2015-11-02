@@ -6,6 +6,8 @@ class MySadhanaViewController: JSONTableViewController {
   var me = SadhanaUser()
   var month = 0
   var totalFound = 1
+  var selectedSadhanaEntry : SadhanaEntry?
+  var selectedPath : NSIndexPath?
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -94,6 +96,12 @@ class MySadhanaViewController: JSONTableViewController {
   override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat
   {
     return 87
+  }
+  
+  override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    self.selectedSadhanaEntry = entries[indexPath.row]
+    self.selectedPath = indexPath
+    performSegueWithIdentifier("MyToEdit", sender: nil)
   }
   
   func insertRowAtBottom()
