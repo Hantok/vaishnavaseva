@@ -46,6 +46,9 @@
 		7521AFA71B57C8E6004B2CFE /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7521AFA61B57C8E5004B2CFE /* BaseViewController.swift */; };
 		7553A0F01BE35BEB005F54B0 /* HitTestPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7553A0EF1BE35BEB005F54B0 /* HitTestPicker.swift */; };
 		7553A0F21BE3ACF1005F54B0 /* HitTestDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7553A0F11BE3ACF1005F54B0 /* HitTestDatePicker.swift */; };
+		7553A0F41BE761ED005F54B0 /* PersonalSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7553A0F31BE761ED005F54B0 /* PersonalSettingsViewController.swift */; };
+		7553A0F61BE76217005F54B0 /* MyToSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7553A0F51BE76217005F54B0 /* MyToSettings.swift */; };
+		7553A0F81BE7624D005F54B0 /* AppControllerStatePersonalSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7553A0F71BE7624D005F54B0 /* AppControllerStatePersonalSettings.swift */; };
 		755B5DE11BA2D72900ADE410 /* JSONTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755B5DE01BA2D72900ADE410 /* JSONTableViewController.swift */; };
 		755B5DE41BA2D81500ADE410 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755B5DE31BA2D81500ADE410 /* Alerts.swift */; };
 		755BF4E01B68D6BE004B1F61 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755BF4DE1B68D6BE004B1F61 /* LogInViewController.swift */; };
@@ -147,6 +150,9 @@
 		7521AFA61B57C8E5004B2CFE /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseViewController.swift; path = ViewControllers/BaseViewController.swift; sourceTree = "<group>"; };
 		7553A0EF1BE35BEB005F54B0 /* HitTestPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HitTestPicker.swift; path = Views/HitTestPicker.swift; sourceTree = "<group>"; };
 		7553A0F11BE3ACF1005F54B0 /* HitTestDatePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HitTestDatePicker.swift; path = Views/HitTestDatePicker.swift; sourceTree = "<group>"; };
+		7553A0F31BE761ED005F54B0 /* PersonalSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersonalSettingsViewController.swift; path = ViewControllers/PersonalSettingsViewController.swift; sourceTree = "<group>"; };
+		7553A0F51BE76217005F54B0 /* MyToSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyToSettings.swift; path = AppController/Segues/MyToSettings.swift; sourceTree = "<group>"; };
+		7553A0F71BE7624D005F54B0 /* AppControllerStatePersonalSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppControllerStatePersonalSettings.swift; path = AppController/States/AppControllerStatePersonalSettings.swift; sourceTree = "<group>"; };
 		755B5DE01BA2D72900ADE410 /* JSONTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSONTableViewController.swift; path = ViewControllers/JSONTableViewController.swift; sourceTree = "<group>"; };
 		755B5DE31BA2D81500ADE410 /* Alerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Alerts.swift; path = Utilities/Alerts.swift; sourceTree = "<group>"; };
 		755BF4DE1B68D6BE004B1F61 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LogInViewController.swift; path = ViewControllers/LogInViewController.swift; sourceTree = "<group>"; };
@@ -314,6 +320,7 @@
 		7521AFA11B57C6B1004B2CFE /* States */ = {
 			isa = PBXGroup;
 			children = (
+				7553A0F71BE7624D005F54B0 /* AppControllerStatePersonalSettings.swift */,
 				75CE83A11B68CFE20033A8AD /* AppControllerState.swift */,
 				7521AFA21B57C6E1004B2CFE /* AppControllerStateGeneralSadhana.swift */,
 				75CE83A21B68CFE20033A8AD /* AppControllerStateMySadhana.swift */,
@@ -410,6 +417,7 @@
 				7595A1801B62847800735A0C /* GeneralToPersonal.swift */,
 				75BA40451B6918A30075CE6B /* GeneralToInfo.swift */,
 				75BA403E1B69106E0075CE6B /* MyToInfo.swift */,
+				7553A0F51BE76217005F54B0 /* MyToSettings.swift */,
 				75BA40461B6918A30075CE6B /* PersonalToInfo.swift */,
 				7595A17F1B62847800735A0C /* BackFromAnyToAny.swift */,
 			);
@@ -445,6 +453,7 @@
 				755BF4E31B68D74F004B1F61 /* InfoViewController.swift */,
 				755BF4DE1B68D6BE004B1F61 /* LogInViewController.swift */,
 				755BF4DF1B68D6BE004B1F61 /* LogOutViewController.swift */,
+				7553A0F31BE761ED005F54B0 /* PersonalSettingsViewController.swift */,
 				75BA404F1B694D120075CE6B /* RootNavigationViewController.swift */,
 			);
 			name = ViewControllers;
@@ -605,6 +614,7 @@
 			files = (
 				4E436D631BE10FC40046C145 /* Locksmith.swift in Sources */,
 				75BA404A1B6918A30075CE6B /* PersonalToInfo.swift in Sources */,
+				7553A0F41BE761ED005F54B0 /* PersonalSettingsViewController.swift in Sources */,
 				7595A17E1B626CAF00735A0C /* AppControllerSegue.swift in Sources */,
 				7521AFA31B57C6E1004B2CFE /* AppControllerStateGeneralSadhana.swift in Sources */,
 				7521AFA71B57C8E6004B2CFE /* BaseViewController.swift in Sources */,
@@ -621,6 +631,7 @@
 				4E436D4E1BE10F6D0046C145 /* ActivityIndicatorsContainer.swift in Sources */,
 				7521AFA51B57C729004B2CFE /* AppControllerStatePersonalSadhana.swift in Sources */,
 				75C331FC1B695F6C0075F747 /* GeneralToLogIn.swift in Sources */,
+				7553A0F81BE7624D005F54B0 /* AppControllerStatePersonalSettings.swift in Sources */,
 				75BA40501B694D120075CE6B /* RootNavigationViewController.swift in Sources */,
 				7553A0F21BE3ACF1005F54B0 /* HitTestDatePicker.swift in Sources */,
 				75CFA0E81B501A5C0071EC79 /* SceneController.swift in Sources */,
@@ -657,6 +668,7 @@
 				75BA40491B6918A30075CE6B /* GeneralToInfo.swift in Sources */,
 				750907EA1B6A91ED008E25E8 /* JapaView.swift in Sources */,
 				75CE83A41B68CFE20033A8AD /* AppControllerStateMySadhana.swift in Sources */,
+				7553A0F61BE76217005F54B0 /* MyToSettings.swift in Sources */,
 				755B5DE11BA2D72900ADE410 /* JSONTableViewController.swift in Sources */,
 				75BA403C1B690F3F0075CE6B /* MyToEdit.swift in Sources */,
 				7507E19D1B975762000AFEA3 /* GeneralSadhanaTableHeader.swift in Sources */,

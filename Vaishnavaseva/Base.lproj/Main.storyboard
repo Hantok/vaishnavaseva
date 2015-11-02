@@ -301,7 +301,7 @@
                             </barButtonItem>
                             <barButtonItem title="Settings" id="RSd-Qb-SDt">
                                 <connections>
-                                    <segue destination="tkf-53-zrs" kind="show" id="gHR-0e-DJf"/>
+                                    <segue destination="tkf-53-zrs" kind="show" identifier="MyToSettings" id="gHR-0e-DJf"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem systemItem="stop" id="cSU-0W-0yc">
@@ -929,7 +929,7 @@
         <!--Settings-->
         <scene sceneID="EDr-Z7-G02">
             <objects>
-                <viewController id="tkf-53-zrs" sceneMemberID="viewController">
+                <viewController id="tkf-53-zrs" customClass="PersonalSettingsViewController" customModule="Vaishnavaseva" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="QcR-3j-fia"/>
                         <viewControllerLayoutGuide type="bottom" id="vD8-pU-6Ix"/>
