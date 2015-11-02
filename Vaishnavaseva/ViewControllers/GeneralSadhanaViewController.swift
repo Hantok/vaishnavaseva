@@ -74,7 +74,7 @@ class GeneralSadhanaViewController: JSONTableViewController {
       let sadhanaEntry = entries[row]
       
       cell.name?.text = sadhanaEntry.sadhanaUser?.userName
-      if (sadhanaEntry.kirtan != nil) {
+      if (sadhanaEntry.kirtan != false) {
         cell.kirtan?.text = "Yes"
         cell.kirtan?.textColor = greenColor
       } else {
