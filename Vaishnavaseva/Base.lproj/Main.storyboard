@@ -860,7 +860,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Qgj-g9-zOa">
-                                <rect key="frame" x="20" y="104" width="560" height="150"/>
+                                <rect key="frame" x="20" y="72" width="560" height="150"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Login" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cW5-cc-Bq4">
                                         <rect key="frame" x="180" y="0.0" width="200" height="30"/>
@@ -903,7 +903,7 @@
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="Qgj-g9-zOa" firstAttribute="leading" secondItem="KlS-cs-6qL" secondAttribute="leadingMargin" id="VfJ-Hc-ZCY"/>
-                            <constraint firstItem="Qgj-g9-zOa" firstAttribute="top" secondItem="IhL-0d-bqS" secondAttribute="bottom" constant="40" id="yZJ-9e-ORn"/>
+                            <constraint firstItem="Qgj-g9-zOa" firstAttribute="top" secondItem="IhL-0d-bqS" secondAttribute="bottom" constant="8" id="yZJ-9e-ORn"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Qgj-g9-zOa" secondAttribute="trailing" id="zMz-Yz-RJ1"/>
                         </constraints>
                         <connections>
