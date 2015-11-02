@@ -29,7 +29,6 @@
 		4E436D751BE110540046C145 /* String+Vaishnavaseva.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E436D6F1BE110540046C145 /* String+Vaishnavaseva.swift */; };
 		4E436D761BE110540046C145 /* VSResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E436D701BE110540046C145 /* VSResponse.swift */; };
 		4E436D771BE110540046C145 /* VSURLSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E436D711BE110540046C145 /* VSURLSessionDelegate.swift */; };
-		4E43E3271BE7C51400D18973 /* VaishnavasevaAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E43E3261BE7C51400D18973 /* VaishnavasevaAccount.swift */; };
 		4E43E3451BE7FD4500D18973 /* BackFromEditToMy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E43E3441BE7FD4500D18973 /* BackFromEditToMy.swift */; };
 		4E43E3491BE8087200D18973 /* Locksmith.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E43E3481BE8087200D18973 /* Locksmith.swift */; };
 		4E43E34B1BE8089F00D18973 /* LocksmithAccessibleOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E43E34A1BE8089F00D18973 /* LocksmithAccessibleOption.swift */; };
@@ -138,7 +137,6 @@
 		4E436D6F1BE110540046C145 /* String+Vaishnavaseva.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "String+Vaishnavaseva.swift"; path = "Networking/String+Vaishnavaseva.swift"; sourceTree = "<group>"; };
 		4E436D701BE110540046C145 /* VSResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VSResponse.swift; path = Networking/VSResponse.swift; sourceTree = "<group>"; };
 		4E436D711BE110540046C145 /* VSURLSessionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VSURLSessionDelegate.swift; path = Networking/VSURLSessionDelegate.swift; sourceTree = "<group>"; };
-		4E43E3261BE7C51400D18973 /* VaishnavasevaAccount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VaishnavasevaAccount.swift; path = Utilities/VaishnavasevaAccount.swift; sourceTree = "<group>"; };
 		4E43E3441BE7FD4500D18973 /* BackFromEditToMy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BackFromEditToMy.swift; path = AppController/Segues/BackFromEditToMy.swift; sourceTree = "<group>"; };
 		4E43E3481BE8087200D18973 /* Locksmith.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Locksmith.swift; path = Keychain/Locksmith.swift; sourceTree = "<group>"; };
 		4E43E34A1BE8089F00D18973 /* LocksmithAccessibleOption.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocksmithAccessibleOption.swift; path = Keychain/LocksmithAccessibleOption.swift; sourceTree = "<group>"; };
@@ -358,7 +356,6 @@
 				4E436D4D1BE10F6D0046C145 /* ActivityIndicatorsContainer.swift */,
 				755B5DE31BA2D81500ADE410 /* Alerts.swift */,
 				4E9977B21BD628790002D7A0 /* Constants.swift */,
-				4E43E3261BE7C51400D18973 /* VaishnavasevaAccount.swift */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -651,7 +648,6 @@
 				755B5DE41BA2D81500ADE410 /* Alerts.swift in Sources */,
 				4E436D4E1BE10F6D0046C145 /* ActivityIndicatorsContainer.swift in Sources */,
 				7521AFA51B57C729004B2CFE /* AppControllerStatePersonalSadhana.swift in Sources */,
-				4E43E3271BE7C51400D18973 /* VaishnavasevaAccount.swift in Sources */,
 				75C331FC1B695F6C0075F747 /* GeneralToLogIn.swift in Sources */,
 				7553A0F81BE7624D005F54B0 /* AppControllerStatePersonalSettings.swift in Sources */,
 				4E43E3451BE7FD4500D18973 /* BackFromEditToMy.swift in Sources */,

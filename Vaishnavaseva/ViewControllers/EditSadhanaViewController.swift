@@ -33,17 +33,13 @@ class EditSadhanaViewController: BaseViewController, UIPickerViewDataSource, UIP
   var superviewHeightConstraints: [NSLayoutConstraint] = []
   var superviewTopConstraints: [NSLayoutConstraint] = []
   
-  var booksReadInMinutes = 0
-  var kirtanDone = false
-  var serviceDone = false
-  var jogaDone = false
-  var lecturesDone = false
-  
   var sadhanaTypesEnableState = SadhanaTypesEnableState()
   
   var animationsEnabled = false
   var lastAnimatedView: UIView?
   var minimizationTimer: NSTimer?
+  
+  var sadhanaEntry = SadhanaEntry()
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -75,19 +71,51 @@ class EditSadhanaViewController: BaseViewController, UIPickerViewDataSource, UIP
     jogaSwitch.enabled = sadhanaTypesEnableState.Joga
     lecturesSwitch.enabled = sadhanaTypesEnableState.Lectures
     
-    kirtanSwitch.setOn(kirtanDone, animated: false)
-    booksMinutesTextField.text = booksReadInMinutes > 0 ? String("\(booksReadInMinutes)") : ""
-    booksMinutesStepperControl.value = Double(booksReadInMinutes)
-    serviceSwitch.setOn(serviceDone, animated: false)
-    jogaSwitch.setOn(jogaDone, animated: false)
-    lecturesSwitch.setOn(lecturesDone, animated: false)
+    booksMinutesTextField.text = self.sadhanaEntry.reading! > 0 ? String("\(self.sadhanaEntry.reading!)") : ""
+    booksMinutesStepperControl.value = Double(self.sadhanaEntry.reading!)
+    
+    kirtanSwitch.setOn(self.sadhanaEntry.kirtan!, animated: false)
+    
+    japaRoundsPickerView.selectRow(self.sadhanaEntry.jCount730!, inComponent: 0, animated: false)
+    japaRoundsPickerView.selectRow(self.sadhanaEntry.jCount1000!, inComponent: 1, animated: false)
+    japaRoundsPickerView.selectRow(self.sadhanaEntry.jCount1800!, inComponent: 2, animated: false)
+    japaRoundsPickerView.selectRow(self.sadhanaEntry.jCountAfter!, inComponent: 3, animated: false)
+    
+    let dateFormat: NSDateFormatter = NSDateFormatter()
+    dateFormat.dateFormat = "HH:mm"
+    wakeTimePickerView.date = dateFormat.dateFromString(self.sadhanaEntry.wakeUpTime!)!
+    sleepTimePickerView.date = dateFormat.dateFromString(self.sadhanaEntry.sleepTime!)!
+    
+    serviceSwitch.setOn(self.sadhanaEntry.serviceEnable!, animated: false)
+    jogaSwitch.setOn(self.sadhanaEntry.exerciseEnable!, animated: false)
+    lecturesSwitch.setOn(self.sadhanaEntry.lectionsEnable!, animated: false)
+    
   }
   
   override func viewDidAppear(animated: Bool) {
     animationsEnabled = true
   }
   
+  override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    booksMinutesTextField.endEditing(true)
+  }
+  
   @IBAction func onDone(sender: AnyObject) {
+    self.sadhanaEntry.reading = booksMinutesTextField.text! == "" ? 0 : Int(booksMinutesTextField.text!)
+    self.sadhanaEntry.kirtan = kirtanSwitch.on
+    
+    let dateFormat: NSDateFormatter = NSDateFormatter()
+    dateFormat.dateFormat = "HH:mm"
+    self.sadhanaEntry.wakeUpTime = dateFormat.stringFromDate(wakeTimePickerView.date)
+    self.sadhanaEntry.sleepTime = dateFormat.stringFromDate(sleepTimePickerView.date)
+    
+    self.sadhanaEntry.serviceEnable = serviceSwitch.on
+    self.sadhanaEntry.exerciseEnable = jogaSwitch.on
+    self.sadhanaEntry.lectionsEnable = lecturesSwitch.on
+    
+    let spiningActivity = MBProgressHUD.showHUDAddedTo(navigationController?.view, animated: true)
+    spiningActivity.labelText = "Please wait"
+    
     sendActionForStateViewEvent(OnDoneStateViewEvent)
   }
   
@@ -117,6 +145,16 @@ class EditSadhanaViewController: BaseViewController, UIPickerViewDataSource, UIP
   }
   
   func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+    switch component {
+    case 0:
+      self.sadhanaEntry.jCount730 = row
+    case 1:
+      self.sadhanaEntry.jCount1000 = row
+    case 2:
+      self.sadhanaEntry.jCount1800 = row
+    default:
+      self.sadhanaEntry.jCountAfter = row //3
+    }
     self.minimizeViewAnimatedIfNeeded()
   }
   
