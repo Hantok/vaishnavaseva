@@ -96,54 +96,56 @@ import UIKit
     method adds new elements to the array dataSource if needed
   */
   private func createEmptySadhanaEntries(today: Int, entries: Array<SadhanaEntry>) -> Array<SadhanaEntry> {
+    var date = NSDate()
+    let calendar = NSCalendar.currentCalendar()
+    let components = calendar.components([.Year, .Month, .Day], fromDate: date)
+    var day = 1
+    var result: Array<SadhanaEntry> = []
+    for sadhanaEntry in entries {
+      while day < sadhanaEntry.day {
+        components.day = day
+        date = calendar.dateFromComponents(components)!
+        date = date.dateByAddingTimeInterval(NSTimeInterval.init(NSTimeZone.systemTimeZone().secondsFromGMT))
+        result.append(createEmptySadhanaEntryForDate(date))
+        ++day
+      }
+      result.append(sadhanaEntry)
+      ++day
+    }
     
+    while day <= today {
+      components.day = day
+      date = calendar.dateFromComponents(components)!
+      date = date.dateByAddingTimeInterval(NSTimeInterval.init(NSTimeZone.systemTimeZone().secondsFromGMT))
+      result.append(createEmptySadhanaEntryForDate(date))
+      ++day
+    }
+    
+    return result
+  }
+  
+  func createEmptySadhanaEntryForDate(date: NSDate) -> SadhanaEntry {
     let dateFormat: NSDateFormatter = NSDateFormatter()
     dateFormat.dateFormat = "yyyy-MM-dd"
-    var startDate = NSDate()
-    var addNewCellToTableView = false
-    if entries.count == 0 //new month started
-    {
-      let calendar = NSCalendar.currentCalendar()
-      let components = calendar.components([.Year, .Month, .Day], fromDate: startDate)
-      
-      components.day = 1
-      startDate = calendar.dateFromComponents(components)!
-      startDate = startDate.dateByAddingTimeInterval(NSTimeInterval.init(NSTimeZone.systemTimeZone().secondsFromGMT))
-      addNewCellToTableView = true
-    }
-    else
-    {
-      //if today data already in DB, do change json
-      addNewCellToTableView = dateFormat.stringFromDate(startDate) == (entries.last?.date)! ? false : true
-    }
-    
     let calendar = NSCalendar.currentCalendar()
-    let components = calendar.components([.Year, .Month, .Day], fromDate: startDate)
-    let startDay = components.day
-    
-    var result = entries
-    for var day = (startDay <= today && addNewCellToTableView) ? startDay : startDay + 1; day <= today; day++
-    {
-      var sadhanaEntry = SadhanaEntry()
-      sadhanaEntry.date = dateFormat.stringFromDate(startDate) as String
-      sadhanaEntry.day = day
-      sadhanaEntry.id = -1
-      sadhanaEntry.userId = Int((NSUserDefaults.standardUserDefaults().valueForKey("me")?["userid"]) as! String)
-      sadhanaEntry.jCount730 = 0
-      sadhanaEntry.jCount1000 = 0
-      sadhanaEntry.jCount1800 = 0
-      sadhanaEntry.jCountAfter = 0
-      sadhanaEntry.kirtan = false
-      sadhanaEntry.reading = 0
-      sadhanaEntry.exerciseEnable = false
-      sadhanaEntry.lectionsEnable = false
-      sadhanaEntry.serviceEnable = false
-      sadhanaEntry.sleepTime = "00:00"
-      sadhanaEntry.wakeUpTime = "00:00"
-      
-      result.append(sadhanaEntry)
-    }
+    let components = calendar.components([.Day], fromDate: date)
 
-    return result
+    var sadhanaEntry = SadhanaEntry()
+    sadhanaEntry.date = dateFormat.stringFromDate(date) as String
+    sadhanaEntry.day = components.day
+    sadhanaEntry.id = -1
+    sadhanaEntry.userId = Int((NSUserDefaults.standardUserDefaults().valueForKey("me")?["userid"]) as! String)
+    sadhanaEntry.jCount730 = 0
+    sadhanaEntry.jCount1000 = 0
+    sadhanaEntry.jCount1800 = 0
+    sadhanaEntry.jCountAfter = 0
+    sadhanaEntry.kirtan = false
+    sadhanaEntry.reading = 0
+    sadhanaEntry.exerciseEnable = false
+    sadhanaEntry.lectionsEnable = false
+    sadhanaEntry.serviceEnable = false
+    sadhanaEntry.sleepTime = "00:00"
+    sadhanaEntry.wakeUpTime = "00:00"
+    return sadhanaEntry
   }
 }
