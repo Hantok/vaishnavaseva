@@ -125,11 +125,6 @@ class MySadhanaViewController: JSONTableViewController {
     }
   }
   
-  @IBAction func onEdit(sender: AnyObject)
-    {
-    performSegueWithIdentifier("MyToEdit", sender: nil)
-    }
-  
   //Needed for unwind segues to work
   @IBAction func backToMySadhana(segue:UIStoryboardSegue)
     {

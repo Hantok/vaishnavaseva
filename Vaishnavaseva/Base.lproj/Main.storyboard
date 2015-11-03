@@ -309,16 +309,6 @@
                                     <segue destination="MwM-Sy-swG" kind="show" identifier="MyToLogOut" id="DGu-S3-pdr"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem style="plain" id="3Fn-bv-Es7">
-                                <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="f62-bt-VOc">
-                                    <rect key="frame" x="394" y="7" width="30" height="30"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <state key="normal" title="Edit"/>
-                                    <connections>
-                                        <action selector="onEdit:" destination="n9d-oo-zJV" eventType="touchUpInside" id="ZOI-9N-JXx"/>
-                                    </connections>
-                                </button>
-                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
@@ -1071,6 +1061,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="jLf-bz-HMW"/>
-        <segue reference="IwF-dC-oae"/>
+        <segue reference="2wo-T1-wJy"/>
     </inferredMetricsTieBreakers>
 </document>
