@@ -22,8 +22,8 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="29"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="dBm-Qa-heS">
-                                            <rect key="frame" x="0.0" y="0.0" width="584" height="13"/>
+                                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="dBm-Qa-heS">
+                                            <rect key="frame" x="8" y="8" width="584" height="13"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UZJ-Ue-3Y1">
                                                     <rect key="frame" x="0.0" y="0.0" width="195" height="13"/>
@@ -383,8 +383,8 @@
                                             </view>
                                         </subviews>
                                     </stackView>
-                                    <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yUu-fy-5bm" customClass="HitTestPicker" customModule="Vaishnavaseva" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="-83" width="600" height="216"/>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yUu-fy-5bm" customClass="HitTestPicker" customModule="Vaishnavaseva" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="-90" width="600" height="216"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="216" id="ALZ-TA-iP0"/>
                                         </constraints>
@@ -1061,6 +1061,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="jLf-bz-HMW"/>
-        <segue reference="2wo-T1-wJy"/>
+        <segue reference="IwF-dC-oae"/>
     </inferredMetricsTieBreakers>
 </document>
