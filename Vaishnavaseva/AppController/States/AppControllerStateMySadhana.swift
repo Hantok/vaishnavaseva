@@ -10,7 +10,7 @@ import UIKit
 //    }
   override func sceneDidBecomeCurrent() {
     super.sceneDidBecomeCurrent()
-    self.viewControllerProtocol.setAction(Selector("userSadhanaEntries"), forTarget: self, forStateViewEvent: (self.viewController as! MySadhanaViewController).mySadhanaEntriesStateViewEvent)
+    self.viewControllerProtocol.setAction(Selector("userSadhanaEntries"), forTarget: self, forStateViewEvent: mySadhanaEntriesStateViewEvent)
   }
   
   func userSadhanaEntries() {

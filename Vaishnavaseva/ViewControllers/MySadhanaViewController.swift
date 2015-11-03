@@ -1,7 +1,8 @@
 import UIKit
 
+let mySadhanaEntriesStateViewEvent = "mySadhanaEntriesStateViewEvent"
+
 class MySadhanaViewController: JSONTableViewController {
-  let mySadhanaEntriesStateViewEvent = "mySadhanaEntriesStateViewEvent"
   
   var me = SadhanaUser()
   var month = 0
@@ -115,7 +116,7 @@ class MySadhanaViewController: JSONTableViewController {
           {
             --self.month 
           }
-          self.sendActionForStateViewEvent(self.mySadhanaEntriesStateViewEvent)
+          self.sendActionForStateViewEvent(mySadhanaEntriesStateViewEvent)
       }
     }
     else
