@@ -1047,6 +1047,13 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="exerciseEnableSwitch" destination="hI4-iP-5G7" id="DUZ-qm-NaF"/>
+                        <outlet property="lecturesEnableSwitch" destination="uIr-RF-e3r" id="Dw3-h9-OS2"/>
+                        <outlet property="publicEnableSwitch" destination="qTY-Bf-Reo" id="6gq-9B-4Rf"/>
+                        <outlet property="serviceEnableSwitch" destination="XPz-1q-XTq" id="JuS-OY-7kH"/>
+                        <outlet property="showMore16Switch" destination="E5r-DC-4IV" id="yLu-Q9-onJ"/>
+                        <outlet property="sleepEnableSwitch" destination="bGf-j8-v1x" id="2Ez-wZ-ivN"/>
+                        <outlet property="wakeUpEnableSwitch" destination="Hrn-Sx-Iad" id="n63-9h-XDI"/>
                         <segue destination="IZA-PQ-cI9" kind="unwind" identifier="BackFromAnyToAny" unwindAction="backToMySadhana:" id="mzL-6P-2BC"/>
                     </connections>
                 </viewController>

@@ -39,7 +39,7 @@ class Deserialiser {
     sadhanaUser.userId = dictionary.objectForKey("userid")?.integerValue
     sadhanaUser.userName = dictionary.objectForKey("user_name") as? String
     sadhanaUser.userNickname = dictionary.objectForKey("user_nicename") as? String
-    sadhanaUser.isPublic = dictionary.objectForKey("cfg_public")?.boolValue
+    sadhanaUser.publicEnable = dictionary.objectForKey("cfg_public")?.boolValue
     sadhanaUser.showMore16 = dictionary.objectForKey("cfg_showmoresixteen")?.boolValue
     sadhanaUser.wakeUpEnable = dictionary.objectForKey("opt_wake")?.boolValue
     sadhanaUser.serviceEnable = dictionary.objectForKey("opt_service")?.boolValue

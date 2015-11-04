@@ -12,7 +12,7 @@ public struct SadhanaUser {
   var userId: Int?
   var userName: String?
   var userNickname: String?
-  var isPublic: Bool?
+  var publicEnable: Bool?
   var showMore16: Bool?
   var wakeUpEnable: Bool?
   var serviceEnable: Bool?

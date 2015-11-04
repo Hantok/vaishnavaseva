@@ -64,16 +64,6 @@ import UIKit
     return params
   }
   
-  private func getAuthString() -> String {
-    let credential = Locksmith.loadDataForUserAccount("myUserAccount")!
-    let login = credential.keys.first!
-    let password = credential.values.first! as! String
-    let userPasswordString = "\(login):\(password)"
-    let userPasswordData = userPasswordString.dataUsingEncoding(NSUTF8StringEncoding)
-    let base64EncodedCredential = userPasswordData!.base64EncodedStringWithOptions(NSDataBase64EncodingOptions.Encoding64CharacterLineLength)
-    return "Basic \(base64EncodedCredential)"
-  }
-  
   
 
 //  override func isEqualTo(other: EquatableBase) -> Bool

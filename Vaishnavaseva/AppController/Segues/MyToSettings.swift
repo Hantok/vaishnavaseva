@@ -5,7 +5,7 @@ import Foundation
   {
   override func perform()
     {
-    let destinationState = AppControllerStateInfo()
+    let destinationState = AppControllerStatePersonalSettings()
     destinationState.viewController = self.visualSegue.destinationViewController
     self.destinationSceneController = destinationState
     
