@@ -115,7 +115,12 @@ class GeneralSadhanaViewController: JSONTableViewController {
   
   override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
   {
-    performSegueWithIdentifier("GeneralToPersonal", sender: nil)
+    let me = NSUserDefaults.standardUserDefaults().objectForKey("me")
+    if me != nil && (me as! NSDictionary).objectForKey("userid")?.integerValue == self.entries[indexPath.row].sadhanaUser?.userId {
+      performSegueWithIdentifier("GeneralToMy", sender: nil)
+    } else {
+      performSegueWithIdentifier("GeneralToPersonal", sender: nil)
+    }
     tableView.deselectRowAtIndexPath(indexPath, animated: true)
   }
   
