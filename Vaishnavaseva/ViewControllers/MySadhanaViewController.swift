@@ -3,7 +3,6 @@ import UIKit
 let mySadhanaEntriesStateViewEvent = "mySadhanaEntriesStateViewEvent"
 
 class MySadhanaViewController: JSONTableViewController {
-  
   var me = SadhanaUser()
   var month = 0
   var totalFound = 1
@@ -12,7 +11,7 @@ class MySadhanaViewController: JSONTableViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    self.navigationItem.title = "My sadhana"
+    self.navigationItem.leftItemsSupplementBackButton = true;
     if me.userName == nil {
       self.me = Deserialiser().getSadhanaUser(NSUserDefaults.standardUserDefaults().valueForKey("me") as! NSDictionary)
     }

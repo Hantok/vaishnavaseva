@@ -136,12 +136,12 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="General sadhana" id="bIg-DW-MlW">
                         <rightBarButtonItems>
-                            <barButtonItem title="Info" id="dMc-w4-mhg">
+                            <barButtonItem image="info_24.png" id="dMc-w4-mhg">
                                 <connections>
                                     <segue destination="kd6-ZC-lcN" kind="show" identifier="GeneralToInfo" id="IwF-dC-oae"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem systemItem="compose" id="AWP-p2-cFo">
+                            <barButtonItem image="man_24.png" id="AWP-p2-cFo">
                                 <connections>
                                     <action selector="onMySadhana:" destination="Pfd-d1-ZYF" id="SZw-l9-kBe"/>
                                 </connections>
@@ -293,20 +293,20 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="My Sadhana" id="wZK-ll-PPl">
+                        <barButtonItem key="leftBarButtonItem" image="outbox_24.png" id="cSU-0W-0yc">
+                            <connections>
+                                <segue destination="MwM-Sy-swG" kind="show" identifier="MyToLogOut" id="DGu-S3-pdr"/>
+                            </connections>
+                        </barButtonItem>
                         <rightBarButtonItems>
-                            <barButtonItem title="Info" id="6Kz-g2-lg8">
+                            <barButtonItem image="info_24.png" id="6Kz-g2-lg8">
                                 <connections>
                                     <segue destination="kd6-ZC-lcN" kind="show" identifier="MyToInfo" id="2wo-T1-wJy"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem title="Settings" id="RSd-Qb-SDt">
+                            <barButtonItem image="gear_24.png" id="RSd-Qb-SDt">
                                 <connections>
                                     <segue destination="tkf-53-zrs" kind="show" identifier="MyToSettings" id="gHR-0e-DJf"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem systemItem="stop" id="cSU-0W-0yc">
-                                <connections>
-                                    <segue destination="MwM-Sy-swG" kind="show" identifier="MyToLogOut" id="DGu-S3-pdr"/>
                                 </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
@@ -716,7 +716,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Person Name" id="8wk-3y-F7U">
-                        <barButtonItem key="rightBarButtonItem" title="Info" id="Z16-EL-x8t">
+                        <barButtonItem key="rightBarButtonItem" image="info_24.png" id="Z16-EL-x8t">
                             <connections>
                                 <segue destination="kd6-ZC-lcN" kind="show" identifier="PersonalToInfo" id="uT5-hR-sCQ"/>
                             </connections>
@@ -1065,9 +1065,13 @@
     </scenes>
     <resources>
         <image name="default_avatar.gif" width="100" height="100"/>
+        <image name="gear_24.png" width="24" height="24"/>
+        <image name="info_24.png" width="24" height="24"/>
+        <image name="man_24.png" width="24" height="24"/>
+        <image name="outbox_24.png" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="jLf-bz-HMW"/>
-        <segue reference="IwF-dC-oae"/>
+        <segue reference="uT5-hR-sCQ"/>
     </inferredMetricsTieBreakers>
 </document>

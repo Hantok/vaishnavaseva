@@ -55,6 +55,10 @@
 		7553A0F41BE761ED005F54B0 /* PersonalSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7553A0F31BE761ED005F54B0 /* PersonalSettingsViewController.swift */; };
 		7553A0F61BE76217005F54B0 /* MyToSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7553A0F51BE76217005F54B0 /* MyToSettings.swift */; };
 		7553A0F81BE7624D005F54B0 /* AppControllerStatePersonalSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7553A0F71BE7624D005F54B0 /* AppControllerStatePersonalSettings.swift */; };
+		7553A13E1BEA7FB7005F54B0 /* gear_24.png in Resources */ = {isa = PBXBuildFile; fileRef = 7553A13B1BEA7FB7005F54B0 /* gear_24.png */; };
+		7553A1421BEA81B0005F54B0 /* outbox_24.png in Resources */ = {isa = PBXBuildFile; fileRef = 7553A1411BEA81B0005F54B0 /* outbox_24.png */; };
+		7553A1441BEA82AB005F54B0 /* man_24.png in Resources */ = {isa = PBXBuildFile; fileRef = 7553A1431BEA82AB005F54B0 /* man_24.png */; };
+		7553A1461BEA8322005F54B0 /* info_24.png in Resources */ = {isa = PBXBuildFile; fileRef = 7553A1451BEA8322005F54B0 /* info_24.png */; };
 		755B5DE11BA2D72900ADE410 /* JSONTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755B5DE01BA2D72900ADE410 /* JSONTableViewController.swift */; };
 		755B5DE41BA2D81500ADE410 /* Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755B5DE31BA2D81500ADE410 /* Alerts.swift */; };
 		755BF4E01B68D6BE004B1F61 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755BF4DE1B68D6BE004B1F61 /* LogInViewController.swift */; };
@@ -165,6 +169,10 @@
 		7553A0F31BE761ED005F54B0 /* PersonalSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersonalSettingsViewController.swift; path = ViewControllers/PersonalSettingsViewController.swift; sourceTree = "<group>"; };
 		7553A0F51BE76217005F54B0 /* MyToSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MyToSettings.swift; path = AppController/Segues/MyToSettings.swift; sourceTree = "<group>"; };
 		7553A0F71BE7624D005F54B0 /* AppControllerStatePersonalSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppControllerStatePersonalSettings.swift; path = AppController/States/AppControllerStatePersonalSettings.swift; sourceTree = "<group>"; };
+		7553A13B1BEA7FB7005F54B0 /* gear_24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = gear_24.png; path = Images/gear_24.png; sourceTree = "<group>"; };
+		7553A1411BEA81B0005F54B0 /* outbox_24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = outbox_24.png; path = Images/outbox_24.png; sourceTree = "<group>"; };
+		7553A1431BEA82AB005F54B0 /* man_24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = man_24.png; path = Images/man_24.png; sourceTree = "<group>"; };
+		7553A1451BEA8322005F54B0 /* info_24.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = info_24.png; path = Images/info_24.png; sourceTree = "<group>"; };
 		755B5DE01BA2D72900ADE410 /* JSONTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSONTableViewController.swift; path = ViewControllers/JSONTableViewController.swift; sourceTree = "<group>"; };
 		755B5DE31BA2D81500ADE410 /* Alerts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Alerts.swift; path = Utilities/Alerts.swift; sourceTree = "<group>"; };
 		755BF4DE1B68D6BE004B1F61 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LogInViewController.swift; path = ViewControllers/LogInViewController.swift; sourceTree = "<group>"; };
@@ -297,6 +305,10 @@
 		750810C71B971FE700E97FF5 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				7553A1451BEA8322005F54B0 /* info_24.png */,
+				7553A1431BEA82AB005F54B0 /* man_24.png */,
+				7553A1411BEA81B0005F54B0 /* outbox_24.png */,
+				7553A13B1BEA7FB7005F54B0 /* gear_24.png */,
 				4E436D4F1BE10FA00046C145 /* icon-29x29.png */,
 				4E436D501BE10FA00046C145 /* icon-40x40.png */,
 				4E436D511BE10FA00046C145 /* icon-58x58.png */,
@@ -598,8 +610,12 @@
 				4E436D581BE10FA00046C145 /* icon-29x29.png in Resources */,
 				4E436D5C1BE10FA00046C145 /* icon-80x80.png in Resources */,
 				750810C91B971FFA00E97FF5 /* default_avatar.gif in Resources */,
+				7553A1421BEA81B0005F54B0 /* outbox_24.png in Resources */,
+				7553A1441BEA82AB005F54B0 /* man_24.png in Resources */,
+				7553A13E1BEA7FB7005F54B0 /* gear_24.png in Resources */,
 				4E436D601BE10FA00046C145 /* icon-180x180.png in Resources */,
 				4E436D591BE10FA00046C145 /* icon-40x40.png in Resources */,
+				7553A1461BEA8322005F54B0 /* info_24.png in Resources */,
 				4E436D5B1BE10FA00046C145 /* icon-76x76.png in Resources */,
 				4E436D5D1BE10FA00046C145 /* icon-87x87.png in Resources */,
 				4E436D5F1BE10FA00046C145 /* icon-152x152.png in Resources */,
