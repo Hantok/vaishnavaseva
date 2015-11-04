@@ -44,6 +44,8 @@ class EditSadhanaViewController: BaseViewController, UIPickerViewDataSource, UIP
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    self.navigationItem.title = sadhanaEntry.date
+    
     japaRoundsPickerView.hitTestDelegate = self
     wakeTimePickerView.hitTestDelegate = self
     sleepTimePickerView.hitTestDelegate = self
