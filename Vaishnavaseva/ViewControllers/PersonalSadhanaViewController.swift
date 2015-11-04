@@ -19,6 +19,7 @@ class PersonalSadhanaViewController: JSONTableViewController {
     {
       self.insertRowAtBottom()
     }
+    self.tableView.allowsSelection = false
   }
 
   override func didReceiveMemoryWarning() {
