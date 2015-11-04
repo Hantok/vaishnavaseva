@@ -20,8 +20,7 @@ class MySadhanaViewController: JSONTableViewController {
     let spiningActivity = MBProgressHUD.showHUDAddedTo(navigationController?.view, animated: true)
     spiningActivity.labelText = "Please wait"
     
-    self.tableView.addInfiniteScrollingWithActionHandler()
-      {
+    self.tableView.addInfiniteScrollingWithActionHandler() {
         self.insertRowAtBottom()
     }
   }

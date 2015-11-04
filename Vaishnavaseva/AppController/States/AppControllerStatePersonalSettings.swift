@@ -19,7 +19,8 @@ import UIKit
         self.viewController.showErrorAlert("Server error")
         return
       } else {
-        self.updateUserDefaults(sadhanaUser)
+        let dict = response.responseJSON as! NSDictionary
+        NSUserDefaults.standardUserDefaults().setValue(dict, forKey: "me")
         self.viewController.performSegueWithIdentifier("BackFromAnyToAny", sender: nil)
       }
     }
@@ -36,24 +37,6 @@ import UIKit
       "opt_lections" : "\(sadhanaUser.lectionsEnable!)",
       "opt_sleep" : "\(sadhanaUser.sleepEnable!)"]
     return params
-  }
-  
-  private func updateUserDefaults(sadhanaUser : SadhanaUser) {
-    
-    let dictionary: NSDictionary =
-      [ "userid" : sadhanaUser.userId!
-      , "user_name" : sadhanaUser.userName!
-      , "user_nicename" : sadhanaUser.userNickname!
-      , "cfg_public" : sadhanaUser.publicEnable!
-      , "cfg_showmoresixteen" : sadhanaUser.showMore16!
-      , "opt_wake" : sadhanaUser.wakeUpEnable!
-      , "opt_service" : sadhanaUser.serviceEnable!
-      , "opt_exercise" : sadhanaUser.exerciseEnable!
-      , "opt_lections" : sadhanaUser.lectionsEnable!
-      , "opt_sleep" : sadhanaUser.sleepEnable!
-      , "avatar_url" : sadhanaUser.avatarUrl!
-    ]
-    NSUserDefaults.standardUserDefaults().setObject(dictionary, forKey: "me")
   }
   
 //  override func isEqualTo(other: EquatableBase) -> Bool

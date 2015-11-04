@@ -90,6 +90,8 @@ import UIKit
       mySadhanaViewController.isBeforeResponseSucsess = true
       mySadhanaViewController.tableView.infiniteScrollingView.stopAnimating()
     }
+    
+    updateUserSettings()
   }
   
   /* 
@@ -147,5 +149,23 @@ import UIKit
     sadhanaEntry.sleepTime = "00:00"
     sadhanaEntry.wakeUpTime = "00:00"
     return sadhanaEntry
+  }
+  
+  func updateUserSettings() {
+    dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0)) {
+      let authString = self.getAuthString()
+      
+      "me".get(headers: ["Authorization" : authString]) { response in
+        if response.data == nil || response.HTTPResponse.statusCode != 200 {
+          print("Update user settings error. Server status code \(response.HTTPResponse.statusCode)")
+          return
+        } else {
+          let dict = response.responseJSON as! NSDictionary
+          (self.viewController as! MySadhanaViewController).me = Deserialiser().getSadhanaUser(dict)
+          NSUserDefaults.standardUserDefaults().setValue(dict, forKey: "me")
+        }
+      }
+
+    }
   }
 }
