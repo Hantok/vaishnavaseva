@@ -6,7 +6,7 @@
         <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
-        <!--General sadhana-->
+        <!--All Sadhana-->
         <scene sceneID="AvT-tN-Kgu">
             <objects>
                 <viewController id="Pfd-d1-ZYF" customClass="GeneralSadhanaViewController" customModule="Vaishnavaseva" customModuleProvider="target" sceneMemberID="viewController">
@@ -134,7 +134,7 @@
                             <outlet property="delegate" destination="Pfd-d1-ZYF" id="Fpx-if-MiH"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="General sadhana" id="bIg-DW-MlW">
+                    <navigationItem key="navigationItem" title="All Sadhana" id="bIg-DW-MlW">
                         <rightBarButtonItems>
                             <barButtonItem image="info_24.png" id="dMc-w4-mhg">
                                 <connections>
@@ -639,7 +639,7 @@
             </objects>
             <point key="canvasLocation" x="4023" y="-298"/>
         </scene>
-        <!--Person Name-->
+        <!--Садхана-->
         <scene sceneID="IWs-Rg-hR5">
             <objects>
                 <viewController id="Egm-P0-sbH" customClass="PersonalSadhanaViewController" customModule="Vaishnavaseva" customModuleProvider="target" sceneMemberID="viewController">
@@ -772,7 +772,7 @@
                             <outlet property="delegate" destination="Egm-P0-sbH" id="lze-96-Hu3"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Person Name" id="8wk-3y-F7U">
+                    <navigationItem key="navigationItem" title="Садхана" id="8wk-3y-F7U">
                         <barButtonItem key="rightBarButtonItem" image="info_24.png" id="Z16-EL-x8t">
                             <connections>
                                 <segue destination="kd6-ZC-lcN" kind="show" identifier="PersonalToInfo" id="uT5-hR-sCQ"/>
@@ -832,7 +832,7 @@
             </objects>
             <point key="canvasLocation" x="2870" y="1268"/>
         </scene>
-        <!--Log Out-->
+        <!--My Data-->
         <scene sceneID="v30-yM-RvO">
             <objects>
                 <viewController id="MwM-Sy-swG" customClass="LogOutViewController" customModule="Vaishnavaseva" customModuleProvider="target" sceneMemberID="viewController">
@@ -882,7 +882,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="Hun-m5-vm8" secondAttribute="trailing" id="qtv-zc-Mf6"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Log Out" id="IxR-1M-pMS"/>
+                    <navigationItem key="navigationItem" title="My Data" id="IxR-1M-pMS"/>
                     <connections>
                         <outlet property="nameLabel" destination="ruh-bu-HsW" id="7Dk-5A-Ejm"/>
                         <outlet property="photo" destination="1iI-vP-xVf" id="D1h-f4-Ptf"/>
@@ -988,11 +988,11 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="g2L-8g-Kwc">
                                 <rect key="frame" x="20" y="72" width="560" height="277"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w6w-ZO-bAU">
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="w6w-ZO-bAU">
                                         <rect key="frame" x="0.0" y="0.0" width="560" height="31"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sleep time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="JG5-DZ-7i1">
-                                                <rect key="frame" x="0.0" y="0.0" width="511" height="31"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="506" height="31"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -1002,11 +1002,11 @@
                                             </switch>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ulm-zs-EvH">
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="ulm-zs-EvH">
                                         <rect key="frame" x="0.0" y="41" width="560" height="31"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wake up time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="r0p-NP-hhY">
-                                                <rect key="frame" x="0.0" y="0.0" width="511" height="31"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="506" height="31"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -1016,11 +1016,11 @@
                                             </switch>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h8d-hV-D1k">
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="h8d-hV-D1k">
                                         <rect key="frame" x="0.0" y="82" width="560" height="31"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Joga" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="aOy-rm-8f8">
-                                                <rect key="frame" x="0.0" y="0.0" width="511" height="31"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="506" height="31"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -1030,11 +1030,11 @@
                                             </switch>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lnx-R6-ZPQ">
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="lnx-R6-ZPQ">
                                         <rect key="frame" x="0.0" y="123" width="560" height="31"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Service" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="WRz-Qx-uS1">
-                                                <rect key="frame" x="0.0" y="0.0" width="511" height="31"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="506" height="31"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -1044,11 +1044,11 @@
                                             </switch>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LMT-LL-AlX">
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="LMT-LL-AlX">
                                         <rect key="frame" x="0.0" y="164" width="560" height="31"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lectures" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="IfP-VN-WVK">
-                                                <rect key="frame" x="0.0" y="0.0" width="511" height="31"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="506" height="31"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -1058,11 +1058,11 @@
                                             </switch>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rzP-D7-hcp">
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="rzP-D7-hcp">
                                         <rect key="frame" x="0.0" y="205" width="560" height="31"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't show on the main page" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="DrF-Aj-Pf9">
-                                                <rect key="frame" x="0.0" y="0.0" width="511" height="31"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="506" height="31"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -1072,11 +1072,11 @@
                                             </switch>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kRF-pD-xAN">
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="kRF-pD-xAN">
                                         <rect key="frame" x="0.0" y="246" width="560" height="31"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't show more then 16 rounds for other users" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="UaH-JH-kiJ">
-                                                <rect key="frame" x="0.0" y="0.0" width="511" height="31"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="506" height="31"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -1129,6 +1129,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="jLf-bz-HMW"/>
-        <segue reference="uT5-hR-sCQ"/>
+        <segue reference="IwF-dC-oae"/>
     </inferredMetricsTieBreakers>
 </document>

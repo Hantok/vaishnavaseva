@@ -8,7 +8,7 @@
 "8OC-V4-eN1.title" = "Дата";
 
 /* Class = "UINavigationItem"; title = "Person Name"; ObjectID = "8wk-3y-F7U"; */
-"8wk-3y-F7U.title" = "Имя Преданного";
+"8wk-3y-F7U.title" = "Садхана";
 
 /* Class = "UILabel"; text = "Kirtan:"; ObjectID = "9QQ-en-2va"; */
 "9QQ-en-2va.text" = "Киртан:";
@@ -29,7 +29,7 @@
 "IfP-VN-WVK.text" = "Лекции";
 
 /* Class = "UINavigationItem"; title = "Log Out"; ObjectID = "IxR-1M-pMS"; */
-"IxR-1M-pMS.title" = "Выйти";
+"IxR-1M-pMS.title" = "Мои Данные";
 
 /* Class = "UILabel"; text = "Sleep time"; ObjectID = "JG5-DZ-7i1"; */
 "JG5-DZ-7i1.text" = "Сон";
@@ -95,7 +95,7 @@
 "aqL-df-gDL.text" = "Подъем";
 
 /* Class = "UINavigationItem"; title = "General sadhana"; ObjectID = "bIg-DW-MlW"; */
-"bIg-DW-MlW.title" = "Садхана";
+"bIg-DW-MlW.title" = "Вся Садхана";
 
 /* Class = "UILabel"; text = "30 min"; ObjectID = "beW-Cr-Kt8"; */
 "beW-Cr-Kt8.text" = "30 мин";
