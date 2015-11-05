@@ -17,7 +17,7 @@ class MySadhanaViewController: JSONTableViewController {
     }
     sendActionForStateViewEvent(mySadhanaEntriesStateViewEvent)
     let spiningActivity = MBProgressHUD.showHUDAddedTo(navigationController?.view, animated: true)
-    spiningActivity.labelText = "Please wait"
+    spiningActivity.labelText = NSLocalizedString("Please wait", comment: "Activity indicator text")
     
     self.tableView.addInfiniteScrollingWithActionHandler() {
         self.insertRowAtBottom()
@@ -51,11 +51,11 @@ class MySadhanaViewController: JSONTableViewController {
     let sadhanaEntry = entries[indexPath.row]
     if sadhanaEntry.kirtan == true
     {
-      cell.kirtan?.text = "Yes"
+      cell.kirtan?.text = NSLocalizedString("Yes", comment: "Kirtan done")
       cell.kirtan?.textColor = greenColor
     } else
     {
-      cell.kirtan?.text = "No"
+      cell.kirtan?.text = NSLocalizedString("No", comment: "No kirtan done")
       cell.kirtan?.textColor = UIColor.redColor()
     }
     cell.date.text = sadhanaEntry.date!

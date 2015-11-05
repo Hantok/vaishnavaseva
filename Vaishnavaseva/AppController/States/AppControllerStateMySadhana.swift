@@ -44,13 +44,13 @@ import UIKit
 
       MBProgressHUD.hideAllHUDsForView(self.viewController.navigationController?.view, animated: true)
       if (response.data == nil){
-        self.viewController.showErrorAlert("Server error")
+        self.viewController.showErrorAlert(NSLocalizedString("Server error", comment: "Alert title"))
         mySadhanaViewController.tableView.infiniteScrollingView.stopAnimating()
         mySadhanaViewController.isBeforeResponseSucsess = false
         return
       }
       if response.error?.code != nil {
-        mySadhanaViewController.showErrorAlert("No internet connection")
+        mySadhanaViewController.showErrorAlert(NSLocalizedString("No internet connection", comment: "Alert title"))
         mySadhanaViewController.tableView.infiniteScrollingView.stopAnimating()
         mySadhanaViewController.isBeforeResponseSucsess = false
         return

@@ -29,7 +29,7 @@ class PersonalSettingsViewController: BaseViewController {
   @IBAction func onDone(sender: AnyObject) {
     
     let spiningActivity = MBProgressHUD.showHUDAddedTo(navigationController?.view, animated: true)
-    spiningActivity.labelText = "Please wait"
+    spiningActivity.labelText = NSLocalizedString("Please wait", comment: "Activity indicator text")
     
     me.sleepEnable = sleepEnableSwitch.on
     me.wakeUpEnable = wakeUpEnableSwitch.on

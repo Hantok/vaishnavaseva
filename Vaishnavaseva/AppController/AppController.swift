@@ -111,14 +111,14 @@ class AppController: UIResponder, UIApplicationDelegate, UINavigationControllerD
   // MARK: - Core Data stack
 
   lazy var applicationDocumentsDirectory: NSURL = {
-      // The directory the application uses to store the Core Data store file. This code uses a directory named "Openminded.Template" in the application's documents Application Support directory.
+      // The directory the application uses to store the Core Data store file. This code uses a directory named the same way as app bundle in the application's documents Application Support directory.
       let urls = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
       return urls[urls.count-1]
   }()
 
   lazy var managedObjectModel: NSManagedObjectModel = {
       // The managed object model for the application. This property is not optional. It is a fatal error for the application not to be able to find and load its model.
-      let modelURL = NSBundle.mainBundle().URLForResource("Template", withExtension: "momd")!
+      let modelURL = NSBundle.mainBundle().URLForResource("Cache", withExtension: "momd")!
       return NSManagedObjectModel(contentsOfURL: modelURL)!
   }()
 
@@ -127,13 +127,13 @@ class AppController: UIResponder, UIApplicationDelegate, UINavigationControllerD
       // Create the coordinator and store
       let coordinator = NSPersistentStoreCoordinator(managedObjectModel: self.managedObjectModel)
       let url = self.applicationDocumentsDirectory.URLByAppendingPathComponent("SingleViewCoreData.sqlite")
-      var failureReason = "There was an error creating or loading the application's saved data."
+      var failureReason = NSLocalizedString("There was an error creating or loading the application's saved data.", comment: "CoreData failure reason")
       do {
           try coordinator.addPersistentStoreWithType(NSSQLiteStoreType, configuration: nil, URL: url, options: nil)
       } catch {
           // Report any error we got.
           var dict = [String: AnyObject]()
-          dict[NSLocalizedDescriptionKey] = "Failed to initialize the application's saved data"
+          dict[NSLocalizedDescriptionKey] = NSLocalizedString("Failed to initialize the application's saved data", comment: "CoreData description")
           dict[NSLocalizedFailureReasonErrorKey] = failureReason
 
           dict[NSUnderlyingErrorKey] = error as NSError

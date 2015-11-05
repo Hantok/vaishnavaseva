@@ -20,7 +20,7 @@ class GeneralSadhanaViewController: JSONTableViewController {
     
     firstTimeDownload()
     
-    self.refreshControl?.attributedTitle = NSAttributedString(string: "Refreshing...")
+    self.refreshControl?.attributedTitle = NSAttributedString(string: NSLocalizedString("Refreshing...", comment: "Refresh control text"))
     self.refreshControl?.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
     //self.tableView.addSubview(self.refreshControl)
 
@@ -75,10 +75,10 @@ class GeneralSadhanaViewController: JSONTableViewController {
       
       cell.name?.text = sadhanaEntry.sadhanaUser?.userName
       if (sadhanaEntry.kirtan != false) {
-        cell.kirtan?.text = "Yes"
+        cell.kirtan?.text = NSLocalizedString("Yes", comment: "Kirtan done")
         cell.kirtan?.textColor = greenColor
       } else {
-        cell.kirtan?.text = "No"
+        cell.kirtan?.text = NSLocalizedString("No", comment: "No kirtan done")
         cell.kirtan?.textColor = UIColor.redColor()
       }
       cell.books?.text = sadhanaEntry.reading?.description
@@ -137,7 +137,7 @@ class GeneralSadhanaViewController: JSONTableViewController {
   
   func firstTimeDownload() {
     let spiningActivity = MBProgressHUD.showHUDAddedTo(navigationController?.view, animated: true)
-    spiningActivity.labelText = "Please wait"
+    spiningActivity.labelText = NSLocalizedString("Please wait", comment: "Activity indicator text")
     refresh(self)
   }
   

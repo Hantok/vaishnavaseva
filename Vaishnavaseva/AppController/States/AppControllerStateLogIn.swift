@@ -25,14 +25,14 @@ import UIKit
         "me".get(headers: ["Authorization" : authString]) { response in
             MBProgressHUD.hideAllHUDsForView(self.viewController.navigationController?.view, animated: true)
             if (response.data == nil){
-              self.viewController.showErrorAlert("Server error")
+              self.viewController.showErrorAlert(NSLocalizedString("Server error", comment: "Alert title"))
               return
             }
             if response.HTTPResponse.statusCode != 200
             {
               logInViewController.passwordTextField.text = ""
               logInViewController.passwordTextField.becomeFirstResponder()
-              logInViewController.showErrorAlert("Authorization error!")
+              logInViewController.showErrorAlert(NSLocalizedString("Authorization error!", comment: "Alert title"))
             }
             else
             {

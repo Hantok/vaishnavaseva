@@ -18,7 +18,6 @@ class HitTestPicker: UIPickerView {
   
   override func hitTest(point: CGPoint, withEvent event: UIEvent?) -> UIView? {
     hitTestDelegate.hitTestCalledForView(self)
-    //print("hitTest")
     return super.hitTest(point, withEvent: event)
   }
     /*

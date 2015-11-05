@@ -48,16 +48,16 @@ class LogInViewController: BaseViewController {
     {
       if self.loginTextField.text == "" {
         self.loginTextField.becomeFirstResponder()
-        self.showErrorAlert("Enter login please")
+        self.showErrorAlert(NSLocalizedString("Enter login please", comment: "Alert title"))
         return
       } else if self.passwordTextField.text == "" {
         self.passwordTextField.becomeFirstResponder()
-        self.showErrorAlert("Enter password please")
+        self.showErrorAlert(NSLocalizedString("Enter password please", comment: "Alert title"))
         return
       }
       
       let spiningActivity = MBProgressHUD.showHUDAddedTo(navigationController?.view, animated: true)
-      spiningActivity.labelText = "Loading"
+      spiningActivity.labelText = NSLocalizedString("Loading", comment: "Activity indicator text")
         
       sendActionForStateViewEvent(LogInStateViewEvent)
     }

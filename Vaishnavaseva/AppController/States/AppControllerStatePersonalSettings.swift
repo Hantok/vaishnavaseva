@@ -16,7 +16,7 @@ import UIKit
     "options/\(sadhanaUser.userId!)/".post(params, headers: ["Authorization" : authString] ) { response in
       MBProgressHUD.hideAllHUDsForView(self.viewController.navigationController?.view, animated: true)
       if response.data == nil || response.HTTPResponse.statusCode != 200 {
-        self.viewController.showErrorAlert("Server error")
+        self.viewController.showErrorAlert(NSLocalizedString("Server error", comment: "Alert title"))
         return
       } else {
         let dict = response.responseJSON as! NSDictionary

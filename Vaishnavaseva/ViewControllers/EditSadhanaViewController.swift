@@ -116,7 +116,7 @@ class EditSadhanaViewController: BaseViewController, UIPickerViewDataSource, UIP
     self.sadhanaEntry.lectionsEnable = lecturesSwitch.on
     
     let spiningActivity = MBProgressHUD.showHUDAddedTo(navigationController?.view, animated: true)
-    spiningActivity.labelText = "Please wait"
+    spiningActivity.labelText = NSLocalizedString("Please wait", comment: "Activity indicator text")
     
     sendActionForStateViewEvent(OnDoneStateViewEvent)
   }
