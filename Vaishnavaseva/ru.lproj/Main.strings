@@ -1,3 +1,156 @@
+/* Class = "UILabel"; text = "Kirtan"; ObjectID = "2Lx-jy-98T"; */
+"2Lx-jy-98T.text" = "Киртан";
 
-/* Class = "UINavigationItem"; title = "Sadhana"; ObjectID = "bIg-DW-MlW"; */
+/* Class = "UILabel"; text = "30 min"; ObjectID = "3HL-7R-YqC"; */
+"3HL-7R-YqC.text" = "30 мин";
+
+/* Class = "UINavigationItem"; title = "Date"; ObjectID = "8OC-V4-eN1"; */
+"8OC-V4-eN1.title" = "Дата";
+
+/* Class = "UINavigationItem"; title = "Person Name"; ObjectID = "8wk-3y-F7U"; */
+"8wk-3y-F7U.title" = "Имя Преданного";
+
+/* Class = "UILabel"; text = "Kirtan:"; ObjectID = "9QQ-en-2va"; */
+"9QQ-en-2va.text" = "Киртан:";
+
+/* Class = "UILabel"; text = "Books:"; ObjectID = "381-a9-bDQ"; */
+"381-a9-bDQ.text" = "Книги:";
+
+/* Class = "UILabel"; text = "Kirtan:"; ObjectID = "AEI-te-GxU"; */
+"AEI-te-GxU.text" = "Киртан:";
+
+/* Class = "UILabel"; text = "Don't show on the main page"; ObjectID = "DrF-Aj-Pf9"; */
+"DrF-Aj-Pf9.text" = "Не выводить на главную страницу";
+
+/* Class = "UILabel"; text = "Info about ISKCON and Srila Prabhupada"; ObjectID = "IaE-tf-1Cq"; */
+"IaE-tf-1Cq.text" = "Информация о Шрили Прабхупаде и ИСККОН";
+
+/* Class = "UILabel"; text = "Lectures"; ObjectID = "IfP-VN-WVK"; */
+"IfP-VN-WVK.text" = "Лекции";
+
+/* Class = "UINavigationItem"; title = "Log Out"; ObjectID = "IxR-1M-pMS"; */
+"IxR-1M-pMS.title" = "Выйти";
+
+/* Class = "UILabel"; text = "Sleep time"; ObjectID = "JG5-DZ-7i1"; */
+"JG5-DZ-7i1.text" = "Сон";
+
+/* Class = "UILabel"; text = "Lectures"; ObjectID = "JrH-HC-JEJ"; */
+"JrH-HC-JEJ.text" = "Лекции";
+
+/* Class = "UILabel"; text = "No"; ObjectID = "JxV-cx-tFC"; */
+"JxV-cx-tFC.text" = "Нет";
+
+/* Class = "UINavigationItem"; title = "Settings"; ObjectID = "Lf3-eB-FHL"; */
+"Lf3-eB-FHL.title" = "Настройки";
+
+/* Class = "UILabel"; text = "Books:"; ObjectID = "OPJ-vA-z5F"; */
+"OPJ-vA-z5F.text" = "Книги:";
+
+/* Class = "UILabel"; text = "Sleep time"; ObjectID = "PuP-RF-g8y"; */
+"PuP-RF-g8y.text" = "Сон";
+
+/* Class = "UILabel"; text = "No"; ObjectID = "RG4-JS-GOG"; */
+"RG4-JS-GOG.text" = "Нет";
+
+/* Class = "UILabel"; text = "18:00"; ObjectID = "Rr9-d6-AFO"; */
+"Rr9-d6-AFO.text" = "18:00";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "S25-fb-2r8"; */
+"S25-fb-2r8.placeholder" = "Пароль";
+
+/* Class = "UILabel"; text = "Date"; ObjectID = "UZJ-Ue-3Y1"; */
+"UZJ-Ue-3Y1.text" = "Дата";
+
+/* Class = "UILabel"; text = "Don't show more then 16 rounds for other users"; ObjectID = "UaH-JH-kiJ"; */
+"UaH-JH-kiJ.text" = "Не показывать больше 16 кругов для других пользователей";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "VB9-mZ-yTH"; */
+"VB9-mZ-yTH.title" = "???";
+
+/* Class = "UILabel"; text = "30 min"; ObjectID = "WCU-Mv-oAY"; */
+"WCU-Mv-oAY.text" = "30 мин";
+
+/* Class = "UILabel"; text = "Date"; ObjectID = "WGU-2J-jBf"; */
+"WGU-2J-jBf.text" = "Дата";
+
+/* Class = "UILabel"; text = "Service"; ObjectID = "WRz-Qx-uS1"; */
+"WRz-Qx-uS1.text" = "Служение";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "Zh8-WM-97I"; */
+"Zh8-WM-97I.text" = "Имя";
+
+/* Class = "UILabel"; text = "No"; ObjectID = "ZtG-sR-DL3"; */
+"ZtG-sR-DL3.text" = "Нет";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "aLy-lI-KVz"; */
+"aLy-lI-KVz.text" = "Имя";
+
+/* Class = "UILabel"; text = "Joga"; ObjectID = "aOy-rm-8f8"; */
+"aOy-rm-8f8.text" = "Йога";
+
+/* Class = "UINavigationItem"; title = "Log In"; ObjectID = "amd-3N-3fr"; */
+"amd-3N-3fr.title" = "Войти";
+
+/* Class = "UILabel"; text = "Wake up time"; ObjectID = "aqL-df-gDL"; */
+"aqL-df-gDL.text" = "Подъем";
+
+/* Class = "UINavigationItem"; title = "General sadhana"; ObjectID = "bIg-DW-MlW"; */
 "bIg-DW-MlW.title" = "Садхана";
+
+/* Class = "UILabel"; text = "30 min"; ObjectID = "beW-Cr-Kt8"; */
+"beW-Cr-Kt8.text" = "30 мин";
+
+/* Class = "UILabel"; text = "Japa"; ObjectID = "cOj-aV-t4g"; */
+"cOj-aV-t4g.text" = "Джапа";
+
+/* Class = "UITextField"; placeholder = "Login"; ObjectID = "cW5-cc-Bq4"; */
+"cW5-cc-Bq4.placeholder" = "Логин";
+
+/* Class = "UILabel"; text = "Books:"; ObjectID = "g1t-Fy-4cq"; */
+"g1t-Fy-4cq.text" = "Книги:";
+
+/* Class = "UILabel"; text = "Someones Name"; ObjectID = "gqe-80-aGb"; */
+"gqe-80-aGb.text" = "Чье-то имя";
+
+/* Class = "UIButton"; normalTitle = "Log In"; ObjectID = "iNj-FR-kcF"; */
+"iNj-FR-kcF.normalTitle" = "Войти";
+
+/* Class = "UIButton"; normalTitle = "Log Out"; ObjectID = "kos-PD-6PK"; */
+"kos-PD-6PK.normalTitle" = "Выйти";
+
+/* Class = "UILabel"; text = "Books, min"; ObjectID = "lB3-4Q-5RE"; */
+"lB3-4Q-5RE.text" = "Книги, мин";
+
+/* Class = "UILabel"; text = "Service"; ObjectID = "lMV-Cs-dOj"; */
+"lMV-Cs-dOj.text" = "Служение";
+
+/* Class = "UILabel"; text = "Date"; ObjectID = "olu-fC-EHJ"; */
+"olu-fC-EHJ.text" = "Дата";
+
+/* Class = "UILabel"; text = "7:30"; ObjectID = "p82-fB-6lS"; */
+"p82-fB-6lS.text" = "7:30";
+
+/* Class = "UILabel"; text = "Kirtan:"; ObjectID = "p88-4a-QC7"; */
+"p88-4a-QC7.text" = "Киртан";
+
+/* Class = "UINavigationItem"; title = "Info"; ObjectID = "paU-OG-Ovc"; */
+"paU-OG-Ovc.title" = "Информация";
+
+/* Class = "UILabel"; text = "10:00"; ObjectID = "pf5-U9-VqU"; */
+"pf5-U9-VqU.text" = "10:00";
+
+/* Class = "UILabel"; text = "Wake up time"; ObjectID = "r0p-NP-hhY"; */
+"r0p-NP-hhY.text" = "Подъем";
+
+/* Class = "UILabel"; text = "Joga"; ObjectID = "rpl-Ry-khg"; */
+"rpl-Ry-khg.text" = "Йога";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "ruh-bu-HsW"; */
+"ruh-bu-HsW.text" = "Имя";
+
+/* Class = "UINavigationItem"; title = "My Sadhana"; ObjectID = "wZK-ll-PPl"; */
+"wZK-ll-PPl.title" = "Моя Садхана";
+
+/* Class = "UIButton"; normalTitle = "Sign Up"; ObjectID = "xjL-1b-cwp"; */
+"xjL-1b-cwp.normalTitle" = "Регистрация";
+

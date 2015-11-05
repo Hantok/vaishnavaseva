@@ -1,0 +1,39 @@
+/* Alert title */
+"Authorization error!" = "Ошибка авторизации!";
+
+/* Alert title */
+"Enter login please" = "Введите логин";
+
+/* Alert title */
+"Enter password please" = "Введите пароль";
+
+/* CoreData description */
+"Failed to initialize the application's saved data" = "Не удалось инициализировать данные для сохранения приложения";
+
+/* Activity indicator text */
+"Loading" = "Загрузка";
+
+/* No kirtan done */
+"No" = "Нет";
+
+/* Alert title */
+"No internet connection" = "Нет соединения с интернет";
+
+/* Alert OK button */
+"OK" = "Джай!";
+
+/* Activity indicator text */
+"Please wait" = "Подождите";
+
+/* Refresh control text */
+"Refreshing..." = "Обновляю...";
+
+/* Alert title */
+"Server error" = "Ошибка на сервере";
+
+/* CoreData failure reason */
+"There was an error creating or loading the application's saved data." = "Ошибка создания или загрузки данных для сохранения приложения.";
+
+/* Kirtan done */
+"Yes" = "Да";
+
