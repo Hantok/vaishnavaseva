@@ -176,6 +176,7 @@ class EditSadhanaViewController: BaseViewController, UIPickerViewDataSource, UIP
   }
   
   func hitTestCalledForView(view: UIView){
+    self.view.endEditing(true)
     if animationsEnabled  && lastAnimatedView != view {
       if let lastAnimated = lastAnimatedView {
         minimizeViewAnimated(lastAnimated)
