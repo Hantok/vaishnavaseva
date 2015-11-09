@@ -816,9 +816,24 @@
                     <view key="view" contentMode="scaleToFill" id="pJt-V9-UnP">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yjR-Qs-ODs">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="yjR-Qs-ODs" firstAttribute="leading" secondItem="pJt-V9-UnP" secondAttribute="leading" id="CAe-px-AX7"/>
+                            <constraint firstAttribute="trailing" secondItem="yjR-Qs-ODs" secondAttribute="trailing" id="Xss-RD-LHn"/>
+                            <constraint firstItem="yjR-Qs-ODs" firstAttribute="bottom" secondItem="sAe-Ex-Dmn" secondAttribute="top" id="hFM-Qz-Ekf"/>
+                            <constraint firstItem="yjR-Qs-ODs" firstAttribute="top" secondItem="pJt-V9-UnP" secondAttribute="top" id="rH6-6e-l5q"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Info" id="paU-OG-Ovc"/>
+                    <connections>
+                        <outlet property="webView" destination="yjR-Qs-ODs" id="Wd1-R4-NKj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0IK-0R-k7G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

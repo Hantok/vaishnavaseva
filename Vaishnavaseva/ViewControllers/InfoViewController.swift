@@ -1,20 +1,12 @@
 import UIKit
 
 class InfoViewController: BaseViewController, UIWebViewDelegate {
+  @IBOutlet weak var webView: UIWebView!
 
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    /* Render the web view under the status bar */
-    var frame = self.view.bounds
-    frame.origin.y = (self.navigationController?.navigationBar.bounds.height)! + UIApplication.sharedApplication().statusBarFrame.height
-    frame.size.height -= frame.origin.y
-    
-    let webView = UIWebView(frame: frame)
     webView.delegate = self
-    webView.scalesPageToFit = true
-    view.addSubview(webView)
-
     let localfilePath = NSBundle.mainBundle().URLForResource("info", withExtension: "html")
     let localRequest = NSURLRequest(URL: localfilePath!)
     webView.loadRequest(localRequest)
