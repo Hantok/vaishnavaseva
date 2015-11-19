@@ -57,6 +57,8 @@ import UIKit
     (self.viewController as! UINavigationControllerDelegate).navigationController?(navigationController, didShowViewController: viewController, animated: animated)
     }
   
+  // MARK: - Deprecated. Used for basic auth
+  
   func getAuthString() -> String {
     let credential = Locksmith.loadDataForUserAccount("myUserAccount")!
     let login = credential.keys.first!
@@ -66,5 +68,4 @@ import UIKit
     let base64EncodedCredential = userPasswordData!.base64EncodedStringWithOptions(NSDataBase64EncodingOptions.Encoding64CharacterLineLength)
     return "Basic \(base64EncodedCredential)"
   }
-  
-  }
+}

@@ -8,23 +8,24 @@ import UIKit
     self.viewControllerProtocol.setAction(Selector("onDone"), forTarget: self, forStateViewEvent: OnDoneStateViewEvent)
     }
 
-  func onDone()
-    {
-      let editViewController = self.viewController as! EditSadhanaViewController
-      let sadhanaEntry = editViewController.sadhanaEntry
-      let sadhanaUser = Deserialiser().getSadhanaUser(NSUserDefaults.standardUserDefaults().objectForKey("me") as! NSDictionary)
-      let params = getPostParams(sadhanaEntry, sadhanaUser: sadhanaUser)
-      let authString = getAuthString()
-      let entryId = sadhanaEntry.id! == -1 ? "" : "\(sadhanaEntry.id!)"
-      "sadhanaEntry/\(sadhanaUser.userId!)/\(entryId)".post(params, headers: ["Authorization" : authString] ) { response in
-        MBProgressHUD.hideAllHUDsForView(self.viewController.navigationController?.view, animated: true)
-        if response.data == nil || response.HTTPResponse.statusCode != 200 {
-          self.viewController.showErrorAlert(NSLocalizedString("Server error", comment: "Alert title"))
-          return
-        } else {
-          self.viewController.performSegueWithIdentifier("BackFromEditToMy", sender: nil)
-        }
+  func onDone() {
+    let editViewController = self.viewController as! EditSadhanaViewController
+    let sadhanaEntry = editViewController.sadhanaEntry
+    let sadhanaUser = Deserialiser().getSadhanaUser(NSUserDefaults.standardUserDefaults().objectForKey("me") as! NSDictionary)
+    let params = getPostParams(sadhanaEntry, sadhanaUser: sadhanaUser)
+    let dict = Locksmith.loadDataForUserAccount("OAuthToken")
+    let oAuthToken = OAuthToken(dict: dict!)
+    let entryId = sadhanaEntry.id! == -1 ? "" : "\(sadhanaEntry.id!)"
+    
+    "sadhanaEntry/\(sadhanaUser.userId!)/\(entryId)".post(params, headers: ["Authorization" : "\(oAuthToken.tokenType) \(oAuthToken.accessToken)"]) { response in
+      MBProgressHUD.hideAllHUDsForView(self.viewController.navigationController?.view, animated: true)
+      if response.data == nil || response.HTTPResponse.statusCode != 200 {
+        self.viewController.showErrorAlert(NSLocalizedString("Server error", comment: "Alert title"))
+        return
+      } else {
+        self.viewController.performSegueWithIdentifier("BackFromEditToMy", sender: nil)
       }
+  }
 
     //TODO:
     //Here:

@@ -11,9 +11,10 @@ import UIKit
     let personalSettingsViewController = self.viewController as! PersonalSettingsViewController
     let sadhanaUser = personalSettingsViewController.me
     let params = getPostParams(sadhanaUser)
-    let authString = getAuthString()
+    let dict = Locksmith.loadDataForUserAccount("OAuthToken")
+    let oAuthToken = OAuthToken(dict: dict!)
 
-    "options/\(sadhanaUser.userId!)/".post(params, headers: ["Authorization" : authString] ) { response in
+    "options/\(sadhanaUser.userId!)/".post(params, headers: ["Authorization" : "\(oAuthToken.tokenType) \(oAuthToken.accessToken)"]) { response in
       MBProgressHUD.hideAllHUDsForView(self.viewController.navigationController?.view, animated: true)
       if response.data == nil || response.HTTPResponse.statusCode != 200 {
         self.viewController.showErrorAlert(NSLocalizedString("Server error", comment: "Alert title"))

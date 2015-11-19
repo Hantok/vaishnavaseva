@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E1F38521BFDEC5C00BE4C99 /* OAuthToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1F38511BFDEC5C00BE4C99 /* OAuthToken.swift */; };
 		4E24D05D1BDFBCE000E4C17F /* SadhanaUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E24D05C1BDFBCE000E4C17F /* SadhanaUser.swift */; };
 		4E24D0601BDFBEAE00E4C17F /* SadhanaEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E24D05F1BDFBEAE00E4C17F /* SadhanaEntry.swift */; };
 		4E24D0621BDFC00A00E4C17F /* Deserializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E24D0611BDFC00A00E4C17F /* Deserializer.swift */; };
@@ -124,6 +125,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4E1F38511BFDEC5C00BE4C99 /* OAuthToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OAuthToken.swift; path = Model/OAuthToken.swift; sourceTree = "<group>"; };
 		4E24D05C1BDFBCE000E4C17F /* SadhanaUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SadhanaUser.swift; path = Model/SadhanaUser.swift; sourceTree = "<group>"; };
 		4E24D05F1BDFBEAE00E4C17F /* SadhanaEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SadhanaEntry.swift; path = Model/SadhanaEntry.swift; sourceTree = "<group>"; };
 		4E24D0611BDFC00A00E4C17F /* Deserializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Deserializer.swift; path = Model/Deserializer.swift; sourceTree = "<group>"; };
@@ -265,6 +267,7 @@
 				4E24D05C1BDFBCE000E4C17F /* SadhanaUser.swift */,
 				4E24D05F1BDFBEAE00E4C17F /* SadhanaEntry.swift */,
 				4E24D0611BDFC00A00E4C17F /* Deserializer.swift */,
+				4E1F38511BFDEC5C00BE4C99 /* OAuthToken.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -694,6 +697,7 @@
 				7521AFA31B57C6E1004B2CFE /* AppControllerStateGeneralSadhana.swift in Sources */,
 				7521AFA71B57C8E6004B2CFE /* BaseViewController.swift in Sources */,
 				75CFA0ED1B501FB40071EC79 /* PersonalSadhanaViewController.swift in Sources */,
+				4E1F38521BFDEC5C00BE4C99 /* OAuthToken.swift in Sources */,
 				4E436D6B1BE1100B0046C145 /* UIScrollView+SVInfiniteScrolling.m in Sources */,
 				7595A1821B62847800735A0C /* GeneralToPersonal.swift in Sources */,
 				4E436D6A1BE1100B0046C145 /* MBProgressHUD.m in Sources */,
@@ -936,7 +940,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Vaishnavaseva/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Openminded.Vaishnavaseva;
+				PRODUCT_BUNDLE_IDENTIFIER = isckon.vaishnavaseva;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Vaishnavaseva/ObjC/Vaishnavaseva-Bridging-Header.h";
@@ -953,7 +957,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Vaishnavaseva/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Openminded.Vaishnavaseva;
+				PRODUCT_BUNDLE_IDENTIFIER = isckon.vaishnavaseva;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Vaishnavaseva/ObjC/Vaishnavaseva-Bridging-Header.h";

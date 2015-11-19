@@ -17,6 +17,9 @@ class PersonalSettingsViewController: BaseViewController {
     super.viewDidLoad()
     
     me = Deserialiser().getSadhanaUser(NSUserDefaults.standardUserDefaults().objectForKey("me") as! NSDictionary)
+    
+    //implement background settings sync
+    
     sleepEnableSwitch.on = me.sleepEnable!
     wakeUpEnableSwitch.on = me.wakeUpEnable!
     exerciseEnableSwitch.on = me.exerciseEnable!
