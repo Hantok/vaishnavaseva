@@ -603,7 +603,7 @@
 				TargetAttributes = {
 					757D12441B5013300001402B = {
 						CreatedOnToolsVersion = 7.0;
-						DevelopmentTeam = S9H3U33KEY;
+						DevelopmentTeam = 48MD2JEP44;
 					};
 					757D125B1B5013300001402B = {
 						CreatedOnToolsVersion = 7.0;
@@ -940,7 +940,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Vaishnavaseva/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = isckon.vaishnavaseva;
+				PRODUCT_BUNDLE_IDENTIFIER = ua.isckon.vaishnavaseva;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Vaishnavaseva/ObjC/Vaishnavaseva-Bridging-Header.h";
@@ -957,7 +957,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Vaishnavaseva/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = isckon.vaishnavaseva;
+				PRODUCT_BUNDLE_IDENTIFIER = ua.isckon.vaishnavaseva;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Vaishnavaseva/ObjC/Vaishnavaseva-Bridging-Header.h";
