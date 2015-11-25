@@ -9,8 +9,9 @@ import UIKit
 //            self.state == otherDynamic.state
 //    }
     override func sceneDidBecomeCurrent() {
-        super.sceneDidBecomeCurrent()
-        self.viewControllerProtocol.setAction(Selector("allSadhanaEntries"), forTarget: self, forStateViewEvent: allSadhanaEntriesStateViewEvent)
+      super.sceneDidBecomeCurrent()
+      self.viewControllerProtocol.setAction(Selector("allSadhanaEntries"), forTarget: self, forStateViewEvent: allSadhanaEntriesStateViewEvent)
+      self.viewControllerProtocol.setAction(Selector("updateAcceessToken"), forTarget: self, forStateViewEvent: updateAceessTokenStateViewEvent)
     }
     
     func allSadhanaEntries() {

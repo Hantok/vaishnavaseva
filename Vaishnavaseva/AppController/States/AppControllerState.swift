@@ -57,6 +57,22 @@ import UIKit
     (self.viewController as! UINavigationControllerDelegate).navigationController?(navigationController, didShowViewController: viewController, animated: animated)
     }
   
+  func getLoginPostParams(login: String, password: String, refreshToken: Bool) -> [String : String] {
+    if refreshToken {
+      let oAuthToken = OAuthToken(dict: Locksmith.loadDataForUserAccount("OAuthToken")!)
+      return ["grant_type" : "\(Constants.grantTypeRefreshToken)",
+        "client_id" : "\(Constants.clientId)",
+        "client_secret" : "\(Constants.clientSecret)",
+        "refresh_token" : "\(oAuthToken.refreshToken)"]
+    } else {
+      return ["grant_type" : "\(Constants.grantTypePassword)",
+        "client_id" : "\(Constants.clientId)",
+        "client_secret" : "\(Constants.clientSecret)",
+        "username" : "\(login)",
+        "password" : "\(password)"]
+    }
+  }
+  
   // MARK: - Deprecated. Used for basic auth
   
   func getAuthString() -> String {

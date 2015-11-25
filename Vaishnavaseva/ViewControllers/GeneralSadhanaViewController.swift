@@ -13,6 +13,7 @@ class GeneralSadhanaViewController: JSONTableViewController {
   var pageNum = 0
   var itemsPerPage = 20
   var totalFound = 120
+  var needToUpdateRefreshToken = false
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -22,10 +23,16 @@ class GeneralSadhanaViewController: JSONTableViewController {
     
     self.refreshControl?.attributedTitle = NSAttributedString(string: NSLocalizedString("Refreshing...", comment: "Refresh control text"))
     self.refreshControl?.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
-    //self.tableView.addSubview(self.refreshControl)
 
     self.tableView.addInfiniteScrollingWithActionHandler(){
       self.insertRowAtBottom()
+    }
+  }
+  
+  func navigationController(navigationController: UINavigationController, didShowViewController viewController: UIViewController, animated: Bool) {
+    if needToUpdateRefreshToken && !AppController.sharedAppController.isLoggedIn {
+      needToUpdateRefreshToken = false
+      onMySadhana(self)
     }
   }
 
@@ -52,9 +59,13 @@ class GeneralSadhanaViewController: JSONTableViewController {
     }
   
   //Needed for unwind segues to work
-  @IBAction func backToGeneralSadhana(segue:UIStoryboardSegue)
-    {
+  @IBAction func backToGeneralSadhana(segue:UIStoryboardSegue) {
+    if segue.identifier! == "BackFromAnyToLogin" {
+      needToUpdateRefreshToken = true
+      AppController.sharedAppController.isLoggedIn = false
+      NSUserDefaults.standardUserDefaults().removeObjectForKey("me")
     }
+  }
   
   override func numberOfSectionsInTableView(tableView: UITableView) -> Int
     {

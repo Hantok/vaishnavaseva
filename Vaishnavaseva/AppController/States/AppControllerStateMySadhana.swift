@@ -11,6 +11,7 @@ import UIKit
   override func sceneDidBecomeCurrent() {
     super.sceneDidBecomeCurrent()
     self.viewControllerProtocol.setAction(Selector("userSadhanaEntries"), forTarget: self, forStateViewEvent: mySadhanaEntriesStateViewEvent)
+    self.viewControllerProtocol.setAction(Selector("updateAcceessToken"), forTarget: self, forStateViewEvent: updateAceessTokenStateViewEvent)
   }
   
   func userSadhanaEntries() {
@@ -153,11 +154,11 @@ import UIKit
   
   func updateUserSettings() {
     dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0)) {
-      let authString = self.getAuthString()
-      
-      "me".get(headers: ["Authorization" : authString]) { response in
+      let dict = Locksmith.loadDataForUserAccount("OAuthToken")!
+      let oAuthToken = OAuthToken(dict: dict)
+      "me".get(headers: ["Authorization" : "\(oAuthToken.tokenType) \(oAuthToken.accessToken)"]) { response in
         if response.data == nil || response.HTTPResponse.statusCode != 200 {
-          print("Update user settings error. Server status code \(response.HTTPResponse.statusCode)")
+          print("Update user settings error.")
           return
         } else {
           let dict = response.responseJSON as! NSDictionary
@@ -165,7 +166,34 @@ import UIKit
           NSUserDefaults.standardUserDefaults().setValue(dict, forKey: "me")
         }
       }
-
+    }
+  }
+  
+  func updateAcceessToken() {
+    let dict = Locksmith.loadDataForUserAccount("myUserAccount")
+    let login = (dict?.keys.first)!
+    let pass = dict?.values.first as! String
+    let params = getLoginPostParams(login, password: pass, refreshToken: true)
+    Constants.authTokenURL.post(params) { response in
+      if response.data == nil {
+        print("Error for connecting the server")
+      } else if response.HTTPResponse.statusCode != 200 {
+        let dict = response.responseJSON
+        print(dict!["error_description"])
+        //logout and go to login screen
+        dispatch_async(dispatch_get_main_queue()) {
+          self.viewController.performSegueWithIdentifier("BackFromAnyToLogin", sender: nil)
+        }
+      } else {
+        let responseDict = response.responseJSON as! NSDictionary
+        do {
+          // update user credentials in keychain
+          try Locksmith.updateData(responseDict as! [String : AnyObject], forUserAccount: "OAuthToken")
+          print("Access token updeted")
+        } catch {
+          print(error)
+        }
+      }
     }
   }
 }

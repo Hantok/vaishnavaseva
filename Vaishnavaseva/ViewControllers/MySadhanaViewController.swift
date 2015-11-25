@@ -1,6 +1,7 @@
 import UIKit
 
 let mySadhanaEntriesStateViewEvent = "mySadhanaEntriesStateViewEvent"
+let updateAceessTokenStateViewEvent = "updateAceessTokenStateViewEvent"
 
 class MySadhanaViewController: JSONTableViewController {
   var me = SadhanaUser()
@@ -16,6 +17,8 @@ class MySadhanaViewController: JSONTableViewController {
       self.me = Deserialiser().getSadhanaUser(NSUserDefaults.standardUserDefaults().valueForKey("me") as! NSDictionary)
     }
     sendActionForStateViewEvent(mySadhanaEntriesStateViewEvent)
+    sendActionForStateViewEvent(updateAceessTokenStateViewEvent)
+    
     let spiningActivity = MBProgressHUD.showHUDAddedTo(navigationController?.view, animated: true)
     spiningActivity.labelText = NSLocalizedString("Please wait", comment: "Activity indicator text")
     

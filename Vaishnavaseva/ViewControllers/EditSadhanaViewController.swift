@@ -91,7 +91,6 @@ class EditSadhanaViewController: BaseViewController, UIPickerViewDataSource, UIP
     serviceSwitch.setOn(self.sadhanaEntry.serviceEnable!, animated: false)
     jogaSwitch.setOn(self.sadhanaEntry.exerciseEnable!, animated: false)
     lecturesSwitch.setOn(self.sadhanaEntry.lectionsEnable!, animated: false)
-    
   }
   
   override func viewDidAppear(animated: Bool) {

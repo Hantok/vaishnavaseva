@@ -19,11 +19,16 @@ import UIKit
     
     "sadhanaEntry/\(sadhanaUser.userId!)/\(entryId)".post(params, headers: ["Authorization" : "\(oAuthToken.tokenType) \(oAuthToken.accessToken)"]) { response in
       MBProgressHUD.hideAllHUDsForView(self.viewController.navigationController?.view, animated: true)
-      if response.data == nil || response.HTTPResponse.statusCode != 200 {
+      if response.data == nil {
         self.viewController.showErrorAlert(NSLocalizedString("Server error", comment: "Alert title"))
         return
-      } else {
+      } else if response.HTTPResponse.statusCode == 200 {
         self.viewController.performSegueWithIdentifier("BackFromEditToMy", sender: nil)
+      } else {
+        print(response.responseJSON)
+        //logout and go to login screen
+        self.viewController.performSegueWithIdentifier("BackFromAnyToLogin", sender: nil)
+        return
       }
   }
 

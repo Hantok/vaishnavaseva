@@ -41,6 +41,7 @@
 		4E43E3521BE808D000D18973 /* LocksmithInternetProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E43E34E1BE808D000D18973 /* LocksmithInternetProtocol.swift */; };
 		4E43E3531BE808D000D18973 /* LocksmithSecurityClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E43E34F1BE808D000D18973 /* LocksmithSecurityClass.swift */; };
 		4E43E3551BE808F000D18973 /* Dictionary_Initializers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E43E3541BE808F000D18973 /* Dictionary_Initializers.swift */; };
+		4E6092201C05F32000B686AA /* BackFromAnyToLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E60921F1C05F32000B686AA /* BackFromAnyToLogin.swift */; };
 		4E9977AE1BD623DE0002D7A0 /* Diskcached.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9977AB1BD623DE0002D7A0 /* Diskcached.swift */; };
 		4E9977AF1BD623DE0002D7A0 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9977AC1BD623DE0002D7A0 /* ImageLoader.swift */; };
 		4E9977B01BD623DE0002D7A0 /* UIImageView+ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9977AD1BD623DE0002D7A0 /* UIImageView+ImageLoader.swift */; };
@@ -162,6 +163,7 @@
 		4E43E34E1BE808D000D18973 /* LocksmithInternetProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocksmithInternetProtocol.swift; path = Keychain/LocksmithInternetProtocol.swift; sourceTree = "<group>"; };
 		4E43E34F1BE808D000D18973 /* LocksmithSecurityClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocksmithSecurityClass.swift; path = Keychain/LocksmithSecurityClass.swift; sourceTree = "<group>"; };
 		4E43E3541BE808F000D18973 /* Dictionary_Initializers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Dictionary_Initializers.swift; path = Keychain/Dictionary_Initializers.swift; sourceTree = "<group>"; };
+		4E60921F1C05F32000B686AA /* BackFromAnyToLogin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BackFromAnyToLogin.swift; path = AppController/Segues/BackFromAnyToLogin.swift; sourceTree = "<group>"; };
 		4E9977AB1BD623DE0002D7A0 /* Diskcached.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Diskcached.swift; path = ImageLoader/Diskcached.swift; sourceTree = "<group>"; };
 		4E9977AC1BD623DE0002D7A0 /* ImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageLoader.swift; path = ImageLoader/ImageLoader.swift; sourceTree = "<group>"; };
 		4E9977AD1BD623DE0002D7A0 /* UIImageView+ImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImageView+ImageLoader.swift"; path = "ImageLoader/UIImageView+ImageLoader.swift"; sourceTree = "<group>"; };
@@ -486,6 +488,7 @@
 				75BA40461B6918A30075CE6B /* PersonalToInfo.swift */,
 				7595A17F1B62847800735A0C /* BackFromAnyToAny.swift */,
 				4E43E3441BE7FD4500D18973 /* BackFromEditToMy.swift */,
+				4E60921F1C05F32000B686AA /* BackFromAnyToLogin.swift */,
 			);
 			name = Segues;
 			sourceTree = "<group>";
@@ -745,6 +748,7 @@
 				4E9977B31BD628790002D7A0 /* Constants.swift in Sources */,
 				4E436D771BE110540046C145 /* VSURLSessionDelegate.swift in Sources */,
 				75CFA0EF1B50214F0071EC79 /* AppController.swift in Sources */,
+				4E6092201C05F32000B686AA /* BackFromAnyToLogin.swift in Sources */,
 				75C331FE1B69623F0075F747 /* LogInToMy.swift in Sources */,
 				755BF4E01B68D6BE004B1F61 /* LogInViewController.swift in Sources */,
 				755BF4E11B68D6BE004B1F61 /* LogOutViewController.swift in Sources */,

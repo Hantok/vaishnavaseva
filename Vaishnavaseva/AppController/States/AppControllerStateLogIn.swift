@@ -17,7 +17,7 @@ import UIKit
       let logInViewController = self.viewController as! LogInViewController
       let login = logInViewController.loginTextField.text!
       let password = logInViewController.passwordTextField.text!
-      let params = getPostParams(login, password: password)
+      let params = getLoginPostParams(login, password: password, refreshToken: false)
       
       Constants.authTokenURL.post(params) { response in
         if (response.data == nil) {
@@ -48,16 +48,6 @@ import UIKit
         }
       }
     }
-
-  private func getPostParams(login: String, password: String) -> [String : String] {
-    let params =
-    ["grant_type" : "\(Constants.grantTypePassword)",
-      "client_id" : "\(Constants.clientId)",
-      "client_secret" : "\(Constants.clientSecret)",
-      "username" : "\(login)",
-      "password" : "\(password)"]
-    return params
-  }
   
   private func getMe(oAuthToken: OAuthToken) {
     "me".get(headers: ["Authorization" : "\(oAuthToken.tokenType) \(oAuthToken.accessToken)"]) { response in
