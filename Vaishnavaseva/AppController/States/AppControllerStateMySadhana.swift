@@ -44,6 +44,7 @@ import UIKit
     "userSadhanaEntries/\(userId)".post(["year": "\(year)", "month": "\(month)"]) { response in
 
       MBProgressHUD.hideAllHUDsForView(self.viewController.navigationController?.view, animated: true)
+      UIApplication.sharedApplication().networkActivityIndicatorVisible = false
       if (response.data == nil){
         self.viewController.showErrorAlert(NSLocalizedString("Server error", comment: "Alert title"))
         mySadhanaViewController.tableView.infiniteScrollingView.stopAnimating()
@@ -153,6 +154,7 @@ import UIKit
   }
   
   func updateUserSettings() {
+    
     dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0)) {
       let dict = Locksmith.loadDataForUserAccount("OAuthToken")!
       let oAuthToken = OAuthToken(dict: dict)
@@ -170,11 +172,13 @@ import UIKit
   }
   
   func updateAcceessToken() {
+    UIApplication.sharedApplication().networkActivityIndicatorVisible = true
     let dict = Locksmith.loadDataForUserAccount("myUserAccount")
     let login = (dict?.keys.first)!
     let pass = dict?.values.first as! String
     let params = getLoginPostParams(login, password: pass, refreshToken: true)
     Constants.authTokenURL.post(params) { response in
+      UIApplication.sharedApplication().networkActivityIndicatorVisible = false
       if response.data == nil {
         print("Error for connecting the server")
       } else if response.HTTPResponse.statusCode != 200 {

@@ -114,9 +114,9 @@ class EditSadhanaViewController: BaseViewController, UIPickerViewDataSource, UIP
     self.sadhanaEntry.exerciseEnable = jogaSwitch.on
     self.sadhanaEntry.lectionsEnable = lecturesSwitch.on
     
+    UIApplication.sharedApplication().networkActivityIndicatorVisible = true
     let spiningActivity = MBProgressHUD.showHUDAddedTo(navigationController?.view, animated: true)
     spiningActivity.labelText = NSLocalizedString("Please wait", comment: "Activity indicator text")
-    
     sendActionForStateViewEvent(OnDoneStateViewEvent)
   }
   

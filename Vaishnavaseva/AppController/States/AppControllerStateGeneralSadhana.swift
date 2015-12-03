@@ -21,6 +21,7 @@ import UIKit
       "allSadhanaEntries".post(["page_num": "\(pageNum)", "items_per_page":"\(itemPerPage)"]) { response in
         
         MBProgressHUD.hideAllHUDsForView(self.viewController.navigationController?.view, animated: true)
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = false
         if (response.data == nil) {
           self.viewController.showErrorAlert(NSLocalizedString("Server error", comment: "Alert title"))
           self.stopAnimations()

@@ -43,6 +43,7 @@ import UIKit
     "userSadhanaEntries/\(userId)".post(["year": "\(year)", "month": "\(month)"]) { response in
       //print(response.responseJSON)
       MBProgressHUD.hideAllHUDsForView(self.viewController.navigationController?.view, animated: true)
+      UIApplication.sharedApplication().networkActivityIndicatorVisible = false
       if (response.data == nil) {
         self.viewController.showErrorAlert(NSLocalizedString("Server error", comment: "Alert title"))
         personalSadhanaViewController.tableView.infiniteScrollingView.stopAnimating()

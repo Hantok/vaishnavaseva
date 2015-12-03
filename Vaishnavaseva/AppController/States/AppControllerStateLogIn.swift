@@ -22,10 +22,12 @@ import UIKit
       Constants.authTokenURL.post(params) { response in
         if (response.data == nil) {
           self.viewController.showErrorAlert(NSLocalizedString("Server error", comment: "Alert title"))
+          UIApplication.sharedApplication().networkActivityIndicatorVisible = false
           MBProgressHUD.hideAllHUDsForView(self.viewController.navigationController?.view, animated: true)
           return
         }
         if response.HTTPResponse.statusCode != 200 {
+          UIApplication.sharedApplication().networkActivityIndicatorVisible = false
           MBProgressHUD.hideAllHUDsForView(self.viewController.navigationController?.view, animated: true)
           logInViewController.passwordTextField.text = ""
           logInViewController.passwordTextField.becomeFirstResponder()
@@ -51,6 +53,7 @@ import UIKit
   
   private func getMe(oAuthToken: OAuthToken) {
     "me".get(headers: ["Authorization" : "\(oAuthToken.tokenType) \(oAuthToken.accessToken)"]) { response in
+      UIApplication.sharedApplication().networkActivityIndicatorVisible = false
       MBProgressHUD.hideAllHUDsForView(self.viewController.navigationController?.view, animated: true)
       if (response.data == nil || response.HTTPResponse.statusCode != 200){
         self.viewController.showErrorAlert(NSLocalizedString("Server error", comment: "Alert title"))

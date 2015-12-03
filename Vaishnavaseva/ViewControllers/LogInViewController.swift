@@ -55,7 +55,7 @@ class LogInViewController: BaseViewController {
         self.showErrorAlert(NSLocalizedString("Enter password please", comment: "Alert title"))
         return
       }
-      
+      UIApplication.sharedApplication().networkActivityIndicatorVisible = true
       let spiningActivity = MBProgressHUD.showHUDAddedTo(navigationController?.view, animated: true)
       spiningActivity.labelText = NSLocalizedString("Loading", comment: "Activity indicator text")
         

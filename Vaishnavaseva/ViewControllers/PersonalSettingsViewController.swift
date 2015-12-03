@@ -30,7 +30,7 @@ class PersonalSettingsViewController: BaseViewController {
   }
   
   @IBAction func onDone(sender: AnyObject) {
-    
+    UIApplication.sharedApplication().networkActivityIndicatorVisible = true
     let spiningActivity = MBProgressHUD.showHUDAddedTo(navigationController?.view, animated: true)
     spiningActivity.labelText = NSLocalizedString("Please wait", comment: "Activity indicator text")
     

@@ -148,6 +148,7 @@ class GeneralSadhanaViewController: JSONTableViewController {
   }
   
   func firstTimeDownload() {
+    UIApplication.sharedApplication().networkActivityIndicatorVisible = true
     let spiningActivity = MBProgressHUD.showHUDAddedTo(navigationController?.view, animated: true)
     spiningActivity.labelText = NSLocalizedString("Please wait", comment: "Activity indicator text")
     refresh(self)
@@ -156,6 +157,7 @@ class GeneralSadhanaViewController: JSONTableViewController {
   func refresh(sender:AnyObject)
   {
     self.pageNum = 0
+    UIApplication.sharedApplication().networkActivityIndicatorVisible = true
     sendActionForStateViewEvent(allSadhanaEntriesStateViewEvent)
     if self.tableView.infiniteScrollingView != nil
     {
@@ -176,6 +178,7 @@ class GeneralSadhanaViewController: JSONTableViewController {
       {
         self.tableView.infiniteScrollingView.enabled = false
       }
+      UIApplication.sharedApplication().networkActivityIndicatorVisible = true
       self.sendActionForStateViewEvent(allSadhanaEntriesStateViewEvent)
     }
   }

@@ -19,6 +19,7 @@ class MySadhanaViewController: JSONTableViewController {
     sendActionForStateViewEvent(mySadhanaEntriesStateViewEvent)
     sendActionForStateViewEvent(updateAceessTokenStateViewEvent)
     
+    UIApplication.sharedApplication().networkActivityIndicatorVisible = true
     let spiningActivity = MBProgressHUD.showHUDAddedTo(navigationController?.view, animated: true)
     spiningActivity.labelText = NSLocalizedString("Please wait", comment: "Activity indicator text")
     
@@ -117,6 +118,7 @@ class MySadhanaViewController: JSONTableViewController {
           {
             --self.month 
           }
+          UIApplication.sharedApplication().networkActivityIndicatorVisible = true
           self.sendActionForStateViewEvent(mySadhanaEntriesStateViewEvent)
       }
     }
