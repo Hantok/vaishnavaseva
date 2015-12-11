@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		02B046E584F20EDB0313090C /* Pods_Vaishnavaseva.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECF6B37A369633433B709D75 /* Pods_Vaishnavaseva.framework */; };
 		4E1F38521BFDEC5C00BE4C99 /* OAuthToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1F38511BFDEC5C00BE4C99 /* OAuthToken.swift */; };
 		4E24D05D1BDFBCE000E4C17F /* SadhanaUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E24D05C1BDFBCE000E4C17F /* SadhanaUser.swift */; };
 		4E24D0601BDFBEAE00E4C17F /* SadhanaEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E24D05F1BDFBEAE00E4C17F /* SadhanaEntry.swift */; };
@@ -236,6 +237,9 @@
 		75CFA0E71B501A5C0071EC79 /* SceneController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SceneController.swift; path = SceneManager/SceneController.swift; sourceTree = "<group>"; };
 		75CFA0EC1B501FB40071EC79 /* PersonalSadhanaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersonalSadhanaViewController.swift; path = ViewControllers/PersonalSadhanaViewController.swift; sourceTree = "<group>"; };
 		75CFA0EE1B50214F0071EC79 /* AppController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppController.swift; path = AppController/AppController.swift; sourceTree = "<group>"; };
+		B40AE0C2556E1C73B012E4B3 /* Pods-Vaishnavaseva.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vaishnavaseva.release.xcconfig"; path = "Pods/Target Support Files/Pods-Vaishnavaseva/Pods-Vaishnavaseva.release.xcconfig"; sourceTree = "<group>"; };
+		C39400939624539C0FE40CE9 /* Pods-Vaishnavaseva.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Vaishnavaseva.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Vaishnavaseva/Pods-Vaishnavaseva.debug.xcconfig"; sourceTree = "<group>"; };
+		ECF6B37A369633433B709D75 /* Pods_Vaishnavaseva.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Vaishnavaseva.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,6 +247,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02B046E584F20EDB0313090C /* Pods_Vaishnavaseva.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,6 +339,14 @@
 			name = Keychain;
 			sourceTree = "<group>";
 		};
+		532072E8761BD0858E564856 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ECF6B37A369633433B709D75 /* Pods_Vaishnavaseva.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		750810C71B971FE700E97FF5 /* Images */ = {
 			isa = PBXGroup;
 			children = (
@@ -412,6 +425,8 @@
 				757D125F1B5013300001402B /* VaishnavasevaTests */,
 				757D126A1B5013300001402B /* VaishnavasevaUITests */,
 				757D12461B5013300001402B /* Products */,
+				9DC3742660234144AFB63D88 /* Pods */,
+				532072E8761BD0858E564856 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -538,6 +553,15 @@
 			name = AppController;
 			sourceTree = "<group>";
 		};
+		9DC3742660234144AFB63D88 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C39400939624539C0FE40CE9 /* Pods-Vaishnavaseva.debug.xcconfig */,
+				B40AE0C2556E1C73B012E4B3 /* Pods-Vaishnavaseva.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -545,9 +569,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 757D12701B5013300001402B /* Build configuration list for PBXNativeTarget "Vaishnavaseva" */;
 			buildPhases = (
+				BE392580C5112C5670ACDE7A /* Check Pods Manifest.lock */,
 				757D12411B5013300001402B /* Sources */,
 				757D12421B5013300001402B /* Frameworks */,
 				757D12431B5013300001402B /* Resources */,
+				717C7A8E0182E89B07C41FF9 /* Embed Pods Frameworks */,
+				9E3B0F636F93E4A101C15D87 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -687,6 +714,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		717C7A8E0182E89B07C41FF9 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Vaishnavaseva/Pods-Vaishnavaseva-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9E3B0F636F93E4A101C15D87 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Vaishnavaseva/Pods-Vaishnavaseva-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BE392580C5112C5670ACDE7A /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		757D12411B5013300001402B /* Sources */ = {
@@ -937,6 +1012,7 @@
 		};
 		757D12711B5013300001402B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C39400939624539C0FE40CE9 /* Pods-Vaishnavaseva.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -954,6 +1030,7 @@
 		};
 		757D12721B5013300001402B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B40AE0C2556E1C73B012E4B3 /* Pods-Vaishnavaseva.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
