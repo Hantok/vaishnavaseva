@@ -341,10 +341,10 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="79"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="28M-3U-i7A">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="28M-3U-i7A" customClass="OAStackView">
                                             <rect key="frame" x="18" y="8" width="564" height="63"/>
                                             <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="l6r-un-fbq">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l6r-un-fbq" customClass="OAStackView">
                                                     <rect key="frame" x="0.0" y="0.0" width="564" height="21"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WGU-2J-jBf">
@@ -366,7 +366,22 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
-                                                </stackView>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
++                                            <userDefinedRuntimeAttributes>
++                                                <userDefinedRuntimeAttribute type="number" keyPath="axisValue">
++                                                    <integer key="value" value="0"/>
++                                                </userDefinedRuntimeAttribute>
++                                                <userDefinedRuntimeAttribute type="number" keyPath="spacing">
++                                                    <real key="value" value="0.0"/>
++                                                </userDefinedRuntimeAttribute>
++                                                <userDefinedRuntimeAttribute type="number" keyPath="alignmentValue">
++                                                    <integer key="value" value="0"/>
++                                                </userDefinedRuntimeAttribute>
++                                                <userDefinedRuntimeAttribute type="number" keyPath="distributionValue">
++                                                    <integer key="value" value="1"/>
++                                                </userDefinedRuntimeAttribute>
++                                            </userDefinedRuntimeAttributes>
++                                        </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jdp-wN-qv7" customClass="JapaView" customModule="Vaishnavaseva" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="33" width="564" height="30"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -375,7 +390,22 @@
                                                     </constraints>
                                                 </view>
                                             </subviews>
-                                        </stackView>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
++                                            <userDefinedRuntimeAttributes>
++                                                <userDefinedRuntimeAttribute type="number" keyPath="axisValue">
++                                                    <integer key="value" value="1"/>
++                                                </userDefinedRuntimeAttribute>
++                                                <userDefinedRuntimeAttribute type="number" keyPath="spacing">
++                                                    <real key="value" value="5.0"/>
++                                                </userDefinedRuntimeAttribute>
++                                                <userDefinedRuntimeAttribute type="number" keyPath="alignmentValue">
++                                                    <integer key="value" value="0"/>
++                                                </userDefinedRuntimeAttribute>
++                                                <userDefinedRuntimeAttribute type="number" keyPath="distributionValue">
++                                                    <integer key="value" value="3"/>
++                                                </userDefinedRuntimeAttribute>
++                                            </userDefinedRuntimeAttributes>
++                                        </view>
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="trailingMargin" secondItem="28M-3U-i7A" secondAttribute="trailing" constant="10" id="QsU-lT-wG5"/>
