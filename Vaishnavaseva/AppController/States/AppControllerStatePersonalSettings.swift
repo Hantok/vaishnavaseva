@@ -16,6 +16,7 @@ import UIKit
 
     "options/\(sadhanaUser.userId!)/".post(params, headers: ["Authorization" : "\(oAuthToken.tokenType) \(oAuthToken.accessToken)"]) { response in
       MBProgressHUD.hideAllHUDsForView(self.viewController.navigationController?.view, animated: true)
+      UIApplication.sharedApplication().networkActivityIndicatorVisible = false
       if response.data == nil || response.HTTPResponse.statusCode != 200 {
         self.viewController.showErrorAlert(NSLocalizedString("Server error", comment: "Alert title"))
         return
