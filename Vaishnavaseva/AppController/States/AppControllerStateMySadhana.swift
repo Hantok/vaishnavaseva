@@ -155,7 +155,7 @@ import UIKit
   
   func updateUserSettings() {
     
-    dispatch_async(dispatch_get_global_queue(QOS_CLASS_USER_INITIATED, 0)) {
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
       let dict = Locksmith.loadDataForUserAccount("OAuthToken")!
       let oAuthToken = OAuthToken(dict: dict)
       "me".get(headers: ["Authorization" : "\(oAuthToken.tokenType) \(oAuthToken.accessToken)"]) { response in

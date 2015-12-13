@@ -18,8 +18,8 @@ public enum LocksmithAccessibleOption: RawRepresentable {
             self = AfterFirstUnlockThisDeviceOnly
         case String(kSecAttrAccessibleAlwaysThisDeviceOnly):
             self = AlwaysThisDeviceOnly
-        case String(kSecAttrAccessibleWhenPasscodeSetThisDeviceOnly):
-            self = WhenPasscodeSetThisDeviceOnly
+//        case String(kSecAttrAccessibleWhenPasscodeSetThisDeviceOnly):
+//            self = WhenPasscodeSetThisDeviceOnly
         default:
             self = WhenUnlocked
         }
@@ -33,14 +33,16 @@ public enum LocksmithAccessibleOption: RawRepresentable {
             return String(kSecAttrAccessibleAfterFirstUnlock)
         case .Always:
             return String(kSecAttrAccessibleAlways)
-        case .WhenPasscodeSetThisDeviceOnly:
-            return String(kSecAttrAccessibleWhenPasscodeSetThisDeviceOnly)
+//        case .WhenPasscodeSetThisDeviceOnly:
+//            return String(kSecAttrAccessibleWhenPasscodeSetThisDeviceOnly)
         case .WhenUnlockedThisDeviceOnly:
             return String(kSecAttrAccessibleWhenUnlockedThisDeviceOnly)
         case .AfterFirstUnlockThisDeviceOnly:
             return String(kSecAttrAccessibleAfterFirstUnlockThisDeviceOnly)
         case .AlwaysThisDeviceOnly:
             return String(kSecAttrAccessibleAlwaysThisDeviceOnly)
+        default:
+            return String(kSecAttrAccessibleAlways)
         }
     }
 }

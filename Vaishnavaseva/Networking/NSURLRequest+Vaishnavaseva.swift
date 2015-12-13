@@ -18,7 +18,11 @@ extension NSURLRequest {
         let actualURL: NSURL
         if let queryParameters = queryParameters {
             let components = NSURLComponents(URL: URL, resolvingAgainstBaseURL: true)!
-            components.queryItems = queryParameters.map { (key, value) in NSURLQueryItem(name: key, value: value) }
+            if #available(iOS 8.0, *) {
+                components.queryItems = queryParameters.map { (key, value) in NSURLQueryItem(name: key, value: value) }
+            } else {
+                // Fallback on earlier versions
+            }
             actualURL = components.URL!
         } else {
             actualURL = URL
