@@ -19,7 +19,7 @@ import UIKit
       UIApplication.sharedApplication().networkActivityIndicatorVisible = false
       if response.data == nil || response.HTTPResponse.statusCode != 200 {
         self.viewController.showErrorAlert(NSLocalizedString("Server error", comment: "Alert title"))
-        return'
+        return
       } else {
         let dict = response.responseJSON as! NSDictionary
         NSUserDefaults.standardUserDefaults().setValue(dict, forKey: "me")
