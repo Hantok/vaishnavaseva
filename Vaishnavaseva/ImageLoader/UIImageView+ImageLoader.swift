@@ -66,6 +66,7 @@ extension UIImageView {
                 // requesting is success then set image
                 if let thisURL = self?.URL, let image = image where thisURL.isEqual(URL) {
                     self?.image = image
+                    self?.highlightedImage = image
                 }
                 completionHandler?(URL, image, error, cacheType)
             }
