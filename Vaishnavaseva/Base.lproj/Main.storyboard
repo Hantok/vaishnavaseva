@@ -1281,19 +1281,9 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iNj-FR-kcF">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iNj-FR-kcF">
                                         <rect key="frame" x="259" y="80" width="42" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="ElK-F8-itx"/>
-                                            <constraint firstAttribute="width" constant="42" id="rOg-vB-0C6"/>
-                                        </constraints>
                                         <state key="normal" title="Log In"/>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="ElK-F8-itx"/>
-                                                <exclude reference="rOg-vB-0C6"/>
-                                            </mask>
-                                        </variation>
                                         <connections>
                                             <action selector="onLogIn:" destination="6Hf-a8-qBb" eventType="touchUpInside" id="68h-lS-Rwb"/>
                                         </connections>
