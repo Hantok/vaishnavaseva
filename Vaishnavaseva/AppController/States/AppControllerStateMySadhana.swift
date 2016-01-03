@@ -26,19 +26,10 @@ import UIKit
     let today = components.day
     
     //year check change
-    while month < 0
+    while month < 1
     {
+      --year
       month = 12 + month
-      if month == 0
-      {
-        month = 12
-        --year
-        break
-      }
-      else if month < 0
-      {
-        --year
-      }
     }
     
     "userSadhanaEntries/\(userId)".post(["year": "\(year)", "month": "\(month)"]) { response in
@@ -62,10 +53,11 @@ import UIKit
       if entriesDict.count == 0 {
         if mySadhanaViewController.entries.count == 0 {
           mySadhanaViewController.entries = self.createEmptySadhanaEntries(today, entries: [])
+        } else {
+          mySadhanaViewController.tableView.infiniteScrollingView.enabled = false
         }
         mySadhanaViewController.isBeforeResponseSucsess = true
         mySadhanaViewController.tableView.infiniteScrollingView.stopAnimating()
-        mySadhanaViewController.tableView.infiniteScrollingView.enabled = false
         mySadhanaViewController.tableView.reloadData()
         return
       }

@@ -25,19 +25,10 @@ import UIKit
     var month = components.month + personalSadhanaViewController.month //personalSadhanaViewController.month <= 0
     
     //year check change
-    while month < 0
+    while month < 1
     {
+      --year
       month = 12 + month
-      if month == 0
-      {
-        month = 12
-        --year
-        break
-      }
-      else if month < 0
-      {
-        --year
-      }
     }
     
     "userSadhanaEntries/\(userId)".post(["year": "\(year)", "month": "\(month)"]) { response in
