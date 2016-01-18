@@ -1288,7 +1288,7 @@
                                             <action selector="onLogIn:" destination="6Hf-a8-qBb" eventType="touchUpInside" id="68h-lS-Rwb"/>
                                         </connections>
                                     </button>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xjL-1b-cwp">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xjL-1b-cwp">
                                         <rect key="frame" x="253" y="120" width="55" height="30"/>
                                         <state key="normal" title="Sign Up"/>
                                         <connections>
