@@ -11,38 +11,83 @@ import UIKit
   
   override func sceneDidBecomeCurrent() {
     super.sceneDidBecomeCurrent()
-    self.viewControllerProtocol.setAction(Selector("userSadhanaEntries"), forTarget: self, forStateViewEvent: userSadhanaEntriesStateViewEvent)
+    self.viewControllerProtocol.setAction(Selector("getAvailableMonths"), forTarget: self, forStateViewEvent: userSadhanaEntriesStateViewEvent)
   }
-
-  func userSadhanaEntries() {
+  
+  func getAvailableMonths() {
+    let personalSadhanaViewController = self.viewController as! PersonalSadhanaViewController
+    let userId = personalSadhanaViewController.sadhanaUser.userId!
+    if (personalSadhanaViewController.year != 0 && personalSadhanaViewController.year < 2015) {
+      personalSadhanaViewController.totalFound = 0
+      personalSadhanaViewController.isBeforeResponseSucsess = true
+      UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+      personalSadhanaViewController.tableView.infiniteScrollingView.stopAnimating()
+      personalSadhanaViewController.tableView.infiniteScrollingView.enabled = false
+      return
+    }
+    
+    if personalSadhanaViewController.dates[personalSadhanaViewController.year] == nil {
+      "months/\(userId)/\(personalSadhanaViewController.year)".get()  { response in
+        
+        if (response.data == nil) {
+          self.viewController.showErrorAlert(NSLocalizedString("Server error", comment: "Alert title"))
+          UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+          personalSadhanaViewController.tableView.infiniteScrollingView.stopAnimating()
+          return
+        }
+        if response.error?.code != nil {
+          personalSadhanaViewController.showErrorAlert(NSLocalizedString("No internet connection", comment: "Alert title"))
+          UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+          personalSadhanaViewController.tableView.infiniteScrollingView.stopAnimating()
+          return
+        }
+        
+        let months = (response.responseJSON as! NSArray).reverse()
+        if (months.count == 0) {
+          personalSadhanaViewController.totalFound = 0
+          personalSadhanaViewController.isBeforeResponseSucsess = true
+          UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+          personalSadhanaViewController.tableView.infiniteScrollingView.stopAnimating()
+          personalSadhanaViewController.tableView.infiniteScrollingView.enabled = false
+        }
+        personalSadhanaViewController.dates[personalSadhanaViewController.year] = months
+        self.getEntries(months)
+      }
+    } else {
+      let months = personalSadhanaViewController.dates[personalSadhanaViewController.year]
+      self.getEntries(months!)
+    }
+  }
+  
+  func getEntries(months:NSArray) {
+    let personalSadhanaViewController = self.viewController as! PersonalSadhanaViewController
+    if personalSadhanaViewController.monthIndex < months.count {
+      self.userSadhanaEntries(months[personalSadhanaViewController.monthIndex] as! String)
+    } else {
+      personalSadhanaViewController.monthIndex = 0
+      --personalSadhanaViewController.year
+      getAvailableMonths()
+    }
+  }
+  
+  func userSadhanaEntries(month:String) {
     let personalSadhanaViewController = self.viewController as! PersonalSadhanaViewController
     let userId = personalSadhanaViewController.sadhanaUser.userId!
     
-    let date = NSDate()
-    let calendar = NSCalendar.currentCalendar()
-    let components = calendar.components([.Year, .Month], fromDate: date)
-    var year = components.year
-    var month = components.month + personalSadhanaViewController.month //personalSadhanaViewController.month <= 0
-    
-    //year check change
-    while month < 1
-    {
-      --year
-      month = 12 + month
-    }
-    
-    "userSadhanaEntries/\(userId)".post(["year": "\(year)", "month": "\(month)"]) { response in
+    "userSadhanaEntries/\(userId)".post(["year": "\(personalSadhanaViewController.year)", "month": "\(month)"]) { response in
       //print(response.responseJSON)
       MBProgressHUD.hideAllHUDsForView(self.viewController.navigationController?.view, animated: true)
       UIApplication.sharedApplication().networkActivityIndicatorVisible = false
       if (response.data == nil) {
         self.viewController.showErrorAlert(NSLocalizedString("Server error", comment: "Alert title"))
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = false
         personalSadhanaViewController.tableView.infiniteScrollingView.stopAnimating()
         personalSadhanaViewController.isBeforeResponseSucsess = false
         return
       }
       if response.error?.code != nil {
         personalSadhanaViewController.showErrorAlert(NSLocalizedString("No internet connection", comment: "Alert title"))
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = false
         personalSadhanaViewController.tableView.infiniteScrollingView.stopAnimating()
         personalSadhanaViewController.isBeforeResponseSucsess = false
         return
@@ -53,6 +98,7 @@ import UIKit
       if entriesDict.count == 0 {
         personalSadhanaViewController.totalFound = 0
         personalSadhanaViewController.isBeforeResponseSucsess = true
+        UIApplication.sharedApplication().networkActivityIndicatorVisible = false
         personalSadhanaViewController.tableView.infiniteScrollingView.stopAnimating()
         personalSadhanaViewController.tableView.infiniteScrollingView.enabled = false
         return
@@ -78,6 +124,7 @@ import UIKit
         personalSadhanaViewController.tableView.reloadData()
       }
       personalSadhanaViewController.isBeforeResponseSucsess = true
+      UIApplication.sharedApplication().networkActivityIndicatorVisible = false
       personalSadhanaViewController.tableView.infiniteScrollingView.stopAnimating()
     }
   }
