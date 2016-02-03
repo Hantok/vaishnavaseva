@@ -4,18 +4,9 @@ let userSadhanaEntriesStateViewEvent = "userSadhanaEntriesStateViewEvent"
 
 class PersonalSadhanaViewController: JSONTableViewController {
   
-  var sadhanaUser: SadhanaUser = SadhanaUser()
-  var totalFound = 1
-  
-  var year = 0
-  var monthIndex = 0
-  var dates = Dictionary<Int, NSArray>();
-  
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    let components = NSCalendar.currentCalendar().components([.Year], fromDate: NSDate())
-    self.year = components.year
     sendActionForStateViewEvent(userSadhanaEntriesStateViewEvent)
     UIApplication.sharedApplication().networkActivityIndicatorVisible = true
     let spiningActivity = MBProgressHUD.showHUDAddedTo(navigationController?.view, animated: true)

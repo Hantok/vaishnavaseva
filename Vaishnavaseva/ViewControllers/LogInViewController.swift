@@ -39,7 +39,7 @@ class LogInViewController: BaseViewController {
     super.prepareForSegue(storyboardSegue, sender: sender)
     if (storyboardSegue.identifier == "LogInToMy")
     {
-      (storyboardSegue.destinationViewController as! MySadhanaViewController).me = self.me
+      (storyboardSegue.destinationViewController as! MySadhanaViewController).sadhanaUser = self.me
     }
 
   }

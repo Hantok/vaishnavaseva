@@ -11,6 +11,7 @@
 		4E24D05D1BDFBCE000E4C17F /* SadhanaUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E24D05C1BDFBCE000E4C17F /* SadhanaUser.swift */; };
 		4E24D0601BDFBEAE00E4C17F /* SadhanaEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E24D05F1BDFBEAE00E4C17F /* SadhanaEntry.swift */; };
 		4E24D0621BDFC00A00E4C17F /* Deserializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E24D0611BDFC00A00E4C17F /* Deserializer.swift */; };
+		4E2915421C624F3000202B91 /* AppControllerStateAbstractUserSadhana.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2915411C624F3000202B91 /* AppControllerStateAbstractUserSadhana.swift */; };
 		4E3C3C631BA078DD00C61320 /* PersonalSadhanaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3C3C621BA078DD00C61320 /* PersonalSadhanaTableViewCell.swift */; };
 		4E3CC7441BEB9116003982D4 /* info.html in Resources */ = {isa = PBXBuildFile; fileRef = 4E3CC7431BEB9116003982D4 /* info.html */; };
 		4E3CC7471BEB9244003982D4 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E3CC7451BEB9244003982D4 /* logo.png */; };
@@ -122,6 +123,7 @@
 		4E24D05C1BDFBCE000E4C17F /* SadhanaUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SadhanaUser.swift; path = Model/SadhanaUser.swift; sourceTree = "<group>"; };
 		4E24D05F1BDFBEAE00E4C17F /* SadhanaEntry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SadhanaEntry.swift; path = Model/SadhanaEntry.swift; sourceTree = "<group>"; };
 		4E24D0611BDFC00A00E4C17F /* Deserializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Deserializer.swift; path = Model/Deserializer.swift; sourceTree = "<group>"; };
+		4E2915411C624F3000202B91 /* AppControllerStateAbstractUserSadhana.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppControllerStateAbstractUserSadhana.swift; path = AppController/States/AppControllerStateAbstractUserSadhana.swift; sourceTree = "<group>"; };
 		4E3C3C621BA078DD00C61320 /* PersonalSadhanaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersonalSadhanaTableViewCell.swift; path = Views/PersonalSadhanaTableViewCell.swift; sourceTree = "<group>"; };
 		4E3CC7431BEB9116003982D4 /* info.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = info.html; path = Vaishnavaseva/Info/info.html; sourceTree = "<group>"; };
 		4E3CC7451BEB9244003982D4 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo.png; path = Vaishnavaseva/Info/logo.png; sourceTree = "<group>"; };
@@ -372,6 +374,7 @@
 				75CE83A11B68CFE20033A8AD /* AppControllerState.swift */,
 				7521AFA21B57C6E1004B2CFE /* AppControllerStateGeneralSadhana.swift */,
 				75CE83A21B68CFE20033A8AD /* AppControllerStateMySadhana.swift */,
+				4E2915411C624F3000202B91 /* AppControllerStateAbstractUserSadhana.swift */,
 				75BA40551B695E9A0075CE6B /* AppControllerStateLogIn.swift */,
 				75BA40531B695E610075CE6B /* AppControllerStateLogOut.swift */,
 				75BA40351B690C820075CE6B /* AppControllerStateEditSadhana.swift */,
@@ -747,6 +750,7 @@
 				75BA40561B695E9A0075CE6B /* AppControllerStateLogIn.swift in Sources */,
 				4E9977AE1BD623DE0002D7A0 /* Diskcached.swift in Sources */,
 				4E24D05D1BDFBCE000E4C17F /* SadhanaUser.swift in Sources */,
+				4E2915421C624F3000202B91 /* AppControllerStateAbstractUserSadhana.swift in Sources */,
 				75BA40361B690C820075CE6B /* AppControllerStateEditSadhana.swift in Sources */,
 				755B5DE41BA2D81500ADE410 /* Alerts.swift in Sources */,
 				4E436D4E1BE10F6D0046C145 /* ActivityIndicatorsContainer.swift in Sources */,

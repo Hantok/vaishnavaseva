@@ -4,17 +4,14 @@ let mySadhanaEntriesStateViewEvent = "mySadhanaEntriesStateViewEvent"
 let updateAceessTokenStateViewEvent = "updateAceessTokenStateViewEvent"
 
 class MySadhanaViewController: JSONTableViewController {
-  var me = SadhanaUser()
-  var month = 0
-  var totalFound = 1
   var selectedSadhanaEntry : SadhanaEntry?
   var selectedPath : NSIndexPath?
   
   override func viewDidLoad() {
     super.viewDidLoad()
     self.navigationItem.leftItemsSupplementBackButton = true;
-    if me.userName == nil {
-      self.me = Deserialiser().getSadhanaUser(NSUserDefaults.standardUserDefaults().valueForKey("me") as! NSDictionary)
+    if self.sadhanaUser.userName == nil {
+      self.sadhanaUser = Deserialiser().getSadhanaUser(NSUserDefaults.standardUserDefaults().valueForKey("me") as! NSDictionary)
     }
     sendActionForStateViewEvent(mySadhanaEntriesStateViewEvent)
     sendActionForStateViewEvent(updateAceessTokenStateViewEvent)
@@ -77,15 +74,15 @@ class MySadhanaViewController: JSONTableViewController {
   override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView?
   {
     let cell = tableView.dequeueReusableCellWithIdentifier("Header") as! PersonalSadhanaTableHeader
-    cell.name.text = me.userName!
+    cell.name.text = sadhanaUser.userName!
     
-    if me.avatarUrl != Constants.default_avatar_url
+    if sadhanaUser.avatarUrl != Constants.default_avatar_url
     {
-      if (Manager.sharedInstance.cache[NSURL(string: me.avatarUrl!)!] != nil) {
-        cell.photo.image = Manager.sharedInstance.cache[NSURL(string: me.avatarUrl!)!]
+      if (Manager.sharedInstance.cache[NSURL(string: sadhanaUser.avatarUrl!)!] != nil) {
+        cell.photo.image = Manager.sharedInstance.cache[NSURL(string: sadhanaUser.avatarUrl!)!]
       }
       else {
-        cell.photo.load(me.avatarUrl!, placeholder: UIImage(named: "default_avatar.gif"), completionHandler: nil)
+        cell.photo.load(sadhanaUser.avatarUrl!, placeholder: UIImage(named: "default_avatar.gif"), completionHandler: nil)
       }
     }
     else
@@ -116,7 +113,7 @@ class MySadhanaViewController: JSONTableViewController {
           // decrease date if previous request was success
           if self.isBeforeResponseSucsess
           {
-            --self.month 
+            ++self.monthIndex
           }
           UIApplication.sharedApplication().networkActivityIndicatorVisible = true
           self.sendActionForStateViewEvent(mySadhanaEntriesStateViewEvent)

@@ -1,6 +1,6 @@
 import UIKit
 
-@objc class AppControllerStateMySadhana: AppControllerState
+@objc class AppControllerStateMySadhana: AppControllerStateAbstractUserSadhana
   {
 //  override func isEqualTo(other: EquatableBase) -> Bool
 //    {
@@ -10,29 +10,17 @@ import UIKit
 //    }
   override func sceneDidBecomeCurrent() {
     super.sceneDidBecomeCurrent()
-    self.viewControllerProtocol.setAction(Selector("userSadhanaEntries"), forTarget: self, forStateViewEvent: mySadhanaEntriesStateViewEvent)
+    self.viewControllerProtocol.setAction(Selector("getAvailableMonths"), forTarget: self, forStateViewEvent: mySadhanaEntriesStateViewEvent)
     self.viewControllerProtocol.setAction(Selector("updateAcceessToken"), forTarget: self, forStateViewEvent: updateAceessTokenStateViewEvent)
   }
   
-  func userSadhanaEntries() {
+  override func userSadhanaEntries(month:String) {
     let mySadhanaViewController = self.viewController as! MySadhanaViewController
-    let userId = mySadhanaViewController.me.userId!
-    
-    let date = NSDate()
-    let calendar = NSCalendar.currentCalendar()
-    let components = calendar.components([.Year, .Month, .Day], fromDate: date)
-    var year = components.year
-    var month = components.month + mySadhanaViewController.month //mySadhanaViewController <= 0
+    let userId = mySadhanaViewController.sadhanaUser.userId!
+    let components = NSCalendar.currentCalendar().components([.Day], fromDate: NSDate())
     let today = components.day
     
-    //year check change
-    while month < 1
-    {
-      --year
-      month = 12 + month
-    }
-    
-    "userSadhanaEntries/\(userId)".post(["year": "\(year)", "month": "\(month)"]) { response in
+    "userSadhanaEntries/\(userId)".post(["year": "\(mySadhanaViewController.year)", "month": "\(month)"]) { response in
 
       MBProgressHUD.hideAllHUDsForView(self.viewController.navigationController?.view, animated: true)
       UIApplication.sharedApplication().networkActivityIndicatorVisible = false
@@ -156,7 +144,7 @@ import UIKit
           return
         } else {
           let dict = response.responseJSON as! NSDictionary
-          (self.viewController as! MySadhanaViewController).me = Deserialiser().getSadhanaUser(dict)
+          (self.viewController as! MySadhanaViewController).sadhanaUser = Deserialiser().getSadhanaUser(dict)
           NSUserDefaults.standardUserDefaults().setValue(dict, forKey: "me")
         }
       }

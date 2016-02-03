@@ -12,7 +12,6 @@ let allSadhanaEntriesStateViewEvent = "allSadhanaEntriesStateViewEvent"
 class GeneralSadhanaViewController: JSONTableViewController {
   var pageNum = 0
   var itemsPerPage = 20
-  var totalFound = 120
   var needToUpdateRefreshToken = false
   
   override func viewDidLoad() {

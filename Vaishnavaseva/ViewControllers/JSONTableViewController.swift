@@ -19,6 +19,11 @@ class JSONTableViewController: BaseTableViewController
         ++sections[sections.count - 1].count
       }
     }
-    
   }
+  
+  var year = NSCalendar.currentCalendar().components([.Year], fromDate: NSDate()).year
+  var monthIndex = 0
+  var dates = Dictionary<Int, NSArray>();
+  var totalFound = 1
+  var sadhanaUser: SadhanaUser = SadhanaUser()
 }
