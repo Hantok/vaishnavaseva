@@ -370,15 +370,15 @@
 		7521AFA11B57C6B1004B2CFE /* States */ = {
 			isa = PBXGroup;
 			children = (
-				7553A0F71BE7624D005F54B0 /* AppControllerStatePersonalSettings.swift */,
 				75CE83A11B68CFE20033A8AD /* AppControllerState.swift */,
-				7521AFA21B57C6E1004B2CFE /* AppControllerStateGeneralSadhana.swift */,
-				75CE83A21B68CFE20033A8AD /* AppControllerStateMySadhana.swift */,
 				4E2915411C624F3000202B91 /* AppControllerStateAbstractUserSadhana.swift */,
+				7521AFA41B57C729004B2CFE /* AppControllerStatePersonalSadhana.swift */,
+				75CE83A21B68CFE20033A8AD /* AppControllerStateMySadhana.swift */,
+				7553A0F71BE7624D005F54B0 /* AppControllerStatePersonalSettings.swift */,
+				7521AFA21B57C6E1004B2CFE /* AppControllerStateGeneralSadhana.swift */,
 				75BA40551B695E9A0075CE6B /* AppControllerStateLogIn.swift */,
 				75BA40531B695E610075CE6B /* AppControllerStateLogOut.swift */,
 				75BA40351B690C820075CE6B /* AppControllerStateEditSadhana.swift */,
-				7521AFA41B57C729004B2CFE /* AppControllerStatePersonalSadhana.swift */,
 				75BA40411B6910E60075CE6B /* AppControllerStateInfo.swift */,
 			);
 			name = States;

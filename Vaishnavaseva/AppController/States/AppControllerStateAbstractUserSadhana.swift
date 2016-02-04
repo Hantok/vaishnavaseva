@@ -28,12 +28,14 @@ import UIKit
       "months/\(userId)/\(jsonTableViewController.year)".get()  { response in
         
         if (response.data == nil) {
+          MBProgressHUD.hideAllHUDsForView(self.viewController.navigationController?.view, animated: true)
           self.viewController.showErrorAlert(NSLocalizedString("Server error", comment: "Alert title"))
           UIApplication.sharedApplication().networkActivityIndicatorVisible = false
           jsonTableViewController.tableView.infiniteScrollingView.stopAnimating()
           return
         }
         if response.error?.code != nil {
+          MBProgressHUD.hideAllHUDsForView(self.viewController.navigationController?.view, animated: true)
           jsonTableViewController.showErrorAlert(NSLocalizedString("No internet connection", comment: "Alert title"))
           UIApplication.sharedApplication().networkActivityIndicatorVisible = false
           jsonTableViewController.tableView.infiniteScrollingView.stopAnimating()
@@ -42,11 +44,13 @@ import UIKit
         
         let months = (response.responseJSON as! NSArray).reverse()
         if (months.count == 0) {
+          MBProgressHUD.hideAllHUDsForView(self.viewController.navigationController?.view, animated: true)
           jsonTableViewController.totalFound = 0
           jsonTableViewController.isBeforeResponseSucsess = true
           UIApplication.sharedApplication().networkActivityIndicatorVisible = false
           jsonTableViewController.tableView.infiniteScrollingView.stopAnimating()
           jsonTableViewController.tableView.infiniteScrollingView.enabled = false
+          return
         }
         jsonTableViewController.dates[jsonTableViewController.year] = months
         self.getEntries(months)
