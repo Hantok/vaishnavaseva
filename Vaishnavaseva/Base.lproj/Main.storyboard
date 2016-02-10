@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BU8-X4-nNb">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BU8-X4-nNb">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -199,7 +199,7 @@
                         <rightBarButtonItems>
                             <barButtonItem image="info_24.png" id="dMc-w4-mhg">
                                 <connections>
-                                    <segue destination="kd6-ZC-lcN" kind="show" identifier="GeneralToInfo" id="IwF-dC-oae"/>
+                                    <action selector="feedbackPressed:" destination="Pfd-d1-ZYF" id="bz7-dt-uZi"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem image="man_24.png" id="AWP-p2-cFo">
@@ -437,7 +437,7 @@
                         <rightBarButtonItems>
                             <barButtonItem image="info_24.png" id="6Kz-g2-lg8">
                                 <connections>
-                                    <segue destination="kd6-ZC-lcN" kind="show" identifier="MyToInfo" id="2wo-T1-wJy"/>
+                                    <action selector="feedbackPressed:" destination="n9d-oo-zJV" id="gsS-vF-u9i"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem image="gear_24.png" id="RSd-Qb-SDt">
@@ -1094,7 +1094,7 @@
                     <navigationItem key="navigationItem" title="Садхана" id="8wk-3y-F7U">
                         <barButtonItem key="rightBarButtonItem" image="info_24.png" id="Z16-EL-x8t">
                             <connections>
-                                <segue destination="kd6-ZC-lcN" kind="show" identifier="PersonalToInfo" id="uT5-hR-sCQ"/>
+                                <action selector="feedbackPressed:" destination="Egm-P0-sbH" id="953-Kb-ymN"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -1123,40 +1123,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fCc-On-GYC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="876" y="-298"/>
-        </scene>
-        <!--Info-->
-        <scene sceneID="cCX-a6-RnY">
-            <objects>
-                <viewController id="kd6-ZC-lcN" customClass="InfoViewController" customModule="Vaishnavaseva" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="CYb-Ne-64r"/>
-                        <viewControllerLayoutGuide type="bottom" id="sAe-Ex-Dmn"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="pJt-V9-UnP">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yjR-Qs-ODs">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </webView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="yjR-Qs-ODs" firstAttribute="leading" secondItem="pJt-V9-UnP" secondAttribute="leading" id="CAe-px-AX7"/>
-                            <constraint firstAttribute="trailing" secondItem="yjR-Qs-ODs" secondAttribute="trailing" id="Xss-RD-LHn"/>
-                            <constraint firstItem="yjR-Qs-ODs" firstAttribute="bottom" secondItem="sAe-Ex-Dmn" secondAttribute="top" id="hFM-Qz-Ekf"/>
-                            <constraint firstItem="yjR-Qs-ODs" firstAttribute="top" secondItem="pJt-V9-UnP" secondAttribute="top" id="rH6-6e-l5q"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Info" id="paU-OG-Ovc"/>
-                    <connections>
-                        <outlet property="webView" destination="yjR-Qs-ODs" id="Wd1-R4-NKj"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0IK-0R-k7G" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2870" y="1268"/>
         </scene>
         <!--My Data-->
         <scene sceneID="v30-yM-RvO">
@@ -1615,7 +1581,6 @@
         <image name="outbox_24.png" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="IIT-AO-hU6"/>
-        <segue reference="uT5-hR-sCQ"/>
+        <segue reference="jLf-bz-HMW"/>
     </inferredMetricsTieBreakers>
 </document>

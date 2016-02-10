@@ -29,6 +29,9 @@ class PersonalSadhanaViewController: JSONTableViewController {
   {
   }
   
+  @IBAction func feedbackPressed(sender: AnyObject) {
+    self.sendEmail()
+  }
   override func numberOfSectionsInTableView(tableView: UITableView) -> Int
   {
     return 1

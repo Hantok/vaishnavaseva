@@ -65,6 +65,9 @@ class GeneralSadhanaViewController: JSONTableViewController {
       NSUserDefaults.standardUserDefaults().removeObjectForKey("me")
     }
   }
+  @IBAction func feedbackPressed(sender: AnyObject) {
+    self.sendEmail();
+  }
   
   override func numberOfSectionsInTableView(tableView: UITableView) -> Int
     {

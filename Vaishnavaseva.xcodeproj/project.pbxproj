@@ -13,9 +13,6 @@
 		4E24D0621BDFC00A00E4C17F /* Deserializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E24D0611BDFC00A00E4C17F /* Deserializer.swift */; };
 		4E2915421C624F3000202B91 /* AppControllerStateAbstractUserSadhana.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E2915411C624F3000202B91 /* AppControllerStateAbstractUserSadhana.swift */; };
 		4E3C3C631BA078DD00C61320 /* PersonalSadhanaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E3C3C621BA078DD00C61320 /* PersonalSadhanaTableViewCell.swift */; };
-		4E3CC7441BEB9116003982D4 /* info.html in Resources */ = {isa = PBXBuildFile; fileRef = 4E3CC7431BEB9116003982D4 /* info.html */; };
-		4E3CC7471BEB9244003982D4 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E3CC7451BEB9244003982D4 /* logo.png */; };
-		4E3CC7481BEB9244003982D4 /* ISKCON.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E3CC7461BEB9244003982D4 /* ISKCON.png */; };
 		4E436D4E1BE10F6D0046C145 /* ActivityIndicatorsContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E436D4D1BE10F6D0046C145 /* ActivityIndicatorsContainer.swift */; };
 		4E436D6A1BE1100B0046C145 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E436D661BE1100B0046C145 /* MBProgressHUD.m */; };
 		4E436D6B1BE1100B0046C145 /* UIScrollView+SVInfiniteScrolling.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E436D681BE1100B0046C145 /* UIScrollView+SVInfiniteScrolling.m */; };
@@ -67,7 +64,6 @@
 		755BF4E01B68D6BE004B1F61 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755BF4DE1B68D6BE004B1F61 /* LogInViewController.swift */; };
 		755BF4E11B68D6BE004B1F61 /* LogOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755BF4DF1B68D6BE004B1F61 /* LogOutViewController.swift */; };
 		755BF4E41B68D74F004B1F61 /* EditSadhanaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755BF4E21B68D74F004B1F61 /* EditSadhanaViewController.swift */; };
-		755BF4E51B68D74F004B1F61 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 755BF4E31B68D74F004B1F61 /* InfoViewController.swift */; };
 		757D124B1B5013300001402B /* GeneralSadhanaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757D124A1B5013300001402B /* GeneralSadhanaViewController.swift */; };
 		757D124E1B5013300001402B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 757D124C1B5013300001402B /* Main.storyboard */; };
 		757D12511B5013300001402B /* Vaishnavaseva.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 757D124F1B5013300001402B /* Vaishnavaseva.xcdatamodeld */; };
@@ -125,9 +121,6 @@
 		4E24D0611BDFC00A00E4C17F /* Deserializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Deserializer.swift; path = Model/Deserializer.swift; sourceTree = "<group>"; };
 		4E2915411C624F3000202B91 /* AppControllerStateAbstractUserSadhana.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppControllerStateAbstractUserSadhana.swift; path = AppController/States/AppControllerStateAbstractUserSadhana.swift; sourceTree = "<group>"; };
 		4E3C3C621BA078DD00C61320 /* PersonalSadhanaTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PersonalSadhanaTableViewCell.swift; path = Views/PersonalSadhanaTableViewCell.swift; sourceTree = "<group>"; };
-		4E3CC7431BEB9116003982D4 /* info.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = info.html; path = Vaishnavaseva/Info/info.html; sourceTree = "<group>"; };
-		4E3CC7451BEB9244003982D4 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo.png; path = Vaishnavaseva/Info/logo.png; sourceTree = "<group>"; };
-		4E3CC7461BEB9244003982D4 /* ISKCON.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ISKCON.png; path = Vaishnavaseva/Info/ISKCON.png; sourceTree = "<group>"; };
 		4E436D4D1BE10F6D0046C145 /* ActivityIndicatorsContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ActivityIndicatorsContainer.swift; path = Utilities/ActivityIndicatorsContainer.swift; sourceTree = "<group>"; };
 		4E436D651BE1100B0046C145 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MBProgressHUD.h; path = ObjC/MBProgressHUD.h; sourceTree = "<group>"; };
 		4E436D661BE1100B0046C145 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MBProgressHUD.m; path = ObjC/MBProgressHUD.m; sourceTree = "<group>"; };
@@ -184,7 +177,6 @@
 		755BF4DE1B68D6BE004B1F61 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LogInViewController.swift; path = ViewControllers/LogInViewController.swift; sourceTree = "<group>"; };
 		755BF4DF1B68D6BE004B1F61 /* LogOutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LogOutViewController.swift; path = ViewControllers/LogOutViewController.swift; sourceTree = "<group>"; };
 		755BF4E21B68D74F004B1F61 /* EditSadhanaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditSadhanaViewController.swift; path = ViewControllers/EditSadhanaViewController.swift; sourceTree = "<group>"; };
-		755BF4E31B68D74F004B1F61 /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InfoViewController.swift; path = ViewControllers/InfoViewController.swift; sourceTree = "<group>"; };
 		757D12451B5013300001402B /* Vaishnavaseva.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Vaishnavaseva.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		757D124A1B5013300001402B /* GeneralSadhanaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GeneralSadhanaViewController.swift; path = ViewControllers/GeneralSadhanaViewController.swift; sourceTree = "<group>"; };
 		757D124D1B5013300001402B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -273,17 +265,6 @@
 				4E436D681BE1100B0046C145 /* UIScrollView+SVInfiniteScrolling.m */,
 			);
 			name = ObjC;
-			sourceTree = "<group>";
-		};
-		4E3CC7421BEB90FA003982D4 /* Info */ = {
-			isa = PBXGroup;
-			children = (
-				4E3CC7451BEB9244003982D4 /* logo.png */,
-				4E3CC7461BEB9244003982D4 /* ISKCON.png */,
-				4E3CC7431BEB9116003982D4 /* info.html */,
-			);
-			name = Info;
-			path = ..;
 			sourceTree = "<group>";
 		};
 		4E9977B11BD623EC0002D7A0 /* ImageLoader */ = {
@@ -433,7 +414,6 @@
 				75C5A5A01B5531F60069B85D /* Equatable */,
 				750810C71B971FE700E97FF5 /* Images */,
 				4E9977B11BD623EC0002D7A0 /* ImageLoader */,
-				4E3CC7421BEB90FA003982D4 /* Info */,
 				757D124C1B5013300001402B /* Main.storyboard */,
 				757D12521B5013300001402B /* Assets.xcassets */,
 				757D12541B5013300001402B /* LaunchScreen.storyboard */,
@@ -510,7 +490,6 @@
 				75CE83A91B68D0260033A8AD /* MySadhanaViewController.swift */,
 				755BF4E21B68D74F004B1F61 /* EditSadhanaViewController.swift */,
 				75CFA0EC1B501FB40071EC79 /* PersonalSadhanaViewController.swift */,
-				755BF4E31B68D74F004B1F61 /* InfoViewController.swift */,
 				755BF4DE1B68D6BE004B1F61 /* LogInViewController.swift */,
 				755BF4DF1B68D6BE004B1F61 /* LogOutViewController.swift */,
 				7553A0F31BE761ED005F54B0 /* PersonalSettingsViewController.swift */,
@@ -652,14 +631,11 @@
 				750810C91B971FFA00E97FF5 /* default_avatar.gif in Resources */,
 				7553A1421BEA81B0005F54B0 /* outbox_24.png in Resources */,
 				7553A1441BEA82AB005F54B0 /* man_24.png in Resources */,
-				4E3CC7481BEB9244003982D4 /* ISKCON.png in Resources */,
 				75169FDB1BEB87D700B3CE1D /* InfoPlist.strings in Resources */,
 				75169FEA1BEB87E000B3CE1D /* Localizable.strings in Resources */,
 				7553A13E1BEA7FB7005F54B0 /* gear_24.png in Resources */,
 				7553A1461BEA8322005F54B0 /* info_24.png in Resources */,
-				4E3CC7441BEB9116003982D4 /* info.html in Resources */,
 				757D12531B5013300001402B /* Assets.xcassets in Resources */,
-				4E3CC7471BEB9244003982D4 /* logo.png in Resources */,
 				757D124E1B5013300001402B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -775,7 +751,6 @@
 				75CE83AA1B68D0260033A8AD /* MySadhanaViewController.swift in Sources */,
 				4E436D761BE110540046C145 /* VSResponse.swift in Sources */,
 				4E43E3501BE808D000D18973 /* LocksmithError.swift in Sources */,
-				755BF4E51B68D74F004B1F61 /* InfoViewController.swift in Sources */,
 				4E436D721BE110540046C145 /* NSURLRequest+Vaishnavaseva.swift in Sources */,
 				7595A1811B62847800735A0C /* BackFromAnyToAny.swift in Sources */,
 				75BA40521B695DFF0075CE6B /* MyToLogOut.swift in Sources */,
