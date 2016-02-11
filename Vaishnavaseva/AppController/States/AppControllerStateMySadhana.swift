@@ -118,7 +118,7 @@ import UIKit
     sadhanaEntry.date = dateFormat.stringFromDate(date) as String
     sadhanaEntry.day = components.day
     sadhanaEntry.id = -1
-    sadhanaEntry.userId = Int((NSUserDefaults.standardUserDefaults().valueForKey("me")?["userid"]) as! String)
+    sadhanaEntry.userId = -1
     sadhanaEntry.jCount730 = 0
     sadhanaEntry.jCount1000 = 0
     sadhanaEntry.jCount1800 = 0

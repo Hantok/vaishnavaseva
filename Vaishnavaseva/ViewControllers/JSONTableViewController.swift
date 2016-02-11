@@ -41,6 +41,7 @@ class JSONTableViewController: BaseTableViewController, MFMailComposeViewControl
   func configuredMailComposeViewController() -> MFMailComposeViewController {
     let mailComposerVC = MFMailComposeViewController()
     mailComposerVC.mailComposeDelegate = self // Extremely important to set the --mailComposeDelegate-- property, NOT the --delegate-- property
+    mailComposerVC.navigationBar.viewForBaselineLayout().tintColor = UIColor.lightGrayColor()
     
     let appVersion = NSBundle.mainBundle().objectForInfoDictionaryKey("CFBundleShortVersionString")!
     let appBuildNumber = NSBundle.mainBundle().objectForInfoDictionaryKey("CFBundleVersion")!

@@ -197,12 +197,14 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="All Sadhana" id="bIg-DW-MlW">
                         <rightBarButtonItems>
-                            <barButtonItem image="info_24.png" id="dMc-w4-mhg">
+                            <barButtonItem image="feedback.png" id="dMc-w4-mhg">
+                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <action selector="feedbackPressed:" destination="Pfd-d1-ZYF" id="bz7-dt-uZi"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem image="man_24.png" id="AWP-p2-cFo">
+                            <barButtonItem image="das.png" id="AWP-p2-cFo">
+                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <action selector="onMySadhana:" destination="Pfd-d1-ZYF" id="SZw-l9-kBe"/>
                                 </connections>
@@ -430,17 +432,20 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="My Sadhana" id="wZK-ll-PPl">
                         <barButtonItem key="leftBarButtonItem" image="outbox_24.png" id="cSU-0W-0yc">
+                            <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <segue destination="MwM-Sy-swG" kind="show" identifier="MyToLogOut" id="DGu-S3-pdr"/>
                             </connections>
                         </barButtonItem>
                         <rightBarButtonItems>
-                            <barButtonItem image="info_24.png" id="6Kz-g2-lg8">
+                            <barButtonItem image="feedback.png" id="6Kz-g2-lg8">
+                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <action selector="feedbackPressed:" destination="n9d-oo-zJV" id="gsS-vF-u9i"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem image="gear_24.png" id="RSd-Qb-SDt">
+                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <segue destination="tkf-53-zrs" kind="show" identifier="MyToSettings" id="gHR-0e-DJf"/>
                                 </connections>
@@ -853,6 +858,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Date" id="8OC-V4-eN1">
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="Gx7-SC-KDl">
+                            <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="onDone:" destination="AV6-D2-REd" id="1SL-p6-m6y"/>
                             </connections>
@@ -1092,7 +1098,8 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Садхана" id="8wk-3y-F7U">
-                        <barButtonItem key="rightBarButtonItem" image="info_24.png" id="Z16-EL-x8t">
+                        <barButtonItem key="rightBarButtonItem" image="feedback.png" id="Z16-EL-x8t">
+                            <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="feedbackPressed:" destination="Egm-P0-sbH" id="953-Kb-ymN"/>
                             </connections>
@@ -1114,6 +1121,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Uod-B8-G01">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -1551,6 +1559,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="Lf3-eB-FHL">
                         <barButtonItem key="rightBarButtonItem" title="Item" systemItem="done" id="VB9-mZ-yTH">
+                            <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="onDone:" destination="tkf-53-zrs" id="xEm-Rt-m5W"/>
                             </connections>
@@ -1574,10 +1583,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="das.png" width="30" height="26"/>
         <image name="default_avatar.gif" width="100" height="100"/>
+        <image name="feedback.png" width="30" height="30"/>
         <image name="gear_24.png" width="24" height="24"/>
-        <image name="info_24.png" width="24" height="24"/>
-        <image name="man_24.png" width="24" height="24"/>
         <image name="outbox_24.png" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
