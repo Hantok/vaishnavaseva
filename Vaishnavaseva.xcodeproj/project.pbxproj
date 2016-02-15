@@ -33,6 +33,7 @@
 		4E58F0D41C6C9EB10007C770 /* feedback.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E58F0D21C6C9EB10007C770 /* feedback.png */; };
 		4E58F0D91C6CA08C0007C770 /* das.png in Resources */ = {isa = PBXBuildFile; fileRef = 4E58F0D81C6CA08C0007C770 /* das.png */; };
 		4E6092201C05F32000B686AA /* BackFromAnyToLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E60921F1C05F32000B686AA /* BackFromAnyToLogin.swift */; };
+		4E78C8951C720F9F0022090A /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E78C8941C720F9F0022090A /* UIColor.swift */; };
 		4E9977AE1BD623DE0002D7A0 /* Diskcached.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9977AB1BD623DE0002D7A0 /* Diskcached.swift */; };
 		4E9977AF1BD623DE0002D7A0 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9977AC1BD623DE0002D7A0 /* ImageLoader.swift */; };
 		4E9977B01BD623DE0002D7A0 /* UIImageView+ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E9977AD1BD623DE0002D7A0 /* UIImageView+ImageLoader.swift */; };
@@ -144,6 +145,7 @@
 		4E58F0D21C6C9EB10007C770 /* feedback.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = feedback.png; path = Images/feedback.png; sourceTree = "<group>"; };
 		4E58F0D81C6CA08C0007C770 /* das.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = das.png; path = Images/das.png; sourceTree = "<group>"; };
 		4E60921F1C05F32000B686AA /* BackFromAnyToLogin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BackFromAnyToLogin.swift; path = AppController/Segues/BackFromAnyToLogin.swift; sourceTree = "<group>"; };
+		4E78C8941C720F9F0022090A /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIColor.swift; path = Utilities/UIColor.swift; sourceTree = "<group>"; };
 		4E9977AB1BD623DE0002D7A0 /* Diskcached.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Diskcached.swift; path = ImageLoader/Diskcached.swift; sourceTree = "<group>"; };
 		4E9977AC1BD623DE0002D7A0 /* ImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageLoader.swift; path = ImageLoader/ImageLoader.swift; sourceTree = "<group>"; };
 		4E9977AD1BD623DE0002D7A0 /* UIImageView+ImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImageView+ImageLoader.swift"; path = "ImageLoader/UIImageView+ImageLoader.swift"; sourceTree = "<group>"; };
@@ -371,6 +373,7 @@
 				4E436D4D1BE10F6D0046C145 /* ActivityIndicatorsContainer.swift */,
 				755B5DE31BA2D81500ADE410 /* Alerts.swift */,
 				4E9977B21BD628790002D7A0 /* Constants.swift */,
+				4E78C8941C720F9F0022090A /* UIColor.swift */,
 			);
 			name = Utilities;
 			sourceTree = "<group>";
@@ -743,6 +746,7 @@
 				75CE83A31B68CFE20033A8AD /* AppControllerState.swift in Sources */,
 				4E24D0621BDFC00A00E4C17F /* Deserializer.swift in Sources */,
 				4ED8890B1BBAFBDA000BC5A4 /* PersonalSadhanaTableHeader.swift in Sources */,
+				4E78C8951C720F9F0022090A /* UIColor.swift in Sources */,
 				7507E19E1B975762000AFEA3 /* GeneralSadhanaTableViewCell.swift in Sources */,
 				757D12511B5013300001402B /* Vaishnavaseva.xcdatamodeld in Sources */,
 				757D124B1B5013300001402B /* GeneralSadhanaViewController.swift in Sources */,

@@ -198,13 +198,13 @@
                     <navigationItem key="navigationItem" title="All Sadhana" id="bIg-DW-MlW">
                         <rightBarButtonItems>
                             <barButtonItem image="feedback.png" id="dMc-w4-mhg">
-                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" red="0.50588235290000005" green="0.83137254900000002" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <action selector="feedbackPressed:" destination="Pfd-d1-ZYF" id="bz7-dt-uZi"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem image="das.png" id="AWP-p2-cFo">
-                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" red="0.50588235294117645" green="0.83137254901960778" blue="0.96862745098039216" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <action selector="onMySadhana:" destination="Pfd-d1-ZYF" id="SZw-l9-kBe"/>
                                 </connections>
@@ -432,20 +432,20 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="My Sadhana" id="wZK-ll-PPl">
                         <barButtonItem key="leftBarButtonItem" image="outbox_24.png" id="cSU-0W-0yc">
-                            <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="tintColor" red="0.50588235290000005" green="0.83137254900000002" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <segue destination="MwM-Sy-swG" kind="show" identifier="MyToLogOut" id="DGu-S3-pdr"/>
                             </connections>
                         </barButtonItem>
                         <rightBarButtonItems>
                             <barButtonItem image="feedback.png" id="6Kz-g2-lg8">
-                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" red="0.50588235290000005" green="0.83137254900000002" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <action selector="feedbackPressed:" destination="n9d-oo-zJV" id="gsS-vF-u9i"/>
                                 </connections>
                             </barButtonItem>
                             <barButtonItem image="gear_24.png" id="RSd-Qb-SDt">
-                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" red="0.50588235290000005" green="0.83137254900000002" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <segue destination="tkf-53-zrs" kind="show" identifier="MyToSettings" id="gHR-0e-DJf"/>
                                 </connections>
@@ -493,6 +493,7 @@
                                     </textField>
                                     <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="1440" stepValue="15" translatesAutoresizingMaskIntoConstraints="NO" id="k6R-IH-ec3">
                                         <rect key="frame" x="466" y="0.0" width="94" height="29"/>
+                                        <color key="tintColor" red="0.50588235290000005" green="0.83137254900000002" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <action selector="onStepperValueChanged:" destination="AV6-D2-REd" eventType="valueChanged" id="3Ki-AF-wix"/>
                                         </connections>
@@ -680,6 +681,7 @@
                                     </label>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pZS-93-eKs">
                                         <rect key="frame" x="511" y="0.0" width="51" height="31"/>
+                                        <color key="tintColor" red="0.50588235290000005" green="0.83137254900000002" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                                     </switch>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -712,6 +714,7 @@
                                     </label>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ld1-53-dEF">
                                         <rect key="frame" x="511" y="0.0" width="51" height="31"/>
+                                        <color key="tintColor" red="0.50588235290000005" green="0.83137254900000002" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                                     </switch>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -744,6 +747,7 @@
                                     </label>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5xx-NQ-bMk">
                                         <rect key="frame" x="511" y="0.0" width="51" height="31"/>
+                                        <color key="tintColor" red="0.50588235290000005" green="0.83137254900000002" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                                     </switch>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -776,6 +780,7 @@
                                     </label>
                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nHs-dA-LBP">
                                         <rect key="frame" x="511" y="0.0" width="51" height="31"/>
+                                        <color key="tintColor" red="0.50588235290000005" green="0.83137254900000002" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                                     </switch>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -858,7 +863,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Date" id="8OC-V4-eN1">
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="Gx7-SC-KDl">
-                            <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="tintColor" red="0.50588235290000005" green="0.83137254900000002" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="onDone:" destination="AV6-D2-REd" id="1SL-p6-m6y"/>
                             </connections>
@@ -1099,7 +1104,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Садхана" id="8wk-3y-F7U">
                         <barButtonItem key="rightBarButtonItem" image="feedback.png" id="Z16-EL-x8t">
-                            <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="tintColor" red="0.50588235290000005" green="0.83137254900000002" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="feedbackPressed:" destination="Egm-P0-sbH" id="953-Kb-ymN"/>
                             </connections>
@@ -1121,7 +1126,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Uod-B8-G01">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="0.50588235290000005" green="0.83137254900000002" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -1165,7 +1170,9 @@
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kos-PD-6PK">
                                                 <rect key="frame" x="178" y="36" width="55" height="30"/>
-                                                <state key="normal" title="Log Out"/>
+                                                <state key="normal" title="Log Out">
+                                                    <color key="titleColor" red="0.50588235290000005" green="0.83137254900000002" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
                                                 <connections>
                                                     <action selector="onLogOut:" destination="MwM-Sy-swG" eventType="touchUpInside" id="AdD-Al-ETo"/>
                                                 </connections>
@@ -1257,14 +1264,18 @@
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iNj-FR-kcF">
                                         <rect key="frame" x="259" y="80" width="42" height="30"/>
-                                        <state key="normal" title="Log In"/>
+                                        <state key="normal" title="Log In">
+                                            <color key="titleColor" red="0.50588235290000005" green="0.83137254900000002" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="onLogIn:" destination="6Hf-a8-qBb" eventType="touchUpInside" id="68h-lS-Rwb"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xjL-1b-cwp">
                                         <rect key="frame" x="253" y="120" width="55" height="30"/>
-                                        <state key="normal" title="Sign Up"/>
+                                        <state key="normal" title="Sign Up">
+                                            <color key="titleColor" red="0.50588235290000005" green="0.83137254900000002" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
                                         <connections>
                                             <action selector="onSignUp:" destination="6Hf-a8-qBb" eventType="touchUpInside" id="96k-Ad-hPT"/>
                                         </connections>
@@ -1340,6 +1351,7 @@
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bGf-j8-v1x">
                                                 <rect key="frame" x="511" y="0.0" width="51" height="31"/>
+                                                <color key="tintColor" red="0.50588235290000005" green="0.83137254900000002" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                                             </switch>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1369,6 +1381,7 @@
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hrn-Sx-Iad">
                                                 <rect key="frame" x="511" y="0.0" width="51" height="31"/>
+                                                <color key="tintColor" red="0.50588235290000005" green="0.83137254900000002" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                                             </switch>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1398,6 +1411,7 @@
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hI4-iP-5G7">
                                                 <rect key="frame" x="511" y="0.0" width="51" height="31"/>
+                                                <color key="tintColor" red="0.50588235290000005" green="0.83137254900000002" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                                             </switch>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1427,6 +1441,7 @@
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XPz-1q-XTq">
                                                 <rect key="frame" x="511" y="0.0" width="51" height="31"/>
+                                                <color key="tintColor" red="0.50588235290000005" green="0.83137254900000002" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                                             </switch>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1456,6 +1471,7 @@
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uIr-RF-e3r">
                                                 <rect key="frame" x="511" y="0.0" width="51" height="31"/>
+                                                <color key="tintColor" red="0.50588235290000005" green="0.83137254900000002" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                                             </switch>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1485,6 +1501,7 @@
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qTY-Bf-Reo">
                                                 <rect key="frame" x="511" y="0.0" width="51" height="31"/>
+                                                <color key="tintColor" red="0.50588235290000005" green="0.83137254900000002" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                                             </switch>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1514,6 +1531,7 @@
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E5r-DC-4IV">
                                                 <rect key="frame" x="511" y="0.0" width="51" height="31"/>
+                                                <color key="tintColor" red="0.50588235290000005" green="0.83137254900000002" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                                             </switch>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1559,7 +1577,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="Lf3-eB-FHL">
                         <barButtonItem key="rightBarButtonItem" title="Item" systemItem="done" id="VB9-mZ-yTH">
-                            <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="tintColor" red="0.50588235290000005" green="0.83137254900000002" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="onDone:" destination="tkf-53-zrs" id="xEm-Rt-m5W"/>
                             </connections>
@@ -1583,13 +1601,13 @@
         </scene>
     </scenes>
     <resources>
-        <image name="das.png" width="30" height="26"/>
+        <image name="das.png" width="28" height="24"/>
         <image name="default_avatar.gif" width="100" height="100"/>
-        <image name="feedback.png" width="30" height="30"/>
+        <image name="feedback.png" width="24" height="24"/>
         <image name="gear_24.png" width="24" height="24"/>
         <image name="outbox_24.png" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="jLf-bz-HMW"/>
+        <segue reference="IIT-AO-hU6"/>
     </inferredMetricsTieBreakers>
 </document>
