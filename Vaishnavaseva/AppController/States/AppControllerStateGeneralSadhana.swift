@@ -12,6 +12,7 @@ import UIKit
       super.sceneDidBecomeCurrent()
       self.viewControllerProtocol.setAction(Selector("allSadhanaEntries"), forTarget: self, forStateViewEvent: allSadhanaEntriesStateViewEvent)
       self.viewControllerProtocol.setAction(Selector("updateAcceessToken"), forTarget: self, forStateViewEvent: updateAceessTokenStateViewEvent)
+      self.viewControllerProtocol.setAction(Selector("findSadhanaUser"), forTarget: self, forStateViewEvent: findSadhanaUserStateViewEvent)
     }
     
     func allSadhanaEntries() {
@@ -57,4 +58,22 @@ import UIKit
       (self.viewController as! GeneralSadhanaViewController).refreshControl?.endRefreshing()
       (self.viewController as! GeneralSadhanaViewController).tableView.infiniteScrollingView.stopAnimating()
     }
+  
+  func findSadhanaUser() {
+    let generalSadhanaViewController = self.viewController as! GeneralSadhanaViewController
+    let url = generalSadhanaViewController.searchString.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLHostAllowedCharacterSet())!
+    
+    "usersByTerm/\(url)".get() { response in
+      UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+      if (response.data == nil) {
+        return
+      }
+      let array = response.responseJSON as! NSArray
+      if array.count == 0 {
+        return
+      }
+      generalSadhanaViewController.userSearchSet = Deserialiser().getSadhanaUsersFromSearchTerm(array)
+      generalSadhanaViewController.searchController.searchResultsTableView.reloadData()
+    }
   }
+}

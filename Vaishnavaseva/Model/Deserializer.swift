@@ -59,5 +59,25 @@ class Deserialiser {
     }
     return result
   }
+  
+  func getSadhanaUsersFromSearchTerm(array: NSArray) -> Array<SadhanaUser> {
+    var sadhanaUserArray = [SadhanaUser]()
+    
+    for dict in array {
+      var sadhanaUser = SadhanaUser()
+      if !dict.objectForKey("spiritual_name")!.isKindOfClass(NSNull) {
+        sadhanaUser.userName = dict.objectForKey("spiritual_name") as? String
+      } else {
+        let userName = dict.objectForKey("first_name") as? String
+        let lastName = dict.objectForKey("last_name") as? String
+        sadhanaUser.userName = "\(userName!) \(lastName == nil ? "" : lastName!)"
+      }
+      sadhanaUser.avatarUrl = dict.objectForKey("avatar") as? String
+      sadhanaUser.userId = dict.objectForKey("id")?.integerValue
+      sadhanaUserArray.append(sadhanaUser)
+    }
+    
+    return sadhanaUserArray
+  }
 
 }

@@ -62,7 +62,7 @@
                                             </userDefinedRuntimeAttributes>
                                         </view>
                                     </subviews>
-                                    <color key="backgroundColor" red="0.91368842081031298" green="0.91368842081031298" blue="0.91368842081031298" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="trailingMargin" secondItem="ZLL-D7-4hc" secondAttribute="trailing" id="6Ze-sq-TbT"/>
                                         <constraint firstItem="ZLL-D7-4hc" firstAttribute="leading" secondItem="h3e-Sb-748" secondAttribute="leadingMargin" id="I0o-Jb-LRn"/>
@@ -196,6 +196,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="All Sadhana" id="bIg-DW-MlW">
+                        <barButtonItem key="leftBarButtonItem" image="search-icon.png" id="9N7-qq-tPy">
+                            <connections>
+                                <action selector="showSearchBar:" destination="Pfd-d1-ZYF" id="NBh-S9-Uo5"/>
+                            </connections>
+                        </barButtonItem>
                         <rightBarButtonItems>
                             <barButtonItem image="feedback.png" id="dMc-w4-mhg">
                                 <color key="tintColor" red="0.50588235290000005" green="0.83137254900000002" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -1606,8 +1611,9 @@
         <image name="feedback.png" width="24" height="24"/>
         <image name="gear_24.png" width="24" height="24"/>
         <image name="outbox_24.png" width="24" height="24"/>
+        <image name="search-icon.png" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="IIT-AO-hU6"/>
+        <segue reference="jLf-bz-HMW"/>
     </inferredMetricsTieBreakers>
 </document>

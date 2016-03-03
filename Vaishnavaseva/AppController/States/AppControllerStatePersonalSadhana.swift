@@ -40,11 +40,13 @@ import UIKit
       let dict = response.responseJSON as! NSDictionary
       let entriesDict = dict.objectForKey("entries") as! NSArray
       if entriesDict.count == 0 {
-        personalSadhanaViewController.totalFound = 0
         personalSadhanaViewController.isBeforeResponseSucsess = true
         UIApplication.sharedApplication().networkActivityIndicatorVisible = false
         personalSadhanaViewController.tableView.infiniteScrollingView.stopAnimating()
-        personalSadhanaViewController.tableView.infiniteScrollingView.enabled = false
+        if personalSadhanaViewController.dates[personalSadhanaViewController.year]?.lastObject! as! String == month {
+          personalSadhanaViewController.totalFound = 0
+          personalSadhanaViewController.tableView.infiniteScrollingView.enabled = false
+        }
         return
       }
       
