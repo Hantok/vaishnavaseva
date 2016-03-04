@@ -42,6 +42,8 @@ import UIKit
         //init or append array
         if (generalSadhanaViewController.entries.count != 0 && pageNum != 0) {
           generalSadhanaViewController.entries.appendContentsOf(entries)
+          //remove dublicates if needed
+          generalSadhanaViewController.entries = generalSadhanaViewController.entries.uniq()
         }
         else {
           generalSadhanaViewController.sections = []

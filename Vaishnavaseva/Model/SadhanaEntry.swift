@@ -25,4 +25,34 @@ public struct SadhanaEntry {
   var wakeUpTime: String?
   var sleepTime: String?
   var sadhanaUser: SadhanaUser?
+  
+}
+
+extension SadhanaEntry: Equatable {}
+
+public func ==(lhs: SadhanaEntry, rhs: SadhanaEntry) -> Bool {
+  let areEqual = lhs.sadhanaUser?.userId == rhs.sadhanaUser?.userId
+  return areEqual
+}
+
+extension Array where Element: Equatable {
+  
+  public func uniq() -> [Element] {
+    var arrayCopy = self
+    arrayCopy.uniqInPlace()
+    return arrayCopy
+  }
+  
+  mutating public func uniqInPlace() {
+    var seen = [Element]()
+    var index = 0
+    for element in self {
+      if seen.contains(element) {
+        removeAtIndex(index)
+      } else {
+        seen.append(element)
+        index++
+      }
+    }
+  }
 }
