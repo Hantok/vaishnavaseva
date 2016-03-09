@@ -24,6 +24,11 @@ import UIKit
         self.viewController.showErrorAlert(NSLocalizedString("Server error", comment: "Alert title"))
         return
       } else if response.HTTPResponse.statusCode == 200 {
+        if (response.responseJSON as! NSDictionary).objectForKey("entry_id")?.integerValue != nil {
+          editViewController.sadhanaEntry.id = (response.responseJSON as! NSDictionary).objectForKey("entry_id")!.integerValue
+        } else {
+          editViewController.sadhanaEntry.id = -1
+        }
         self.viewController.performSegueWithIdentifier("BackFromEditToMy", sender: nil)
       } else {
         print(response.responseJSON)
@@ -64,7 +69,7 @@ import UIKit
       "opt_lections" : "\(sadhanaEntry.lectionsEnable!)"]
     
     //if set SadhanaEntry
-    if sadhanaEntry.id != -1 {
+    if sadhanaEntry.id != -1 || sadhanaEntry.id != nil {
       params.updateValue("\(sadhanaEntry.id!)", forKey: "id")
     }
 
