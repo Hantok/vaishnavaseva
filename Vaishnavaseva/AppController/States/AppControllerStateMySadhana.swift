@@ -170,6 +170,7 @@ import UIKit
         }
       } else {
         let responseDict = response.responseJSON as! NSDictionary
+        NSUserDefaults.standardUserDefaults().setObject(NSDate().timeIntervalSince1970, forKey: "lastDate")
         do {
           // update user credentials in keychain
           try Locksmith.updateData(responseDict as! [String : AnyObject], forUserAccount: "OAuthToken")

@@ -14,7 +14,6 @@ class MySadhanaViewController: JSONTableViewController {
       self.sadhanaUser = Deserialiser().getSadhanaUser(NSUserDefaults.standardUserDefaults().valueForKey("me") as! NSDictionary)
     }
     sendActionForStateViewEvent(mySadhanaEntriesStateViewEvent)
-    sendActionForStateViewEvent(updateAceessTokenStateViewEvent)
     
     UIApplication.sharedApplication().networkActivityIndicatorVisible = true
     let spiningActivity = MBProgressHUD.showHUDAddedTo(navigationController?.view, animated: true)
@@ -22,6 +21,14 @@ class MySadhanaViewController: JSONTableViewController {
     
     self.tableView.addInfiniteScrollingWithActionHandler() {
         self.insertRowAtBottom()
+    }
+  }
+  
+  override func viewWillAppear(animated: Bool) {
+    super.viewWillAppear(animated)
+    let curDate = NSDate().timeIntervalSince1970
+    if NSUserDefaults.standardUserDefaults().objectForKey("lastDate") == nil || curDate - NSUserDefaults.standardUserDefaults().objectForKey("lastDate")!.doubleValue > 86400 {
+      sendActionForStateViewEvent(updateAceessTokenStateViewEvent)
     }
   }
   
