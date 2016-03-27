@@ -158,6 +158,8 @@ class GeneralSadhanaViewController: JSONTableViewController, UISearchBarDelegate
         cell.javaView.rounds2 = sadhanaEntry.jCount1800!
         cell.javaView.rounds3 = sadhanaEntry.jCountAfter!
         
+        cell.javaView.countLabel.text = "\(sadhanaEntry.jCount730! + sadhanaEntry.jCount1000! + sadhanaEntry.jCount1800! + sadhanaEntry.jCountAfter!)"
+        
         let avatar_url = sadhanaEntry.sadhanaUser?.avatarUrl!
         if avatar_url != Constants.default_avatar_url
         {

@@ -102,6 +102,7 @@ import UIKit
   @IBOutlet weak var progressView1: UIProgressView!
   @IBOutlet weak var progressView2: UIProgressView!
   @IBOutlet weak var delimiterView: UIView!
+  @IBOutlet weak var countLabel: UILabel!
   
   //Constraints
   @IBOutlet weak var progressView1LeadingConstraint: NSLayoutConstraint!

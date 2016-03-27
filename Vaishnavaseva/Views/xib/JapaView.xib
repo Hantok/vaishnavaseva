@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8164.2" systemVersion="14F25a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8135.1"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="JapaView" customModule="Vaishnavaseva" customModuleProvider="target">
             <connections>
+                <outlet property="countLabel" destination="LU0-jD-xSe" id="NTW-12-xz9"/>
                 <outlet property="delimiterView" destination="QE6-gu-w5m" id="Tid-oR-zKC"/>
                 <outlet property="delimiterViewLeadingCostraint" destination="WJD-a6-s3N" id="GwZ-a9-9qS"/>
                 <outlet property="mainView" destination="iN0-l3-epB" id="iuy-9m-4dk"/>
@@ -24,29 +26,37 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <progressView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" verticalHuggingPriority="750" misplaced="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ycQ-oB-U79">
-                    <rect key="frame" x="1" y="2" width="400" height="259"/>
+                    <rect key="frame" x="201" y="2" width="200" height="259"/>
                     <color key="progressTintColor" red="0.81568627449999997" green="0.16078431369999999" blue="0.47843137250000001" alpha="1" colorSpace="calibratedRGB"/>
                     <color key="trackTintColor" red="0.16078431369999999" green="0.40000000000000002" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
                 </progressView>
                 <progressView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" verticalHuggingPriority="750" misplaced="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="QmK-ZW-p3L">
-                    <rect key="frame" x="1" y="2" width="0.0" height="259"/>
+                    <rect key="frame" x="1" y="2" width="200" height="259"/>
                     <color key="progressTintColor" red="0.98039215690000003" green="0.76862745099999996" blue="0.1764705882" alpha="1" colorSpace="calibratedRGB"/>
                     <color key="trackTintColor" red="0.94509803920000002" green="0.5450980392" blue="0.14117647059999999" alpha="1" colorSpace="calibratedRGB"/>
                 </progressView>
-                <view userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QE6-gu-w5m">
-                    <rect key="frame" x="400" y="0.0" width="1" height="6"/>
+                <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QE6-gu-w5m">
+                    <rect key="frame" x="401" y="0.0" width="1" height="263"/>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="1" id="xla-36-vOD"/>
                     </constraints>
                 </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LU0-jD-xSe">
+                    <rect key="frame" x="384" y="120" width="13" height="24"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <color key="textColor" red="0.19641729797979801" green="0.19641729797979801" blue="0.19641729797979801" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="QmK-ZW-p3L" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="centerX" multiplier="0.8" id="1FA-A7-vhc"/>
                 <constraint firstItem="ycQ-oB-U79" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="2" id="3lu-KK-mmZ"/>
                 <constraint firstItem="ycQ-oB-U79" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="bottom" constant="-2" id="55w-dk-Zdu"/>
+                <constraint firstItem="LU0-jD-xSe" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="5UP-Pd-hDs"/>
                 <constraint firstAttribute="bottom" secondItem="QmK-ZW-p3L" secondAttribute="bottom" constant="2" id="Ayp-Rj-CSL"/>
+                <constraint firstItem="LU0-jD-xSe" firstAttribute="trailing" secondItem="QE6-gu-w5m" secondAttribute="trailing" constant="-5" id="T2i-rg-t30"/>
                 <constraint firstItem="QE6-gu-w5m" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" multiplier="1.6" id="WJD-a6-s3N"/>
                 <constraint firstItem="ycQ-oB-U79" firstAttribute="leading" secondItem="QmK-ZW-p3L" secondAttribute="trailing" id="WbD-mH-v8d"/>
                 <constraint firstItem="QmK-ZW-p3L" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="2" id="k5h-95-59a"/>
