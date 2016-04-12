@@ -10,7 +10,7 @@ import UIKit
 //    }
     override func sceneDidBecomeCurrent() {
         super.sceneDidBecomeCurrent()
-        self.viewControllerProtocol.setAction(Selector("onLogIn"), forTarget: self, forStateViewEvent: LogInStateViewEvent)
+        self.viewControllerProtocol.setAction(#selector(AppControllerStateLogIn.onLogIn), forTarget: self, forStateViewEvent: LogInStateViewEvent)
     }
     
     func onLogIn() {

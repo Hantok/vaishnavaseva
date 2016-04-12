@@ -26,7 +26,7 @@ import UIKit
   
   func sceneDidBecomeCurrent()
     {
-    self.viewControllerProtocol.setAction(Selector("popState"), forTarget: self, forStateViewEvent: OnBackStateViewEvent)
+    self.viewControllerProtocol.setAction(#selector(AppControllerState.popState), forTarget: self, forStateViewEvent: OnBackStateViewEvent)
     }
   
   func isEqualTo(other: AppControllerState) -> Bool

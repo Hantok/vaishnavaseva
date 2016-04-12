@@ -182,7 +182,7 @@ class EditSadhanaViewController: BaseViewController, UIPickerViewDataSource, UIP
       }
       lastAnimatedView = view
       maximizeViewAnimated(view)
-      minimizationTimer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "minimizeViewAnimatedIfNeeded", userInfo: nil, repeats: false)
+      minimizationTimer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: #selector(EditSadhanaViewController.minimizeViewAnimatedIfNeeded), userInfo: nil, repeats: false)
     }
   }
   

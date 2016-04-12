@@ -5,7 +5,7 @@ import UIKit
   override func sceneDidBecomeCurrent()
     {
     super.sceneDidBecomeCurrent()
-    self.viewControllerProtocol.setAction(Selector("onDone"), forTarget: self, forStateViewEvent: OnDoneStateViewEvent)
+    self.viewControllerProtocol.setAction(#selector(AppControllerStateEditSadhana.onDone), forTarget: self, forStateViewEvent: OnDoneStateViewEvent)
     }
 
   func onDone() {

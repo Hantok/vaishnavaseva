@@ -67,7 +67,7 @@ import UIKit
       self.userSadhanaEntries(months[jsonTableViewController.monthIndex] as! String)
     } else {
       jsonTableViewController.monthIndex = 0
-      --jsonTableViewController.year
+      jsonTableViewController.year -= 1
       getAvailableMonths()
     }
   }

@@ -11,13 +11,13 @@ class JSONTableViewController: BaseTableViewController, MFMailComposeViewControl
       if sections.count != 0 {
         sections = []
       }
-      for var i = 0; i < entries.count; ++i {
+      for i in 0 ..< entries.count {
         let currentDate = entries[i].date!
         if lastDate != currentDate {
           lastDate = currentDate
           sections.append(Section(date: lastDate, firstIndex: i, count: 0))
         }
-        ++sections[sections.count - 1].count
+        sections[sections.count - 1].count += 1
       }
     }
   }

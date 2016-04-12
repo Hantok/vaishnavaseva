@@ -11,7 +11,7 @@ import UIKit
   
   override func sceneDidBecomeCurrent() {
     super.sceneDidBecomeCurrent()
-    self.viewControllerProtocol.setAction(Selector("getAvailableMonths"), forTarget: self, forStateViewEvent: userSadhanaEntriesStateViewEvent)
+    self.viewControllerProtocol.setAction(#selector(AppControllerStateAbstractUserSadhana.getAvailableMonths), forTarget: self, forStateViewEvent: userSadhanaEntriesStateViewEvent)
   }
     
   override func userSadhanaEntries(month:String) {
@@ -59,7 +59,7 @@ import UIKit
         let countOfCurrentItems = personalSadhanaViewController.entries.count
         personalSadhanaViewController.tableView.beginUpdates()
         personalSadhanaViewController.entries.appendContentsOf(entries.reverse())
-        for var i = 0; i < countOfNewItems; i++
+        for i in 0 ..< countOfNewItems
         {
           paths.append(NSIndexPath.init(forRow: countOfCurrentItems+i, inSection: 0))
         }

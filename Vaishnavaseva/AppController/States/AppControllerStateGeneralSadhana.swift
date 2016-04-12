@@ -10,9 +10,8 @@ import UIKit
 //    }
     override func sceneDidBecomeCurrent() {
       super.sceneDidBecomeCurrent()
-      self.viewControllerProtocol.setAction(Selector("allSadhanaEntries"), forTarget: self, forStateViewEvent: allSadhanaEntriesStateViewEvent)
-      self.viewControllerProtocol.setAction(Selector("updateAcceessToken"), forTarget: self, forStateViewEvent: updateAceessTokenStateViewEvent)
-      self.viewControllerProtocol.setAction(Selector("findSadhanaUser"), forTarget: self, forStateViewEvent: findSadhanaUserStateViewEvent)
+      self.viewControllerProtocol.setAction(#selector(AppControllerStateGeneralSadhana.allSadhanaEntries), forTarget: self, forStateViewEvent: allSadhanaEntriesStateViewEvent)
+      self.viewControllerProtocol.setAction(#selector(AppControllerStateGeneralSadhana.findSadhanaUser), forTarget: self, forStateViewEvent: findSadhanaUserStateViewEvent)
     }
     
     func allSadhanaEntries() {

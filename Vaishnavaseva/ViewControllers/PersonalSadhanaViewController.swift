@@ -109,7 +109,7 @@ class PersonalSadhanaViewController: JSONTableViewController {
           // decrease date if previous request was success
           if self.isBeforeResponseSucsess
           {
-            ++self.monthIndex
+            self.monthIndex += 1
           }
           UIApplication.sharedApplication().networkActivityIndicatorVisible = true
           self.sendActionForStateViewEvent(userSadhanaEntriesStateViewEvent)

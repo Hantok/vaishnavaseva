@@ -10,8 +10,8 @@ import UIKit
 //    }
   override func sceneDidBecomeCurrent() {
     super.sceneDidBecomeCurrent()
-    self.viewControllerProtocol.setAction(Selector("getAvailableMonths"), forTarget: self, forStateViewEvent: mySadhanaEntriesStateViewEvent)
-    self.viewControllerProtocol.setAction(Selector("updateAcceessToken"), forTarget: self, forStateViewEvent: updateAceessTokenStateViewEvent)
+    self.viewControllerProtocol.setAction(#selector(AppControllerStateMySadhana.getAvailableMonths), forTarget: self, forStateViewEvent: mySadhanaEntriesStateViewEvent)
+    self.viewControllerProtocol.setAction(#selector(AppControllerStateMySadhana.updateAcceessToken), forTarget: self, forStateViewEvent: updateAceessTokenStateViewEvent)
   }
   
   override func userSadhanaEntries(month:String) {
@@ -59,7 +59,7 @@ import UIKit
         let countOfCurrentItems = mySadhanaViewController.entries.count
         mySadhanaViewController.tableView.beginUpdates()
         mySadhanaViewController.entries.appendContentsOf(entries.reverse())
-        for var i = 0; i < countOfNewItems; i++
+        for i in 0 ..< countOfNewItems
         {
           paths.append(NSIndexPath.init(forRow: countOfCurrentItems+i, inSection: 0))
         }
@@ -91,10 +91,10 @@ import UIKit
         date = calendar.dateFromComponents(components)!
         date = date.dateByAddingTimeInterval(NSTimeInterval.init(NSTimeZone.systemTimeZone().secondsFromGMT))
         result.append(createEmptySadhanaEntryForDate(date))
-        ++day
+        day += 1
       }
       result.append(sadhanaEntry)
-      ++day
+      day += 1
     }
     
     while day <= today {
@@ -102,7 +102,7 @@ import UIKit
       date = calendar.dateFromComponents(components)!
       date = date.dateByAddingTimeInterval(NSTimeInterval.init(NSTimeZone.systemTimeZone().secondsFromGMT))
       result.append(createEmptySadhanaEntryForDate(date))
-      ++day
+      day += 1
     }
     
     return result

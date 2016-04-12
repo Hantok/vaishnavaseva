@@ -51,7 +51,7 @@ extension Array where Element: Equatable {
         removeAtIndex(index)
       } else {
         seen.append(element)
-        index++
+        index += 1
       }
     }
   }

@@ -27,7 +27,7 @@ class GeneralSadhanaViewController: JSONTableViewController, UISearchBarDelegate
     firstTimeDownload()
     
     self.refreshControl?.attributedTitle = NSAttributedString(string: NSLocalizedString("Refreshing...", comment: "Refresh control text"))
-    self.refreshControl?.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
+    self.refreshControl?.addTarget(self, action: #selector(GeneralSadhanaViewController.refresh(_:)), forControlEvents: UIControlEvents.ValueChanged)
 
     self.tableView.addInfiniteScrollingWithActionHandler(){
       self.insertRowAtBottom()
@@ -244,7 +244,7 @@ class GeneralSadhanaViewController: JSONTableViewController, UISearchBarDelegate
       {
         if self.isBeforeResponseSucsess
         {
-          ++self.pageNum
+          self.pageNum += 1
         }
       }
       else
