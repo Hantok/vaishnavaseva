@@ -48,6 +48,21 @@ class GeneralSadhanaViewController: JSONTableViewController, UISearchBarDelegate
     searchController.searchResultsDelegate = self
     searchController.searchResultsTableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: kCellIdentifier)
   }
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+    }
   
   func navigationController(navigationController: UINavigationController, didShowViewController viewController: UIViewController, animated: Bool) {
     if needToUpdateRefreshToken && !AppController.sharedAppController.isLoggedIn {

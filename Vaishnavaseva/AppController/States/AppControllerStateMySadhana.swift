@@ -159,6 +159,7 @@ import UIKit
     let params = getLoginPostParams(login, password: pass, refreshToken: true)
     Constants.authTokenURL.post(params) { response in
       UIApplication.sharedApplication().networkActivityIndicatorVisible = false
+      MBProgressHUD.hideAllHUDsForView(self.viewController.navigationController?.view, animated: true)
       if response.data == nil {
         print("Error for connecting the server")
       } else if response.HTTPResponse.statusCode != 200 {
