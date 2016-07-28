@@ -69,8 +69,13 @@ import UIKit
       if (response.data == nil) {
         return
       }
-      let array = response.responseJSON as! NSArray
-      if array.count == 0 {
+      var array: NSArray
+      if let responseJSON = response.responseJSON {
+        array = responseJSON as! NSArray
+        if array.count == 0 {
+          return
+        }
+      } else {
         return
       }
       generalSadhanaViewController.userSearchSet = Deserialiser().getSadhanaUsersFromSearchTerm(array)

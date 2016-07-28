@@ -175,7 +175,7 @@ import UIKit
         do {
           // update user credentials in keychain
           try Locksmith.updateData(responseDict as! [String : AnyObject], forUserAccount: "OAuthToken")
-          //print("Access token updeted")
+          print("Access token updeted")
         } catch {
           print(error)
         }
