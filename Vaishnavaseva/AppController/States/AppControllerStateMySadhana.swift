@@ -40,7 +40,7 @@ import UIKit
       let entriesDict = dict.objectForKey("entries") as! NSArray
       if entriesDict.count == 0 {
         if mySadhanaViewController.entries.count == 0 {
-          mySadhanaViewController.entries = self.createEmptySadhanaEntries(today, entries: [])
+          mySadhanaViewController.entries = self.createEmptySadhanaEntries(today, entries: []).reverse()
         } else {
           mySadhanaViewController.tableView.infiniteScrollingView.enabled = false
         }

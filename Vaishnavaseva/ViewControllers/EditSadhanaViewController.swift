@@ -72,25 +72,43 @@ class EditSadhanaViewController: BaseViewController, UIPickerViewDataSource, UIP
     serviceSwitch.enabled = sadhanaTypesEnableState.Service
     jogaSwitch.enabled = sadhanaTypesEnableState.Joga
     lecturesSwitch.enabled = sadhanaTypesEnableState.Lectures
-    
-    booksMinutesTextField.text = self.sadhanaEntry.reading! > 0 ? String("\(self.sadhanaEntry.reading!)") : ""
-    booksMinutesStepperControl.value = Double(self.sadhanaEntry.reading!)
-    
-    kirtanSwitch.setOn(self.sadhanaEntry.kirtan!, animated: false)
-    
-    japaRoundsPickerView.selectRow(self.sadhanaEntry.jCount730!, inComponent: 0, animated: false)
-    japaRoundsPickerView.selectRow(self.sadhanaEntry.jCount1000!, inComponent: 1, animated: false)
-    japaRoundsPickerView.selectRow(self.sadhanaEntry.jCount1800!, inComponent: 2, animated: false)
-    japaRoundsPickerView.selectRow(self.sadhanaEntry.jCountAfter!, inComponent: 3, animated: false)
+    if let reading = self.sadhanaEntry.reading {
+        booksMinutesTextField.text = reading > 0 ? String("\(reading)") : ""
+        booksMinutesStepperControl.value = Double(reading)
+    }
+    if let kirtan = self.sadhanaEntry.kirtan {
+        kirtanSwitch.setOn(kirtan, animated: false)
+    }
+    if let jCount730 = self.sadhanaEntry.jCount730 {
+        japaRoundsPickerView.selectRow(jCount730, inComponent: 0, animated: false)
+    }
+    if let jCount1000 = self.sadhanaEntry.jCount1000 {
+        japaRoundsPickerView.selectRow(jCount1000, inComponent: 1, animated: false)
+    }
+    if let jCount1800 = self.sadhanaEntry.jCount1800 {
+        japaRoundsPickerView.selectRow(jCount1800, inComponent: 2, animated: false)
+    }
+    if let jCountAfter = self.sadhanaEntry.jCountAfter {
+        japaRoundsPickerView.selectRow(jCountAfter, inComponent: 3, animated: false)
+    }
     
     let dateFormat: NSDateFormatter = NSDateFormatter()
     dateFormat.dateFormat = "HH:mm"
-    wakeTimePickerView.date = dateFormat.dateFromString(self.sadhanaEntry.wakeUpTime!)!
-    sleepTimePickerView.date = dateFormat.dateFromString(self.sadhanaEntry.sleepTime!)!
-    
-    serviceSwitch.setOn(self.sadhanaEntry.serviceEnable!, animated: false)
-    jogaSwitch.setOn(self.sadhanaEntry.exerciseEnable!, animated: false)
-    lecturesSwitch.setOn(self.sadhanaEntry.lectionsEnable!, animated: false)
+    if let wakeUpTime = self.sadhanaEntry.wakeUpTime {
+        wakeTimePickerView.date = dateFormat.dateFromString(wakeUpTime)!
+    }
+    if let sleepTime = self.sadhanaEntry.sleepTime {
+        sleepTimePickerView.date = dateFormat.dateFromString(sleepTime)!
+    }
+    if let serviceEnable = self.sadhanaEntry.serviceEnable {
+        serviceSwitch.setOn(serviceEnable, animated: false)
+    }
+    if let exerciseEnable = self.sadhanaEntry.exerciseEnable {
+        jogaSwitch.setOn(exerciseEnable, animated: false)
+    }
+    if let lectionsEnable = self.sadhanaEntry.lectionsEnable {
+        lecturesSwitch.setOn(lectionsEnable, animated: false)
+    }
   }
   
   override func viewDidAppear(animated: Bool) {
